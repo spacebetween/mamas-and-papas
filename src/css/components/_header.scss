@@ -1,8 +1,3 @@
 .header {
-    &_introduction {
-        border-bottom: $header-border;
-    }
-    &_thin {
-        border-width: 1px;
-    }
+    display: block;
 }
