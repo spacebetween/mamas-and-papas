@@ -1,0 +1,36 @@
+.border {
+    @extend .border-top;
+    @extend .border-left;
+    @extend .border-right;
+    @extend .border-bottom;
+    &-bottom {
+        border-bottom: 1px solid $gray-lightest;
+    }
+    &-right {
+        border-right: 1px solid $gray-lightest;
+    }
+    &-left {
+        border-left: 1px solid $gray-lightest;
+    }
+    &-top {
+        border-top: 1px solid $gray-lightest;
+    }
+    &_brand {
+        border-top: 1px solid $brand-primary;
+    }
+    &-image {
+        border: $image-border;
+    }
+    &-imageBrand {
+        border: $image-border $brand-primary;
+    }
+
+    &_brandSecondary {
+        border-color: $brand-secondary;
+    }
+
+    &_brandTertiary {
+        border-color: $brand-tertiary;
+    }
+
+}

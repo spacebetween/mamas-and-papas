@@ -1,0 +1,41 @@
+build:
+  description: 'Default task'
+  tasks:
+    - 'svg_sprite'
+    - 'css'
+    - 'js'
+
+server:
+  description: 'Start server'
+  tasks:
+    - 'build'
+    - 'express'
+    - 'watch'
+
+test:
+  description: 'Test script'
+  tasks:
+    - 'sasslint'
+    - 'eslint'
+
+svgs:
+  description: 'Build out SVG'
+  tasks:
+    - 'svg_sprite'
+    - 'sass'
+    - 'postcss'
+
+css:
+  description: 'CSS chain'
+  tasks:
+    - 'sasslint'
+    - 'sass'
+    - 'postcss'
+
+js:
+  description: 'JS chain'
+  tasks:
+    - 'eslint'
+    - 'concat'
+    - 'babel'
+    - 'uglify'

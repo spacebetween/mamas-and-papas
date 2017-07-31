@@ -1,0 +1,87 @@
+.btn {
+    padding: .5em 3em .5em 1.5em;
+    border-radius: 11em;
+    border: 2px solid;
+    box-shadow: 0 4px 23px -5px $gray-dark;
+    transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
+    font-weight: bold;
+    position: relative;
+    &:hover {
+        box-shadow: 0 2px 6px 0 $gray-dark;
+    }
+    &::after {
+        content: '\003e';
+        position: absolute;
+        right: 1.3em;
+        top: .4em;
+    }
+    &-noPoint {
+        padding-right: 1.5em;
+        &::after {
+            content: '';
+        }
+    }
+    &-primary {
+        color: $btn-primary-color;
+        background-color: $btn-primary-bg;
+        border-color: $btn-primary-border;
+        &:hover {
+            background-color: $btn-primary-bg-hover;
+        }
+    }
+    &-altPrimary {
+        color: $btn-primary-bg;
+        background-color: $btn-primary-color;
+        border-color: $btn-primary-border;
+        &:hover {
+            background-color: $btn-primary-bg-hover;
+            color: $btn-primary-color;
+        }
+    }
+    &-secondary {
+        color: $btn-secondary-color;
+        background-color: $btn-secondary-bg;
+        border-color: $btn-secondary-border;
+        &:hover {
+            background-color: $btn-secondary-bg-hover;
+        }
+    }
+    &-tertiary {
+        color: $btn-tertiary-color;
+        background-color: $btn-tertiary-bg;
+        border-color: $btn-tertiary-border;
+        &:hover {
+            background-color: $btn-tertiary-bg-hover;
+        }
+    }
+    &-quaternary {
+        color: $btn-quaternary-color;
+        background-color: $btn-quaternary-bg;
+        border-color: $btn-quaternary-border;
+        &:hover {
+            background-color: $btn-quaternary-bg-hover;
+        }
+    }
+    &-hushed {
+        background: none;
+        border: 0;
+        padding: 0;
+        &::after {
+            content: none;
+        }
+    }
+    &-disabled,
+    &:disabled {
+        &,
+        &:hover {
+            box-shadow: none;
+            border-color: $gray-lightest;
+            color: $gray-lightest;
+            background-color: $white;
+        }
+    }
+    &-block {
+        display: block;
+        width: 100%;
+    }
+}
