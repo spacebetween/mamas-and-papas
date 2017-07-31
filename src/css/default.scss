@@ -1,56 +1,31 @@
 // Brand specific variables
 
 // Brand colors
-$gray-darkest:              #282828;
-$gray-darker:               #666;
-$gray-dark:                 #8c8c8c;
+$gray-dark:                 #323232;
 $gray:                      #999;
-$gray-light:                #b9b9b9;
-$gray-lighter:              #cbcbc7;
-$gray-lightest:             #e4e4e2;
-
-$priority-orange:           #faa21a;
-$priority-orange-light:     #ffc000;
-
-$brand-primary:             #d63c00;
-$brand-primary-light:       #f24500;
-$brand-primary-dark:        darken($brand-primary, 20);
-
-$brand-secondary:           #282828;
-$brand-secondary-light:     #000;
-$brand-secondary-dark:      darken($brand-secondary, 20);
-
-$brand-tertiary:            $priority-orange;
-$brand-tertiary-light:      $priority-orange-light;
-$brand-tertiary-dark:       darken($brand-tertiary, 20);
-
-$brand-success:             #e8f3e2;
-$brand-success-active:   	#2f8b06;
-$brand-info:                #1c6edd;
-$brand-info-active:         #0e56b7;
-$brand-warning:             #da0000;
-$brand-warning-active:      #b30000;
-$brand-danger:              #dc1d1e;
-$brand-danger-active:       #a30517;
+$gray-light:                #f8f8f8;
 
 $white:                     #fff;
 $black:                     #000;
 
 // Typography
-$headings-font-family:    	'Asap', Helvetica, Arial, sans-serif;
-$font-family-base:        	'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-family-base:    	    'Roboto', sans-serif;
+$font-family-icons:         'FontAwesome';
 
-$header-border:             .4em solid $priority-orange;
+$font-size-1:                10px;
+$font-size-2:                12px;
+$font-size-3:                13px;
+$font-size-4:                14px;
+$font-size-5:                16px;
+$font-size-6:                18px;
+$font-size-7:                20px;
+$font-size-8:                24px;
+$font-size-9:                26px;
+$font-size-10:               30px;
+$font-size-11:               34px;
 
-$btn-quaternary-color:      $black;
-$btn-quaternary-bg:         $priority-orange;
-$btn-quaternary-bg-hover:   $priority-orange-light;
-$btn-quaternary-border:     transparent;
-
-$nav-tabs-link-hover-border-color: $priority-orange;
-$nav-tabs-active-link-hover-color: inherit;
-$nav-tabs-active-link-hover-border-color: $priority-orange;
 
 //Imports
 @import 'globalSettings';
 @import 'globalImports';
+@import 'main';
