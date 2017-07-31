@@ -1,0 +1,199 @@
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-flex:               false!default;
+$enable-rounded:            true!default;
+$enable-shadows:            false!default;
+$enable-gradients:          false!default;
+$enable-transitions:        true!default;
+$enable-hover-media-query:  false!default;
+$enable-grid-classes:       true!default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+
+$spacer:                     1rem!default;
+$spacer-x:                   $spacer!default;
+$spacer-y:                   $spacer!default;
+$spacers: (
+    0: (
+        x:   0,
+        y:   0
+    ),
+    hf: (
+        x:   ($spacer-x * .5),
+        y:   ($spacer-y * .5)
+    ),
+    1: (
+        x:   $spacer-x,
+        y:   $spacer-y
+    ),
+    2: (
+        x:   ($spacer-x * 1.5),
+        y:   ($spacer-y * 1.5)
+    ),
+    3: (
+        x:   ($spacer-x * 3),
+        y:   ($spacer-y * 3)
+    ),
+    4: (
+        x:   ($spacer-x * 4),
+        y:   ($spacer-y * 4)
+    ),
+    5: (
+        x:   ($spacer-x * 5),
+        y:   ($spacer-y * 5)
+    )
+)!default;
+
+$container-max-widths: (
+    sm: 767px,
+    md: 959px,
+    lg: 960px,
+    xl: 1140px
+)!default;
+
+$border-width:               1px!default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg:         (4 / 3)!default;
+$line-height-sm:         1.5!default;
+
+$border-radius:          .2rem!default;
+$border-radius-lg:       .2rem!default;
+$border-radius-sm:       .15rem!default;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-primary-color:              $white!default;
+$btn-primary-bg:                 $brand-primary!default;
+$btn-primary-bg-hover:           $brand-primary-light!default;
+$btn-primary-border:             $btn-primary-bg!default;
+
+$btn-secondary-color:            $white!default;
+$btn-secondary-bg:               $brand-secondary!default;
+$btn-secondary-bg-hover:         $brand-secondary-light!default;
+$btn-secondary-border:           $btn-secondary-bg!default;
+
+$btn-tertiary-color:             $black!default;
+$btn-tertiary-bg:                $brand-tertiary!default;
+$btn-tertiary-bg-hover:          $brand-tertiary-light!default;
+$btn-tertiary-border:            $brand-tertiary!default;
+
+$btn-quaternary-color:           $white!default;
+$btn-quaternary-bg:              $black!default;
+$btn-quaternary-bg-hover:        $black!default;
+$btn-quaternary-border:          $black!default;
+
+$btn-white-color:                $brand-primary!default;
+$btn-white-bg:                   $white!default;
+$btn-white-border:               $btn-white-bg!default;
+
+$btn-padding-x-sm:               .75rem!default;
+$btn-padding-y-sm:               .25rem!default;
+
+$btn-padding-x-lg:               1.25rem!default;
+$btn-padding-y-lg:               .75rem!default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:              .15rem!default;
+$btn-border-radius-lg:           .3rem!default;
+$btn-border-radius-sm:           .075rem!default;
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root:             14px!default;
+
+$font-size-base:             1rem!default;
+$font-size-lg:               1.25rem!default;
+$font-size-sm:               .875rem!default;
+$font-size-xs:               .75rem!default;
+
+$font-size-h1:               2.571rem!default;
+$font-size-h2:               1.571rem!default;
+$font-size-h3:               1.429rem!default;
+$font-size-h4:               1.286rem!default;
+$font-size-h5:               1.143rem!default;
+$font-size-h6:               1rem!default;
+
+$display1-size:               6rem!default;
+$display2-size:               5.5rem!default;
+$display3-size:               4.5rem!default;
+$display4-size:               3.5rem!default;
+
+$display1-weight:             400!default;
+$display2-weight:             400!default;
+$display3-weight:             400!default;
+$display4-weight:             400!default;
+
+$line-height:                1.5!default;
+
+$headings-margin-bottom:     ($spacer / 2)!default;
+$headings-font-weight:       700!default;
+$headings-line-height:       1.1!default;
+$headings-color:             inherit!default;
+
+$lead-font-size:             1.25rem!default;
+$lead-font-weight:           400!default;
+
+$text-muted:                  transparentize($gray-darkest, .3)!default;
+$text-loud:                  $brand-primary;
+
+$abbr-border-color:           $gray-light!default;
+
+$blockquote-small-color:      $gray-light!default;
+$blockquote-font-size:        ($font-size-base * 1.25)!default;
+$blockquote-border-color:     $gray-lighter!default;
+
+$hr-border-color:             rgba(0, 0, 0, .1)!default;
+$hr-border-width:             $border-width!default;
+
+$dt-font-weight:              bold!default;
+
+$nested-kbd-font-weight:      bold!default;
+
+$list-inline-padding:         5px!default;
+
+$header-border:               none!default;
+$header-hanger:               $gray-lightest!default;
+
+$body-bg:                     $white!default;
+$body-color:                  $gray-darkest!default;
+
+$background-primary:          $gray-darkest!default;
+$background-primary-color:    $white!default;
+
+$background-secondary:        $gray-lightest!default;
+$background-secondary-color:  $black!default;
+
+$background-tertiary:         $brand-tertiary!default;
+$background-tertiary-color:   $black!default;
+
+$background-loud:             $brand-primary!default;
+$background-loud-color:       $white!default;
+
+$image-border:                3px solid $black!default;
+
+// Shadowing
+//
+// For adding shadow around a div
+$shadow-color:                rgba(0, 0, 0, .9)!default;
+$shadow-top:                  0 -3px 10px -5px!default;
+$shadow-bottom:               0 3px 10px -5px!default;
+$shadow-right:                3px 0 10px -5px!default;
+$shadow-left:                 -3px 0 10px -5px!default;
+$shadow-all:                  0 0 3px!default;
+
+$nav-link-padding:                  .5em .5em!default;
+$nav-tabs-border-color:             $white!default;
+$nav-tabs-link-hover-border-color:  $brand-primary!default;
+$nav-pills-active-link-color:       inherit!default;
+$nav-tabs-active-link-hover-color:  $black!default;
+$nav-tabs-active-link-hover-border-color: $brand-primary!default;

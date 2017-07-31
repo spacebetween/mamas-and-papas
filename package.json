@@ -1,0 +1,60 @@
+{
+  "name": "mamasandpapas",
+  "version": "1.0.0",
+  "description": "A place to store the mamas and papas static website",
+  "main": "index.js",
+  "scripts": {
+    "start": "grunt server",
+    "test": "grunt test",
+    "build": "grunt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spacebetween/mamas-and-papas.git"
+  },
+  "author": "Michael Reader <michael.reader@spacebetween.co.uk> (http://spacebetween.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spacebetween/mamas-and-papas/issues"
+  },
+  "config": {
+    "tasks": "gruntTasks/",
+    "npm": "node_modules",
+    "src": {
+      "scripts": "src/js",
+      "server": "server",
+      "styles": "src/css",
+      "svgs": "media/svgs",
+      "views": "views"
+    },
+    "dist": {
+      "styles": "dist/css",
+      "scripts": "dist/js"
+    }
+  },
+  "homepage": "https://github.com/spacebetween/mamas-and-papas#readme",
+  "devDependencies": {
+    "autoprefixer": "7.1.1",
+    "babel-preset-es2015": "6.24.1",
+    "cssnano": "3.10.0",
+    "grunt": "1.0.1",
+    "grunt-babel": "6.0.0",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-uglify": "3.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-eslint": "20.0.0",
+    "grunt-express-server": "0.5.3",
+    "grunt-postcss": "0.8.0",
+    "grunt-sass": "2.0.0",
+    "grunt-sass-lint": "0.2.2",
+    "grunt-svg-sprite": "1.3.7",
+    "load-grunt-config": "0.19.2",
+    "pixrem": "3.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "express": "4.15.3",
+    "express-handlebars": "3.0.0",
+    "slick-carousel": "1.6.0"
+  }
+}

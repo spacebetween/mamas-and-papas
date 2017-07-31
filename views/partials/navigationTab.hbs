@@ -1,0 +1,31 @@
+<div class="tab-pane px-2" id="{{{stringReplace @key}}}" role="tabpanel">
+	<div class="row">
+		{{#each .}}
+			<dl class="col">
+				<dt class="pb-2 pt-2">{{@key}}</dt>
+				{{#each .}}
+					<dd>{{.}}</dd>
+				{{/each}}
+			</dl>
+		{{/each}}
+	</div>
+	<div class="row pb-2">
+		<a href="#" class="d-flex col flex-wrap  background-body">
+			<div class="col col-6 align-items-center">
+				{{> icon classes="icon icon-tools my-1"}}
+			</div>
+			<div class="col col-6 p-1">
+				{{> icon classes="icon-chevron-right float-right my-1"}}
+			</div>
+			<div class="col-12">
+				<div class="text-left text-black">
+					<h4>All {{@key}}</h4>
+					<p>view the full range</p>
+				</div>
+			</div>
+		</a>
+		<div class="col col-md-9">
+			<img src="http://via.placeholder.com/855x175" alt="" class="img-fluid shadow-1">
+		</div>
+	</div>
+</div>

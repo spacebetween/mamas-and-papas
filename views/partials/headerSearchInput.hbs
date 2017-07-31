@@ -1,0 +1,11 @@
+<div class="pl-2 pr-3 py-1 col-6 js-searchWrapper" id="leftPane">
+	<form id="searchForm">
+		<div class="d-flex flex-wrap justify-content-between">
+			<div class="input-stroke col d-flex mr-1">
+				{{> input type="text" classes="form-control js-searchInput border-0 js-searchInput align-self-center" placeholder=(theme code="search_message") name="search"}}
+				{{> icon name="spinner js-loadingSpinner align-self-center d-none"}}
+			</div>
+			{{> button type="submit" classes="d-flex btn-secondary btn-roundedIcon icon icon-search border-0 rounded-circle js-searchButton" target="#productCollapse"}}
+		</div>
+	</form>
+</div>
