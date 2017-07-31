@@ -1,3 +1,17 @@
 .footer {
-    display: block;
+    padding: 1em 0;
+    color: $gray-dark;
+    font-size: $font-size-4;
+    text-align: center;
+
+    h4 {
+        font-size: $font-size-5;
+        font-weight: $font-heavy;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 }

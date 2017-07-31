@@ -1,3 +1,16 @@
-<footer>
-  
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            {{#each (theme code="footer_links")}}
+            <div class="col">
+                <h4>{{@key}}</h4>
+                <ul>
+                    {{#each .}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </footer>

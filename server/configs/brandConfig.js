@@ -5,11 +5,11 @@ const brandConfig = {
         'name': 'Mamas and Papas',
         'css': 'styles',
         'logo': 'placeholder.jpg',
-        'font': 'https://fonts.googleapis.com/css?family=Asap:400,500,700|Source+Sans+Pro:200,300,400,600,700,900',
+        'font': 'https://fonts.googleapis.com/css?family=Roboto',
         'footer_strapline': '&copy; 2017',
         'footer_logo': 'placeholder.jpg',
         'store_image': 'placeholder.jpg',
-        'favicon': 'favicon.ico',
+        'favicon': 'shared/favicon.ico',
         'sign_in': 'Sign in / Register',
         'quick_order': 'Quick order',
         'search_message': 'Search products - what do you need?',
@@ -493,29 +493,32 @@ const brandConfig = {
             }
         },
         'footer_links': {
-            'Customer Services': [
-                'Link one',
-                'Another link two',
-                'Link three here',
-                'This is link four'
+            'Shopping To Suit You': [
+                'Delivery',
+                'Returns',
+                'Stores & Stocklists',
+                'Personal Shopping',
+                'Gift Registry'
             ],
-            'About Priority Direct': [
-                'Link one',
-                'Another link two',
-                'Link three here',
-                'This is link four'
+            'Customer Service': [
+                'Help',
+                'Contact Us',
+                'Product Instructions',
+                'Returns',
+                'Delivery Information'
             ],
-            'Delivery information': [
-                'Link one',
-                'Another link two',
-                'Link three here',
-                'This is link four'
+            'About M&P': [
+                'About Us',
+                'Careers',
+                'M&P Blog',
+                'Terms & Conditions',
+                'Privacy Policy'
             ],
-            'Legal information': [
-                'Link one',
-                'Another link two',
-                'Link three here',
-                'This is link four'
+            'Additional Information': [
+                'Acceptance Of Use',
+                'Quality Notice',
+                'Product Recall',
+                'Modern Slavery Policy'
             ]
         },
         'social_links': [
