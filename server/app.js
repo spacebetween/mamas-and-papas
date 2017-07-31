@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const app = express();
 const brandConfig = require('./configs/brandConfig');
 app.use(express.static('dist'));
-app.use('/media', express.static(`media/${brandConfig[process.env.PORT].css}`));
+app.use('/media', express.static('media'));
 app.use('/media/shared', express.static('media/shared'));
 
 var hbs = exphbs.create({
