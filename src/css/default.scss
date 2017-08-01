@@ -2,6 +2,7 @@
 
 // Brand colors
 $gray-dark:                 #323232;
+$gray-medium:               #d6d6d6;
 $gray-light:                #f8f8f8;
 
 $white:                     #fff;
@@ -25,6 +26,11 @@ $font-size-11:               34px;
 
 $font-heavy:                 600;
 
+// Spacing
+$spacing-default:            20px;
+$spacing-small:              10px;
+$spacing-large:              60px;
+$spacing-xsmall:             6px;
 
 //Imports
 @import 'globalSettings';

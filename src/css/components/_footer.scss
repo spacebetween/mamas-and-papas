@@ -1,17 +1,88 @@
 .footer {
-    padding: 1em 0;
+    padding: $spacing-default 0;
     color: $gray-dark;
     font-size: $font-size-4;
-    text-align: center;
+    text-align: left;
 
-    h4 {
+    .heading {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: $spacing-default 0;
+        border-bottom: 1px solid $gray-light;
         font-size: $font-size-5;
         font-weight: $font-heavy;
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            right: 0;
+            font-family: FontAwesome;
+            content: '\f067';
+        }
+
+        &.active {
+            &::after {
+                content: '\f068';
+            }
+
+            + .links {
+                display: block;
+            }
+        }
     }
 
-    ul {
+    .links {
+        display: none;
         margin: 0;
-        padding: 0;
+        padding: $spacing-default;
         list-style: none;
+        background: $gray-light;
+        border-bottom: 2px solid $gray-medium;
+        line-height: 36px;
+    }
+
+    .social {
+        margin: $spacing-default;
+        font-size: $font-size-9;
+        text-align: center;
+
+        .fa {
+            padding: $spacing-xsmall;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .footer {
+        text-align: center;
+
+        .heading {
+            margin-bottom: $spacing-small;
+            padding: 0;
+            border-bottom: 0;
+            cursor: default;
+
+            &::after {
+                display: none;
+            }
+
+            &.active::after {
+                display: none;
+            }
+        }
+
+        .links {
+            display: block;
+            padding: 0;
+            background: 0;
+            border: 0;
+            line-height: 24px;
+        }
+
+        .social {
+            margin-top: $spacing-large;
+            font-size: $font-size-7;
+        }
     }
 }
