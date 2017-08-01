@@ -522,10 +522,12 @@ const brandConfig = {
             ]
         },
         'social_links': [
+            'twitter',
             'instagram',
             'facebook',
-            'linkedin',
-            'twitter'
+            'youtube',
+            'pencil',
+            'pinterest'
         ],
         'products': [
             {

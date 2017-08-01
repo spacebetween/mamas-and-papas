@@ -1,5 +1,10 @@
 'use strict';
 
-(function () {
-    console.log('M&PS v1 - Ready');
-})();
+// Footer specific JS
+$(function () {
+
+    $('.footer').on('click', '.footer_heading', function () {
+        $(this).toggleClass('active');
+    });
+
+});
