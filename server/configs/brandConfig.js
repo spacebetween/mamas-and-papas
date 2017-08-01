@@ -5,7 +5,7 @@ const brandConfig = {
         'name': 'Mamas and Papas',
         'css': 'styles',
         'logo': 'placeholder.jpg',
-        'font': 'https://fonts.googleapis.com/css?family=Asap:400,500,700|Source+Sans+Pro:200,300,400,600,700,900',
+        'font': 'https://fonts.googleapis.com/css?family=Roboto:300,400',
         'footer_strapline': '&copy; 2017',
         'footer_logo': 'placeholder.jpg',
         'store_image': 'placeholder.jpg',

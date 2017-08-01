@@ -1,3 +1,7 @@
-.helper {
-    display: block;
+.font {
+    &-weight {
+        &-light {
+            font-weight: 300;
+        }
+    }
 }
