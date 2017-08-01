@@ -1,14 +1,9 @@
 .footer {
-    padding: $spacing-default 0;
     color: $gray-dark;
     font-size: $font-size-4;
-    text-align: left;
 
-    .heading {
-        display: block;
+    .footer-heading {
         position: relative;
-        margin: 0;
-        padding: $spacing-default 0;
         border-bottom: 1px solid $gray-light;
         font-size: $font-size-5;
         font-weight: $font-heavy;
@@ -26,62 +21,43 @@
                 content: '\f068';
             }
 
-            + .links {
+            + .footer-links {
                 display: block;
             }
         }
     }
 
-    .links {
+    .footer-links {
         display: none;
-        margin: 0;
-        padding: $spacing-default;
-        list-style: none;
         background: $gray-light;
         border-bottom: 2px solid $gray-medium;
         line-height: 36px;
     }
 
-    .social {
-        margin: $spacing-default;
+    .footer-socialLinks {
         font-size: $font-size-9;
-        text-align: center;
-
-        .fa {
-            padding: $spacing-xsmall;
-        }
     }
 }
 
 @include media-breakpoint-up(md) {
     .footer {
-        text-align: center;
-
-        .heading {
-            margin-bottom: $spacing-small;
-            padding: 0;
+        .footer-heading {
             border-bottom: 0;
             cursor: default;
 
             &::after {
                 display: none;
             }
-
-            &.active::after {
-                display: none;
-            }
         }
 
-        .links {
+        .footer-links {
             display: block;
-            padding: 0;
             background: 0;
             border: 0;
             line-height: 24px;
         }
 
-        .social {
-            margin-top: $spacing-large;
+        .footer-socialLinks {
             font-size: $font-size-7;
         }
     }
