@@ -3,7 +3,7 @@
 // Footer specific JS
 $(function () {
 
-    $('.footer').on('click', '.footer-heading', function () {
+    $('.footer').on('click', '.footer_heading', function () {
         $(this).toggleClass('active');
     });
 
