@@ -7,22 +7,22 @@
             </ul>
         </div>
         {{#each (theme code="footer_links")}}
-        <div class="col-md">
-            <h4 class="footer_heading m-0 py-2 py-md-1">{{@key}}</h4>
-            <ul class="footer_links list-unstyled m-0 p-2 p-md-0">
-                {{#each .}}
-                    <li>{{.}}</li>
-                {{/each}}
-            </ul>
-        </div>
+            <div class="col-md">
+                <h4 class="footer_heading m-0 py-2 py-md-1">{{@key}}</h4>
+                <ul class="footer_links list-unstyled m-0 p-2 p-md-0">
+                    {{#each .}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                </ul>
+            </div>
         {{/each}}
     </div>
 
     <div class="row">
         <div class="col text-center m-2 mt-md-5 footer_socialLinks">
-        {{#each (theme code="social_links")}}
-            <i class="fa fa-{{.}}" aria-hidden="true"></i>
-        {{/each}}
+            {{#each (theme code="social_links")}}
+                <i class="fa fa-{{.}}" aria-hidden="true"></i>
+            {{/each}}
         </div>
     </div>
 </footer>
