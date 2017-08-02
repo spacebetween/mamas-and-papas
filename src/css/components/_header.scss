@@ -1,3 +1,19 @@
 .header {
-    display: block;
+    background-position: center top;
+    background-repeat: no-repeat;
+    @media (min-width: breakpoint-min(md)) {
+        background-size: cover;
+    }
+    &_title {
+        font-size: $header-size-2;
+        @media (min-width: breakpoint-min(md)) {
+            font-size: $header-size-1;
+        }
+    }
+    &_subtitle {
+        font-size: $font-size-8;
+    }
+    &_icon {
+        font-size: $font-size-9;
+    }
 }

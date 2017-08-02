@@ -1,38 +1,30 @@
 <header>
-    <div class="headerImage container-fluid" style="background-image: url(http://lorempixel.com/output/cats-q-c-1200-750-4.jpg); background-repeat: no-repeat; background-size: 100% auto;">
+    <div class="header container-fluid" style="background-image: url(http://lorempixel.com/output/cats-q-c-1200-750-4.jpg);">
         <div class="row py-1 text-white">
-            <div class="col-sm-4 pt-2">
-                <a class="text-uppercase font-weight-light px-1">Shop</a>
-                <a class="text-uppercase font-weight-light px-1">Discover</a>
+            <div class="col-4 pt-2">
+                <a class="text-uppercase font-weight-light px-1 hidden-sm-down">Shop</a>
+                <a class="text-uppercase font-weight-light px-1 hidden-sm-down">Discover</a>
+                <i class="header_icon fa fa-2x px-sm-1 fa-navicon cursor-pointer hidden-md-up d-inline" aria-hidden="true"></i>
+                <i class="header_icon fa fa-2x px-sm-1 fa-search cursor-pointer  hidden-md-up d-inline" aria-hidden="true"></i>
             </div>
-            <div class="col-sm-4 text-center">mamas&papas</div>
-            <div class="col-sm-4 text-right pt-2">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            <div class="col-4 text-center">mamas&papas</div>
+            <div class="col-4 text-right pt-2">
+                <i class="header_icon fa fa-2x px-1 fa-search cursor-pointer hidden-sm-down" aria-hidden="true"></i>
+                <i class="header_icon fa fa-2x px-sm-1 fa-map-marker cursor-pointer" aria-hidden="true"></i>
+                <i class="header_icon fa fa-2x px-1 fa-user cursor-pointer hidden-sm-down" aria-hidden="true"></i>
+                <i class="header_icon fa fa-2x px-sm-1 fa-shopping-bag cursor-pointer" aria-hidden="true"></i>
             </div>
         </div>
-        <div class="row px-4 py-5">
+        <div class="row px-md-4 py-5">
             <div class="col-md-6 text-white d-flex align-content-center">
                 <div class="py-5">
-                    <h1 class="display-4 pt-5 font-weight-normal">Explore the perfect nursery for baby</h1>
-                    <p class="lead font-weight-light">Stunning collaborations & inspiration</p>
-                    <div class="my-4 box-2"></div>
+                    <h1 class="header_title display-4 pt-md-5 font-weight-normal">Explore the perfect nursery for baby</h1>
+                    <p class="header_subtitle lead font-weight-light">Stunning collaborations & inspiration</p>
+                    {{> arrowButton color="white"}}
                 </div>
             </div>
-            <div class="col-md-3 offset-md-3">
-                <div class="bg-white">
-                    <img class="img-fluid" src="https://placekitten.com/300/280"/>
-                    <div class="p-2">
-                        <strong class="d-block"> Bunny & Clyde</strong>
-                        <small>
-                            <a>Read more</a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                        </small>
-                        <div class="mb-4 box"></div>
-                    </div>
-                </div>
+            <div class="col-lg-3 offset-lg-3 col-md-4 offset-md-2">
+                {{> card image="ttps://placekitten.com/300/280" href="" title="Bunny & Clyde" linkText="Read the article" content="The be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen's see name in."}}
             </div>
         </div>
     </div>

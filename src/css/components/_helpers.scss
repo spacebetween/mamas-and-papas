@@ -1,7 +1,11 @@
 .font {
     &-weight {
         &-light {
-            font-weight: 300;
+            font-weight: $font-light;
         }
     }
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

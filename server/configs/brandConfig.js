@@ -9,7 +9,7 @@ const brandConfig = {
         'footer_strapline': '&copy; 2017',
         'footer_logo': 'placeholder.jpg',
         'store_image': 'placeholder.jpg',
-        'favicon': 'shared/favicon.ico',
+        'favicon': 'favicon.ico',
         'sign_in': 'Sign in / Register',
         'quick_order': 'Quick order',
         'search_message': 'Search products - what do you need?',
