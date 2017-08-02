@@ -14,6 +14,7 @@ const brandConfig = {
         'navigation_search': 'Discover',
         'header_title': 'Explore the perfect nursery for baby',
         'header_subtitle': 'Stunning collaborations & inspiration',
+        'header_image': 'http://lorempixel.com/output/cats-q-c-1200-750-4.jpg',
         'footer_links': {
             'Shopping To Suit You': [
                 'Delivery',
