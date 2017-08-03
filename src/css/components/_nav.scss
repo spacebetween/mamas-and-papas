@@ -1,3 +1,66 @@
 .nav {
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+    transform: translateX(-100%);
+    transition-duration: .66s;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    opacity: 0;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+        .nav {
+            transform: translateX(-25%);
+        }
+    }
+
+    &.active {
+        transform: translateX(0);
+        z-index: 1;
+        opacity: 1;
+    }
+
+    &_top {
+        border-bottom: 1px solid $gray-medium;
+    }
+
+    &_section {
+        background: $white;
+    }
+
+    &_close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: $font-size-9;
+        cursor: pointer;
+    }
+
+    &_tier2,
+    &_tier3 {
+        display: none;
+    }
+
+    &_links {
+        li {
+            position: relative;
+            border-bottom: 1px solid $gray-medium;
+            font-size: $font-size-5;
+
+            a {
+                color: $gray-dark;
+
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    font-family: FontAwesome;
+                    content: '\f054';
+                }
+            }
+        }
+    }
 }

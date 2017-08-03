@@ -1,0 +1,48 @@
+<nav>
+    <a href="#" class="js-nav-open">SHOP</a>
+</nav>
+
+<nav class="nav">
+    <div class="row m-0">
+        <div class="col-md-3 m-0 p-1 nav_top nav_section">
+            <div class="nav_logo">
+                <img src="media/shared/logo_mp_small.png" height="40" alt="PLACEHOLDER - Mamas and Papas logo" />
+            </div>
+            <div class="nav_close js-nav-close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-md-3 p-1 nav_section">
+            {{#if (theme code="navigation")}}
+                <ul data-category="nav_tier1" class="nav_links nav_tier1 list-unstyled m-0 p-0">
+                    {{#each (theme code="navigation")}}
+                        <li data-category="nav_tier2_{{stringReplace @key}}"><a href="#tier1" class="d-block py-1">{{@key}}</a></li>
+                    {{/each}}
+                </ul>
+                    {{#each (theme code="navigation")}}
+                        {{#if .}}
+                            <ul data-category="nav_tier2_{{stringReplace @key}}" class="nav_links nav_tier2 list-unstyled m-0 p-0">
+                                {{#each .}}
+                                    <li data-category="nav_tier3_{{stringReplace @key}}"><a href="#tier2" class="d-block py-1">{{@key}}</a></li>
+                                {{/each}}
+                            </ul>
+
+                            {{#if .}}
+                                {{#each .}}
+                                    {{#if this.length}}
+                                        <ul data-category="nav_tier3_{{stringReplace @key}}" class="nav_links nav_tier3 list-unstyled m-0 p-0">
+                                            {{#each .}}
+                                                <li data-category="nav_tier4_{{stringReplace this}}"><a href="#tier3" class="d-block py-1">{{this}}</a></li>
+                                            {{/each}}
+                                        </ul>
+                                    {{/if}}
+                                {{/each}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}    
+            {{/if}}
+        </div>
+    </div>
+</nav>
