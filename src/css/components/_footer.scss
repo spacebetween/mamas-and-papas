@@ -2,18 +2,24 @@
     color: $gray-dark;
     font-size: $font-size-4;
 
-    .footer_heading {
+    &_heading {
         position: relative;
         border-bottom: 1px solid $gray-light;
         font-size: $font-size-5;
         font-weight: $font-heavy;
         cursor: pointer;
-
+        @media (min-width: breakpoint-min(md)) {
+            border-bottom: 0;
+            cursor: default;
+        }
         &::after {
             position: absolute;
             right: 0;
             font-family: FontAwesome;
             content: '\f067';
+            @media (min-width: breakpoint-min(md)) {
+                display: none;
+            }
         }
 
         &.active {
@@ -27,42 +33,26 @@
         }
     }
 
-    .footer_links {
+    &_links {
         display: none;
         background: $gray-light;
         border-bottom: 2px solid $gray-medium;
         line-height: 36px;
-    }
-
-    .footer_socialLinks {
-        font-size: $font-size-9;
-
-        .fa {
-            padding: 6px;
-        }
-    }
-}
-
-@include media-breakpoint-up(md) {
-    .footer {
-        .footer_heading {
-            border-bottom: 0;
-            cursor: default;
-
-            &::after {
-                display: none;
-            }
-        }
-
-        .footer_links {
+        @media (min-width: breakpoint-min(md)) {
             display: block;
             background: 0;
             border: 0;
             line-height: 24px;
         }
+    }
 
-        .footer_socialLinks {
+    &_socialLinks {
+        font-size: $font-size-9;
+        @media (min-width: breakpoint-min(md)) {
             font-size: $font-size-7;
         }
+    }
+    &_socialIcon {
+        padding: 6px;
     }
 }

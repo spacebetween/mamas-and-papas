@@ -1,0 +1,12 @@
+.btn {
+    &-arrow {
+        width: 60px;
+        height: 60px;
+        &-black {
+            border: 1px solid $black;
+        }
+        &-white {
+            border: 1px solid $white;
+        }
+    }
+}
