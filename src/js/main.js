@@ -8,3 +8,10 @@ $(function () {
     });
 
 });
+
+$(document).ready(function () {
+    $('.article_carousel').slick({
+        dots: true,
+        arrows: false
+    });
+});

@@ -1,0 +1,18 @@
+
+    <div class="article_carousel bg-white float-md-right mx-auto m-md-auto">
+        {{#each (theme code="articles")}}
+            {{#if this.displayInCarousel}}
+                <div class="article">
+                    <img class="img-fluid article_carousel_image" src="{{this.image}}"/>
+                    <div class="p-2 bg-white article_carousel_content">
+                        <strong class="d-block truncate"> {{this.title}}</strong>
+                        <small>
+                            <a class="text-black font-weight-light" href="{{this.href}}">{{this.link_text}}</a>
+                            <p>{{this.description}}</p>
+                        </small>
+                        {{> arrowButton color="black" size="small"}}
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
