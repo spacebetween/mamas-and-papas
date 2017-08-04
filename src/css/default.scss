@@ -2,7 +2,8 @@
 
 // Brand colors
 $gray-dark:                 #323232;
-$gray:                      #9b9b9b;
+$gray:                      #d8d8d8;
+$another-gray:              #979797;
 $gray-medium:               #d6d6d6;
 $gray-light:                #f8f8f8;
 
@@ -156,6 +157,7 @@ $image-border:                3px solid $black!default;
 @import 'components/card';
 @import 'components/button';
 @import 'components/article';
+@import 'components/slick';
 
 // Any styles that can't be put into a component
 @import 'main';

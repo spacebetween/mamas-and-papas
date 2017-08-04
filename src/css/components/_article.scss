@@ -10,30 +10,6 @@
         &_content {
             height: 245px;
         }
-        .slick-dots {
-            bottom: 11px;
-            li {
-                margin: 0;
-                button {
-                    width: 10px;
-                    &::before {
-                        font-size: 0;
-                        opacity: 1;
-                        border: 1px solid $gray-dark;
-                        border-radius: 5px;
-                        width: 10px;
-                        height: 10px;
-                    }
-                }
-            }
-        }
-        .slick-active {
-            button {
-                &::before {
-                    background-color: $gray;
-                }
-            }
-        }
     }
 }
 
