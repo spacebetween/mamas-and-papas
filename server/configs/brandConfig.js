@@ -16,74 +16,76 @@ const brandConfig = {
         'header_subtitle': 'Stunning collaborations & inspiration',
         'header_image': 'http://lorempixel.com/output/cats-q-c-1200-750-4.jpg',
         'navigation': {
-            '_categoryLinks': {
-                'Baby Clothing': {
-                    '_categoryLinks': {
-                        'Boys': {
-                            '_categoryLinks': {
-                                'All Boys': {},
-                                'NEW Arrivals': {},
-                                'Accessories': {},
-                                'All In Ones': {},
-                                'Baby Basics & Multipacks': {},
-                                'Jackets & Pramsuits': {},
-                                'Knitwear': {},
-                                'Pyjamas': {},
-                                'Rompers & Bodysuits': {},
-                                'Shirts & Tops': {},
-                                'Special Occasion': {},
-                                'Swimwear': {},
-                                'Trousers & Shorts': {}
+            'primary': {
+                '_categoryLinks': {
+                    'Baby Clothing': {
+                        '_categoryLinks': {
+                            'Boys': {
+                                '_categoryLinks': {
+                                    'All Boys': {},
+                                    'NEW Arrivals': {},
+                                    'Accessories': {},
+                                    'All In Ones': {},
+                                    'Baby Basics & Multipacks': {},
+                                    'Jackets & Pramsuits': {},
+                                    'Knitwear': {},
+                                    'Pyjamas': {},
+                                    'Rompers & Bodysuits': {},
+                                    'Shirts & Tops': {},
+                                    'Special Occasion': {},
+                                    'Swimwear': {},
+                                    'Trousers & Shorts': {}
+                                },
+                                '_promoImage': [
+                                    'http://lorempixel.com/400/300/fashion/'
+                                ]
                             },
-                            '_promoImage': [
-                                'http://lorempixel.com/400/300/fashion/'
-                            ]
-                        },
-                        'Girls': {
-                            '_categoryLinks': {
-                                'Test': {},
-                                'Lorem Ipsum': {},
-                                'Dolar': {}
+                            'Girls': {
+                                '_categoryLinks': {
+                                    'Test': {},
+                                    'Lorem Ipsum': {},
+                                    'Dolar': {}
+                                },
+                                '_promoImage': [
+                                    'http://lorempixel.com/400/300/fashion/'
+                                ]
                             },
-                            '_promoImage': [
-                                'http://lorempixel.com/400/300/fashion/'
-                            ]
+                            'Unisex': {},
+                            'Collections': {}
                         },
-                        'Unisex': {},
-                        'Collections': {}
+                        '_promoImage': [
+                            'http://lorempixel.com/400/300/fashion/'
+                        ]
                     },
-                    '_promoImage': [
-                        'http://lorempixel.com/400/300/fashion/'
-                    ]
-                },
-                'Baby Home': {
-                    '_categoryLinks': {
-                        'New In': {},
-                        'Prams & Pushchairs': {},
-                        'Buggies & Strollers': {},
-                        'Twin & Double Pushchairs': {}
-                    }
-                },
-                'Baby Out & About': {
-                    '_categoryLinks': {
-                        'BO&A 1': {},
-                        'BO&A 2': {},
-                        'BO&A 3': {},
-                        'BO&A 4': {}
-                    }
-                },
-                'For Mum': {
-                    '_categoryLinks': {
-                        'FM 1': {},
-                        'FM 2': {},
-                        'FM 3': {}
-                    }
-                },
-                'Celebrate': {
-                    '_categoryLinks': {
-                        'C 1': {},
-                        'C 2': {},
-                        'c 3': {}
+                    'Baby Home': {
+                        '_categoryLinks': {
+                            'New In': {},
+                            'Prams & Pushchairs': {},
+                            'Buggies & Strollers': {},
+                            'Twin & Double Pushchairs': {}
+                        }
+                    },
+                    'Baby Out & About': {
+                        '_categoryLinks': {
+                            'BO&A 1': {},
+                            'BO&A 2': {},
+                            'BO&A 3': {},
+                            'BO&A 4': {}
+                        }
+                    },
+                    'For Mum': {
+                        '_categoryLinks': {
+                            'FM 1': {},
+                            'FM 2': {},
+                            'FM 3': {}
+                        }
+                    },
+                    'Celebrate': {
+                        '_categoryLinks': {
+                            'C 1': {},
+                            'C 2': {},
+                            'c 3': {}
+                        }
                     }
                 }
             }
