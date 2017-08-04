@@ -38,7 +38,7 @@
     &_close {
         position: absolute;
         right: 1rem;
-        top: 2rem;
+        top: 1.2rem;
         font-size: $font-size-9;
         cursor: pointer;
         z-index: 999;
@@ -59,7 +59,7 @@
 
     &_categoryTitle {
         height: 80px;
-        line-height: 42px;
+        line-height: 46px;
         border-bottom: 1px solid $gray-medium;
     }
 
