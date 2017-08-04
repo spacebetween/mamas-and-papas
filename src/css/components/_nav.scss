@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(50, 50, 50, .5);
+    background: $transparent-bg-dark;
     transform: translateX(-100%);
     transition-duration: .66s;
     transition-property: transform, opacity;
@@ -13,9 +13,7 @@
     z-index: -1;
 
     @include media-breakpoint-up(md) {
-        .nav {
-            transform: translateX(-25%);
-        }
+        transform: translateX(-25%);
     }
 
     &.active {
@@ -27,10 +25,8 @@
     &_section {
         min-height: 100vh;
         background: $white;
-    }
 
-    @include media-breakpoint-up(sm) {
-        &_section {
+        @include media-breakpoint-up(sm) {
             max-width: 380px;
         }
     }
@@ -40,7 +36,6 @@
         right: 1rem;
         top: 1.2rem;
         font-size: $font-size-9;
-        cursor: pointer;
         z-index: 999;
     }
 
@@ -72,7 +67,7 @@
         }
     }
 
-    &_links {
+    &_group {
         li {
             position: relative;
             border-bottom: 1px solid $gray-medium;

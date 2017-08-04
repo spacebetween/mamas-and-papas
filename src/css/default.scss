@@ -115,6 +115,9 @@ $background-primary-color:    $gray-dark!default;
 
 $image-border:                3px solid $black!default;
 
+// Backgrounds
+$transparent-bg-dark: rgba(50, 50, 50, .5);
+
 //Imports
 // Core variables and mixins
 @import 'bootstrap/scss/variables';

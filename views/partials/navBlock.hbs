@@ -11,9 +11,9 @@
             </div>
     {{/ifeq}}
 
-        <ul class="nav_links list-unstyled m-0 px-1">
+        <ul class="nav_group list-unstyled m-0 px-1">
             {{#each this._categoryLinks}}
-                <li data-goto-category="nav_{{stringReplace @key}}" class="js-navSwitchCategory"><a href="#" class="d-block py-1">{{@key}}</a></li>
+                <li data-goto-category="nav_{{stringReplace @key}}" class="nav_groupLink js-navSwitchCategory"><a href="#" class="d-block py-1">{{@key}}</a></li>
             {{/each}}
         </ul>
 
