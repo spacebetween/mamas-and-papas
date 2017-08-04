@@ -14,7 +14,7 @@ const brandConfig = {
         'navigation_search': 'Discover',
         'header_title': 'Explore the perfect nursery for baby',
         'header_subtitle': 'Stunning collaborations & inspiration',
-        'header_image': 'http://lorempixel.com/output/cats-q-c-1200-750-4.jpg',
+        'header_image': '/media/banner_homepage.jpg',
         'navigation': {
             'primary': {
                 '_categoryLinks': {
@@ -24,7 +24,12 @@ const brandConfig = {
                                 '_categoryLinks': {
                                     'All Boys': {},
                                     'NEW Arrivals': {},
-                                    'Accessories': {},
+                                    'Accessories': {
+                                        '_categoryLinks': {
+                                            'Belts': {},
+                                            'Gloves': {}
+                                        }
+                                    },
                                     'All In Ones': {},
                                     'Baby Basics & Multipacks': {},
                                     'Jackets & Pramsuits': {},
@@ -37,7 +42,7 @@ const brandConfig = {
                                     'Trousers & Shorts': {}
                                 },
                                 '_promoImage': [
-                                    'http://lorempixel.com/400/300/fashion/'
+                                    '/media/promo_bunny_clyde.jpg'
                                 ]
                             },
                             'Girls': {
@@ -47,14 +52,14 @@ const brandConfig = {
                                     'Dolar': {}
                                 },
                                 '_promoImage': [
-                                    'http://lorempixel.com/400/300/fashion/'
+                                    '/media/promo_bunny_clyde.jpg'
                                 ]
                             },
                             'Unisex': {},
                             'Collections': {}
                         },
                         '_promoImage': [
-                            'http://lorempixel.com/400/300/fashion/'
+                            '/media/promo_bunny_clyde.jpg'
                         ]
                     },
                     'Baby Home': {
@@ -87,7 +92,10 @@ const brandConfig = {
                             'c 3': {}
                         }
                     }
-                }
+                },
+                '_promoImage': [
+                    '/media/promo_discover.jpg'
+                ]
             }
         },
         'footer_links': {
