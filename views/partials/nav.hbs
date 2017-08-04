@@ -1,48 +1,65 @@
-<nav>
-    <a href="#" class="js-nav-open">SHOP</a>
-</nav>
-
-<nav class="nav">
-    <div class="row m-0">
-        <div class="col-md-3 m-0 p-1 nav_top nav_section">
-            <div class="nav_logo">
-                <img src="media/shared/logo_mp_small.png" height="40" alt="PLACEHOLDER - Mamas and Papas logo" />
+<nav class="nav h-100">
+    <div class="row h-100 m-0">
+        <div class="col-sm-9 p-0 py-1 nav_section">
+            <div class="nav_top">
+                <div class="nav_close js-navClose">
+                    <i class="fa fa-close"></i>
+                </div>
             </div>
-            <div class="nav_close js-nav-close">
-                <i class="fa fa-close"></i>
-            </div>
-        </div>
-    </div>
-    <div class="row m-0">
-        <div class="col-md-3 p-1 nav_section">
-            {{#if (theme code="navigation")}}
-                <ul data-category="nav_tier1" class="nav_links nav_tier1 list-unstyled m-0 p-0">
-                    {{#each (theme code="navigation")}}
-                        <li data-category="nav_tier2_{{stringReplace @key}}"><a href="#tier1" class="d-block py-1">{{@key}}</a></li>
-                    {{/each}}
-                </ul>
-                    {{#each (theme code="navigation")}}
-                        {{#if .}}
-                            <ul data-category="nav_tier2_{{stringReplace @key}}" class="nav_links nav_tier2 list-unstyled m-0 p-0">
-                                {{#each .}}
-                                    <li data-category="nav_tier3_{{stringReplace @key}}"><a href="#tier2" class="d-block py-1">{{@key}}</a></li>
-                                {{/each}}
-                            </ul>
 
-                            {{#if .}}
-                                {{#each .}}
-                                    {{#if this.length}}
-                                        <ul data-category="nav_tier3_{{stringReplace @key}}" class="nav_links nav_tier3 list-unstyled m-0 p-0">
-                                            {{#each .}}
-                                                <li data-category="nav_tier4_{{stringReplace this}}"><a href="#tier3" class="d-block py-1">{{this}}</a></li>
-                                            {{/each}}
-                                        </ul>
+            {{#each (theme code="navigation")}}
+                <div class="nav_category nav_category-selected" data-category="nav_tier1_primary">
+                    <div class="nav_logo nav_categoryTitle p-1 js-navSwitchCategory">
+                        <img src="media/logo_mp_small.png" height="40" alt="Mamas and Papas" />
+                    </div>
+                    <ul class="nav_links nav_tier1 list-unstyled m-0 px-1">
+                        {{#each this}}
+                            <li data-goto-category="nav_tier2_{{stringReplace @key}}" class="js-navSwitchCategory"><a href="#tier1" class="d-block py-1">{{@key}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{#each (theme code="navigation")}}
+                    {{#each this as |parentValue parentKey|}}
+                            <div class="nav_category" data-category="nav_tier2_{{stringReplace @key}}">
+                                <div data-goto-category="nav_tier1_primary" class="nav_categoryTitle nav_backArrow cursor-pointer font-weight-bold p-1 pl-3 js-navSwitchCategory">
+                                    {{@key}}
+                                </div>
+                                <ul class="nav_links nav_tier2 list-unstyled m-0 px-1">
+                                    {{#each this._categoryLinks}}
+                                        <li data-goto-category="nav_tier3_{{stringReplace @key}}" class="js-navSwitchCategory"><a href="#tier2" class="d-block py-1">{{@key}}</a></li>
+                                    {{/each}}
+                                </ul>
+                                {{#if this._promoImage}}
+                                    <div class="my-1 p-1">
+                                        <img src="{{this._promoImage}}" class="w-100" />
+                                    </div>
+                                {{/if}}
+                            </div>
+
+                            {{#if this._categoryLinks}}
+                                {{#each this._categoryLinks}}
+                                    {{#if this._categoryLinks}}
+                                        <div class="nav_category" data-category="nav_tier3_{{stringReplace @key}}">
+                                            <div data-goto-category="nav_tier2_{{stringReplace parentKey}}" class="nav_categoryTitle nav_backArrow font-weight-bold cursor-pointer p-1 pl-3 js-navSwitchCategory">
+                                                {{@key}}
+                                            </div>
+                                            <ul class="nav_links nav_tier3 list-unstyled m-0 px-1">
+                                                {{#each this._categoryLinks}}
+                                                    <li data-goto-category="nav_tier4_{{stringReplace @key}}" class="js-navSwitchCategory"><a href="#tier3" class="d-block py-1">{{@key}}</a></li>
+                                                {{/each}}
+                                            </ul>
+                                            {{#if this._promoImage}}
+                                                <div class="my-1 p-1">
+                                                    <img src="{{this._promoImage}}" class="w-100" />
+                                                </div>
+                                            {{/if}}
+                                        </div>
                                     {{/if}}
                                 {{/each}}
                             {{/if}}
-                        {{/if}}
-                    {{/each}}    
-            {{/if}}
+                    {{/each}}
+                {{/each}}
+            {{/each}}
         </div>
     </div>
 </nav>

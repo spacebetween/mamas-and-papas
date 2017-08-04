@@ -12,37 +12,61 @@ $(function () {
 // Navigation
 $(function () {
 
-    function resetNav () {
-        $('.nav').find('ul').hide();
-        $('.nav').find('ul[data-category="nav_tier1"]').show();
+    // Settings
+    var settings = {
+        header: $('header'),
+        nav: $('.nav')
+    };
+
+    function closeNavigation () {
+        settings.nav.removeClass('active');
     }
 
-    $('.nav').on('click', 'li', function (e) {
+    function categoryChanger (gotoCategory) {
+        settings.nav.find('div.nav_category').removeClass('nav_category-selected');
+        gotoCategory.addClass('nav_category-selected');
+    }
+
+    // Listen for esc of left arrow keyPress to track back menu
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27 || e.keyCode === 37) {
+            var parentCategory = $('.nav_category-selected').find('.js-navSwitchCategory').data('goto-category');
+            var gotoParentCategory = settings.nav.find('div.nav_category[data-category=' + parentCategory + ']');
+
+            if (!gotoParentCategory.length) {
+                closeNavigation();
+            } else {
+                categoryChanger(gotoParentCategory);
+            }
+        }
+    });
+
+    // Sets the layer index for the nav to appear above the content
+    settings.header.on('click', '.js-navOpen', function () {
+        settings.nav.css('z-index', '9999').addClass('active');
+    });
+
+    // Switch the category, nav list items and titles trigger this to traverse the menu
+    settings.nav.on('click', '.js-navSwitchCategory', function (e) {
         e.preventDefault();
-        var _this = $(this);
-        var category = _this.data('category');
-        console.log('Category', category);
 
-        $('.nav').find('ul').hide();
-        $('.nav').find('ul[data-category=' + category + ']').show();
+        var category = $(this).data('goto-category');
+        var gotoCategory = settings.nav.find('div.nav_category[data-category=' + category + ']');
+
+        if (gotoCategory.length) {
+            categoryChanger(gotoCategory);
+        }
     });
 
-    $('.nav').on('click', '.js-nav-close', function () {
-        resetNav();
-        $('.nav').removeClass('active');
+    // Close the navigation
+    settings.nav.on('click', '.js-navClose', function () {
+        closeNavigation();
     });
 
-    $('nav').on('click', '.js-nav-open', function () {
-        $('.nav').css('z-index', '1').addClass('active');
-    });
-
-    $('.nav').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-        console.log('Close animation ended');
-        if ($(this).hasClass('active')) {
-            console.log('open');
-        } else {
-            console.log('closed');
-            $('.nav').css('z-index', '-1');
+    // Wait for the CSS transition to finish before resetting the z-index for the inactive nav.
+    settings.nav.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+        if (!$(this).hasClass('active')) {
+            settings.nav.css('z-index', '-1');
         }
     });
 

@@ -5,77 +5,87 @@ const brandConfig = {
         'name': 'Mamas and Papas',
         'css': 'styles',
         'logo': 'placeholder.jpg',
-        'font': 'https://fonts.googleapis.com/css?family=Roboto',
+        'font': 'https://fonts.googleapis.com/css?family=Roboto:300,400',
         'footer_strapline': '&copy; 2017',
         'footer_logo': 'placeholder.jpg',
         'store_image': 'placeholder.jpg',
-        'favicon': 'shared/favicon.ico',
-        'sign_in': 'Sign in / Register',
-        'quick_order': 'Quick order',
-        'search_message': 'Search products - what do you need?',
-        'store_message': 'Stores',
-        'store_message_support': 'Find your nearest store',
-        'cookie_message': 'We use cookies to provide you with a better online experience. Please continue browsing if you\'re happy with this or find out how to manage cookies',
-        'cookie_btn_text': 'OK, got it',
-        'promotions': [
-            'Big brands, low prices',
-            'FREE next day delivery*',
-            'No account needed',
-            'Click &amp; collect in 5 minutes'
-        ],
-        'store_search_title': 'Our Stores',
-        'store_area_count': 'We have 8 stores all within the London area with more on the way',
-        'store_postcode_town_message': 'Please enter a postcode or town',
-        'store_inc_vat_message': 'inc VAT',
-        'store_product_categories': 'Product Categories',
-        'store_product_suggestions': 'Product Suggestions',
-        'use_location_message': 'Use your current location',
-        'navigation_browse': 'Browse',
-        'navigation_search': 'Search',
-        'navigation_stores': 'Stores',
-        'navigation_checkout': 'Checkout',
+        'favicon': 'favicon.ico',
+        'navigation_browse': 'Shop',
+        'navigation_search': 'Discover',
+        'header_title': 'Explore the perfect nursery for baby',
+        'header_subtitle': 'Stunning collaborations & inspiration',
+        'header_image': 'http://lorempixel.com/output/cats-q-c-1200-750-4.jpg',
         'navigation': {
-            'Baby Clothing': {
-                'Boys': [
-                    'All Boys',
-                    'NEW Arrivals',
-                    'Accessories',
-                    'All In Ones',
-                    'Baby Basics & Multipacks',
-                    'Jackets & Pramsuits',
-                    'Knitwear',
-                    'Pyjamas',
-                    'Rompers & Bodysuits',
-                    'Shirts & Tops',
-                    'Special Occasion',
-                    'Swimwear',
-                    'Trousers & Shorts'
-                ],
-                'Girls': [],
-                'Unisex': [],
-                'Collections': []
-            },
-            'Baby Home': {
-                'New In': [],
-                'Prams & Pushchairs': [],
-                'Buggies & Strollers': [],
-                'Twin & Double Pushchairs': []
-            },
-            'Baby Out & About': {
-                'BO&A 1': [],
-                'BO&A 2': [],
-                'BO&A 3': [],
-                'BO&A 4': []
-            },
-            'For Mum': {
-                'FM 1': [],
-                'FM 2': [],
-                'FM 3': []
-            },
-            'Celebrate': {
-                'C 1': [],
-                'C 2': [],
-                'c 3': []
+            '_categoryLinks': {
+                'Baby Clothing': {
+                    '_categoryLinks': {
+                        'Boys': {
+                            '_categoryLinks': {
+                                'All Boys': {},
+                                'NEW Arrivals': {},
+                                'Accessories': {},
+                                'All In Ones': {},
+                                'Baby Basics & Multipacks': {},
+                                'Jackets & Pramsuits': {},
+                                'Knitwear': {},
+                                'Pyjamas': {},
+                                'Rompers & Bodysuits': {},
+                                'Shirts & Tops': {},
+                                'Special Occasion': {},
+                                'Swimwear': {},
+                                'Trousers & Shorts': {}
+                            },
+                            '_promoImage': [
+                                'http://lorempixel.com/400/300/fashion/'
+                            ]
+                        },
+                        'Girls': {
+                            '_categoryLinks': {
+                                'Test': {},
+                                'Lorem Ipsum': {},
+                                'Dolar': {}
+                            },
+                            '_promoImage': [
+                                'http://lorempixel.com/400/300/fashion/'
+                            ]
+                        },
+                        'Unisex': {},
+                        'Collections': {}
+                    },
+                    '_promoImage': [
+                        'http://lorempixel.com/400/300/fashion/'
+                    ]
+                },
+                'Baby Home': {
+                    '_categoryLinks': {
+                        'New In': {},
+                        'Prams & Pushchairs': {},
+                        'Buggies & Strollers': {},
+                        'Twin & Double Pushchairs': {}
+                    }
+                },
+                'Baby Out & About': {
+                    '_categoryLinks': {
+                        'BO&A 1': {},
+                        'BO&A 2': {},
+                        'BO&A 3': {},
+                        'BO&A 4': {}
+                    }
+                },
+                'For Mum': {
+                    '_categoryLinks': {
+                        'FM 1': {},
+                        'FM 2': {},
+                        'FM 3': {}
+                    }
+                },
+                'Celebrate': {
+                    '_categoryLinks': {
+                        'C 1': {},
+                        'C 2': {},
+                        'c 3': {}
+                    }
+                }
             }
         },
         'footer_links': {
@@ -114,40 +124,6 @@ const brandConfig = {
             'youtube',
             'pencil',
             'pinterest'
-        ],
-        'products': [
-            {
-                name: 'Makita 18V LXT Combi Drill',
-                promo: false,
-                recommended: true,
-                price: 180
-            },
-            {
-                name: 'Some Other Drill',
-                promo: true,
-                recommended: false,
-                price: 300
-            },
-            {
-                name: 'this is not a drill',
-                promo: false,
-                recommended: false,
-                price: 50
-            }
-        ],
-        'search_results': [
-            {
-                name: 'Drills',
-                category: 'Drill Bits'
-            },
-            {
-                name: 'Drills',
-                category: 'Cordless'
-            },
-            {
-                name: 'Drills',
-                category: 'Corded'
-            }
         ]
     }
 };
