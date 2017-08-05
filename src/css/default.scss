@@ -2,6 +2,8 @@
 
 // Brand colors
 $gray-dark:                 #323232;
+$gray:                      #d8d8d8;
+$another-gray:              #979797;
 $gray-medium:               #d6d6d6;
 $gray-light:                #f8f8f8;
 
@@ -140,6 +142,11 @@ $image-border:                3px solid $black!default;
 // Utility classes
 @import 'bootstrap/scss/utilities';
 
+// sass-lint:disable clean-import-paths
+@import 'slick-carousel/slick/slick-theme.scss';
+@import 'slick-carousel/slick/slick.scss';
+// sass-lint:enable clean-import-paths
+
 // Custom imports
 @import 'components/backgrounds';
 @import 'components/helpers';
@@ -149,6 +156,8 @@ $image-border:                3px solid $black!default;
 @import 'components/footer';
 @import 'components/card';
 @import 'components/button';
+@import 'components/article';
+@import 'components/slick';
 
 // Any styles that can't be put into a component
 @import 'main';

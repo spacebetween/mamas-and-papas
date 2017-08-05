@@ -12,6 +12,7 @@ module.exports = {
     main: {
         files: {
             '<%= package.config.dist.scripts %>/main.min.js': [
+                '<%= package.config.npm %>/slick-carousel/slick/slick.min.js',
                 '<%= package.config.dist.scripts %>/main.js'
             ]
         }

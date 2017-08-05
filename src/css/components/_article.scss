@@ -1,0 +1,15 @@
+.article {
+    &_carousel {
+        width: 100%;
+        @media (min-width: breakpoint-min(md)) {
+            width: 310px;
+        }
+        &_image {
+            width: 100%;
+        }
+        &_content {
+            min-height: 250px;
+        }
+    }
+}
+
