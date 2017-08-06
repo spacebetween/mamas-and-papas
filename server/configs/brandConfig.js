@@ -15,6 +15,29 @@ const brandConfig = {
         'header_title': 'Explore the perfect nursery for baby',
         'header_subtitle': 'Stunning collaborations & inspiration',
         'header_image': 'http://lorempixel.com/output/cats-q-c-1200-750-4.jpg',
+        'info_bar_message': 'Free standard delivery - on orders over £50',
+        'info_bar_links': [
+            {
+                icon: 'phone',
+                name: 'Contact',
+                link: '#'
+            },
+            {
+                icon: 'map-marker',
+                name: 'Stores',
+                link: '#'
+            }
+        ],
+        'currency': [
+            {
+                region: 'UK',
+                currency: '£'
+            },
+            {
+                region: 'IE',
+                currency: '€'
+            }
+        ],
         'footer_links': {
             'Shopping To Suit You': [
                 'Delivery',
