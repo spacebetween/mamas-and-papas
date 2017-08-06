@@ -4,11 +4,19 @@
             font-weight: $font-light;
         }
     }
+    &-family {
+        &-secondary {
+            font-family: $font-family-secondary;
+        }
+    }
 }
 
 .text {
     &-black {
         color: $black;
+    }
+    &-light {
+        color: $gray-info;
     }
 }
 
@@ -21,4 +29,20 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.infoBar {
+    height: 35px;
+    line-height: 34px;
+    border: 1px solid $gray-lighter;
+    &-left {
+        border-right: 1px solid $gray-lighter;
+    }
+    &-right {
+        border-left: 1px solid $gray-lighter;
+        height: 100%;
+    }
+    &_currencySelect {
+        border: 0;
+    }
 }
