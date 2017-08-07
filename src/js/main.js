@@ -69,5 +69,16 @@ $(function () {
             settings.nav.css('z-index', '-1');
         }
     });
+  
+});
+
+// Slick article carousel
+$(document).ready(function () {
+    $('.article_carousel').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 10000
+    });
 
 });

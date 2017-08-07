@@ -134,6 +134,58 @@ const brandConfig = {
             'youtube',
             'pencil',
             'pinterest'
+        ],
+        'articles': [
+            {
+                title: 'Bunny & Clyde owner talks style',
+                card_title: 'Bunny & Clyde owner talks style',
+                link: '',
+                link_text: 'Read the article',
+                description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
+                image: 'https://placekitten.com/310/300',
+                card_image: 'https://placekitten.com/310/300',
+                displayInCarousel: true
+            },
+            {
+                title: 'Bunny & Clyde owner talks style',
+                card_title: 'Bunny & Clyde owner talks style',
+                link: '',
+                link_text: 'Read the article',
+                description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
+                image: 'https://placekitten.com/310/300',
+                card_image: 'https://placekitten.com/310/300',
+                displayInCarousel: true
+            },
+            {
+                title: 'Bunny & Clyde owner talks style',
+                card_title: 'Bunny & Clyde owner talks style',
+                link: '',
+                link_text: 'Read the article',
+                description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
+                image: 'https://placekitten.com/310/300',
+                card_image: 'https://placekitten.com/310/300',
+                displayInCarousel: true
+            },
+            {
+                title: 'Bunny & Clyde owner talks style',
+                card_title: 'Bunny & Clyde owner talks style',
+                link: '',
+                link_text: 'Read the article',
+                description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
+                image: 'https://placekitten.com/310/300',
+                card_image: 'https://placekitten.com/310/300',
+                displayInCarousel: true
+            },
+            {
+                title: 'Bunny & Clyde owner talks style',
+                card_title: 'Bunny & Clyde owner talks style',
+                link: '',
+                link_text: 'Read the article',
+                description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
+                image: 'https://placekitten.com/310/300',
+                card_image: 'https://placekitten.com/310/300',
+                displayInCarousel: false
+            }
         ]
     }
 };

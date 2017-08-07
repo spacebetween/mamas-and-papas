@@ -8,5 +8,9 @@
         &-white {
             border: 1px solid $white;
         }
+        &-small {
+            height: 45px;
+            width: 45px;
+        }
     }
 }

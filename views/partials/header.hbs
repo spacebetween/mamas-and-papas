@@ -18,13 +18,15 @@
         <div class="row px-md-4 py-5">
             <div class="col-md-6 text-white d-flex align-content-center">
                 <div class="py-5">
-                    <h1 class="header_title display-4 pt-md-5 font-weight-normal">{{theme code="header_title"}}</h1>
-                    <p class="header_subtitle lead font-weight-light">{{theme code="header_subtitle"}}</p>
+                    <h1 class="header_title display-4 pt-md-4 font-weight-normal">{{theme code="header_title"}}</h1>
+                    <p class="header_subtitle lead font-weight-light py-2">{{theme code="header_subtitle"}}</p>
                     {{> arrowButton color="white"}}
                 </div>
             </div>
-            <div class="col-lg-3 offset-lg-3 col-md-4 offset-md-2">
-                {{> card image="ttps://placekitten.com/300/280" href="" title="Bunny & Clyde" linkText="Read the article" content="The be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen's see name in."}}
+            <div class="col-md-6">
+                <div class="bg-white float-md-right mx-auto m-md-auto">
+                    {{> articleCarousel}}
+                </div>
             </div>
         </div>
     </div>
