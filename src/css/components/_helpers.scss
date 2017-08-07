@@ -34,9 +34,9 @@
 .infoBar {
     height: 35px;
     line-height: 34px;
-    border: 1px solid $info-bar-border;
+    border: $info-bar-border;
     &-left {
-        border-right: 1px solid $info-bar-border;
+        border-right: $info-bar-border;
     }
     &-right {
         border-left: $info-bar-border;
