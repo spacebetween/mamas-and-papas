@@ -1,19 +1,17 @@
-<header>
-    <div class="header container-fluid" style="background-image: url({{theme code="header_image"}});">
-        {{> header color="white"}}
-        <div class="row px-md-4 py-5">
-            <div class="col-md-6 text-white d-flex align-content-center">
-                <div class="py-5">
-                    <h1 class="header_title display-4 pt-md-4 font-weight-normal">{{theme code="header_title"}}</h1>
-                    <p class="header_subtitle lead font-weight-light py-2">{{theme code="header_subtitle"}}</p>
-                    {{> arrowButton color="white"}}
-                </div>
+<div class="header container-fluid px-0" style="background-image: url({{theme code="header_image"}});">
+    {{> header color="white"}}
+    <div class="row px-md-4 py-5">
+        <div class="col-md-6 text-white d-flex align-content-center">
+            <div class="py-5">
+                <h1 class="header_title display-4 pt-md-4 font-weight-normal">{{theme code="header_title"}}</h1>
+                <p class="header_subtitle lead font-weight-light py-2">{{theme code="header_subtitle"}}</p>
+                {{> arrowButton color="white"}}
             </div>
-            <div class="col-md-6">
-                <div class="bg-white float-md-right mx-auto m-md-auto">
-                    {{> articleCarousel}}
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div class="bg-white float-md-right mx-auto m-md-auto">
+                {{> articleCarousel}}
             </div>
         </div>
     </div>
-</header>
+</div>
