@@ -34,12 +34,12 @@
 .infoBar {
     height: 35px;
     line-height: 34px;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $info-bar-border;
     &-left {
-        border-right: 1px solid $gray-lighter;
+        border-right: 1px solid $info-bar-border;
     }
     &-right {
-        border-left: 1px solid $gray-lighter;
+        border-left: $info-bar-border;
         height: 100%;
     }
     &_currencySelect {
