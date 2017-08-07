@@ -3,10 +3,10 @@
         width: 60px;
         height: 60px;
         &-black {
-            border: 1px solid $black;
+            border: $button-border-black;
         }
         &-white {
-            border: 1px solid $white;
+            border: $button-border-white;
         }
         &-small {
             height: 45px;
