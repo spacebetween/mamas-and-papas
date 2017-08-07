@@ -46,3 +46,10 @@
         border: 0;
     }
 }
+
+// Custom mixins. May need a mixin SASS file?
+@mixin placeholder {
+    &::placeholder {
+        @content;
+    }
+}
