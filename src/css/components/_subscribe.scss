@@ -1,3 +1,19 @@
 .subscribe {
+    position: relative;
     background: $gray-light;
+
+    &_box {
+        max-width: 600px;
+    }
+
+    &_email {
+        width: 100%;
+        padding: 1rem 150px 1rem 1rem;
+    }
+
+    .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
