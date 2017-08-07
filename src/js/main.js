@@ -79,5 +79,4 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 10000
     });
-
 });

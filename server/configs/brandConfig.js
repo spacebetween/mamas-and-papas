@@ -121,35 +121,56 @@ const brandConfig = {
                 ]
             }
         },
-        'footer_links': {
-            'Shopping To Suit You': [
-                'Delivery',
-                'Returns',
-                'Stores & Stocklists',
-                'Personal Shopping',
-                'Gift Registry'
-            ],
-            'Customer Service': [
-                'Help',
-                'Contact Us',
-                'Product Instructions',
-                'Returns',
-                'Delivery Information'
-            ],
-            'About M&P': [
-                'About Us',
-                'Careers',
-                'M&P Blog',
-                'Terms & Conditions',
-                'Privacy Policy'
-            ],
-            'Additional Information': [
-                'Acceptance Of Use',
-                'Quality Notice',
-                'Product Recall',
-                'Modern Slavery Policy'
-            ]
-        },
+        'footer_links': [
+            {
+                name: 'Change Location',
+                links: [
+                    'Lorem Ipsum'
+                ],
+                options: {
+                    hideDesktop: true
+                }
+            },
+            {
+                name: 'Shopping To Suit You',
+                links: [
+                    'Delivery',
+                    'Returns',
+                    'Stores & Stocklists',
+                    'Personal Shopping',
+                    'Gift Registry'
+                ]
+            },
+            {
+                name: 'Customer Service',
+                links: [
+                    'Help',
+                    'Contact Us',
+                    'Product Instructions',
+                    'Returns',
+                    'Delivery Information'
+                ]
+            },
+            {
+                name: 'About M&P',
+                links: [
+                    'About Us',
+                    'Careers',
+                    'M&P Blog',
+                    'Terms & Conditions',
+                    'Privacy Policy'
+                ]
+            },
+            {
+                name: 'Additional Information',
+                links: [
+                    'Acceptance Of Use',
+                    'Quality Notice',
+                    'Product Recall',
+                    'Modern Slavery Policy'
+                ]
+            }
+        ],
         'social_links': [
             'twitter',
             'instagram',
