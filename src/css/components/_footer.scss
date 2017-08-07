@@ -2,7 +2,7 @@
     font-size: $font-size-4;
     &_heading {
         position: relative;
-        border-bottom: 1px solid $gray-light;
+        border-bottom: 1px solid $gray-lighter;
         font-size: $font-size-5;
         font-weight: $font-heavy;
         cursor: pointer;
@@ -33,8 +33,8 @@
 
     &_links {
         display: none;
-        background: $gray-light;
-        border-bottom: 2px solid $gray-medium;
+        background: $gray-lighter;
+        border-bottom: 2px solid $gray;
         line-height: 36px;
         @media (min-width: breakpoint-min(md)) {
             display: block;

@@ -3,18 +3,14 @@
 // Brand colors
 
 //Body text
-$gray-dark:                 #323232;
-$another-gray:              #979797;
-$gray:                      #d8d8d8;
-$gray-medium:               #d6d6d6;
-$gray-lighter:              #efefef;
-$gray-light:                #f8f8f8;
-
-//Top infobar
-$gray-info:                 #8b8b8b;
+$gray-darker:               #8b8b8b;
+$gray-dark:                 #979797;
+$gray:                      #d6d6d6;
+$gray-light:                #efefef;
+$gray-lighter:              #f8f8f8;
 
 $white:                     #fff;
-$black:                     #000;
+$black:                     #323232;
 
 // Typography
 $font-family-base:    	    'Roboto', sans-serif;
@@ -117,14 +113,14 @@ $border-radius-lg:       .2rem!default;
 $border-radius-sm:       .15rem!default;
 
 $body-bg:                     $white!default;
-$body-color:                  $gray-dark!default;
+$body-color:                  $black!default;
 
 $background-primary:          $white!default;
-$background-primary-color:    $gray-dark!default;
+$background-primary-color:    $black!default;
 
 $image-border:                3px solid $black!default;
 
-$info-bar-border:             1px solid $gray-lighter;
+$info-bar-border:             1px solid $gray-light;
 
 // Backgrounds
 $transparent-bg-dark:       rgba(50, 50, 50, .5);

@@ -55,7 +55,7 @@
     &_categoryTitle {
         height: 80px;
         line-height: 46px;
-        border-bottom: 1px solid $gray-medium;
+        border-bottom: 1px solid $gray;
     }
 
     &_backArrow {
@@ -70,11 +70,11 @@
     &_group {
         li {
             position: relative;
-            border-bottom: 1px solid $gray-medium;
+            border-bottom: 1px solid $gray;
             font-size: $font-size-5;
 
             a {
-                color: $gray-dark;
+                color: $black;
 
                 &::after {
                     position: absolute;
