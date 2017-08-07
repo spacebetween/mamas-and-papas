@@ -69,7 +69,6 @@ $(function () {
             settings.nav.css('z-index', '-1');
         }
     });
-
 });
 
 // Slick article carousel
@@ -80,5 +79,4 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 10000
     });
-
 });

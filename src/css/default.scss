@@ -2,16 +2,20 @@
 
 // Brand colors
 $gray-dark:                 #323232;
-$gray:                      #d8d8d8;
 $another-gray:              #979797;
+$gray:                      #d8d8d8;
 $gray-medium:               #d6d6d6;
+$gray-lighter:              #efefef;
 $gray-light:                #f8f8f8;
+
+$gray-info:                 #8b8b8b;
 
 $white:                     #fff;
 $black:                     #000;
 
 // Typography
 $font-family-base:    	    'Roboto', sans-serif;
+$font-family-secondary:      Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
 $font-family-icons:         'FontAwesome';
 
 $font-size-1:                10px;
@@ -117,8 +121,10 @@ $background-primary-color:    $gray-dark!default;
 
 $image-border:                3px solid $black!default;
 
+$info-bar-border:             1px solid $gray-lighter;
+
 // Backgrounds
-$transparent-bg-dark: rgba(50, 50, 50, .5);
+$transparent-bg-dark:       rgba(50, 50, 50, .5);
 
 //Imports
 // Core variables and mixins

@@ -15,6 +15,29 @@ const brandConfig = {
         'header_title': 'Explore the perfect nursery for baby',
         'header_subtitle': 'Stunning collaborations & inspiration',
         'header_image': '/media/banner_homepage.jpg',
+        'info_bar_message': 'Free standard delivery - on orders over £50',
+        'info_bar_links': [
+            {
+                icon: 'phone',
+                name: 'Contact',
+                link: '#'
+            },
+            {
+                icon: 'map-marker',
+                name: 'Stores',
+                link: '#'
+            }
+        ],
+        'currency': [
+            {
+                region: 'UK',
+                currency: '£'
+            },
+            {
+                region: 'IE',
+                currency: '€'
+            }
+        ],
         'navigation': {
             'primary': {
                 '_categoryLinks': {
