@@ -141,6 +141,7 @@ $transparent-bg-dark:       rgba(50, 50, 50, .5);
 @import 'bootstrap/scss/images';
 @import 'bootstrap/scss/grid';
 @import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
 
 // Components
 @import 'bootstrap/scss/transitions';
@@ -163,6 +164,7 @@ $transparent-bg-dark:       rgba(50, 50, 50, .5);
 @import 'components/header';
 @import 'components/nav';
 @import 'components/footer';
+@import 'components/subscribe';
 @import 'components/card';
 @import 'components/button';
 @import 'components/article';
