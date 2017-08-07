@@ -38,6 +38,10 @@ app.get('/', (req, res) => {
     res.render('home', {});
 });
 
+app.get('/product-list-page', (req, res) => {
+    res.render('pages/productListPage', {});
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`Mamas and papas is running on localhost:${process.env.PORT}, go do something amazing!`);
 });

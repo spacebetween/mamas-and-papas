@@ -1,0 +1,29 @@
+<div class="row bg-grayLight infoBar">
+    <div class="col hidden-md-down">
+        <div class="float-left infoBar-left px-1">
+            <small>
+            <select class="text-light font-weight-light font-family-secondary infoBar_currencySelect">
+                {{#each (theme code="currency")}}
+                    <option value="{{this.region}}">{{this.region}} ({{this.currency}})</option>
+                {{/each}}
+            </select>
+            </small>
+
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center text-capitalize">
+            <small>{{theme code="info_bar_message"}}</small>
+        </div>
+
+    </div>
+    <div class="col hidden-md-down">
+        <div class="float-right text-light">
+            {{#each (theme code="info_bar_links")}}
+                <div class="infoBar-right d-inline-block px-1">
+                    <small class="font-weight-light font-family-secondary"><a href="{{this.link}}"></a><i class="fa fa-{{this.icon}}"></i> {{this.name}}</small>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

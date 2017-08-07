@@ -69,7 +69,6 @@ $(function () {
             settings.nav.css('z-index', '-1');
         }
     });
-  
 });
 
 // Slick article carousel
