@@ -1,0 +1,16 @@
+.feature {
+    &_carousel {
+        width: 440px;
+
+        &_image {
+            width: 100%;
+        }
+
+        .article {
+            &.active {
+                transform: translateY(-2rem);
+            }
+        }
+    }
+}
+
