@@ -1,0 +1,32 @@
+{{#if this._categoryLinks}}
+    {{#ifeq @key 'primary'}}
+        <div class="nav_category nav_category-selected" data-category="nav_{{stringReplace @key}}">
+            <div class="nav_logo nav_categoryTitle p-1 js-navSwitchCategory">
+                <img src="media/logo_mp_small.png" height="40" alt="Mamas and Papas" />
+            </div>
+    {{else}}
+        <div class="nav_category" data-category="nav_{{stringReplace @key}}">
+            <div data-goto-category="nav_{{stringReplace @../key}}" class="nav_categoryTitle nav_backArrow font-weight-bold cursor-pointer p-1 pl-3 js-navSwitchCategory">
+                {{@key}}
+            </div>
+    {{/ifeq}}
+
+        <ul class="nav_group list-unstyled m-0 px-1">
+            {{#each this._categoryLinks}}
+                <li data-goto-category="nav_{{stringReplace @key}}" class="nav_groupLink js-navSwitchCategory"><a href="#" class="d-block py-1">{{@key}}</a></li>
+            {{/each}}
+        </ul>
+
+        {{#if this._promoImage}}
+            <div class="my-1 p-1">
+                <img src="{{this._promoImage}}" class="w-100" />
+            </div>
+        {{/if}}
+    </div>
+{{/if}}
+
+{{#if this._categoryLinks}}
+    {{#each this._categoryLinks}}
+        {{> navBlock}}
+    {{/each}}
+{{/if}}

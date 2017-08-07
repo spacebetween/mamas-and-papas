@@ -109,13 +109,16 @@ $border-radius:          .2rem!default;
 $border-radius-lg:       .2rem!default;
 $border-radius-sm:       .15rem!default;
 
-$body-bg:                     $gray-light!default;
+$body-bg:                     $white!default;
 $body-color:                  $gray-dark!default;
 
 $background-primary:          $white!default;
 $background-primary-color:    $gray-dark!default;
 
 $image-border:                3px solid $black!default;
+
+// Backgrounds
+$transparent-bg-dark: rgba(50, 50, 50, .5);
 
 //Imports
 // Core variables and mixins
