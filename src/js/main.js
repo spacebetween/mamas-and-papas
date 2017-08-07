@@ -14,7 +14,7 @@ $(function () {
 
     // Settings
     var settings = {
-        header: $('header'),
+        header: $('.header'),
         nav: $('.nav')
     };
 
@@ -43,6 +43,7 @@ $(function () {
 
     // Sets the layer index for the nav to appear above the content
     settings.header.on('click', '.js-navOpen', function () {
+        console.log('hi');
         settings.nav.css('z-index', '9999').addClass('active');
     });
 
