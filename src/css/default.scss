@@ -113,6 +113,7 @@ $body-color:                 $black!default;
 
 // Borders
 $info-bar-border:            1px solid $gray-light;
+$border-black:               1px solid $black;
 
 //Button Borders
 $button-border-white:       1px solid $white;
@@ -161,6 +162,7 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'components/card';
 @import 'components/button';
 @import 'components/article';
+@import 'components/banner';
 @import 'components/slick';
 
 // Any styles that can't be put into a component
