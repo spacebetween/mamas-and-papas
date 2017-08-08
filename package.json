@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "A place to store the mamas and papas static website",
   "main": "index.js",
+  "engines": {
+    "node": "6.9.1"
+  },
   "scripts": {
     "server": "grunt build && node index.js",
+    "serverLocal": "grunt build && PORT=3000 node index.js",
     "start": "grunt server",
     "test": "grunt test",
     "build": "grunt build"
