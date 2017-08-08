@@ -4,7 +4,8 @@
   "description": "A place to store the mamas and papas static website",
   "main": "index.js",
   "scripts": {
-    "start": "grunt server",
+    "start": "node index.js",
+    "server": "grunt server",
     "test": "grunt test",
     "build": "grunt build"
   },
