@@ -8,7 +8,7 @@
   },
   "scripts": {
     "server": "grunt build && node index.js",
-    "serverLocal": "grunt build && PORT=3000 node index.js",
+    "serverLocal": "grunt build && PORT=3001 node index.js",
     "start": "grunt server",
     "test": "grunt test",
     "build": "grunt build"
