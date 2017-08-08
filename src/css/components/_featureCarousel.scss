@@ -15,8 +15,18 @@
         float: left;
         margin-top: 3rem;
 
-        &_image {
+        &Image {
             width: 100%;
+        }
+
+        .content {
+            visibility: hidden;
+        }
+
+        &.active {
+            .content {
+                visibility: visible;
+            }
         }
     }
 

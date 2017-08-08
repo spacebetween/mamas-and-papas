@@ -82,11 +82,11 @@ $(function () {
 
     function init () {
 
-        var track = {
-            width: (settings.carouselElement.length * settings.carouselElement.outerWidth())
-        };
+        var trackWidth = (settings.carouselElement.length * settings.carouselElement.outerWidth());
 
-        settings.carouselElement.wrapAll( "<div class='featureCarousel_track' style='width: " + track.width + "px' />");
+        settings.carouselElement.wrapAll( "<div class='featureCarousel_track' style='width: " + trackWidth + "px' />");
+
+        settings.carouselElement.first().addClass('active');
     }
 
     init();

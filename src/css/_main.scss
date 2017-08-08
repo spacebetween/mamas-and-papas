@@ -4,3 +4,12 @@ body {
     min-height: 100vh;
     padding-bottom: 1rem;
 }
+
+// Normalise overwrite
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family-base;
+}
