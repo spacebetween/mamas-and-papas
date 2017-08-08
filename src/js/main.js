@@ -14,7 +14,7 @@ $(function () {
 
     // Settings
     var settings = {
-        header: $('header'),
+        header: $('.header'),
         nav: $('.nav')
     };
 

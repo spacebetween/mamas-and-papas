@@ -38,6 +38,10 @@ app.get('/', (req, res) => {
     res.render('home', {});
 });
 
+app.get('/style-guide', (req, res) => {
+    res.render('pages/styleGuide', {});
+});
+
 app.get('/product-list-page', (req, res) => {
     res.render('pages/productListPage', {});
 });
