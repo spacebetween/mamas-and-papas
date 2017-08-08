@@ -41,6 +41,11 @@ const brandConfig = {
         'plp_banner_title': 'Boys Shirts & Tops',
         'plp_banner_content': 'Whether you\'re looking for the perfect smart shirt for a birthday, wedding, christening or party, or a stylish top for tose everyday adventures, at Mamas and Papas, we have lots of soft, cosy tops and shirts to choose from.',
         'plp_banner_image': '/media/banner_homepage.jpg',
+        'plp_breadcrumb': [
+            'Home',
+            'Baby Clothing',
+            'Boys'
+        ],
         'navigation': {
             'primary': {
                 '_categoryLinks': {

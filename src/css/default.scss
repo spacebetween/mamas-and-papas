@@ -146,17 +146,6 @@ $button-border-black:       1px solid $black;
 // Backgrounds
 $transparent-bg-dark:      rgba(50, 50, 50, .5);
 
-// Breadcrumbs
-
-$breadcrumb-padding-y:          .75rem!default;
-$breadcrumb-padding-x:          1rem!default;
-$breadcrumb-item-padding:       .5rem!default;
-
-$breadcrumb-bg:                 $white!default;
-$breadcrumb-divider-color:      $black!default;
-$breadcrumb-active-color:       $black!default;
-$breadcrumb-divider:            '/'!default;
-
 //Imports
 // Core variables and mixins
 @import 'bootstrap/scss/variables';

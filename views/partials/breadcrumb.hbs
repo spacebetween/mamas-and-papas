@@ -1,6 +1,9 @@
 <div class="breadcrumb mx-auto bg-white text-center font-weight-light">
-    <a class="breadcrumb_item text-light" href="#">Home</a> 
-    <a class="breadcrumb_item text-light" href="#">Library</a> 
-    <a class="breadcrumb_item text-light" href="#">Data</a>
-    <span class="breadcrumb_item breadcrumb-active ">Bootstrap</span>
+    {{#each (theme code="plp_breadcrumb")}}
+        {{#if @last}}
+            <span class="breadcrumb_item breadcrumb-active ">{{.}}</span>
+        {{else}}
+            <a class="breadcrumb_item text-light" href="#">{{.}}</a> 
+        {{/if}}
+    {{/each}}
 </div>
