@@ -38,6 +38,9 @@ const brandConfig = {
                 currency: '€'
             }
         ],
+        'plp_banner_title': 'Boys Shirts & Tops',
+        'plp_banner_content': 'Whether you\'re looking for the perfect smart shirt for a birthday, wedding, christening or party, or a stylish top for tose everyday adventures, at Mamas and Papas, we have lots of soft, cosy tops and shirts to choose from.',
+        'plp_banner_image': '/media/banner_homepage.jpg',
         'navigation': {
             'primary': {
                 '_categoryLinks': {
@@ -187,7 +190,7 @@ const brandConfig = {
                 link_text: 'Read the article',
                 description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
                 image: 'https://placekitten.com/310/300',
-                card_image: 'https://placekitten.com/310/300',
+                card_image: '/media/card_bunny_clyde.jpg',
                 displayInCarousel: true
             },
             {
@@ -197,7 +200,7 @@ const brandConfig = {
                 link_text: 'Read the article',
                 description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
                 image: 'https://placekitten.com/310/300',
-                card_image: 'https://placekitten.com/310/300',
+                card_image: '/media/card_bunny_clyde.jpg',
                 displayInCarousel: true
             },
             {
@@ -207,7 +210,7 @@ const brandConfig = {
                 link_text: 'Read the article',
                 description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
                 image: 'https://placekitten.com/310/300',
-                card_image: 'https://placekitten.com/310/300',
+                card_image: '/media/card_bunny_clyde.jpg',
                 displayInCarousel: true
             },
             {
@@ -217,7 +220,7 @@ const brandConfig = {
                 link_text: 'Read the article',
                 description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
                 image: 'https://placekitten.com/310/300',
-                card_image: 'https://placekitten.com/310/300',
+                card_image: '/media/card_bunny_clyde.jpg',
                 displayInCarousel: true
             },
             {
@@ -227,7 +230,7 @@ const brandConfig = {
                 link_text: 'Read the article',
                 description: 'To be one the and one the made live letters, and latter casting at hand, with fellow that seven and the aggressively want who errors queen\'s see name in.',
                 image: 'https://placekitten.com/310/300',
-                card_image: 'https://placekitten.com/310/300',
+                card_image: '/media/card_bunny_clyde.jpg',
                 displayInCarousel: false
             }
         ],
