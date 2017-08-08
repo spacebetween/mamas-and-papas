@@ -13,4 +13,11 @@
             width: 45px;
         }
     }
+
+    &-primary {
+        height: 50px;
+        font-size: $font-size-4;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
 }

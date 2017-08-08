@@ -1,6 +1,18 @@
 .featureCarousel {
+    overflow: hidden;
+    &::after {
+        clear: left;
+        display: table;
+        content: '';
+    }
+
+    &_track {
+        overflow: hidden;
+    }
+
     &_entry {
         width: 480px;
+        float: left;
         margin-top: 3rem;
 
         &_image {

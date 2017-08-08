@@ -10,7 +10,7 @@ $(function () {
 });
 
 // Navigation
-$(function () {
+(function ($) {
 
     // Settings
     var settings = {
@@ -69,7 +69,29 @@ $(function () {
             settings.nav.css('z-index', '-1');
         }
     });
-});
+})(jQuery);
+
+// Feature Carousel - Homepage
+(function ($) {
+
+    // Settings
+    var settings = {
+        carousel: $('.featureCarousel'),
+        carouselElement: $('.featureCarousel_entry')
+    };
+
+    function init () {
+
+        var track = {
+            width: (settings.carouselElement.length * settings.carouselElement.outerWidth())
+        };
+
+        settings.carouselElement.wrapAll( "<div class='featureCarousel_track' style='width: " + track.width + "px' />");
+    }
+
+    init();
+
+})(jQuery);
 
 // Slick article carousel
 $(document).ready(function () {
