@@ -230,6 +230,38 @@ const brandConfig = {
                 card_image: 'https://placekitten.com/310/300',
                 displayInCarousel: false
             }
+        ],
+        'homepage_carousel': [
+            {
+                title: 'Maternity style in Bloom',
+                description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
+                image: 'media/carousel_01.jpg',
+                link: '#'
+            },
+            {
+                title: 'Ultimate in Comfort',
+                description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
+                image: 'media/carousel_02.jpg',
+                link: '#'
+            },
+            {
+                title: 'Discover',
+                description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
+                image: 'media/carousel_03.jpg',
+                link: '#'
+            },
+            {
+                title: 'Lorem',
+                description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
+                image: 'http://via.placeholder.com/600x720',
+                link: '#'
+            },
+            {
+                title: 'Ipsum',
+                description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
+                image: 'http://via.placeholder.com/600x720',
+                link: '#'
+            }
         ]
     }
 };

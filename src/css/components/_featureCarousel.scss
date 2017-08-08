@@ -1,16 +1,20 @@
-.feature {
-    &_carousel {
-        width: 440px;
+.featureCarousel {
+    &_entry {
+        width: 480px;
+        margin-top: 3rem;
 
         &_image {
             width: 100%;
         }
+    }
 
-        .article {
-            &.active {
-                transform: translateY(-2rem);
-            }
+    &_controls {
+        .arrow {
+            height: 80px;
+            width: 80px;
+            background: $white;
+            font-size: $header-size-1;
+            line-height: 40px;
         }
     }
 }
-

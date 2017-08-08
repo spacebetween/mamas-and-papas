@@ -1,16 +1,26 @@
-
-<div class="feature mt-5 pb-5 bg-inverse">
-    <div class="feature_carousel mx-auto px-2">
-        <div class="article active text-center">
-            <img class="img-fluid feature_carousel_image" src="media/carousel_01.jpg"/>
-            <div class="p-2 bg-white">
-                <strong class="d-block truncate">Test Title</strong>
+<div class="featureCarousel mt-5 pb-5 bg-inverse">
+    {{#each (theme code="homepage_carousel")}}
+        <div class="featureCarousel_entry mx-auto px-2">
+            <img class="img-fluid feature_carousel_image" src="{{this.image}}"/>
+            <div class="content p-2 bg-white">
+                <h3 class="d-block truncate font-weight-bold mb-1">{{this.title}}</h3>
                 <small>
-                    <a class="text-black font-weight-light" href="#">URL text</a>
-                    <p>Test Description</p>
+                    <p>{{this.description}}</p>
                 </small>
                 {{> arrowButton color="black" size="small" mx="auto"}}
             </div>
         </div>
+    {{/each}}
+</div>
+
+
+
+
+<div class="featureCarousel_controls" style="display: none;">
+    <div class="arrow prev d-inline text-center cursor-pointer px-2">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </div>
+    <div class="arrow prev d-inline text-center cursor-pointer px-2">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
     </div>
 </div>
