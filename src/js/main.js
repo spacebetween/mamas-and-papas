@@ -4,6 +4,7 @@
 $(function () {
 
     $('.footer').on('click', '.footer_heading', function () {
+        $('.footer_heading').removeClass('active');
         $(this).toggleClass('active');
     });
 
@@ -77,19 +78,37 @@ $(function () {
     // Settings
     var settings = {
         carousel: $('.featureCarousel'),
+        carouselTrack: $('.featureCarousel_track'),
         carouselElement: $('.featureCarousel_entry')
     };
 
-    function init () {
-
-        var trackWidth = (settings.carouselElement.length * settings.carouselElement.outerWidth());
-
-        settings.carouselElement.wrapAll( "<div class='featureCarousel_track' style='width: " + trackWidth + "px' />");
-
-        settings.carouselElement.first().addClass('active');
+    function setContainerHeight () {
+        settings.carouselTrack.css('height', settings.carouselElement.outerHeight() + 'px');
     }
 
-    init();
+    function next () {
+        settings.carouselTrack.find('.featureCarousel_entry').first().appendTo(settings.carouselTrack);
+    }
+
+    function prev () {
+        settings.carouselTrack.find('.featureCarousel_entry').last().prependTo(settings.carouselTrack);
+    }
+
+    settings.carousel.on('click', '.js-next', function () {
+        next();
+    });
+
+    settings.carousel.on('click', '.js-prev', function () {
+        prev();
+    });
+
+    window.addEventListener('resize', function () {
+        setContainerHeight();
+    });
+
+    $(function () {
+        setContainerHeight();
+    });
 
 })(jQuery);
 

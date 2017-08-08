@@ -1,5 +1,7 @@
 .featureCarousel {
+    position: relative;
     overflow: hidden;
+
     &::after {
         clear: left;
         display: table;
@@ -7,15 +9,23 @@
     }
 
     &_track {
-        overflow: hidden;
+        position: relative;
+        margin-top: 40px;
     }
 
     &_entry {
-        width: 480px;
-        float: left;
-        margin-top: 3rem;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform-origin: top center;
 
-        &Image {
+        @media (min-width: breakpoint-min(md)) {
+            width: 600px;
+        }
+
+        .image {
             width: 100%;
         }
 
@@ -23,20 +33,72 @@
             visibility: hidden;
         }
 
-        &.active {
+        &:nth-child(1) {
+            transform: translate(-1px, -40px) scale(1);
+            z-index: 30;
+
             .content {
                 visibility: visible;
             }
         }
+
+        &:nth-child(2) {
+            transform: translate(50%, -20px) scale(.9);
+            z-index: 20;
+        }
+
+        &:nth-child(3) {
+            transform: translate(90%, 0) scale(.8);
+            z-index: 10;
+        }
+
+        &:nth-child(4) {
+            transform: translate(-90%, 0) scale(.8);
+            z-index: 10;
+        }
+
+        &:nth-child(5) {
+            transform: translate(-50%, -20px) scale(.9);
+            z-index: 20;
+        }
     }
 
     &_controls {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
+        z-index: 35;
+
+        @media (min-width: breakpoint-min(md)) {
+            width: 710px;
+            z-index: 25;
+        }
+
         .arrow {
-            height: 80px;
-            width: 80px;
+            position: absolute;
+            top: 0;
+            height: 40px;
+            width: 40px;
             background: $white;
-            font-size: $header-size-1;
+            font-size: $header-size-2;
             line-height: 40px;
+
+            @media (min-width: breakpoint-min(sm)) {
+                height: 80px;
+                width: 80px;
+                font-size: $header-size-1;
+                line-height: 80px;
+            }
+
+            &.prev {
+                left: 0;
+            }
+
+            &.next {
+                right: 0;
+            }
         }
     }
 }

@@ -1,26 +1,25 @@
-<div class="featureCarousel mt-5 pb-5 bg-inverse">
-    {{#each (theme code="homepage_carousel")}}
-        <div class="featureCarousel_entry mx-auto px-2">
-            <img class="img-fluid featureCarousel_entryImage" src="{{this.image}}"/>
-            <div class="content p-2 bg-white">
-                <h3 class="d-block truncate font-weight-bold mb-1">{{this.title}}</h3>
-                <small>
-                    <p>{{this.description}}</p>
-                </small>
-                {{> arrowButton color="black" size="small" mx="auto"}}
+<div class="featureCarousel mt-5 pb-5">
+    <div class="featureCarousel_track bg-inverse">
+        {{#each (theme code="homepage_carousel")}}
+            <div class="featureCarousel_entry mx-auto px-2">
+                <img class="img-fluid image" src="{{this.image}}"/>
+                <div class="content p-2 bg-white">
+                    <h3 class="d-block truncate font-weight-bold mb-1">{{this.title}}</h3>
+                    <small>
+                        <p>{{this.description}}</p>
+                    </small>
+                    {{> arrowButton color="black" size="small" mx="auto"}}
+                </div>
             </div>
-        </div>
-    {{/each}}
-</div>
-
-
-
-
-<div class="featureCarousel_controls" style="display: none;">
-    <div class="arrow prev d-inline text-center cursor-pointer px-2">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        {{/each}}
     </div>
-    <div class="arrow prev d-inline text-center cursor-pointer px-2">
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+    <div class="featureCarousel_controls">
+        <div class="arrow prev d-inline text-center cursor-pointer js-next">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <div class="arrow next d-inline text-center cursor-pointer js-prev">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
     </div>
 </div>
