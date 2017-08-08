@@ -41,6 +41,9 @@ $spacing-small:              10px;
 $spacing-large:              60px;
 $spacing-xsmall:             6px;
 
+// Text
+$link-color:                 $black;
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -143,6 +146,17 @@ $button-border-black:       1px solid $black;
 // Backgrounds
 $transparent-bg-dark:      rgba(50, 50, 50, .5);
 
+// Breadcrumbs
+
+$breadcrumb-padding-y:          .75rem!default;
+$breadcrumb-padding-x:          1rem!default;
+$breadcrumb-item-padding:       .5rem!default;
+
+$breadcrumb-bg:                 $white!default;
+$breadcrumb-divider-color:      $black!default;
+$breadcrumb-active-color:       $black!default;
+$breadcrumb-divider:            '/'!default;
+
 //Imports
 // Core variables and mixins
 @import 'bootstrap/scss/variables';
@@ -188,6 +202,7 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'components/article';
 @import 'components/banner';
 @import 'components/slick';
+@import 'components/breadcrumb';
 
 // Any styles that can't be put into a component
 @import 'main';
