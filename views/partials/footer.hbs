@@ -1,5 +1,6 @@
-<footer class="footer text-md-center p-1 bg-white">
-    <div class="row">
+<footer class="footer text-md-center px-1 bg-white">
+    {{> subscribe}}
+    <div class="row pt-2">
         {{#each (theme code="footer_links")}}
             <div class="col-md {{#if options.hideDesktop}}hidden-md-up{{/if}}">
                 <h4 class="footer_heading m-0 py-2 py-md-1">{{name}}</h4>
