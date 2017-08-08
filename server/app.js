@@ -16,7 +16,7 @@ var hbs = exphbs.create({
     helpers: {
         theme: (data) => {
             // Get brand specific config
-            return brandConfig[process.env.PORT][data.hash.code] || brandConfig.shared[data.hash.code];
+            return brandConfig[3000][data.hash.code];
         },
         stringReplace: (data) => {
             return data.replace(/\s+/g, '-').replace('&', 'and').toLowerCase();

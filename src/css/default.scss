@@ -41,6 +41,9 @@ $spacing-small:              10px;
 $spacing-large:              60px;
 $spacing-xsmall:             6px;
 
+// Text
+$link-color:                 $black;
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -189,6 +192,7 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'components/banner';
 @import 'components/slick';
 @import 'components/featureCarousel';
+@import 'components/breadcrumb';
 
 // Any styles that can't be put into a component
 @import 'main';
