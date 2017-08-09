@@ -11,6 +11,7 @@
     &_track {
         position: relative;
         margin-top: 40px;
+        background: $black;
     }
 
     &_entry {
@@ -25,19 +26,19 @@
             width: 600px;
         }
 
-        .image {
+        .featureCarousel_image {
             width: 100%;
         }
 
-        .content {
+        .featureCarousel_content {
             visibility: hidden;
         }
 
         &:nth-child(1) {
-            transform: translate(-1px, -40px) scale(1);
+            transform: translate(0, -40px) scale(1);
             z-index: 30;
 
-            .content {
+            .featureCarousel_content {
                 visibility: visible;
             }
         }
@@ -52,26 +53,27 @@
             z-index: 10;
         }
 
-        &:nth-child(4) {
-            transform: translate(-90%, 0) scale(.8);
-            z-index: 10;
-        }
-
-        &:nth-child(5) {
+        &:nth-last-child(1) {
             transform: translate(-50%, -20px) scale(.9);
             z-index: 20;
+        }
+
+        &:nth-last-child(2) {
+            transform: translate(-90%, 0) scale(.8);
+            z-index: 10;
         }
     }
 
     &_controls {
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
         width: 100%;
         transform: translateX(-50%);
         z-index: 35;
 
         @media (min-width: breakpoint-min(md)) {
+            top: 50%;
             width: 710px;
             z-index: 25;
         }
@@ -79,11 +81,11 @@
         .arrow {
             position: absolute;
             top: 0;
-            height: 40px;
-            width: 40px;
+            height: 50px;
+            width: 50px;
             background: $white;
             font-size: $header-size-2;
-            line-height: 40px;
+            line-height: 50px;
 
             @media (min-width: breakpoint-min(sm)) {
                 height: 80px;

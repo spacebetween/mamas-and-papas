@@ -75,39 +75,82 @@ $(function () {
 // Feature Carousel - Homepage
 (function ($) {
 
-    // Settings
-    var settings = {
+    var element = {
         carousel: $('.featureCarousel'),
         carouselTrack: $('.featureCarousel_track'),
         carouselElement: $('.featureCarousel_entry')
     };
 
+    var xDown = null;
+    var yDown = null;
+
     function setContainerHeight () {
-        settings.carouselTrack.css('height', settings.carouselElement.outerHeight() + 'px');
+        element.carouselTrack.css('height', element.carouselElement.outerHeight() + 'px');
+    }
+
+    function setContainerBackground () {
+        var active = element.carouselTrack.find('.featureCarousel_entry').first();
+        var colour = active.data('background') || '';
+
+        element.carouselTrack.css('background-color', colour);
     }
 
     function next () {
-        settings.carouselTrack.find('.featureCarousel_entry').first().appendTo(settings.carouselTrack);
+        element.carouselTrack.find('.featureCarousel_entry').first().appendTo(element.carouselTrack);
+        setContainerBackground();
     }
 
     function prev () {
-        settings.carouselTrack.find('.featureCarousel_entry').last().prependTo(settings.carouselTrack);
+        element.carouselTrack.find('.featureCarousel_entry').last().prependTo(element.carouselTrack);
+        setContainerBackground();
     }
 
-    settings.carousel.on('click', '.js-next', function () {
+    function handleTouchStart (event) {
+        xDown = event.touches[0].clientX;
+        yDown = event.touches[0].clientY;
+    }
+
+    function handleTouchMove (event) {
+        if (!xDown || !yDown) {
+            return;
+        }
+
+        var xUp = event.touches[0].clientX;
+        var yUp = event.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        // ensure the user isn't just scrolling down, in which case the Y travel will be greater than the X sway
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if ( xDiff > 0 ) {
+                // swipe left
+                next();
+            } else {
+                // swipe right
+                prev();
+            }
+        }
+
+        /* reset */
+        xDown = null;
+    }
+
+    element.carousel.on('click', '.js-next', function () {
         next();
     });
 
-    settings.carousel.on('click', '.js-prev', function () {
+    element.carousel.on('click', '.js-prev', function () {
         prev();
     });
 
-    window.addEventListener('resize', function () {
-        setContainerHeight();
-    });
+    window.addEventListener('resize', setContainerHeight);
+    document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
+    document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
 
     $(function () {
         setContainerHeight();
+        setContainerBackground();
     });
 
 })(jQuery);

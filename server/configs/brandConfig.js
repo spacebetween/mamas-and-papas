@@ -244,29 +244,45 @@ const brandConfig = {
                 title: 'Maternity style in Bloom',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
                 image: 'media/carousel_01.jpg',
-                link: '#'
+                link: '#',
+                background_colour: '#feede3'
             },
             {
                 title: 'Ultimate in Comfort',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
                 image: 'media/carousel_02.jpg',
-                link: '#'
+                link: '#',
+                background_colour: '#49454c'
             },
             {
                 title: 'Discover',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
                 image: 'media/carousel_03.jpg',
-                link: '#'
+                link: '#',
+                background_colour: '#37524e'
             },
             {
                 title: 'Lorem',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
                 image: 'http://via.placeholder.com/600x725',
-                link: '#'
+                link: '#',
+                background_colour: 'rgb(60, 45, 65)'
             },
             {
                 title: 'Ipsum',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
+                image: 'http://via.placeholder.com/600x725',
+                link: '#'
+            },
+            {
+                title: 'Test 1',
+                description: '...',
+                image: 'http://via.placeholder.com/600x725',
+                link: '#'
+            },
+            {
+                title: 'Test 2',
+                description: '...',
                 image: 'http://via.placeholder.com/600x725',
                 link: '#'
             }
