@@ -44,12 +44,17 @@
         position: absolute;
         width: 100%;
         visibility: hidden;
-        transition: transform $transition-duration $transition-easing;
+        transition-duration: $transition-duration;
+        transition-property: transform, visibility;
+        transition-timing-function: $transition-easing;
         transform: translateX(-100%);
+        z-index: 10;
+        background: $white;
 
         &-selected {
             visibility: visible;
             transform: translateX(0%);
+            z-index: 20;
         }
     }
 

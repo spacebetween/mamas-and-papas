@@ -3,3 +3,12 @@ body {
     position: relative;
     min-height: 100vh;
 }
+
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    max-width: 1500px;
+    margin: 0 auto;
+}
