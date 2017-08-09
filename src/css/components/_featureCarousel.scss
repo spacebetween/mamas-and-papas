@@ -43,24 +43,24 @@
             }
         }
 
-        &:nth-child(2) {
-            transform: translate(50%, -20px) scale(.9);
-            z-index: 20;
-        }
-
         &:nth-child(3) {
             transform: translate(90%, 0) scale(.8);
             z-index: 10;
         }
 
-        &:nth-last-child(1) {
-            transform: translate(-50%, -20px) scale(.9);
-            z-index: 20;
-        }
-
         &:nth-last-child(2) {
             transform: translate(-90%, 0) scale(.8);
             z-index: 10;
+        }
+
+        &:nth-child(2) {
+            transform: translate(50%, -20px) scale(.9);
+            z-index: 20;
+        }
+
+        &:nth-last-child(1) {
+            transform: translate(-50%, -20px) scale(.9);
+            z-index: 20;
         }
     }
 

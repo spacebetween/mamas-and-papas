@@ -85,7 +85,7 @@ $(function () {
     var yDown = null;
 
     function setContainerHeight () {
-        element.carouselTrack.css('height', element.carouselElement.outerHeight() + 'px');
+        element.carouselTrack.css('height', (element.carouselElement.outerHeight() + 20) + 'px');
     }
 
     function setContainerBackground () {
