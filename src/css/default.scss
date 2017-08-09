@@ -44,6 +44,10 @@ $spacing-xsmall:             6px;
 // Text
 $link-color:                 $black;
 
+// Transitions
+$transition-duration:        600ms;
+$transition-easing:          cubic-bezier(.8, 0, 0, 1);
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
