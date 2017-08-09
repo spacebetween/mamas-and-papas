@@ -23,7 +23,7 @@ const brandConfig = {
                 link: '#'
             },
             {
-                icon: 'map-marker',
+                icon: 'mapPointer',
                 name: 'Stores',
                 link: '#'
             }

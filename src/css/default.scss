@@ -14,7 +14,7 @@ $black:                     #323232;
 // Typography
 $font-family-base:    	    'Roboto', sans-serif;
 $font-family-secondary:      Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
-$font-family-icons:         'FontAwesome';
+$font-family-icons:         'Linearicons';
 
 $font-size-1:                10px;
 $font-size-2:                12px;
@@ -176,6 +176,9 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'slick-carousel/slick/slick-theme.scss';
 @import 'slick-carousel/slick/slick.scss';
 // sass-lint:enable clean-import-paths
+
+// Custom icons
+@import 'icons/icons';
 
 // Custom imports
 @import 'components/backgrounds';

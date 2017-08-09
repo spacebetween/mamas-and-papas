@@ -31,8 +31,23 @@
     }
     &_logo {
         width: 100%;
+        max-width: 100px;
         @media (min-width: breakpoint-min(md)) {
             width: auto;
+            max-width: initial;
+        }
+    }
+    &_icon {
+        font-size: $font-size-8;
+        padding-top: 5px;
+        @media (min-width: breakpoint-min(md)) {
+            font-size: $font-size-9;
+            padding: 0 15px;
+        }
+    }
+    &_nav {
+        @media (min-width: breakpoint-min(md)) {
+            height: 100px;
         }
     }
 }

@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Linearicons';
+    src: url('Linearicons.ttf');
+}
+
+.ico {
+    display: inline-block;
+    font: normal normal normal 14px/1 Linearicons;
+    font-size: inherit;
+    text-rendering: auto;
+    &-search {
+        &::before {
+            content: '\E922';
+        }
+    }
+    &-phone {
+        &::before {
+            content: '\E76A';
+        }
+    }
+    &-cart {
+        &::before {
+            content: '\E74D';
+        }
+    }
+    &-eye {
+        &::before {
+            content: '\E6A5';
+        }
+    }
+    &-bag {
+        &::before {
+            content: '\E74C';
+        }
+    }
+    &-mapPointer {
+        &::before {
+            content: '\E77A';
+        }
+
+    }
+    &-plus {
+        &::before {
+            content: '\E936';
+        }
+
+    }
+    &-chevronLeft {
+        &::before {
+            content: '\E93B';
+        }
+    }
+    &-chevronRight {
+        &::before {
+            content: '\E93C';
+        }
+    }
+    &-arrowLeft {
+        &::before {
+            content: '\E943';
+        }
+    }
+    &-arrowRight {
+        &::before {
+            content: '\E944';
+        }
+    }
+    &-navicon {
+        &::before {
+            content: '\E92B';
+        }
+    }
+    &-cross {
+        &::before {
+            content: '\E92A';
+        }
+    }
+    &-user {
+        &::before {
+            content: '\E71E';
+        }
+    }
+}
