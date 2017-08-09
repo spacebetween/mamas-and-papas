@@ -53,3 +53,9 @@
         @content;
     }
 }
+
+.border {
+    &-gray {
+        border: $info-bar-border;
+    }
+}

@@ -1,0 +1,14 @@
+.productFilter {
+    width: 140px;
+    height: 55px;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        background-color: $gray-lighter;
+    }
+    &_icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
