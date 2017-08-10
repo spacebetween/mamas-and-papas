@@ -81,14 +81,13 @@
         .arrow {
             position: absolute;
             top: 0;
-            font-size: $header-size-2;
-            line-height: 50px;
+            font-size: $font-size-9;
+            line-height: 55px;
 
             @media (min-width: breakpoint-min(sm)) {
                 height: 80px;
                 width: 80px;
-                font-size: $header-size-1;
-                line-height: 80px;
+                line-height: 88px;
             }
 
             &.prev {
