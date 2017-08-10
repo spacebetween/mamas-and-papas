@@ -1,6 +1,6 @@
 <footer class="footer text-md-center bg-white">
     {{> subscribe}}
-    <div class="row pt-2">
+    <div class="row pt-2 js-accordion">
         {{#each (theme code="footer_links")}}
             <div class="col-md {{#if options.hideDesktop}}hidden-md-up{{/if}}">
                 <h4 class="footer_heading m-0 py-2 py-md-1 js-accordionTitle">{{name}}</h4>

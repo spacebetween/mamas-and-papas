@@ -7,8 +7,8 @@ $(function () {
      * Used in the footer, toggles the active state of accordion element, bound within a group.
      */
 
-    $('body').on('click', '.js-accordionTitle', function () {
-        $(this).parent().parent().find('.js-accordionTitle').not(this).removeClass('active');
+    $('.js-accordion').on('click', '.js-accordionTitle', function () {
+        $(this).closest('.js-accordion').find('.js-accordionTitle').not(this).removeClass('active');
         $(this).toggleClass('active');
     });
 
