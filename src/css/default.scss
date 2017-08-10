@@ -1,7 +1,5 @@
-// Brand specific variables
 
 // Brand colors
-
 $gray-darkest:              #4e4e4e;
 $gray-darker:               #8b8b8b;
 $gray-dark:                 #979797;
@@ -12,10 +10,11 @@ $gray-lighter:              #f8f8f8;
 $white:                     #fff;
 $black:                     #323232;
 
+
 // Typography
 $font-family-base:    	    'Roboto', sans-serif;
 $font-family-secondary:      Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
-$font-family-icons:         'FontAwesome';
+$font-family-icons:         'Linearicons';
 
 $font-size-1:                10px;
 $font-size-2:                12px;
@@ -35,23 +34,24 @@ $header-size-2:              40px;
 $font-heavy:                 600;
 $font-light:                 300;
 
+
 // Spacing
 $spacing-default:            20px;
 $spacing-small:              10px;
 $spacing-large:              60px;
 $spacing-xsmall:             6px;
 
+
 // Text
 $link-color:                 $black;
+
 
 // Transitions
 $transition-duration:        600ms;
 $transition-easing:          cubic-bezier(.8, 0, 0, 1);
 
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
 
+// Options
 $enable-flex:                false!default;
 $enable-rounded:             true!default;
 $enable-shadows:             false!default;
@@ -60,11 +60,8 @@ $enable-transitions:         true!default;
 $enable-hover-media-query:   false!default;
 $enable-grid-classes:        true!default;
 
-// Spacing
-//
-// Control the default styling of most Bootstrap elements by modifying these
-// variables. Mostly focused on spacing.
 
+// Control the default styling of most Bootstrap elements by modifying these
 $spacer:                     1rem!default;
 $spacer-x:                   $spacer!default;
 $spacer-y:                   $spacer!default;
@@ -108,12 +105,8 @@ $container-max-widths: (
 
 $border-width:               1px!default;
 
-// Default button styles
 
 // Buttons
-//
-// For each of Bootstrap's buttons, define text, background and border color.
-
 $btn-primary-color:              $white;
 $btn-primary-bg:                 $black;
 $btn-primary-border:             $black;
@@ -122,6 +115,7 @@ $btn-secondary-color:            $gray-dark;
 $btn-secondary-bg:               $gray-light;
 $btn-secondary-border:           $white;
 
+
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:              0;
 $btn-border-radius-lg:           0;
@@ -129,26 +123,28 @@ $btn-border-radius-sm:           0;
 
 $btn-transition:                 all .2s ease-in-out!default;
 
-// Components
-//
-// Define common padding and border radius sizes and more.
 
+// Components
 $line-height-lg:             (4 / 3)!default;
 $line-height-sm:             1.5!default;
 
 $body-bg:                    $white!default;
 $body-color:                 $black!default;
 
+
 // Borders
 $info-bar-border:            1px solid $gray-light;
 $border-black:               1px solid $black;
+
 
 //Button Borders
 $button-border-white:       1px solid $white;
 $button-border-black:       1px solid $black;
 
+
 // Backgrounds
 $transparent-bg-dark:      rgba(50, 50, 50, .5);
+
 
 //Imports
 // Core variables and mixins
@@ -180,6 +176,9 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'slick-carousel/slick/slick-theme.scss';
 @import 'slick-carousel/slick/slick.scss';
 // sass-lint:enable clean-import-paths
+
+// Custom icons
+@import 'icons/icons';
 
 // Custom imports
 @import 'components/backgrounds';
