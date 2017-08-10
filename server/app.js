@@ -41,6 +41,11 @@ app.engine('hbs', hbs.engine);
 
 app.set('view engine', 'hbs');
 
+app.get('/robots.txt', (req, res) => {
+    res.type('text/plain');
+    res.send('User-agent: *\nDisallow: /');
+});
+
 app.get('/', (req, res) => {
     res.render('home', {});
 });
