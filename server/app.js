@@ -27,6 +27,12 @@ var hbs = exphbs.create({
                 return options.fn(this);
             }
             return options.inverse(this);
+        },
+        ifSetOrDefault: (a, b) => {
+            if (!a) {
+                return b;
+            }
+            return a;
         }
     }
 });

@@ -4,13 +4,14 @@
 $(function () {
 
     $('.footer').on('click', '.footer_heading', function () {
+        $('.footer_heading').removeClass('active');
         $(this).toggleClass('active');
     });
 
 });
 
 // Navigation
-$(function () {
+(function ($) {
 
     // Settings
     var settings = {
@@ -69,7 +70,98 @@ $(function () {
             settings.nav.css('z-index', '-1');
         }
     });
-});
+})(jQuery);
+
+// Feature Carousel - Homepage
+(function ($) {
+
+    var element = {
+        carousel: $('.featureCarousel'),
+        carouselTrack: $('.featureCarousel_track'),
+        carouselElement: $('.featureCarousel_entry'),
+        carouselControls: $('.featureCarousel_controls')
+    };
+
+    var xDown = null;
+    var yDown = null;
+
+    function setControlArrowPos () {
+        // Get the image height, adjust amount by scaling and margin offset
+        var offset = Math.ceil(element.carouselElement.first().find('img').height() * .9 - 60);
+        element.carouselControls.css('top', offset);
+    }
+
+    function setContainerHeight () {
+        element.carouselTrack.css('height', (element.carouselElement.outerHeight() + 20) + 'px');
+        setControlArrowPos();
+    }
+
+    function setContainerBackground () {
+        var active = element.carouselTrack.find('.featureCarousel_entry').first();
+        var colour = active.data('background') || '';
+
+        element.carouselTrack.css('background-color', colour);
+    }
+
+    function next () {
+        element.carouselTrack.find('.featureCarousel_entry').first().appendTo(element.carouselTrack);
+        setContainerBackground();
+    }
+
+    function prev () {
+        element.carouselTrack.find('.featureCarousel_entry').last().prependTo(element.carouselTrack);
+        setContainerBackground();
+    }
+
+    function handleTouchStart (event) {
+        xDown = event.touches[0].clientX;
+        yDown = event.touches[0].clientY;
+    }
+
+    function handleTouchMove (event) {
+        if (!xDown || !yDown) {
+            return;
+        }
+
+        var xUp = event.touches[0].clientX;
+        var yUp = event.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        // ensure the user isn't just scrolling down, in which case the Y travel will be greater than the X sway
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if ( xDiff > 0 ) {
+                // swipe left
+                next();
+            } else {
+                // swipe right
+                prev();
+            }
+        }
+
+        /* reset */
+        xDown = null;
+    }
+
+    element.carousel.on('click', '.js-next', function () {
+        next();
+    });
+
+    element.carousel.on('click', '.js-prev', function () {
+        prev();
+    });
+
+    window.addEventListener('resize', setContainerHeight);
+    document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
+    document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
+
+    $(function () {
+        setContainerHeight();
+        setContainerBackground();
+    });
+
+})(jQuery);
 
 // Slick article carousel
 $(document).ready(function () {
