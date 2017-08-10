@@ -4,30 +4,31 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: $transparent-bg-dark;
-    transform: translateX(-100%);
-    transition-duration: .66s;
-    transition-property: transform, opacity;
-    transition-timing-function: ease;
-    opacity: 0;
+    transition-duration: $transition-duration;
+    transition-property: background;
+    transition-timing-function: $transition-easing;
     z-index: -1;
 
-    @include media-breakpoint-up(md) {
-        transform: translateX(-25%);
+    &_section {
+        min-height: 100vh;
+        background: $white;
+        transform: translateX(-100%);
+        transition-duration: $transition-duration;
+        transition-property: transform;
+        transition-timing-function: $transition-easing;
+
+        @include media-breakpoint-up(sm) {
+            max-width: 380px;
+        }
     }
 
     &.active {
         transform: translateX(0);
         z-index: 1;
-        opacity: 1;
-    }
+        background: $transparent-bg-dark;
 
-    &_section {
-        min-height: 100vh;
-        background: $white;
-
-        @include media-breakpoint-up(sm) {
-            max-width: 380px;
+        .nav_section {
+            transform: translateX(0);
         }
     }
 
@@ -43,12 +44,17 @@
         position: absolute;
         width: 100%;
         visibility: hidden;
-        transition: transform .33s ease;
+        transition-duration: $transition-duration;
+        transition-property: transform, visibility;
+        transition-timing-function: $transition-easing;
         transform: translateX(-100%);
+        z-index: 10;
+        background: $white;
 
         &-selected {
             visibility: visible;
             transform: translateX(0%);
+            z-index: 20;
         }
     }
 
@@ -63,7 +69,7 @@
             position: absolute;
             left: 1rem;
             font-family: $font-family-icons;
-            content: '\f177';
+            content: '\E93B';
         }
     }
 
@@ -80,7 +86,7 @@
                     position: absolute;
                     right: 0;
                     font-family: $font-family-icons;
-                    content: '\f054';
+                    content: '\E93C';
                 }
             }
         }

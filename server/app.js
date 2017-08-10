@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const app = express();
 const brandConfig = require('./configs/brandConfig');
 app.use(express.static('dist'));
+app.use('/fonts', express.static('src/fonts'));
 app.use('/media', express.static('media'));
 app.use('/media/shared', express.static('media/shared'));
 
@@ -26,6 +27,12 @@ var hbs = exphbs.create({
                 return options.fn(this);
             }
             return options.inverse(this);
+        },
+        ifSetOrDefault: (a, b) => {
+            if (!a) {
+                return b;
+            }
+            return a;
         }
     }
 });

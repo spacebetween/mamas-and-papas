@@ -2,4 +2,23 @@
 body {
     position: relative;
     min-height: 100vh;
+    padding-bottom: 1rem;
+}
+
+// Normalise overwrite
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family-base;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    max-width: 1500px;
+    margin: 0 auto;
 }
