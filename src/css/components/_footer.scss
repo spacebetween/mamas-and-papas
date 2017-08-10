@@ -14,7 +14,7 @@
             position: absolute;
             right: 0;
             font-family: $font-family-icons;
-            content: '\f067';
+            content: '\E936';
             @media (min-width: breakpoint-min(md)) {
                 display: none;
             }
@@ -22,7 +22,7 @@
 
         &.active {
             &::after {
-                content: '\f068';
+                content: '\E937';
             }
 
             + .footer_links {

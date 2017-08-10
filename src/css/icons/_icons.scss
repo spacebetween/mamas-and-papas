@@ -45,6 +45,12 @@
         }
 
     }
+    &-minus {
+        &::before {
+            content: '\E937';
+        }
+
+    }
     &-chevronLeft {
         &::before {
             content: '\E93B';
