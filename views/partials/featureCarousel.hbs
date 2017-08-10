@@ -3,7 +3,7 @@
         {{#each (theme code="homepage_carousel")}}
             <div class="featureCarousel_entry mx-auto px-2" {{#if this.background_colour}}data-background="{{this.background_colour}}"{{/if}}>
                 <img class="img-fluid d-block featureCarousel_image" src="{{this.image}}"/>
-                <div class="featureCarousel_content p-2 bg-white">
+                <div class="featureCarousel_content text-center p-2 bg-white">
                     <h3 class="d-block truncate font-weight-bold mb-1">{{this.title}}</h3>
                     <small>
                         <p>{{this.description}}</p>
@@ -15,10 +15,10 @@
     </div>
 
     <div class="featureCarousel_controls">
-        <div class="arrow prev d-inline text-center cursor-pointer js-prev">
+        <div class="btn-arrow-small bg-white arrow prev d-inline text-center cursor-pointer js-prev">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
         </div>
-        <div class="arrow next d-inline text-center cursor-pointer js-next">
+        <div class="btn-arrow-small bg-white arrow next d-inline text-center cursor-pointer js-next">
             <i class="fa fa-angle-right" aria-hidden="true"></i>
         </div>
     </div>

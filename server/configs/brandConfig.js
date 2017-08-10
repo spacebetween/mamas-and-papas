@@ -264,26 +264,14 @@ const brandConfig = {
             {
                 title: 'Lorem',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
-                image: 'http://via.placeholder.com/600x725',
+                image: 'media/carousel_04.jpg',
                 link: '#',
                 background_colour: 'rgb(60, 45, 65)'
             },
             {
                 title: 'Ipsum',
                 description: 'For her, fixed and the them. To contract, I up, the more you never do repeat copy. Caching back even declined, parents them can tell expected.',
-                image: 'http://via.placeholder.com/600x725',
-                link: '#'
-            },
-            {
-                title: 'Test 1',
-                description: '...',
-                image: 'http://via.placeholder.com/600x725',
-                link: '#'
-            },
-            {
-                title: 'Test 2',
-                description: '...',
-                image: 'http://via.placeholder.com/600x725',
+                image: 'media/carousel_05.jpg',
                 link: '#'
             }
         ]

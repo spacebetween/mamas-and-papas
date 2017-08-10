@@ -78,14 +78,22 @@ $(function () {
     var element = {
         carousel: $('.featureCarousel'),
         carouselTrack: $('.featureCarousel_track'),
-        carouselElement: $('.featureCarousel_entry')
+        carouselElement: $('.featureCarousel_entry'),
+        carouselControls: $('.featureCarousel_controls')
     };
 
     var xDown = null;
     var yDown = null;
 
+    function setControlArrowPos () {
+        // Get the image height, adjust amount by scaling and margin offset
+        var offset = Math.ceil(element.carouselElement.first().find('img').height() * .9 - 60);
+        element.carouselControls.css('top', offset);
+    }
+
     function setContainerHeight () {
         element.carouselTrack.css('height', (element.carouselElement.outerHeight() + 20) + 'px');
+        setControlArrowPos();
     }
 
     function setContainerBackground () {
