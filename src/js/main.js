@@ -26,18 +26,22 @@ $(function () {
 
         // Get our target element to slide in
         var target = $(this).data('target');
+        var slidePanel = null;
 
-        if (target) {
-            // If we have a target, put it above everything and set it to active
-            $(target).css('z-index', '99999').toggleClass('active');
-
-            // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
-            $(target).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-                if (!$(this).hasClass('active')) {
-                    $(this).css('z-index', '-1');
-                }
-            });
+        if (!target) {
+            slidePanel = $(this).closest('.slidePanel');
+        } else {
+            slidePanel = $(target).closest('.slidePanel');
         }
+
+        slidePanel.css('z-index', '9999').toggleClass('active');
+
+        // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
+        slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+            if (!$(this).hasClass('active')) {
+                $(this).css('z-index', '-1');
+            }
+        });
     });
 
 })(jQuery);
@@ -63,12 +67,12 @@ $(function () {
     $(document).on('keyup', function (e) {
         if (e.keyCode === 27 || e.keyCode === 37) {
             var parentCategory = $('.nav_category-selected').find('.js-navSwitchCategory').data('goto-category');
-            var gotoCategory = element.nav.find('div.nav_category[data-category=' + parentCategory + ']');
+            var gotoParentCategory = element.nav.find('div.nav_category[data-category=' + parentCategory + ']');
 
-            if (!gotoCategory.length) {
-                element.nav.find('.js-slidePanel').trigger('click');
+            if (!gotoParentCategory.length) {
+                element.nav.parent().find('.js-slidePanel').trigger('click');
             } else {
-                categoryChanger(gotoCategory);
+                categoryChanger(gotoParentCategory);
             }
         }
     });
