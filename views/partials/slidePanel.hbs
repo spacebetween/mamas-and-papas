@@ -1,0 +1,11 @@
+<div class="slidePanel slidePanel-{{ifSetOrDefault align 'leftSide'}} h-100">
+    <div class="slidePanel_content h-100 bg-white">
+        <div class="slidePanel_top">
+            <div class="slidePanel_close cursor-pointer js-slidePanel">
+                <i class="ico ico-cross"></i>
+            </div>
+        </div>
+        {{> (lookup . 'block') }}
+    </div>
+    <div class="slidePanel_bg"></div>
+</div>

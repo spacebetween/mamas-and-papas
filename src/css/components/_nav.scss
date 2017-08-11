@@ -1,45 +1,4 @@
 .nav {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition-duration: $transition-duration;
-    transition-property: background;
-    transition-timing-function: $transition-easing;
-    z-index: -1;
-
-    &_section {
-        min-height: 100vh;
-        background: $white;
-        transform: translateX(-100%);
-        transition-duration: $transition-duration;
-        transition-property: transform;
-        transition-timing-function: $transition-easing;
-
-        @include media-breakpoint-up(sm) {
-            max-width: 380px;
-        }
-    }
-
-    &.active {
-        transform: translateX(0);
-        z-index: 1;
-        background: $transparent-bg-dark;
-
-        .nav_section {
-            transform: translateX(0);
-        }
-    }
-
-    &_close {
-        position: absolute;
-        right: 1rem;
-        top: 1.2rem;
-        font-size: $font-size-9;
-        z-index: 999;
-    }
-
     &_category {
         position: absolute;
         width: 100%;
@@ -49,9 +8,12 @@
         transition-timing-function: $transition-easing;
         transform: translateX(-100%);
         z-index: 10;
-        background: $white;
+        max-height: 100%;
+        overflow: hidden;
 
         &-selected {
+            max-height: none;
+            overflow: visible;
             visibility: visible;
             transform: translateX(0%);
             z-index: 20;

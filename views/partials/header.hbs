@@ -1,8 +1,8 @@
 <div class="row py-2 header header_nav header_text-{{color}} bg-{{background}}">
     <div class="col-4 pt-md-1">
-        <a class="text-uppercase px-1 hidden-sm-down cursor-pointer js-navOpen header_link">{{theme code="navigation_browse"}}</a>
+        <a class="text-uppercase px-1 hidden-sm-down cursor-pointer header_link js-slidePanel" data-target="#nav">{{theme code="navigation_browse"}}</a>
         <a class="text-uppercase px-1 hidden-sm-down header_link">{{theme code="navigation_search"}}</a>
-        <i class="header_link-{{color}} header_icon ico ico-navicon cursor-pointer hidden-md-up js-navOpen" aria-hidden="true"></i>
+        <i class="header_link-{{color}} header_icon ico ico-navicon cursor-pointer hidden-md-up js-slidePanel" data-target="#nav" aria-hidden="true"></i>
         <i class="header_link-{{color}} header_icon ico ico-search pl-2 cursor-pointer hidden-md-up" aria-hidden="true"></i>
     </div>
     <div class="col-4 text-center"><img class="header_logo" src="/media/logo/mpLogo-{{color}}.png"></div>
@@ -10,6 +10,6 @@
         <i class="header_link-{{color}} header_icon ico ico-search cursor-pointer hidden-sm-down" aria-hidden="true"></i>
         <i class="header_link-{{color}} header_icon ico ico-mapPointer pr-2 cursor-pointer" aria-hidden="true"></i>
         <i class="header_link-{{color}} header_icon ico ico-user cursor-pointer hidden-sm-down" aria-hidden="true"></i>
-        <i class="header_link-{{color}} header_icon ico ico-bag cursor-pointer" aria-hidden="true"></i>
+        <i class="header_link-{{color}} header_icon ico ico-bag cursor-pointer js-slidePanel" data-target="#bag" aria-hidden="true"></i>
     </div>
 </div>

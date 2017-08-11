@@ -5,11 +5,11 @@
     Sort By <i class="ico ico-plus productFilter_icon"> </i>
 </div>
 
-<div class="row filters">
+<div class="row filters js-toggle">
     <div class="col-md-5">
         <ul>
             {{#each (theme code="clothing_filters")}}
-            <li class="filter_section" id="{{stringReplace @key}}">
+            <li class="js-toggleClick" data-target="{{stringReplace @key}}">
                 {{@key}}
             </li>
             {{/each}}
@@ -17,7 +17,7 @@
     </div>
     <div class="col-md-7">
         {{#each (theme code="clothing_filters")}}
-            <div class="d-inline-block filter_options" data-category="{{stringReplace @key}}">
+            <div class="js-target" data-toggle="{{stringReplace @key}}">
                 {{#each . }}
                     <label class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input">

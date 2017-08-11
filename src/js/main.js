@@ -1,45 +1,63 @@
 'use strict';
 
-// Footer
+//filter
 $(function () {
-
-    $('.footer').on('click', '.footer_heading', function () {
-        $('.footer_heading').removeClass('active');
-        $(this).toggleClass('active');
+    $('.js-toggle').on('click', '.js-toggleClick', function (e) {
+        e.preventDefault();
+        var toggle = $(this).data('target');
+        var target = document.querySelectorAll('[data-toggle=' + toggle + ']');
+        $('.js-target').not(target).removeClass('d-block');
+        $(target).toggleClass('d-block');
     });
-
-});
-
-// Filter
-$(function () {
-
-    $('.filters').on('click', '.filter_section', function () {
-        var id = this.id;
-        console.log('id', id);
-        var cat = document.querySelectorAll('[data-category=' + id + ']');
-        $('.filters').removeClass('active');
-        console.log('category', cat);
-        $('.filter_option').removeClass('active');
-        $(cat).toggleClass('active');
-    });
-
 });
 
 // Navigation
 (function ($) {
 
-    // Settings
-    var settings = {
-        header: $('.header'),
+    /* 
+     * Slide Panel
+     * Multi use toggle for the slide panel feature.
+     * Requires the class js-slidePanel on the triggers, and a data-target attribute for the DOM element to be slid in/out.
+     */
+
+    $('body').on('click', '.js-slidePanel', function () {
+
+        // Get our target element to slide in
+        var target = $(this).data('target');
+        var slidePanel = null;
+
+        if (!target) {
+            slidePanel = $(this).closest('.slidePanel');
+        } else {
+            slidePanel = $(target).closest('.slidePanel');
+        }
+
+        slidePanel.css('z-index', '9999').toggleClass('active');
+
+        // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
+        slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+            if (!$(this).hasClass('active')) {
+                $(this).css('z-index', '-1');
+            }
+        });
+    });
+
+})(jQuery);
+
+(function ($) {
+
+    /* 
+     * Navigation
+     * Category change functions and esc/left arrow funcitonality only
+     * The containing panel is triggered via the Slide Panel function
+     */
+
+    var element = {
         nav: $('.nav')
     };
 
-    function closeNavigation () {
-        settings.nav.removeClass('active');
-    }
-
     function categoryChanger (gotoCategory) {
-        settings.nav.find('div.nav_category').removeClass('nav_category-selected');
+        element.nav.find('div.nav_category').removeClass('nav_category-selected');
         gotoCategory.addClass('nav_category-selected');
     }
 
@@ -47,48 +65,35 @@ $(function () {
     $(document).on('keyup', function (e) {
         if (e.keyCode === 27 || e.keyCode === 37) {
             var parentCategory = $('.nav_category-selected').find('.js-navSwitchCategory').data('goto-category');
-            var gotoParentCategory = settings.nav.find('div.nav_category[data-category=' + parentCategory + ']');
+            var gotoParentCategory = element.nav.find('div.nav_category[data-category=' + parentCategory + ']');
 
             if (!gotoParentCategory.length) {
-                closeNavigation();
+                element.nav.parent().find('.js-slidePanel').trigger('click');
             } else {
                 categoryChanger(gotoParentCategory);
             }
         }
     });
 
-    // Sets the layer index for the nav to appear above the content
-    settings.header.on('click', '.js-navOpen', function () {
-        settings.nav.css('z-index', '9999').addClass('active');
-    });
-
     // Switch the category, nav list items and titles trigger this to traverse the menu
-    settings.nav.on('click', '.js-navSwitchCategory', function (e) {
+    element.nav.on('click', '.js-navSwitchCategory', function (e) {
         e.preventDefault();
 
         var category = $(this).data('goto-category');
-        var gotoCategory = settings.nav.find('div.nav_category[data-category=' + category + ']');
+        var gotoCategory = element.nav.find('div.nav_category[data-category=' + category + ']');
 
         if (gotoCategory.length) {
             categoryChanger(gotoCategory);
         }
     });
 
-    // Close the navigation
-    settings.nav.on('click', '.js-navClose', function () {
-        closeNavigation();
-    });
-
-    // Wait for the CSS transition to finish before resetting the z-index for the inactive nav.
-    settings.nav.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-        if (!$(this).hasClass('active')) {
-            settings.nav.css('z-index', '-1');
-        }
-    });
 })(jQuery);
 
-// Feature Carousel - Homepage
 (function ($) {
+
+    /*
+     * Feature Carousel - Homepage
+     */
 
     var element = {
         carousel: $('.featureCarousel'),
@@ -167,13 +172,18 @@ $(function () {
         prev();
     });
 
-    window.addEventListener('resize', setContainerHeight);
-    document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
-    document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
+    function init () {
+        if (element.carousel.length) {
+            window.addEventListener('resize', setContainerHeight);
+            document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
+            document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
+            setContainerHeight();
+            setContainerBackground();
+        }
+    }
 
     $(function () {
-        setContainerHeight();
-        setContainerBackground();
+        init();
     });
 
 })(jQuery);
