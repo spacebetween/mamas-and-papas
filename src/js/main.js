@@ -174,13 +174,18 @@ $(function () {
         prev();
     });
 
-    window.addEventListener('resize', setContainerHeight);
-    document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
-    document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
+    function init () {
+        if (element.carousel.length) {
+            window.addEventListener('resize', setContainerHeight);
+            document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
+            document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
+            setContainerHeight();
+            setContainerBackground();
+        }
+    }
 
     $(function () {
-        setContainerHeight();
-        setContainerBackground();
+        init();
     });
 
 })(jQuery);

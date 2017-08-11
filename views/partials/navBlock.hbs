@@ -1,11 +1,11 @@
 {{#if this._categoryLinks}}
     {{#ifeq @key 'primary'}}
-        <div class="nav_category nav_category-selected" data-category="nav_{{stringReplace @key}}">
+        <div class="nav_category nav_category-selected bg-white" data-category="nav_{{stringReplace @key}}">
             <div class="nav_logo nav_categoryTitle p-1 js-navSwitchCategory">
                 <img src="media/logo_mp_small.png" height="40" alt="Mamas and Papas" />
             </div>
     {{else}}
-        <div class="nav_category" data-category="nav_{{stringReplace @key}}">
+        <div class="nav_category bg-white" data-category="nav_{{stringReplace @key}}">
             <div data-goto-category="nav_{{stringReplace @../key}}" class="nav_categoryTitle nav_backArrow font-weight-bold cursor-pointer p-1 pl-3 js-navSwitchCategory">
                 {{@key}}
             </div>
