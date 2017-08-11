@@ -53,3 +53,9 @@
         @content;
     }
 }
+
+.transition-background {
+    transition-duration: $transition-duration;
+    transition-property: background;
+    transition-timing-function: $transition-easing;
+}
