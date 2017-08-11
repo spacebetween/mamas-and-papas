@@ -8,8 +8,12 @@
         transition-timing-function: $transition-easing;
         transform: translateX(-100%);
         z-index: 10;
+        max-height: 100%;
+        overflow: hidden;
 
         &-selected {
+            max-height: none;
+            overflow: visible;
             visibility: visible;
             transform: translateX(0%);
             z-index: 20;
