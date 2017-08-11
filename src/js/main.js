@@ -1,11 +1,18 @@
 'use strict';
 
-//filter
+// Toggle function
 $(function () {
-    $('.js-toggle').on('click', '.js-toggleClick', function (e) {
-        e.preventDefault();
+
+    /* 
+     * Toggle Function
+     * Multi use toggle for when you only want one div to show at a time
+     * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
+     * that will be toggled.
+     */
+
+    $('.js-toggle').on('click', '.js-trigger', function () {
         var toggle = $(this).data('target');
-        var target = document.querySelectorAll('[data-toggle=' + toggle + ']');
+        var target = document.querySelectorAll('[data-trigger=' + toggle + ']');
         $('.js-target').not(target).removeClass('d-block');
         $(target).toggleClass('d-block');
     });
