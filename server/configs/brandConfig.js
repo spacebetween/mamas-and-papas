@@ -274,7 +274,33 @@ const brandConfig = {
                 image: 'media/carousel_05.jpg',
                 link: '#'
             }
-        ]
+        ],
+        'clothing_filters': {
+            'Category': [
+                'Tops'
+            ],
+            'Size': [
+                '0-6 Months',
+                '6-9 Months',
+                '6-12 Months',
+                '12-18 Years',
+                '12-24 Months',
+                '18-24 Months',
+                '2-3 Years',
+                '3-4 Years',
+                'One size'
+            ],
+            'Collection': [
+                'Bunny & Clyde'
+            ],
+            'Price': [
+                '£0-£10'
+            ],
+            'Colour': [
+                'Black',
+                'White'
+            ]
+        }
     }
 };
 

@@ -1,11 +1,31 @@
 <div class="border-gray d-inline-block p-1 productFilter">
-    Filter By <i class="fa fa-plus productFilter_icon"> </i>
+    Filter By <i class="ico ico-plus productFilter_icon"> </i>
 </div>
 <div class="border-gray d-inline-block p-1 productFilter">
-    Sort By <i class="fa fa-plus productFilter_icon"> </i>
+    Sort By <i class="ico ico-plus productFilter_icon"> </i>
 </div>
 
-<div class="col-md-5">
-    
+<div class="row filters">
+    <div class="col-md-5">
+        <ul>
+            {{#each (theme code="clothing_filters")}}
+            <li class="filter_section" id="{{stringReplace @key}}">
+                {{@key}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-7">
+        {{#each (theme code="clothing_filters")}}
+            <div class="d-inline-block filter_options" data-category="{{stringReplace @key}}">
+                {{#each . }}
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">{{.}}</span>
+                    </label>
+                {{/each}}
+            </div>
+        {{/each}}
+    </div>
 </div>
-<div class="col-md-7"></div>

@@ -10,6 +10,21 @@ $(function () {
 
 });
 
+// Filter
+$(function () {
+
+    $('.filters').on('click', '.filter_section', function () {
+        var id = this.id;
+        console.log('id', id);
+        var cat = document.querySelectorAll('[data-category=' + id + ']');
+        $('.filters').removeClass('active');
+        console.log('category', cat);
+        $('.filter_option').removeClass('active');
+        $(cat).toggleClass('active');
+    });
+
+});
+
 // Navigation
 (function ($) {
 
