@@ -2,7 +2,7 @@
     {{> subscribe}}
     <div class="row pt-2 js-accordion">
         {{#each (theme code="footer_links")}}
-            <div class="col-md {{#if options.hideDesktop}}hidden-md-up{{/if}}">
+            <div class="col-md {{#if options.hideDesktop}}d-none d-md-block{{/if}}">
                 <h4 class="footer_heading m-0 py-2 py-md-1 js-accordionTitle">{{name}}</h4>
                 <ul class="footer_links list-unstyled m-0 p-2 p-md-0">
                     {{#each links}}
