@@ -10,6 +10,8 @@ $gray-lighter:              #f8f8f8;
 $white:                     #fff;
 $black:                     #323232;
 
+$red:                       #e66571;
+
 
 // Typography
 $font-family-base:    	    'Roboto', sans-serif;
@@ -199,6 +201,7 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'components/slick';
 @import 'components/featureCarousel';
 @import 'components/breadcrumb';
+@import 'components/productCard';
 
 // Any styles that can't be put into a component
 @import 'main';
