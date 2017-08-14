@@ -4,4 +4,9 @@
         line-height: 46px;
         border-bottom: 1px solid $gray;
     }
+
+    &_strap {
+        font-size: $font-size-3;
+        border-top: $border-width solid $gray;
+    }
 }
