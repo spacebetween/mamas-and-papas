@@ -1,9 +1,9 @@
 <div class="bg-grayLight infoBar">
     <div class="row">
-        <div class="col hidden-md-down">
-            <div class="float-left infoBar-left px-1">
+        <div class="col d-none d-md-block">
+            <div class="float-left infoBar-left px-0">
                 <small>
-                <select class="text-light font-weight-light font-family-secondary infoBar_currencySelect">
+                <select class="text-gray font-weight-light font-family-secondary infoBar_currencySelect">
                     {{#each (theme code="currency")}}
                         <option value="{{this.region}}">{{this.region}} ({{this.currency}})</option>
                     {{/each}}
@@ -17,10 +17,10 @@
             </div>
 
         </div>
-        <div class="col hidden-md-down">
-            <div class="float-right text-light">
+        <div class="col d-none d-md-block">
+            <div class="float-right text-gray">
                 {{#each (theme code="info_bar_links")}}
-                    <div class="infoBar-right d-inline-block px-1">
+                    <div class="infoBar-right d-inline-block px-3">
                         <small class="font-weight-light font-family-secondary"><a href="{{this.link}}"></a><i class="ico ico-{{this.icon}}"></i> {{this.name}}</small>
                     </div>
                 {{/each}}

@@ -5,15 +5,6 @@ body {
     padding-bottom: 1rem;
 }
 
-// Normalise overwrite
-button,
-input,
-optgroup,
-select,
-textarea {
-    font-family: $font-family-base;
-}
-
 .container-fluid {
     padding: 0;
 }

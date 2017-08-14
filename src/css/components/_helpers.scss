@@ -15,7 +15,7 @@
     &-black {
         color: $black;
     }
-    &-light {
+    &-gray {
         color: $gray-darker;
     }
 }
@@ -62,4 +62,10 @@
 
 .js-target {
     display: none;
+}
+
+.transition-background {
+    transition-duration: $transition-duration;
+    transition-property: background;
+    transition-timing-function: $transition-easing;
 }

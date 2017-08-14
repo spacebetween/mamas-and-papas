@@ -102,6 +102,7 @@ $(function () {
      * Feature Carousel - Homepage
      */
 
+    // Grab references to our carousel elements
     var element = {
         carousel: $('.featureCarousel'),
         carouselTrack: $('.featureCarousel_track'),
@@ -109,8 +110,54 @@ $(function () {
         carouselControls: $('.featureCarousel_controls')
     };
 
+    // A lock for the prev and next functions, just a nice to have feature
+    var locked = 0;
+
+    // Delay timing for transition lock
+    var delayTime = 600;
+
+    // Store array of the carousel elements, we'll keep track of and manipulate the order of them via this
+    var order = element.carouselElement.toArray();
+
+    // Default central carousel item
+    var currentFocusIndex = 1;
+
+    // Mobile touch variables
     var xDown = null;
     var yDown = null;
+
+    // Carousel supports up to 5 layered images in a rotating fashion, these are the style rules for the positioning
+    var cssRule = [
+        {
+            visibility: 'visible',
+            transform: 'translate(0, -40px) scale(1)',
+            zIndex: '30'
+        },
+        {
+            visibility: 'visible',
+            transform: 'translate(50%, -20px) scale(.9)',
+            zIndex: '20'
+        },
+        {
+            visibility: 'visible',
+            transform: 'translate(90%, 0) scale(.8)',
+            zIndex: '10'
+        },
+        {
+            visibility: 'visible',
+            transform: 'translate(-90%, 0) scale(.8)',
+            zIndex: '10'
+        },
+        {
+            visibility: 'visible',
+            transform: 'translate(-50%, -20px) scale(.9)',
+            zIndex: '20'
+        }
+    ];
+
+    function unlock () {
+        locked = 0;
+    }
 
     function setControlArrowPos () {
         // Get the image height, adjust amount by scaling and margin offset
@@ -124,20 +171,55 @@ $(function () {
     }
 
     function setContainerBackground () {
-        var active = element.carouselTrack.find('.featureCarousel_entry').first();
+        var active = element.carouselTrack.find('.featureCarousel_entry.focused');
         var colour = active.data('background') || '';
 
         element.carouselTrack.css('background-color', colour);
     }
 
-    function next () {
-        element.carouselTrack.find('.featureCarousel_entry').first().appendTo(element.carouselTrack);
+    function setCssRules () {
+        element.carouselElement.removeClass('focused');
+        element.carouselElement.eq(currentFocusIndex - 1).addClass('focused');
+
+        $.each(order, function (i, e) {
+            element.carouselTrack.find(e).css(cssRule[i]);
+        });
+
         setContainerBackground();
+
+        setTimeout(unlock, delayTime);
+    }
+
+    function next () {
+        if (!locked) {
+
+            locked = 1;
+
+            if (currentFocusIndex >= element.carouselElement.length) {
+                currentFocusIndex = 1;
+            } else {
+                currentFocusIndex++;
+            }
+
+            order.push(order.shift());
+            setCssRules();
+        }
     }
 
     function prev () {
-        element.carouselTrack.find('.featureCarousel_entry').last().prependTo(element.carouselTrack);
-        setContainerBackground();
+        if (!locked) {
+
+            locked = 1;
+
+            if (currentFocusIndex <= 1) {
+                currentFocusIndex = element.carouselElement.length;
+            } else {
+                currentFocusIndex--;
+            }
+
+            order.unshift(order.pop());
+            setCssRules();
+        }
     }
 
     function handleTouchStart (event) {
@@ -171,21 +253,25 @@ $(function () {
         xDown = null;
     }
 
-    element.carousel.on('click', '.js-next', function () {
-        next();
-    });
-
-    element.carousel.on('click', '.js-prev', function () {
-        prev();
-    });
-
     function init () {
         if (element.carousel.length) {
+
+            // Add listeners for resize and touch
             window.addEventListener('resize', setContainerHeight);
-            document.getElementById('featureCarousel').addEventListener('touchstart', handleTouchStart);
-            document.getElementById('featureCarousel').addEventListener('touchmove', handleTouchMove);
+            element.carousel.on('touchstart', handleTouchStart);
+            element.carousel.on('touchmove', handleTouchMove);
+            element.carousel.on('click', '.js-next', next);
+            element.carousel.on('click', '.js-prev', prev);
+
+            // Set the height and background of the container
+            setCssRules();
             setContainerHeight();
-            setContainerBackground();
+
+            // First load, after the initial background has been set, we'll now tag it to add transitions to further background changes
+            setTimeout(function () {
+                element.carouselTrack.addClass('transition-background');
+            }, 1000);
+
         }
     }
 

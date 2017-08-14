@@ -1,3 +1,4 @@
+@import 'bootstrap/scss/functions';
 
 // Brand colors
 $gray-darkest:              #4e4e4e;
@@ -9,7 +10,6 @@ $gray-lighter:              #f8f8f8;
 
 $white:                     #fff;
 $black:                     #323232;
-
 
 // Typography
 $font-family-base:    	    'Roboto', sans-serif;
@@ -49,6 +49,7 @@ $link-color:                 $black;
 // Transitions
 $transition-duration:        600ms;
 $transition-easing:          cubic-bezier(.8, 0, 0, 1);
+$transition-easing-alt:      cubic-bezier(.44, .13, 0, 1);
 
 
 // Options
@@ -63,38 +64,16 @@ $enable-grid-classes:        true!default;
 
 // Control the default styling of most Bootstrap elements by modifying these
 $spacer:                     1rem!default;
-$spacer-x:                   $spacer!default;
-$spacer-y:                   $spacer!default;
 $spacers: (
-    0: (
-        x:   0,
-        y:   0
-    ),
-    hf: (
-        x:   ($spacer-x * .5),
-        y:   ($spacer-y * .5)
-    ),
-    1: (
-        x:   $spacer-x,
-        y:   $spacer-y
-    ),
-    2: (
-        x:   ($spacer-x * 1.5),
-        y:   ($spacer-y * 1.5)
-    ),
-    3: (
-        x:   ($spacer-x * 3),
-        y:   ($spacer-y * 3)
-    ),
-    4: (
-        x:   ($spacer-x * 4),
-        y:   ($spacer-y * 4)
-    ),
-    5: (
-        x:   ($spacer-x * 5),
-        y:   ($spacer-y * 5)
-    )
-)!default;
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 4),
+    7: ($spacer * 5)
+  ) !default;
 
 $container-max-widths: (
     sm: 767px,
@@ -107,13 +86,13 @@ $border-width:               1px!default;
 
 
 // Buttons
-$btn-primary-color:              $white;
-$btn-primary-bg:                 $black;
-$btn-primary-border:             $black;
+$btn-primary-color:              $white!default;
+$btn-primary-bg:                 $black!default;
+$btn-primary-border:             $black!default;
 
-$btn-secondary-color:            $gray-dark;
-$btn-secondary-bg:               $gray-light;
-$btn-secondary-border:           $white;
+$btn-secondary-color:            $white!default;
+$btn-secondary-bg:               $gray!default;
+$btn-secondary-border:           $gray!default;
 
 
 // Allows for customizing button radius independently from global border radius
@@ -152,7 +131,6 @@ $transparent-bg-dark:      rgba(50, 50, 50, .5);
 @import 'bootstrap/scss/mixins';
 
 // Reset and dependencies
-@import 'bootstrap/scss/normalize';
 @import 'bootstrap/scss/print';
 
 // Core CSS
