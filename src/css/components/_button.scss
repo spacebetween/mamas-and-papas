@@ -18,4 +18,14 @@
             width: 50px;
         }
     }
+    &-primary {
+        color: $btn-primary-color;
+        background-color: $btn-primary-bg;
+        border-color: $btn-primary-border;
+    }
+    &-secondary {
+        color: $btn-secondary-color;
+        background-color: $btn-secondary-bg;
+        border-color: $btn-secondary-border;
+    }
 }
