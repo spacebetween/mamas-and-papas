@@ -1,10 +1,10 @@
-<div class="featureCarousel mt-md-3" id="featureCarousel">
+<div class="featureCarousel mt-md-5" id="featureCarousel">
     <div class="featureCarousel_track">
         {{#each (theme code="homepage_carousel")}}
-            <div class="featureCarousel_entry mx-auto px-2" {{#if this.background_colour}}data-background="{{this.background_colour}}"{{/if}}>
+            <div class="featureCarousel_entry mx-auto px-4" {{#if this.background_colour}}data-background="{{this.background_colour}}"{{/if}}>
                 <img class="img-fluid d-block featureCarousel_image" src="{{this.image}}"/>
-                <div class="featureCarousel_content text-center p-2 bg-white">
-                    <h3 class="d-block truncate font-weight-bold mb-1">{{this.title}}</h3>
+                <div class="featureCarousel_content text-center p-4 bg-white">
+                    <h3 class="d-block truncate font-weight-bold mb-3">{{this.title}}</h3>
                     <small>
                         <p>{{this.description}}</p>
                     </small>
