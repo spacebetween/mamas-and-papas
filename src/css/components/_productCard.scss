@@ -8,20 +8,12 @@
         border-bottom: $border-width solid $gray-darkest;
     }
 
-    &_discount {
-        font-size: $font-size-4;
-        color: $red;
-    }
-
+    &_discount,
     &_title {
         font-size: $font-size-4;
     }
 
     &_price {
         font-size: $font-size-5;
-
-        &-old {
-            color: $gray-darker;
-        }
     }
 }
