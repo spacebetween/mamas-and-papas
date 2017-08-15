@@ -1,29 +1,34 @@
-<div class="border-gray d-inline-block p-1 productFilter">
-    Filter By <i class="ico ico-plus productFilter_icon"> </i>
-</div>
-<div class="border-gray d-inline-block p-1 productFilter">
-    Sort By <i class="ico ico-plus productFilter_icon"> </i>
+<div class="row productFilter_filterSelectors p-2">
+    <div class="border-gray d-inline-block p-3 productFilter_select mr-3">
+        Filter By <i class="ico ico-plus productFilter_icon"> </i>
+    </div>
+    <div class="border-gray d-inline-block p-3 productFilter_select">
+        Sort By <i class="ico ico-plus productFilter_icon"> </i>
+    </div>
 </div>
 
-<div class="row filters js-toggle">
-    <div class="col-md-5">
-        <ul>
-            {{#each (theme code="clothing_filters")}}
-            <li class="js-trigger" data-target="{{stringReplace @key}}">
-                {{@key}}
-            </li>
-            {{/each}}
-        </ul>
+<div class="row js-toggle">
+    <div class="col-md-5 py-5">
+        <div>
+            <ul class="list-unstyled productFilter_filterContainer float-right">
+                {{#each (theme code="clothing_filters")}}
+                    <li class="js-trigger productFilter_links p-3" data-target="{{stringReplace @key}}">
+                        {{@key}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-5 pt-4">
         {{#each (theme code="clothing_filters")}}
             <div class="js-target" data-trigger="{{stringReplace @key}}">
                 {{#each . }}
-                    <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description">{{.}}</span>
-                    </label>
+                    <div class="d-inline-block pb-4">
+                        <div class="checkbox">
+                            <div class="checkbox_toggle"></div>
+                            <span class="checkbox_text">{{.}}</span>
+                        </div>
+                    </div>
                 {{/each}}
             </div>
         {{/each}}

@@ -14,6 +14,8 @@ $(function () {
         var toggle = $(this).data('target');
         var target = document.querySelectorAll('[data-trigger=' + toggle + ']');
         $('.js-target').not(target).removeClass('d-block');
+        $('.js-trigger').not($(this)).removeClass('active');
+        $(this).toggleClass('active');
         $(target).toggleClass('d-block');
     });
 });

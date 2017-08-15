@@ -1,8 +1,9 @@
 .productFilter {
-    width: 140px;
-    height: 55px;
-    position: relative;
-    cursor: pointer;
+    &_select {
+        width: 140px;
+        height: 55px;
+        cursor: pointer;
+    }
     &:hover {
         background-color: $gray-lighter;
     }
@@ -10,5 +11,30 @@
         position: absolute;
         top: 20px;
         right: 20px;
+    }
+    &_filterContainer {
+        width: 380px;
+    }
+    &_filterSelectors {
+        border-bottom: $info-bar-border;
+    }
+    &_links {
+        border-bottom: .5px solid $gray;
+        font-size: $font-size-5;
+        position: relative;
+        &:last-child {
+            border-bottom: 0;
+        }
+        &::after {
+            position: absolute;
+            right: 0;
+            font-family: $font-family-icons;
+            content: '\E936';
+        }
+        &.active {
+            &::after {
+                content: '\E937';
+            }
+        }
     }
 }
