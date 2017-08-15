@@ -33,6 +33,10 @@ var hbs = exphbs.create({
                 return b;
             }
             return a;
+        },
+        formatCurrency: (amount, currency) => {
+            currency = currency || '£';
+            return currency + amount.toFixed(2);
         }
     }
 });

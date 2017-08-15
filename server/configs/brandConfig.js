@@ -274,6 +274,29 @@ const brandConfig = {
                 image: 'media/carousel_05.jpg',
                 link: '#'
             }
+        ],
+        'shopping_basket': [
+            {
+                title: 'Oxford 3 Piece Cotbed Set Grey',
+                image: 'http://via.placeholder.com/90x105',
+                price: 1157.00,
+                qty: 1
+            },
+            {
+                title: 'Boys Striped Pocket',
+                image: 'http://via.placeholder.com/90x105',
+                price: 12.00,
+                qty: 1,
+                personalise: true
+            }
+        ],
+        'shopping_basket_upsell': [
+            {
+                strap: 'Don\'t forget your mattress...',
+                title: 'Essential Pocket Sprung Mattress',
+                image: 'http://via.placeholder.com/90x105',
+                price: 71.20
+            }
         ]
     }
 };

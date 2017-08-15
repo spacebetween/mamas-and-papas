@@ -1,6 +1,6 @@
 .slidePanel {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -51,6 +51,7 @@
 
     &.active {
         overflow: visible;
+        overflow-y: scroll;
 
         .slidePanel_bg {
             background: $transparent-bg-dark;
