@@ -1,0 +1,19 @@
+.productCard {
+    max-width: 300px; // temp placeholder before including it into the main PDP grid
+    font-size: $font-size-3;
+
+    &_strap {
+        position: relative;
+        border-top: $border-width solid $gray-darkest;
+        border-bottom: $border-width solid $gray-darkest;
+    }
+
+    &_discount,
+    &_title {
+        font-size: $font-size-4;
+    }
+
+    &_price {
+        font-size: $font-size-5;
+    }
+}

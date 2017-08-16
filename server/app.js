@@ -28,6 +28,12 @@ var hbs = exphbs.create({
             }
             return options.inverse(this);
         },
+        ifGreater: (a, b, options) => {
+            if (a > b) {
+                return options.fn(this);
+            }
+            return options.inverse(this);
+        },
         ifSetOrDefault: (a, b) => {
             if (!a) {
                 return b;
@@ -37,6 +43,13 @@ var hbs = exphbs.create({
         formatCurrency: (amount, currency) => {
             currency = currency || '£';
             return currency + amount.toFixed(2);
+        },
+        times: (n, block) => {
+            var accum = '';
+            for (var i = 0; i < n; ++i) {
+                accum += block.fn(i);
+            }
+            return accum;
         }
     }
 });
