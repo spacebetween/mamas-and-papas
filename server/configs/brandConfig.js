@@ -296,6 +296,12 @@ const brandConfig = {
                 title: 'Essential Pocket Sprung Mattress',
                 image: 'http://via.placeholder.com/90x105',
                 price: 71.20
+            },
+            {
+                strap: 'and how about...',
+                title: 'Boys Flaired Jeans',
+                image: 'http://via.placeholder.com/90x105',
+                price: 21.00
             }
         ]
     }

@@ -1,11 +1,17 @@
 <div class="basket_upsell">
     <hr class="hr-gray my-5" size="2" />
-    <div class="row">
-        <div class="col">
-            <strong>{{strap}}</strong>
-        </div>
-    </div>
-    <div class="basket_product my-2">
-        {{> basketProductView}}
+    <div class="basket_upsellCarousel m-0 pb-5">
+        {{#each (theme code="shopping_basket_upsell")}}
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <strong>{{strap}}</strong>
+                    </div>
+                </div>
+                <div class="basket_product my-2">
+                    {{> basketProductView}}
+                </div>
+            </div>
+        {{/each}}
     </div>
 </div>

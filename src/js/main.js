@@ -30,6 +30,8 @@
 
     var locked = 0;
 
+    $('body').append('<div class="blackout"></div>');
+
     $('body').on('click', '.js-slidePanel', function () {
 
         // Get our target element to slide in
@@ -40,25 +42,32 @@
             locked = lock || 0;
         }
 
+        function toggleState () {
+            slidePanel.css('z-index', 9999).toggleClass('active');
+            $('body').find('.blackout').toggleClass('active');
+        }
+
         if (!target) {
             slidePanel = $(this).closest('.slidePanel');
         } else {
             slidePanel = $(target).closest('.slidePanel');
         }
 
-        if (slidePanel.hasClass('active')) {
-            slidePanel.removeClass('active');
-            //$('body').css('overflow', 'auto');
+        if (slidePanel.length) {
+            if (slidePanel.hasClass('active')) {
+                toggleState();
 
-            // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
-            slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-                $(this).css('z-index', '-1');
-                setLock(0);
-            });
-        } else if (!slidePanel.hasClass('active') && locked === 0) {
-            setLock(1);
-            slidePanel.css('z-index', '9999').addClass('active');
-            //$('body').css('overflow', 'hidden');
+                // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
+                slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                    $(this).css('z-index', '-1');
+
+                    setLock(0);
+                    slidePanel.off();
+                });
+            } else if (!slidePanel.hasClass('active') && locked === 0) {
+                setLock(1);
+                toggleState();
+            }
         }
 
     });
@@ -302,5 +311,11 @@ $(document).ready(function () {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 10000
+    });
+
+    $('.basket_upsellCarousel').slick({
+        dots: true,
+        arrows: false,
+        autoplay: false
     });
 });
