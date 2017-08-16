@@ -339,6 +339,7 @@ $(document).ready(function () {
         arrows: false,
         autoplay: false
     });
+
     $(function () {
         var homepageFeature = new Carousel();
         homepageFeature.init();
