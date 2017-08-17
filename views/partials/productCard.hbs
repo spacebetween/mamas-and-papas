@@ -1,26 +1,36 @@
-<div class="productCard p-2 my-4">
-    <div class="text-center">
+<div class="productCard transition-transform p-2 pt-4 my-4">
+    <div class="productCard_top text-center">
+        {{#if strapline}}
         <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
-            Free Delivery
+            {{strapline}}
         </div>
-        <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
-            {{> reviewStars amount=4 total=5}}
+        {{/if}}
+        {{#if reviewScore}}
+            <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
+                {{> reviewStars amount=reviewScore.x total=reviewScore.total}}
+            </div>
+        {{/if}}
+    </div>
+    <div class="productCard_image my-3">
+        <img src="{{image}}" class="mx-auto" />
+    </div>
+    <div class="productCard_details pt-4">
+        {{#if discount}}
+        <div class="productCard_discount text-red py-1 text-uppercase">
+            <strong>{{discount}}</strong>
         </div>
-        <div class="productCard_image">
-            <img src="media/product_shirt_01.png" />
+        {{/if}}
+        <div class="productCard_title py-1">
+            <strong>{{title}}</strong>
         </div>
-    </div>
-    <div class="productCard_discount text-red py-1 text-uppercase">
-        <strong>Save 50%</strong>
-    </div>
-    <div class="productCard_title py-1">
-        <strong>White Cotton Pattern Shirt</strong>
-    </div>
-    <div class="productCard_promoLine py-1">
-        3 for 2 on Selected Tops
-    </div>
-    <div class="productCard_price py-1">
-        <strong>&pound;14.50</strong> 
-        <del class="text-gray">&pound;20.00</del>
+        <div class="productCard_promoLine py-1">
+            {{promotion}}
+        </div>
+        <div class="productCard_price py-1">
+            <strong>{{formatCurrency price '£'}}</strong> 
+            {{#if priceOld}}
+                <del class="text-gray">{{formatCurrency priceOld '£'}}</del>
+            {{/if}}
+        </div>
     </div>
 </div>

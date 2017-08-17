@@ -84,3 +84,46 @@
         }
     }
 }
+
+@font-face {
+    font-family: 'grid';
+    src: url('/fonts/grid.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^='grid-'],
+[class*=' grid-'] {
+    font-family: 'grid';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.grid {
+    font-size: $font-size-11;
+
+    &-1x2 {
+        &::before {
+            content: '\e900';
+        }
+    }
+    &-2x2 {
+        &::before {
+            content: '\e901';
+        }
+    }
+    &-3x3 {
+        &::before {
+            content: '\e902';
+        }
+    }
+    &-4x4 {
+        &::before {
+            content: '\e903';
+        }
+    }
+}

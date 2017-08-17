@@ -1,5 +1,26 @@
 'use strict';
 
+/*
+ * https://www.iambacon.co.uk/blog/prevent-transitionend-event-firing-twice
+ * Find and set globally the supported transition property for our listeners.
+ */
+function whichTransitionEvent () {
+    var el = document.createElement('fake'),
+        transEndEventNames = {
+            'WebkitTransition': 'webkitTransitionEnd', // Saf 6, Android Browser
+            'MozTransition': 'transitionend', // only for FF < 15
+            'transition': 'transitionend' // IE10, Opera, Chrome, FF 15+, Saf 7+
+        };
+
+    for (var t in transEndEventNames) {
+        if ( el.style[t] !== undefined ) {
+            return transEndEventNames[t];
+        }
+    }
+}
+
+var transitionEnd = whichTransitionEvent();
+
 $(function () {
 
     /* 
@@ -37,14 +58,14 @@ $(function () {
         slidePanel.css('z-index', '9999').toggleClass('active');
 
         // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
-        slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+        slidePanel.one(transitionEnd, function () {
             if (!$(this).hasClass('active')) {
                 $(this).css('z-index', '-1');
             }
         });
     });
 
-})(jQuery);
+}(jQuery));
 
 (function ($) {
 
@@ -89,7 +110,7 @@ $(function () {
         }
     });
 
-})(jQuery);
+}(jQuery));
 
 var Carousel = function ($, window) {
 
@@ -296,6 +317,67 @@ var Carousel = function ($, window) {
     };
 
 }(jQuery, window);
+
+(function ($) {
+
+    /* 
+     * Product Page Column Toggle
+     */
+
+    var currentState = 'small',
+        triggeredState,
+        container = $('.products'),
+        products = container.find('.productCard'),
+        colFrom,
+        colTo,
+        jsProductToggle = '.js-productPanel',
+        locked = 0;
+
+    // rudimentary mechanism to allow the transition to finish first.. 
+    // without this, a user could click very quickly on the col switcher and be mid-transition, leaving the screen blank
+    function setLock () {
+        locked = 1;
+        setTimeout(function () {
+            locked = 0;
+        }, 1000);
+    }
+
+    function setColumnState () {
+        switch (currentState) {
+            case 'large':
+                colFrom = 'col-md-3';
+                colTo = 'col-md-4';
+                break;
+            default:
+                colFrom = 'col-md-4';
+                colTo = 'col-md-3';
+        }
+
+        container.find('[class*="' + colFrom + '"]').removeClass(colFrom).addClass(colTo);
+    }
+
+    // Listener for transition to finish before switching columns
+    container.on(transitionEnd, products, function () {
+        setColumnState();
+        products.removeClass('transition');
+    });
+
+    container.on('click', jsProductToggle, function () {
+
+        triggeredState = $(this).data('state');
+
+        if (currentState !== triggeredState && !locked) {
+            setLock();
+
+            $(this).parent().find(jsProductToggle).removeClass('active');
+            $(this).addClass('active');
+
+            currentState = triggeredState;
+            products.addClass('transition');
+        }
+    });
+
+}(jQuery));
 
 // Slick article carousel
 $(document).ready(function () {
