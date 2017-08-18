@@ -74,6 +74,7 @@
     vertical-align: middle;
     width: 200px;
     &_toggle {
+        cursor: pointer;
         display: table-cell;
         width: 40px;
         height: 40px;
@@ -81,6 +82,9 @@
         text-align: center;
         padding-top: 3px;
         font-size: 20px;
+        &:hover {
+            border: 1px solid $black;
+        }
         &.active {
             border: 1px solid $black;
             &::after {

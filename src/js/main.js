@@ -1,24 +1,97 @@
 'use strict';
 
 // Toggle function
-$(function () {
-
+(function ($) {
     /* 
      * Toggle Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
      * that will be toggled.
      */
-
-    $('.js-toggle').on('click', '.js-trigger', function () {
+    $('.js-toggle').on('click', '.js-trigger', function (e) {
+        e.stopPropagation();
+        var parent = $(this).closest('.js-toggle');
         var toggle = $(this).data('target');
-        var target = document.querySelectorAll('[data-trigger=' + toggle + ']');
-        $('.js-target').not(target).removeClass('d-block');
-        $('.js-trigger').not($(this)).removeClass('active');
+        var target = parent.find('[data-trigger=' + toggle + ']');
+        parent.find('.js-target').not(target).removeClass('d-block');
+        parent.find('.js-trigger').not($(this)).removeClass('active');
+        parent.find(target).toggleClass('d-block');
         $(this).toggleClass('active');
-        $(target).toggleClass('d-block');
     });
-});
+
+})(jQuery);
+
+// Radio button function
+(function ($) {
+    /* 
+     * Radio Function
+     * Multi use toggle for when you only want one div to show at a time
+     * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
+     * that will be toggled.
+     */
+
+    $('.js-radio').on('click', '.checkbox_toggle', function () {
+        $('.js-radio').find('.checkbox_toggle').not($(this)).removeClass('active');
+        $(this).toggleClass('active');
+        var index = $(this).closest('.js-radio').data('index');
+        var text = $(this).siblings('.checkbox_text').text();
+        var label = $(document).find('#sort' + index);
+        label.text(text);
+    });
+
+    $(document).ready(function () {
+        $('.js-radio').each(function () {
+            var index = $(this).data('index');
+            var label = $(document).find('#sort' + index);
+            var activeText = $(this).find('.active').siblings('.checkbox_text').text();
+            label.text(activeText);
+        });
+    });
+
+})(jQuery);
+
+// Checkbox button function
+(function ($) {
+    /* 
+     * Checkbox Function
+     * Multi use toggle for when you only want one div to show at a time
+     * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
+     * that will be toggled.
+     */
+    $('.js-checkbox').on('click', '.checkbox_toggle', function () {
+        $(this).toggleClass('active');
+        var parent = $(this).closest('.js-checkboxContainer');
+        var activeCheckboxes = parent.find('div.active');
+
+        var count = activeCheckboxes.length;
+        var index = $(this).closest('.js-checkboxContainer').data('index');
+        var btnLabel = $(document).find('#filter' + index);
+        var footer = $(document).find('#filterFooter' + index);
+        var suffix = count === 1 ? '' : 's';
+        var filterList = '';
+
+        $(activeCheckboxes).each(function () {
+            var sibText = $(this).siblings('.checkbox_text').text();
+            filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <i class="ico ico-cross px-1 js-uncheckCheckbox"></i>' + sibText + '</div>';
+        });
+
+        btnLabel.text(count + ' Selected');
+        footer.text(count + ' filter' + suffix + ' applied');
+
+        $('<div class="pl-2 d-inline-block">' + filterList + '</div>').appendTo(footer);
+    });
+
+    $('.js-checkboxContainer').on('click', '.js-clearCheckbox', function () {
+        var parent = $(this).closest('.js-checkboxContainer');
+        var activeCheckboxes = parent.find('div.active');
+        activeCheckboxes.removeClass('active');
+        var index = $(this).closest('.js-checkboxContainer').data('index');
+        var btnLabel = $(document).find('#filter' + index);
+        var footer = $(document).find('#filterFooter' + index);
+        btnLabel.text('0 Selected');
+        footer.text('0 filters applied');
+    });
+})(jQuery);
 
 // Navigation
 (function ($) {

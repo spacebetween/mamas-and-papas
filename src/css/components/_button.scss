@@ -3,6 +3,9 @@
     text-transform: uppercase;
     cursor: pointer;
     height: 50px;
+    color: $black;
+    background-color: $white;
+    border-color: $white;
     &-arrow {
         width: 60px;
         height: 60px;

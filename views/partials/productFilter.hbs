@@ -1,36 +1,86 @@
-<div class="row productFilter_filterSelectors p-2">
-    <div class="border-gray d-inline-block p-3 productFilter_select mr-3">
-        Filter By <i class="ico ico-plus productFilter_icon"> </i>
-    </div>
-    <div class="border-gray d-inline-block p-3 productFilter_select">
-        Sort By <i class="ico ico-plus productFilter_icon"> </i>
-    </div>
-</div>
-
-<div class="row js-toggle">
-    <div class="col-md-5 py-5">
-        <div>
-            <ul class="list-unstyled productFilter_filterContainer float-right">
-                {{#each (theme code="clothing_filters")}}
-                    <li class="js-trigger productFilter_links p-3" data-target="{{stringReplace @key}}">
-                        {{@key}}
-                    </li>
-                {{/each}}
-            </ul>
-        </div>
-    </div>
-    <div class="col-md-5 pt-4">
-        {{#each (theme code="clothing_filters")}}
-            <div class="js-target" data-trigger="{{stringReplace @key}}">
-                {{#each . }}
-                    <div class="d-inline-block pb-4">
-                        <div class="checkbox">
-                            <div class="checkbox_toggle"></div>
-                            <span class="checkbox_text">{{.}}</span>
-                        </div>
-                    </div>
-                {{/each}}
+<div class="productFilter js-toggle">
+    <div class="row productFilter_filterSelectors p-2">
+        {{#each (theme code="plp_clothing_filters")}}
+            <div class="border-gray d-inline-block py-2 px-3 productFilter_select mr-3 js-trigger" data-target="{{stringReplace name}}">
+                {{name}}
+                <div class="productFilter_label font-weight-light" id="filter{{@index}}">0 filters applied</div>
+                <i class="ico ico-plus productFilter_icon"> </i>
+            </div>
+        {{/each}}
+        {{#each (theme code="plp_clothing_sort")}}
+            <div class="border-gray d-inline-block py-2 px-3 productFilter_select mr-3 js-trigger" data-target="{{stringReplace name}}">
+                {{name}}
+                <div class="productFilter_label font-weight-light" id="sort{{@index}}"></div>
+                <i class="ico ico-plus productFilter_icon"> </i>
             </div>
         {{/each}}
     </div>
+
+    {{#each (theme code="plp_clothing_sort")}}
+        <div class="productFilter_tab js-target" data-trigger="{{stringReplace name}}">
+            <div class="row">
+                <div class="col-md-7 py-5 px-7">
+                    <div class="js-radio" data-index="{{@index}}" data-selected="">
+                        {{#each filters}}
+                            <div class="d-inline-block pb-4">
+                                <div class="checkbox">
+                                    <div class="checkbox_toggle {{#if default}}active{{/if}}"></div>
+                                    <div class="checkbox_text">{{filter}}</div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+
+    {{#each (theme code="plp_clothing_filters")}}
+        <div class="js-target" data-trigger="{{stringReplace name}}" >
+            <div class="js-toggle productFilter_tab js-checkboxContainer" data-index="{{@index}}">
+                <div class="row">
+                    <div class="col-md-5 py-5">
+                        <ul class="list-unstyled productFilter_filterContainer float-right">
+                            {{#each filters}}
+                                <li class="js-trigger productFilter_links p-3" data-target="{{stringReplace @key}}">
+                                    {{@key}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        {{#each filters}}
+                            <div class="js-target js-checkbox {{@key}}" data-trigger="{{stringReplace @key}}">
+                                {{#each .}}
+                                    <div class="d-inline-block pb-4">
+                                        <div class="checkbox">
+                                            <div class="checkbox_toggle"></div>
+                                            <div class="checkbox_text">{{.}}</div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="productFilter_footer p-2 bg-grayLight">
+                    <div class="row">
+                        <div class="col-8">
+                            <div id="filterFooter{{@index}}" class="py-3">
+                                0 filters applied                                
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="d-inline-block">
+                                {{> button backgroundColour="primary" text="Apply Filters"}}
+                            </div>
+                            <div class="d-inline-block pl-3">
+                                {{> button text="Clear all" class="js-clearCheckbox"}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    {{/each}}
 </div>

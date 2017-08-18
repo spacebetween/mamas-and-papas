@@ -1,11 +1,12 @@
 .productFilter {
     &_select {
-        width: 140px;
+        width: 180px;
         height: 55px;
         cursor: pointer;
-    }
-    &:hover {
-        background-color: $gray-lighter;
+        position: relative;
+        &:hover {
+            background-color: $gray-lighter;
+        }
     }
     &_icon {
         position: absolute;
@@ -17,6 +18,12 @@
     }
     &_filterSelectors {
         border-bottom: $info-bar-border;
+    }
+    &_label {
+        font-size: $font-size-2;
+    }
+    &_footer {
+        font-size: $font-size-4;
     }
     &_links {
         border-bottom: .5px solid $gray;
