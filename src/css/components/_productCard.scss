@@ -21,11 +21,11 @@
         border-bottom: $border-width solid $gray-darkest;
     }
 
-    &_image {
+    &_media {
         position: relative;
         padding-bottom: 80%; // sets image ratio, ensures it scales down
 
-        img {
+        &Image {
             position: absolute;
             top: 0;
             left: 0;
