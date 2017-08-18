@@ -1,0 +1,28 @@
+<div id="basket" class="basket h-100">
+    <div class="basket_title font-weight-bold p-3">
+        Shopping Basket
+    </div>
+
+    <div class="basket_strap text-center bg-grayLight p-1">
+        Free Standard Delivery - On Orders Over &pound;50
+    </div>
+
+    {{#each (theme code="shopping_basket")}}
+        {{> basketProduct}}
+    {{/each}}
+
+    {{> basketUpsell}}
+
+    <div class="text-center">
+        <div class="basket_delivery my-3 p-2">
+            Estimated Delivery: 2 days
+        </div>
+        <div class="p-2">
+            <strong>Sub-Total:</strong> &pound;1,169.00
+        </div>
+        <div class="p-2">
+            <button class="btn btn-primary px-6">Checkout</button>
+        </div>
+    </div>
+
+</div>

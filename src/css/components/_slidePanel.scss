@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     overflow: hidden;
     z-index: -1;
 
@@ -13,6 +14,7 @@
         left: 0;
         width: 100%;
         max-width: 380px;
+        height: 100%;
         transform: translateX(-100%);
         transition-duration: $transition-duration;
         transition-property: transform;
@@ -35,27 +37,7 @@
         }
     }
 
-    &_bg {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        transition-duration: $transition-duration;
-        transition-property: background;
-        transition-timing-function: $transition-easing;
-        z-index: -1;
-    }
-
     &.active {
-        overflow: visible;
-
-        .slidePanel_bg {
-            background: $transparent-bg-dark;
-        }
-
         .slidePanel_content {
             transform: translateX(0);
         }

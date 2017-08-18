@@ -40,6 +40,10 @@ var hbs = exphbs.create({
             }
             return a;
         },
+        formatCurrency: (amount, currency) => {
+            currency = currency || '£';
+            return currency + amount.toFixed(2);
+        },
         times: (n, block) => {
             var accum = '';
             for (var i = 0; i < n; ++i) {
