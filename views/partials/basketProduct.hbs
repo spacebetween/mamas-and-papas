@@ -5,13 +5,13 @@
             <div class="row my-4 p-0">
                 <div class="col m-0 py-2 px-3 bg-grayLight">
                     <div class="basket_personaliseArrow arrow-up"></div>
-                    <div class="basket_personaliseToggle cursor-pointer py-1 js-trigger" data-target="{{stringReplace title}}">Personalise me for just &pound;5</div>
+                    <div class="basket_personaliseToggle cursor-pointer py-1 js-trigger" data-target="{{stringReplace title}}">{{{theme code="basket_personalise_message"}}}</div>
                     <div class="basket_personaliseForm js-target" data-trigger="{{stringReplace title}}">
                         <div class="py-2">
-                            <input type="text" placeholder="Type your message (max 12 characters)" maxlength="12" class="form-control form-control-small" />
+                            <input type="text" placeholder="{{theme code='basket_personalise_placeholder'}}" maxlength="12" class="form-control form-control-small" />
                         </div>
                         <div class="basket_personaliseSave text-center">
-                            <a href="#">Save</a>
+                            <a href="#">{{theme code="basket_personalise_button"}}</a>
                         </div>
                     </div>
                 </div>

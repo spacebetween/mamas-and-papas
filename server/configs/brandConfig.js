@@ -275,6 +275,9 @@ const brandConfig = {
                 link: '#'
             }
         ],
+        'basket_personalise_message': 'Personalise me for just &pound;5',
+        'basket_personalise_placeholder': 'Type your message (max 12 characters)',
+        'basket_personalise_button': 'Save',
         'shopping_basket': [
             {
                 title: 'Oxford 3 Piece Cotbed Set Grey',
