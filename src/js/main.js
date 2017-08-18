@@ -328,9 +328,8 @@ var Carousel = function ($, window) {
         triggeredState,
         container = $('.products'),
         products = container.find('.productCard'),
-        colFrom,
-        colTo,
         jsProductToggle = '.js-productPanel',
+        colSwapper,
         locked = 0;
 
     // rudimentary mechanism to allow the transition to finish first.. 
@@ -345,19 +344,41 @@ var Carousel = function ($, window) {
     function setColumnState () {
         switch (currentState) {
             case 'large':
-                colFrom = 'col-md-3';
-                colTo = 'col-md-4';
+                colSwapper = [
+                    {
+                        f: '.col-lg-3.col-md-4.col-sm-6', // Joint, for class group search
+                        s: 'col-lg-3 col-md-4 col-sm-6', // Spaced to removeClass
+                        t: 'col-lg-4 col-md-4 col-sm-6' // Becomes this
+                    },
+                    {
+                        f: '.col-lg-6.col-md-8.col-sm-12', // Large UPS default group
+                        s: 'col-lg-6 col-md-8 col-sm-12',
+                        t: 'col-lg-8 col-md-8 col-sm-12' // to this
+                    }
+                ];
                 break;
             default:
-                colFrom = 'col-md-4';
-                colTo = 'col-md-3';
+                colSwapper = [
+                    {
+                        f: '.col-lg-4.col-md-4.col-sm-6',
+                        s: 'col-lg-4 col-md-4 col-sm-6',
+                        t: 'col-lg-3 col-md-4 col-sm-6'
+                    },
+                    {
+                        f: '.col-lg-8.col-md-8.col-sm-12',
+                        s: 'col-lg-8 col-md-8 col-sm-12',
+                        t: 'col-lg-6 col-md-8 col-sm-12'
+                    }
+                ];
         }
 
-        container.find('[class*="' + colFrom + '"]').removeClass(colFrom).addClass(colTo);
+        $.each(colSwapper, function ( index, value ) {
+            $('.products').find(value.f).removeClass(value.s).addClass(value.t);
+        });
     }
 
     // Listener for transition to finish before switching columns
-    container.on(transitionEnd, products, function () {
+    container.on(transitionEnd, '.transition', function () {
         setColumnState();
         products.removeClass('transition');
     });

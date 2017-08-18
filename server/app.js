@@ -42,7 +42,9 @@ var hbs = exphbs.create({
         },
         formatCurrency: (amount, currency) => {
             currency = currency || '£';
-            return currency + amount.toFixed(2);
+            if (amount) {
+                return currency + amount.toFixed(2);
+            }
         },
         times: (n, block) => {
             var accum = '';

@@ -326,15 +326,10 @@ const brandConfig = {
                 reviewScore: { x: 3, total: 5 }
             },
             {
-                id: 53765,
-                title: 'White Cotton Pattern Shirt',
-                image: 'media/product_01.jpg',
-                price: 14.50,
-                priceOld: 20.00,
-                strapline: 'Free Delivery',
-                reviewScore: { x: 4, total: 5 },
-                discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                type: 'USP',
+                size: 'large',
+                title: 'A special USP entry block',
+                image: 'media/plp_usp_02.jpg'
             },
             {
                 id: 53765,
@@ -390,6 +385,23 @@ const brandConfig = {
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
                 promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                id: 53765,
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                type: 'USP',
+                size: 'small',
+                title: 'A special USP entry block',
+                image: 'media/plp_usp_01.jpg'
             },
             {
                 id: 53765,

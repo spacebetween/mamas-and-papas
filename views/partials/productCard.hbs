@@ -1,36 +1,38 @@
-<div class="productCard transition-transform p-2 pt-4 my-4">
-    <div class="productCard_top text-center">
-        {{#if strapline}}
-        <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
-            {{strapline}}
-        </div>
-        {{/if}}
-        {{#if reviewScore}}
+<div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="productCard transition-transform p-2 pt-4 my-5">
+        <div class="productCard_top text-center">
+            {{#if strapline}}
             <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
-                {{> reviewStars amount=reviewScore.x total=reviewScore.total}}
+                {{strapline}}
             </div>
-        {{/if}}
-    </div>
-    <div class="productCard_image my-3">
-        <img src="{{image}}" class="mx-auto" />
-    </div>
-    <div class="productCard_details pt-4">
-        {{#if discount}}
-        <div class="productCard_discount text-red py-1 text-uppercase">
-            <strong>{{discount}}</strong>
-        </div>
-        {{/if}}
-        <div class="productCard_title py-1">
-            <strong>{{title}}</strong>
-        </div>
-        <div class="productCard_promoLine py-1">
-            {{promotion}}
-        </div>
-        <div class="productCard_price py-1">
-            <strong>{{formatCurrency price '£'}}</strong> 
-            {{#if priceOld}}
-                <del class="text-gray">{{formatCurrency priceOld '£'}}</del>
             {{/if}}
+            {{#if reviewScore}}
+                <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
+                    {{> reviewStars amount=reviewScore.x total=reviewScore.total}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="productCard_image my-4">
+            <img src="{{image}}" class="mx-auto" />
+        </div>
+        <div class="productCard_details pt-4">
+            {{#if discount}}
+            <div class="productCard_discount text-red py-1 text-uppercase">
+                <strong>{{discount}}</strong>
+            </div>
+            {{/if}}
+            <div class="productCard_title py-1">
+                <strong>{{title}}</strong>
+            </div>
+            <div class="productCard_promoLine py-1">
+                {{promotion}}
+            </div>
+            <div class="productCard_price py-1">
+                <strong>{{formatCurrency price '£'}}</strong> 
+                {{#if priceOld}}
+                    <del class="text-gray">{{formatCurrency priceOld '£'}}</del>
+                {{/if}}
+            </div>
         </div>
     </div>
 </div>

@@ -15,11 +15,13 @@
             <i class="icon grid grid-3x3 cursor-pointer ml-2 js-productPanel" data-state="large" aria-hidden="true"></i>
         </div>
     </div>
-    <div class="row no-gutters">
+    <div class="row">
         {{#each (theme code="products")}}
-            <div class="col-md-3 col-sm-6">
-                {{> productCard}}
-            </div>
+            {{#ifeq type 'USP'}}
+                {{> uspBlock ../this}}
+            {{else}}
+                {{> productCard ../this}}
+            {{/ifeq}}
         {{/each}}
     </div>
 </div>
