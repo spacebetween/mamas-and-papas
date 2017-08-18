@@ -277,7 +277,6 @@ const brandConfig = {
         ],
         'products': [
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -287,7 +286,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 234523,
                 title: 'Blue Cotton Shirt',
                 image: 'media/product_02.jpg',
                 price: 10.00,
@@ -295,7 +293,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 234523,
                 title: 'Green Alpaca Shirt',
                 image: 'media/product_03.jpg',
                 price: 10.00,
@@ -303,14 +300,12 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_04.jpg',
                 price: 14.50,
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_05.jpg',
                 price: 14.50,
@@ -318,7 +313,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_06.jpg',
                 price: 14.50,
@@ -332,7 +326,6 @@ const brandConfig = {
                 image: 'media/plp_usp_02.jpg'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -343,7 +336,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -354,7 +346,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -365,7 +356,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -376,7 +366,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -387,7 +376,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -404,7 +392,6 @@ const brandConfig = {
                 image: 'media/plp_usp_01.jpg'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -415,7 +402,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -426,7 +412,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -437,7 +422,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
@@ -448,40 +432,6 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             },
             {
-                id: 53765,
-                title: 'White Cotton Pattern Shirt',
-                image: 'media/product_01.jpg',
-                price: 14.50,
-                priceOld: 20.00,
-                strapline: 'Free Delivery',
-                reviewScore: { x: 4, total: 5 },
-                discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
-            },
-            {
-                id: 53765,
-                title: 'White Cotton Pattern Shirt',
-                image: 'media/product_01.jpg',
-                price: 14.50,
-                priceOld: 20.00,
-                strapline: 'Free Delivery',
-                reviewScore: { x: 4, total: 5 },
-                discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
-            },
-            {
-                id: 53765,
-                title: 'White Cotton Pattern Shirt',
-                image: 'media/product_01.jpg',
-                price: 14.50,
-                priceOld: 20.00,
-                strapline: 'Free Delivery',
-                reviewScore: { x: 4, total: 5 },
-                discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
-            },
-            {
-                id: 53765,
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_01.jpg',
                 price: 14.50,
