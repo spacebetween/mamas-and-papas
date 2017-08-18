@@ -66,7 +66,7 @@ var transitionEnd = whichTransitionEvent();
         function toggleState () {
             slidePanel.css('z-index', 9999).toggleClass('active');
             $('body').find('.blackout').toggleClass('active');
-        }                 
+        }
 
         if (!target) {
             slidePanel = $(this).closest('.slidePanel');
