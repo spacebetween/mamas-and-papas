@@ -1,5 +1,5 @@
-.products {
-    .icon {
+.product {
+    &_icon {
         color: $gray;
 
         &.active {
