@@ -45,6 +45,7 @@ var hbs = exphbs.create({
             if (amount) {
                 return currency + amount.toFixed(2);
             }
+            return currency + amount.toFixed(2);
         },
         times: (n, block) => {
             var accum = '';

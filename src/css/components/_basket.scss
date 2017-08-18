@@ -1,0 +1,75 @@
+.basket {
+    &_title {
+        height: 80px;
+        line-height: 46px;
+        border-bottom: $border-width solid $gray;
+    }
+
+    &_strap {
+        font-size: $font-size-3;
+        border-top: $border-width solid $gray;
+    }
+
+    &_product {
+        font-size: $font-size-3;
+
+        &Price {
+            font-size: $font-size-5;
+        }
+
+        &Price,
+        &Qty {
+            line-height: 2rem;
+        }
+
+        &Remove {
+            font-size: $font-size-2;
+        }
+    }
+
+    &_delivery {
+        font-size: $font-size-3;
+        border-top: $border-width solid $gray-darkest;
+        border-bottom: $border-width solid $gray-darkest;
+    }
+
+    &_personalise {
+        position: relative;
+
+        &Arrow {
+            position: absolute;
+            top: -16px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        &Toggle {
+            &::after {
+                position: absolute;
+                right: 1rem;
+                font-family: Linearicons;
+                content: '\E93A';
+            }
+            &.active {
+                &::after {
+                    content: '\E939';
+                }
+            }
+        }
+
+        &Form {
+            display: none;
+        }
+
+        &Save {
+            font-size: $font-size-2;
+        }
+    }
+
+    &_upsell {
+        &Product {
+            border: $border-width solid $gray;
+        }
+    }
+}

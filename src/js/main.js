@@ -21,19 +21,25 @@ function whichTransitionEvent () {
 
 var transitionEnd = whichTransitionEvent();
 
-$(function () {
+(function ($) {
 
     /* 
-     * Accordion show/hide
-     * Used in the footer, toggles the active state of accordion element, bound within a group.
+     * Toggle Function
+     * Multi use toggle for when you only want one div to show at a time
+     * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
+     * that will be toggled.
      */
 
-    $('.js-accordion').on('click', '.js-accordionTitle', function () {
-        $(this).closest('.js-accordion').find('.js-accordionTitle').not(this).removeClass('active');
+    $('.js-toggle').on('click', '.js-trigger', function () {
+        var parent = $(this).closest('.js-toggle');
+        var toggle = $(this).data('target');
+        var target = document.querySelectorAll('[data-trigger=' + toggle + ']');
+        parent.find('.js-target').not(target).removeClass('d-block');
+        parent.find('.js-trigger').not($(this)).removeClass('active');
+        parent.find(target).toggleClass('d-block');
         $(this).toggleClass('active');
     });
-
-});
+})(jQuery);
 
 (function ($) {
 
@@ -43,11 +49,24 @@ $(function () {
      * Requires the class js-slidePanel on the triggers, and a data-target attribute for the DOM element to be slid in/out.
      */
 
+    var locked = 0;
+
+    $('body').append('<div class="blackout"></div>');
+
     $('body').on('click', '.js-slidePanel', function () {
 
         // Get our target element to slide in
         var target = $(this).data('target');
         var slidePanel = null;
+
+        function setLock (lock) {
+            locked = lock || 0;
+        }
+
+        function toggleState () {
+            slidePanel.css('z-index', 9999).toggleClass('active');
+            $('body').find('.blackout').toggleClass('active');
+        }                 
 
         if (!target) {
             slidePanel = $(this).closest('.slidePanel');
@@ -55,14 +74,23 @@ $(function () {
             slidePanel = $(target).closest('.slidePanel');
         }
 
-        slidePanel.css('z-index', '9999').toggleClass('active');
+        if (slidePanel.length) {
+            if (slidePanel.hasClass('active')) {
+                toggleState();
 
-        // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
-        slidePanel.one(transitionEnd, function () {
-            if (!$(this).hasClass('active')) {
-                $(this).css('z-index', '-1');
+                // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
+                slidePanel.one(transitionEnd, function () {
+                    $(this).css('z-index', '-1');
+
+                    setLock(0);
+                    slidePanel.off();
+                });
+            } else if (!slidePanel.hasClass('active') && locked === 0) {
+                setLock(1);
+                toggleState();
             }
-        });
+        }
+
     });
 
 }(jQuery));
@@ -407,6 +435,12 @@ $(document).ready(function () {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 10000
+    });
+
+    $('.basket_upsellCarousel').slick({
+        dots: true,
+        arrows: false,
+        autoplay: false
     });
 
     $(function () {

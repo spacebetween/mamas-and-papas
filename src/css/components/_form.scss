@@ -1,15 +1,22 @@
-.form-control {
-    height: 50px;
-    border: 0;
-    border-radius: 0;
-    background: $white;
-    color: $gray-dark;
-
-    &:focus {
+.form {
+    &-control {
+        height: 50px;
+        border: 0;
+        border-radius: 0;
+        background: $white;
         color: $gray-dark;
-    }
 
-    @include placeholder {
-        color: $gray-dark;
+        &-small {
+            height: auto;
+            font-size: $font-size-1;
+        }
+
+        &:focus {
+            color: $gray-dark;
+        }
+
+        @include placeholder {
+            color: $gray-dark;
+        }
     }
 }
