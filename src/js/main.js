@@ -1,5 +1,26 @@
 'use strict';
 
+/*
+ * https://www.iambacon.co.uk/blog/prevent-transitionend-event-firing-twice
+ * Find and set globally the supported transition property for our listeners.
+ */
+function whichTransitionEvent () {
+    var el = document.createElement('fake'),
+        transEndEventNames = {
+            'WebkitTransition': 'webkitTransitionEnd', // Saf 6, Android Browser
+            'MozTransition': 'transitionend', // only for FF < 15
+            'transition': 'transitionend' // IE10, Opera, Chrome, FF 15+, Saf 7+
+        };
+
+    for (var t in transEndEventNames) {
+        if ( el.style[t] !== undefined ) {
+            return transEndEventNames[t];
+        }
+    }
+}
+
+var transitionEnd = whichTransitionEvent();
+
 (function ($) {
 
     /* 
@@ -58,7 +79,7 @@
                 toggleState();
 
                 // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
-                slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                slidePanel.one(transitionEnd, function () {
                     $(this).css('z-index', '-1');
 
                     setLock(0);
@@ -72,7 +93,7 @@
 
     });
 
-})(jQuery);
+}(jQuery));
 
 (function ($) {
 
@@ -117,7 +138,7 @@
         }
     });
 
-})(jQuery);
+}(jQuery));
 
 var Carousel = function ($, window) {
 
@@ -324,6 +345,88 @@ var Carousel = function ($, window) {
     };
 
 }(jQuery, window);
+
+(function ($) {
+
+    /* 
+     * Product Page Column Toggle
+     */
+
+    var currentState = 'small',
+        triggeredState,
+        container = $('.products'),
+        products = container.find('.productCard'),
+        jsProductToggle = '.js-productPanel',
+        colSwapper,
+        locked = 0;
+
+    // rudimentary mechanism to allow the transition to finish first.. 
+    // without this, a user could click very quickly on the col switcher and be mid-transition, leaving the screen blank
+    function setLock () {
+        locked = 1;
+        setTimeout(function () {
+            locked = 0;
+        }, 1000);
+    }
+
+    function setColumnState () {
+        switch (currentState) {
+            case 'large':
+                colSwapper = [
+                    {
+                        f: '.col-lg-3.col-md-4.col-sm-6', // Joint, for class group search
+                        s: 'col-lg-3 col-md-4 col-sm-6', // Spaced to removeClass
+                        t: 'col-lg-4 col-md-4 col-sm-6' // Becomes this
+                    },
+                    {
+                        f: '.col-lg-6.col-md-8.col-sm-12', // Large UPS default group
+                        s: 'col-lg-6 col-md-8 col-sm-12',
+                        t: 'col-lg-8 col-md-8 col-sm-12' // to this
+                    }
+                ];
+                break;
+            default:
+                colSwapper = [
+                    {
+                        f: '.col-lg-4.col-md-4.col-sm-6',
+                        s: 'col-lg-4 col-md-4 col-sm-6',
+                        t: 'col-lg-3 col-md-4 col-sm-6'
+                    },
+                    {
+                        f: '.col-lg-8.col-md-8.col-sm-12',
+                        s: 'col-lg-8 col-md-8 col-sm-12',
+                        t: 'col-lg-6 col-md-8 col-sm-12'
+                    }
+                ];
+        }
+
+        $.each(colSwapper, function ( index, value ) {
+            $('.products').find(value.f).removeClass(value.s).addClass(value.t);
+        });
+    }
+
+    // Listener for transition to finish before switching columns
+    container.on(transitionEnd, '.transition', function () {
+        setColumnState();
+        products.removeClass('transition');
+    });
+
+    container.on('click', jsProductToggle, function () {
+
+        triggeredState = $(this).data('state');
+
+        if (currentState !== triggeredState && !locked) {
+            setLock();
+
+            $(this).parent().find(jsProductToggle).removeClass('active');
+            $(this).addClass('active');
+
+            currentState = triggeredState;
+            products.addClass('transition');
+        }
+    });
+
+}(jQuery));
 
 // Slick article carousel
 $(document).ready(function () {

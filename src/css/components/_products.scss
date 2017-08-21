@@ -1,0 +1,9 @@
+.product {
+    &_icon {
+        color: $gray;
+
+        &.active {
+            color: $black;
+        }
+    }
+}

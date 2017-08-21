@@ -63,6 +63,18 @@
     transition-timing-function: $transition-easing;
 }
 
+.transition-width {
+    transition-duration: $transition-duration;
+    transition-property: width, min-width, max-width, flex;
+    transition-timing-function: $transition-easing;
+}
+
+.transition-transform {
+    transition-duration: $transition-duration;
+    transition-property: transform, opacity;
+    transition-timing-function: $transition-easing;
+}
+
 .arrow-up {
     width: 0;
     height: 0;
