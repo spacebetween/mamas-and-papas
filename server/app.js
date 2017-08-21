@@ -42,6 +42,9 @@ var hbs = exphbs.create({
         },
         formatCurrency: (amount, currency) => {
             currency = currency || '£';
+            if (amount) {
+                return currency + amount.toFixed(2);
+            }
             return currency + amount.toFixed(2);
         },
         times: (n, block) => {

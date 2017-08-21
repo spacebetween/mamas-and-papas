@@ -329,6 +329,173 @@ const brandConfig = {
                 ]
             }
         ],
+        'products': [
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'Blue Cotton Shirt',
+                image: 'media/product_02.jpg',
+                price: 10.00,
+                priceOld: 16.50,
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'Green Alpaca Shirt',
+                image: 'media/product_03.jpg',
+                price: 10.00,
+                reviewScore: { x: 4, total: 5 },
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_04.jpg',
+                price: 14.50,
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_05.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_06.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                reviewScore: { x: 3, total: 5 }
+            },
+            {
+                type: 'USP',
+                size: 'large',
+                title: 'A special USP entry block',
+                image: 'media/plp_usp_02.jpg'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                type: 'USP',
+                size: 'small',
+                title: 'A special USP entry block',
+                image: 'media/plp_usp_01.jpg'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            },
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product_01.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                strapline: 'Free Delivery',
+                reviewScore: { x: 4, total: 5 },
+                discount: 'Save 50%',
+                promotion: '3 for 2 on Selected Tops'
+            }
+        ],
         'basket_personalise_message': 'Personalise me for just &pound;5',
         'basket_personalise_placeholder': 'Type your message (max 12 characters)',
         'basket_personalise_button': 'Save',

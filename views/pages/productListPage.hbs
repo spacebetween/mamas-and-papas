@@ -10,6 +10,23 @@
 {{> boxBanner }}
 {{> breadcrumb}}
 {{> productFilter}}
-{{> productCard}}
+<div class="products">
+    <div class="row">
+        <div class="col py-3 text-right">
+            <i class="product_icon grid grid-4x4 cursor-pointer ml-2 js-productPanel active" data-state="small" aria-hidden="true"></i>
+            <i class="product_icon grid grid-3x3 cursor-pointer ml-2 js-productPanel" data-state="large" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="row">
+        {{#each (theme code="products")}}
+            {{#ifeq type 'USP'}}
+                {{> uspBlock ../this}}
+            {{else}}
+                {{> productCard ../this}}
+            {{/ifeq}}
+        {{/each}}
+    </div>
+</div>
+
 {{> footer}}
 {{> scripts}}
