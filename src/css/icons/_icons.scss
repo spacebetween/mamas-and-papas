@@ -93,6 +93,11 @@
             content: '\E71E';
         }
     }
+    &-tickCircle {
+        &::before {
+            content: '\E959';
+        }
+    }
 }
 
 @font-face {
