@@ -442,6 +442,17 @@ const brandConfig = {
                 promotion: '3 for 2 on Selected Tops'
             }
         ],
+        'product_display_page': [
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product-img@3x.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                reviewScore: { x: 4, total: 5 },
+                description: 'This classic shirt is a must have wardrobe staple this summer. With short sleeves it is perfect for keeping cool on family days out.',
+                inStock: true
+            }
+        ],
         'basket_personalise_message': 'Personalise me for just &pound;5',
         'basket_personalise_placeholder': 'Type your message (max 12 characters)',
         'basket_personalise_button': 'Save',
