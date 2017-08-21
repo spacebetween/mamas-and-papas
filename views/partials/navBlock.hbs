@@ -13,7 +13,7 @@
 
         <ul class="nav_group list-unstyled m-0 px-3">
             {{#each this._categoryLinks}}
-                <li data-goto-category="nav_{{stringReplace @key}}" class="nav_groupLink js-navSwitchCategory"><a href="#" class="d-block py-3">{{@key}}</a></li>
+                <li data-goto-category="nav_{{stringReplace @key}}" class="nav_groupLink js-navSwitchCategory"><a href="{{ifSetOrDefault this.URL '#'}}" class="d-block py-3">{{@key}}</a></li>
             {{/each}}
         </ul>
 

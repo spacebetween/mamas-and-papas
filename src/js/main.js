@@ -127,9 +127,7 @@ var transitionEnd = whichTransitionEvent();
     });
 
     // Switch the category, nav list items and titles trigger this to traverse the menu
-    element.nav.on('click', '.js-navSwitchCategory', function (e) {
-        e.preventDefault();
-
+    element.nav.on('click', '.js-navSwitchCategory', function () {
         var category = $(this).data('goto-category');
         var gotoCategory = element.nav.find('div.nav_category[data-category=' + category + ']');
 
