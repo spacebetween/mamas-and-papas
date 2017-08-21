@@ -39,6 +39,7 @@
             content: '\E936';
         }
         &.active {
+            color: $black;
             &::after {
                 content: '\E937';
             }

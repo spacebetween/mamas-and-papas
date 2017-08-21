@@ -1,22 +1,43 @@
 'use strict';
-
 // Toggle function
 (function ($) {
+    /* 
+     * Set Filter Styles Function
+     * This is a function specific to the product filter
+     * If there is a list item that is active, all non active list items will have .text-grayLight set
+     * whilst the active will be black. If none are active, all list items will be black.
+     */
+    function setFilterStyles (container) {
+        var filterContainer = container.find('.productFilter_filterContainer');
+        var listItems = container.find('.productFilter_links');
+        if (filterContainer.find('.active').length > 0) {
+            $(listItems).each(function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('text-grayLight');
+                }
+            });
+        } else {
+            listItems.removeClass('text-grayLight');
+        }
+    }
     /* 
      * Toggle Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
      * that will be toggled.
      */
-    $('.js-toggle').on('click', '.js-trigger', function (e) {
-        e.stopPropagation();
-        var parent = $(this).closest('.js-toggle');
-        var toggle = $(this).data('target');
-        var target = parent.find('[data-trigger=' + toggle + ']');
-        parent.find('.js-target').not(target).removeClass('d-block');
-        parent.find('.js-trigger').not($(this)).removeClass('active');
-        parent.find(target).toggleClass('d-block');
+    $('.js-toggle').on('click', '.js-trigger', function () {
+        var container = $(this).closest('.js-toggle');
+        var toggle = $(this).data('toggle');
+        var target = container.find('[data-trigger=' + toggle + ']');
+        container.find('.js-toggle').not(target).removeClass('d-block');
+        container.find('.js-trigger').not($(this)).removeClass('active');
+        container.find(target).toggleClass('d-block');
         $(this).toggleClass('active');
+
+        if (container.find('.productFilter_tab')) {
+            setFilterStyles(container);
+        }
     });
 
 })(jQuery);
@@ -32,17 +53,17 @@
 
     $('.js-radio').on('click', '.checkbox_toggle', function () {
         $('.js-radio').find('.checkbox_toggle').not($(this)).removeClass('active');
-        $(this).toggleClass('active');
+        $(this).addClass('active');
         var index = $(this).closest('.js-radio').data('index');
         var text = $(this).siblings('.checkbox_text').text();
-        var label = $(document).find('#sort' + index);
+        var label = $(document).find('#sortBy' + index);
         label.text(text);
     });
 
     $(document).ready(function () {
         $('.js-radio').each(function () {
             var index = $(this).data('index');
-            var label = $(document).find('#sort' + index);
+            var label = $(document).find('#sortBy' + index);
             var activeText = $(this).find('.active').siblings('.checkbox_text').text();
             label.text(activeText);
         });
@@ -53,6 +74,37 @@
 // Checkbox button function
 (function ($) {
     /* 
+     * setFilterCounts Function
+     * This is a function specifically for the product filters that works off of the checkbox
+     * function. 'isClear' defines if the action is to clear the filters or not
+     * if false, it will set the filter counts in the filter footer and button.
+     */
+    function setFilterCounts (container, isClear) {
+        var activeCheckboxes = container.find('div.active');
+        var count = activeCheckboxes.length;
+        var index = container.data('index');
+        var btnLabel = $(document).find('#filter' + index);
+        var footer = $(document).find('#filterFooter' + index);
+        var suffix = count === 1 ? '' : 's';
+        var filterList = '';
+
+        if (isClear === true) {
+            btnLabel.text('0 Selected');
+            footer.text('0 filters applied');
+        } else {
+            // for each active checkbox, add the text value to filterList
+            $(activeCheckboxes).each(function () {
+                var sibText = $(this).siblings('.checkbox_text').text();
+                filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <i class="ico ico-cross px-1 js-uncheckCheckbox"></i>' + sibText + '</div>';
+            });
+
+            btnLabel.text(count + ' Selected');
+            footer.text(count + ' filter' + suffix + ' applied');
+
+            $('<div class="pl-2 d-inline-block">' + filterList + '</div>').appendTo(footer);
+        }
+    }
+    /* 
      * Checkbox Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
@@ -60,37 +112,23 @@
      */
     $('.js-checkbox').on('click', '.checkbox_toggle', function () {
         $(this).toggleClass('active');
-        var parent = $(this).closest('.js-checkboxContainer');
-        var activeCheckboxes = parent.find('div.active');
+        var container = $(this).closest('.js-checkboxContainer');
 
-        var count = activeCheckboxes.length;
-        var index = $(this).closest('.js-checkboxContainer').data('index');
-        var btnLabel = $(document).find('#filter' + index);
-        var footer = $(document).find('#filterFooter' + index);
-        var suffix = count === 1 ? '' : 's';
-        var filterList = '';
-
-        $(activeCheckboxes).each(function () {
-            var sibText = $(this).siblings('.checkbox_text').text();
-            filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <i class="ico ico-cross px-1 js-uncheckCheckbox"></i>' + sibText + '</div>';
-        });
-
-        btnLabel.text(count + ' Selected');
-        footer.text(count + ' filter' + suffix + ' applied');
-
-        $('<div class="pl-2 d-inline-block">' + filterList + '</div>').appendTo(footer);
+        if (container.find('.productFilter_tab')) {
+            setFilterCounts(container, false);
+        }
     });
 
     $('.js-checkboxContainer').on('click', '.js-clearCheckbox', function () {
-        var parent = $(this).closest('.js-checkboxContainer');
-        var activeCheckboxes = parent.find('div.active');
+        var container = $(this).closest('.js-checkboxContainer');
+        var activeCheckboxes = container.find('div.active');
         activeCheckboxes.removeClass('active');
-        var index = $(this).closest('.js-checkboxContainer').data('index');
-        var btnLabel = $(document).find('#filter' + index);
-        var footer = $(document).find('#filterFooter' + index);
-        btnLabel.text('0 Selected');
-        footer.text('0 filters applied');
+
+        if (container.find('.productFilter_tab')) {
+            setFilterCounts(container, true);
+        }
     });
+
 })(jQuery);
 
 // Navigation
@@ -102,11 +140,25 @@
      * Requires the class js-slidePanel on the triggers, and a data-target attribute for the DOM element to be slid in/out.
      */
 
-    $('body').on('click', '.js-slidePanel', function () {
+    var locked = 0;
 
+    $('body').append('<div class="blackout"></div>');
+
+    $('body').on('click', '.js-slidePanel', function () {
+        console.log('hi');
         // Get our target element to slide in
         var target = $(this).data('target');
+        console.log(target);
         var slidePanel = null;
+
+        function setLock (lock) {
+            locked = lock || 0;
+        }
+
+        function toggleState () {
+            slidePanel.css('z-index', 9999).toggleClass('active');
+            $('body').find('.blackout').toggleClass('active');
+        }
 
         if (!target) {
             slidePanel = $(this).closest('.slidePanel');
@@ -114,14 +166,23 @@
             slidePanel = $(target).closest('.slidePanel');
         }
 
-        slidePanel.css('z-index', '9999').toggleClass('active');
+        if (slidePanel.length) {
+            if (slidePanel.hasClass('active')) {
+                toggleState();
 
-        // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
-        slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
-            if (!$(this).hasClass('active')) {
-                $(this).css('z-index', '-1');
+                // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
+                slidePanel.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                    $(this).css('z-index', '-1');
+
+                    setLock(0);
+                    slidePanel.off();
+                });
+            } else if (!slidePanel.hasClass('active') && locked === 0) {
+                setLock(1);
+                toggleState();
             }
-        });
+        }
+
     });
 
 })(jQuery);
@@ -171,190 +232,211 @@
 
 })(jQuery);
 
-(function ($) {
+var Carousel = function ($, window) {
 
     /*
      * Feature Carousel - Homepage
      */
 
-    // Grab references to our carousel elements
-    var element = {
-        carousel: $('.featureCarousel'),
-        carouselTrack: $('.featureCarousel_track'),
-        carouselElement: $('.featureCarousel_entry'),
-        carouselControls: $('.featureCarousel_controls')
+    return function () {
+
+        // Carousel elements, see init()
+        var element = {};
+
+        // A lock for the prev and next functions, just a nice to have feature
+        var locked = 0;
+
+        // Delay timing for transition lock
+        var delayTime = 600;
+
+        // Store array of the carousel elements, see init()
+        var order;
+
+        // Default central carousel item
+        var currentFocusIndex = 1;
+
+        // Mobile touch variables
+        var xDown = null;
+        var yDown = null;
+
+        // Carousel supports up to 5 layered images in a rotating fashion, these are the style rules for the positioning
+        // Note: this needs improving. Now we have the basic carousel in place, this CSS needs to be generated for X amount of slides, using the config options to decide offset etc.
+        var cssRule = [
+            {
+                visibility: 'visible',
+                transform: 'translate(0, -40px) scale(1)',
+                zIndex: '30'
+            },
+            {
+                visibility: 'visible',
+                transform: 'translate(50%, -20px) scale(.9)',
+                zIndex: '20'
+            },
+            {
+                visibility: 'visible',
+                transform: 'translate(90%, 0) scale(.8)',
+                zIndex: '10'
+            },
+            {
+                visibility: 'visible',
+                transform: 'translate(-90%, 0) scale(.8)',
+                zIndex: '10'
+            },
+            {
+                visibility: 'visible',
+                transform: 'translate(-50%, -20px) scale(.9)',
+                zIndex: '20'
+            }
+        ];
+
+        function unlock () {
+            locked = 0;
+        }
+
+        function setControlArrowPos () {
+            // Get the image height, adjust amount by scaling and margin offset
+            var offset = Math.ceil(element.carouselElement.first().find('img').height() * .9 - 60);
+            element.carouselControls.css('top', offset);
+        }
+
+        function setContainerHeight () {
+            element.carouselTrack.css('height', (element.carouselElement.outerHeight() + 20) + 'px');
+            setControlArrowPos();
+        }
+
+        function setContainerBackground () {
+            var active = element.carouselTrack.find('.featureCarousel_entry.focused');
+            var colour = active.data('background') || '';
+
+            element.carouselTrack.css('background-color', colour);
+        }
+
+        function setCssRules () {
+            element.carouselElement.removeClass('focused');
+            element.carouselElement.eq(currentFocusIndex - 1).addClass('focused');
+
+            $.each(order, function (i, e) {
+                element.carouselTrack.find(e).css(cssRule[i]);
+            });
+
+            setContainerBackground();
+
+            setTimeout(unlock, delayTime);
+        }
+
+        function next () {
+            if (!locked) {
+
+                locked = 1;
+
+                if (currentFocusIndex >= element.carouselElement.length) {
+                    currentFocusIndex = 1;
+                } else {
+                    currentFocusIndex++;
+                }
+
+                order.push(order.shift());
+                setCssRules();
+            }
+        }
+
+        function prev () {
+            if (!locked) {
+
+                locked = 1;
+
+                if (currentFocusIndex <= 1) {
+                    currentFocusIndex = element.carouselElement.length;
+                } else {
+                    currentFocusIndex--;
+                }
+
+                order.unshift(order.pop());
+                setCssRules();
+            }
+        }
+
+        function handleTouchStart (event) {
+            xDown = event.touches[0].clientX;
+            yDown = event.touches[0].clientY;
+        }
+
+        function handleTouchMove (event) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            var xUp = event.touches[0].clientX;
+            var yUp = event.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            // ensure the user isn't just scrolling down, in which case the Y travel will be greater than the X sway
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if ( xDiff > 0 ) {
+                    // swipe left
+                    next();
+                } else {
+                    // swipe right
+                    prev();
+                }
+            }
+
+            /* reset */
+            xDown = null;
+        }
+
+        function init (config) {
+
+            config = config || {};
+
+            config = Object.assign({
+                element: $('#featureCarousel'),
+                offsetTop: '40px',
+                offsetTopStep: '20px',
+                offsetSide: '50%',
+                lockDelayTimer: 600
+            }, config);
+
+            element = {
+                carousel: config.element,
+                carouselTrack: config.element.find('.featureCarousel_track'),
+                carouselElement: config.element.find('.featureCarousel_entry'),
+                carouselControls: config.element.find('.featureCarousel_controls')
+            };
+
+            if (element.carousel.length) {
+
+                // Store array of the carousel elements, we'll keep track of and manipulate the order of them via this
+                order = element.carouselElement.toArray();
+
+                // Add listeners for resize and touch
+                window.addEventListener('resize', setContainerHeight);
+                element.carousel.on('touchstart', handleTouchStart);
+                element.carousel.on('touchmove', handleTouchMove);
+                element.carousel.on('click', '.js-next', next);
+                element.carousel.on('click', '.js-prev', prev);
+
+                // Set the height and background of the container
+                setCssRules();
+                setContainerHeight();
+
+                // First load, after the initial background has been set, we'll now tag it to add transitions to further background changes
+                setTimeout(function () {
+                    element.carouselTrack.addClass('transition-background');
+                }, 1000);
+
+            }
+        }
+
+        return {
+            init: init
+        };
+
     };
 
-    // A lock for the prev and next functions, just a nice to have feature
-    var locked = 0;
-
-    // Delay timing for transition lock
-    var delayTime = 600;
-
-    // Store array of the carousel elements, we'll keep track of and manipulate the order of them via this
-    var order = element.carouselElement.toArray();
-
-    // Default central carousel item
-    var currentFocusIndex = 1;
-
-    // Mobile touch variables
-    var xDown = null;
-    var yDown = null;
-
-    // Carousel supports up to 5 layered images in a rotating fashion, these are the style rules for the positioning
-    var cssRule = [
-        {
-            visibility: 'visible',
-            transform: 'translate(0, -40px) scale(1)',
-            zIndex: '30'
-        },
-        {
-            visibility: 'visible',
-            transform: 'translate(50%, -20px) scale(.9)',
-            zIndex: '20'
-        },
-        {
-            visibility: 'visible',
-            transform: 'translate(90%, 0) scale(.8)',
-            zIndex: '10'
-        },
-        {
-            visibility: 'visible',
-            transform: 'translate(-90%, 0) scale(.8)',
-            zIndex: '10'
-        },
-        {
-            visibility: 'visible',
-            transform: 'translate(-50%, -20px) scale(.9)',
-            zIndex: '20'
-        }
-    ];
-
-    function unlock () {
-        locked = 0;
-    }
-
-    function setControlArrowPos () {
-        // Get the image height, adjust amount by scaling and margin offset
-        var offset = Math.ceil(element.carouselElement.first().find('img').height() * .9 - 60);
-        element.carouselControls.css('top', offset);
-    }
-
-    function setContainerHeight () {
-        element.carouselTrack.css('height', (element.carouselElement.outerHeight() + 20) + 'px');
-        setControlArrowPos();
-    }
-
-    function setContainerBackground () {
-        var active = element.carouselTrack.find('.featureCarousel_entry.focused');
-        var colour = active.data('background') || '';
-
-        element.carouselTrack.css('background-color', colour);
-    }
-
-    function setCssRules () {
-        element.carouselElement.removeClass('focused');
-        element.carouselElement.eq(currentFocusIndex - 1).addClass('focused');
-
-        $.each(order, function (i, e) {
-            element.carouselTrack.find(e).css(cssRule[i]);
-        });
-
-        setContainerBackground();
-
-        setTimeout(unlock, delayTime);
-    }
-
-    function next () {
-        if (!locked) {
-
-            locked = 1;
-
-            if (currentFocusIndex >= element.carouselElement.length) {
-                currentFocusIndex = 1;
-            } else {
-                currentFocusIndex++;
-            }
-
-            order.push(order.shift());
-            setCssRules();
-        }
-    }
-
-    function prev () {
-        if (!locked) {
-
-            locked = 1;
-
-            if (currentFocusIndex <= 1) {
-                currentFocusIndex = element.carouselElement.length;
-            } else {
-                currentFocusIndex--;
-            }
-
-            order.unshift(order.pop());
-            setCssRules();
-        }
-    }
-
-    function handleTouchStart (event) {
-        xDown = event.touches[0].clientX;
-        yDown = event.touches[0].clientY;
-    }
-
-    function handleTouchMove (event) {
-        if (!xDown || !yDown) {
-            return;
-        }
-
-        var xUp = event.touches[0].clientX;
-        var yUp = event.touches[0].clientY;
-
-        var xDiff = xDown - xUp;
-        var yDiff = yDown - yUp;
-
-        // ensure the user isn't just scrolling down, in which case the Y travel will be greater than the X sway
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {
-            if ( xDiff > 0 ) {
-                // swipe left
-                next();
-            } else {
-                // swipe right
-                prev();
-            }
-        }
-
-        /* reset */
-        xDown = null;
-    }
-
-    function init () {
-        if (element.carousel.length) {
-
-            // Add listeners for resize and touch
-            window.addEventListener('resize', setContainerHeight);
-            element.carousel.on('touchstart', handleTouchStart);
-            element.carousel.on('touchmove', handleTouchMove);
-            element.carousel.on('click', '.js-next', next);
-            element.carousel.on('click', '.js-prev', prev);
-
-            // Set the height and background of the container
-            setCssRules();
-            setContainerHeight();
-
-            // First load, after the initial background has been set, we'll now tag it to add transitions to further background changes
-            setTimeout(function () {
-                element.carouselTrack.addClass('transition-background');
-            }, 1000);
-
-        }
-    }
-
-    $(function () {
-        init();
-    });
-
-})(jQuery);
+}(jQuery, window);
 
 // Slick article carousel
 $(document).ready(function () {
@@ -363,5 +445,16 @@ $(document).ready(function () {
         arrows: false,
         autoplay: true,
         autoplaySpeed: 10000
+    });
+
+    $('.basket_upsellCarousel').slick({
+        dots: true,
+        arrows: false,
+        autoplay: false
+    });
+
+    $(function () {
+        var homepageFeature = new Carousel();
+        homepageFeature.init();
     });
 });

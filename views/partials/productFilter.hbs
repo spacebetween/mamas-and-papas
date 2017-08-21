@@ -1,16 +1,16 @@
 <div class="productFilter js-toggle">
     <div class="row productFilter_filterSelectors p-2">
         {{#each (theme code="plp_clothing_filters")}}
-            <div class="border-gray d-inline-block py-2 px-3 productFilter_select mr-3 js-trigger" data-target="{{stringReplace name}}">
+            <div class="border-gray d-inline-block py-2 px-3 productFilter_select mr-3 js-slidePanel js-trigger" data-target="#{{stringReplace name}}-slide" data-toggle="{{stringReplace name}}">
                 {{name}}
                 <div class="productFilter_label font-weight-light" id="filter{{@index}}">0 filters applied</div>
                 <i class="ico ico-plus productFilter_icon"> </i>
             </div>
         {{/each}}
         {{#each (theme code="plp_clothing_sort")}}
-            <div class="border-gray d-inline-block py-2 px-3 productFilter_select mr-3 js-trigger" data-target="{{stringReplace name}}">
+            <div class="border-gray d-inline-block py-2 px-3 productFilter_select mr-3 js-slidePanel js-trigger " data-target="#{{stringReplace name}}-slide" data-toggle="{{stringReplace name}}">
                 {{name}}
-                <div class="productFilter_label font-weight-light" id="sort{{@index}}"></div>
+                <div class="productFilter_label font-weight-light" id="sortBy{{@index}}"></div>
                 <i class="ico ico-plus productFilter_icon"> </i>
             </div>
         {{/each}}
@@ -42,7 +42,7 @@
                     <div class="col-md-5 py-5">
                         <ul class="list-unstyled productFilter_filterContainer float-right">
                             {{#each filters}}
-                                <li class="js-trigger productFilter_links p-3" data-target="{{stringReplace @key}}">
+                                <li class="js-trigger productFilter_links p-3" data-toggle="{{stringReplace @key}}">
                                     {{@key}}
                                 </li>
                             {{/each}}

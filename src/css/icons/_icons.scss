@@ -48,6 +48,16 @@
             content: '\E937';
         }
     }
+    &-chevronUp {
+        &::before {
+            content: '\E939';
+        }
+    }
+    &-chevronDown {
+        &::before {
+            content: '\E93A';
+        }
+    }
     &-chevronLeft {
         &::before {
             content: '\E93B';
