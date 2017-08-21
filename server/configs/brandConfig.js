@@ -457,7 +457,19 @@ const brandConfig = {
                     'Size 1',
                     'Size 2',
                     'Size 3'
-                ]
+                ],
+                product_details: `<p>This classic shirt is a must have wardrobe staple this summer. With short sleeves it is perfect for keeping cool on family days out, pair with chino shorts for a complete look.</p>
+                                    - Lined <br />
+                                    - Shape print <br />
+                                    - Denim detail on lining <br />
+                                    - Cooling fabric <br />
+                                    - Double layered collar <br />
+                                    <br />
+                                    <strong>Additional Information</strong> <br />
+                                    100% Cotton <br />
+                                    Machine washable <br />
+                                    Do not bleach <br />
+                                    Tumble dry low`
             }
         ],
         'basket_personalise_message': 'Personalise me for just &pound;5',
