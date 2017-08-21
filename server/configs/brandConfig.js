@@ -15,6 +15,8 @@ const brandConfig = {
         'header_title': 'Explore the perfect nursery for baby',
         'header_subtitle': 'Stunning collaborations & inspiration',
         'header_image': '/media/banner_homepage.jpg',
+        'btn_add_to_bag': 'Add To Bag',
+        'btn_find_in_store': 'Find In Store',
         'info_bar_message': 'Free standard delivery - on orders over £50',
         'info_bar_links': [
             {
@@ -450,7 +452,12 @@ const brandConfig = {
                 priceOld: 20.00,
                 reviewScore: { x: 4, total: 5 },
                 description: 'This classic shirt is a must have wardrobe staple this summer. With short sleeves it is perfect for keeping cool on family days out.',
-                inStock: true
+                inStock: true,
+                sizes: [
+                    'Size 1',
+                    'Size 2',
+                    'Size 3'
+                ]
             }
         ],
         'basket_personalise_message': 'Personalise me for just &pound;5',
