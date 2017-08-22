@@ -1,0 +1,88 @@
+<div class="wrapper">
+    <header>
+        {{> topInfoBar}}
+        <div class="container-fluid">
+            {{> header color="black" background="white"}}
+        </div>
+    </header>
+    {{> breadcrumb}}
+
+    <div class="container-fluid product pt-4">
+        {{#each (theme code="product_display_page")}}
+            <div class="row">
+                <div class="col-lg-8 col-md-6">
+                    <img src="{{image}}" class="p-lg-7 py-md-7" width="100%" />
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="productDetails p-2 pt-4 my-4">
+                        <div class="productDetails_title py-1">
+                            <strong>{{title}}</strong>
+                        </div>
+                        <div class="productDetails_price py-1">
+                            <strong>{{formatCurrency price '£'}}</strong> 
+                            {{#if priceOld}}
+                                <del class="text-gray">{{formatCurrency priceOld '£'}}</del>
+                            {{/if}}
+                        </div>
+                        {{#if reviewScore}}
+                            <div class="productDetails_review mx-auto my-2 text-uppercase">
+                                {{> reviewStars amount=reviewScore.x total=reviewScore.total}}
+                            </div>
+                        {{/if}}
+                        {{#if description}}
+                            <div class="productDetails_description pt-2">
+                                <p class="m-0 p-0"><small>{{description}}</small></p>
+                                <p><small><u><a href="#">read more</a></u></small></p>
+                            </div>
+                        {{/if}}
+                        {{#if inStock}}
+                            <div class="productDetails_description">
+                                <small><i class="ico ico-tickCircle"></i> in stock</small>
+                            </div>
+                        {{/if}}
+
+                        {{#if sizes}}
+                            <div class="row mx-0 px-0 my-3">
+                                <div class="col m-0 p-0">
+                                    <select class="w-100 p-3">
+                                        <option>Select your size</option>
+                                        {{#each sizes}}
+                                            <option>{{this}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        {{/if}}
+                        <div class="row mx-0 px-0 my-3">
+                            <div class="col-6 ml-0 pl-0 pr-1">
+                                <button class="btn w-100">{{theme code="btn_add_to_bag"}}</button>
+                            </div>
+                            <div class="col-6 mr-0 pr-0 pl-1">
+                                <button class="btn btn- w-100">{{theme code="btn_find_in_store"}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <p><strong>Product Details</strong></p>
+                    <small>{{{product_details}}}</small>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <p><strong>Information</strong></p>
+                    <small>{{{product_information}}}</small>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+    {{> footer}}
+
+</div>
+
+{{> slidePanel block="nav"}}
+{{> slidePanel block="basket" align="rightSide"}}
+
+{{> scripts}}

@@ -15,6 +15,8 @@ const brandConfig = {
         'header_title': 'Explore the perfect nursery for baby',
         'header_subtitle': 'Stunning collaborations & inspiration',
         'header_image': '/media/banner_homepage.jpg',
+        'btn_add_to_bag': 'Add To Bag',
+        'btn_find_in_store': 'Find In Store',
         'info_bar_message': 'Free standard delivery - on orders over £50',
         'info_bar_links': [
             {
@@ -53,24 +55,24 @@ const brandConfig = {
                         '_categoryLinks': {
                             'Boys': {
                                 '_categoryLinks': {
-                                    'All Boys': {},
-                                    'NEW Arrivals': {},
+                                    'All Boys': { 'URL': '/product-list-page' },
+                                    'NEW Arrivals': { 'URL': '/product-list-page' },
                                     'Accessories': {
                                         '_categoryLinks': {
-                                            'Belts': {},
-                                            'Gloves': {}
+                                            'Belts': { 'URL': '/product-list-page' },
+                                            'Gloves': { 'URL': '/product-list-page' }
                                         }
                                     },
-                                    'All In Ones': {},
-                                    'Baby Basics & Multipacks': {},
-                                    'Jackets & Pramsuits': {},
-                                    'Knitwear': {},
-                                    'Pyjamas': {},
-                                    'Rompers & Bodysuits': {},
-                                    'Shirts & Tops': {},
-                                    'Special Occasion': {},
-                                    'Swimwear': {},
-                                    'Trousers & Shorts': {}
+                                    'All In Ones': { 'URL': '/product-list-page' },
+                                    'Baby Basics & Multipacks': { 'URL': '/product-list-page' },
+                                    'Jackets & Pramsuits': { 'URL': '/product-list-page' },
+                                    'Knitwear': { 'URL': '/product-list-page' },
+                                    'Pyjamas': { 'URL': '/product-list-page' },
+                                    'Rompers & Bodysuits': { 'URL': '/product-list-page' },
+                                    'Shirts & Tops': { 'URL': '/product-list-page' },
+                                    'Special Occasion': { 'URL': '/product-list-page' },
+                                    'Swimwear': { 'URL': '/product-list-page' },
+                                    'Trousers & Shorts': { 'URL': '/product-list-page' }
                                 },
                                 '_promoImage': [
                                     '/media/promo_bunny_clyde.jpg'
@@ -78,16 +80,16 @@ const brandConfig = {
                             },
                             'Girls': {
                                 '_categoryLinks': {
-                                    'Test': {},
-                                    'Lorem Ipsum': {},
-                                    'Dolar': {}
+                                    'Test': { 'URL': '/product-list-page' },
+                                    'Lorem Ipsum': { 'URL': '/product-list-page' },
+                                    'Dolar': { 'URL': '/product-list-page' }
                                 },
                                 '_promoImage': [
                                     '/media/promo_bunny_clyde.jpg'
                                 ]
                             },
-                            'Unisex': {},
-                            'Collections': {}
+                            'Unisex': { 'URL': '/product-list-page' },
+                            'Collections': { 'URL': '/product-list-page' }
                         },
                         '_promoImage': [
                             '/media/promo_bunny_clyde.jpg'
@@ -95,32 +97,32 @@ const brandConfig = {
                     },
                     'Baby Home': {
                         '_categoryLinks': {
-                            'New In': {},
-                            'Prams & Pushchairs': {},
-                            'Buggies & Strollers': {},
-                            'Twin & Double Pushchairs': {}
+                            'New In': { 'URL': '/product-list-page' },
+                            'Prams & Pushchairs': { 'URL': '/product-list-page' },
+                            'Buggies & Strollers': { 'URL': '/product-list-page' },
+                            'Twin & Double Pushchairs': { 'URL': '/product-list-page' }
                         }
                     },
                     'Baby Out & About': {
                         '_categoryLinks': {
-                            'BO&A 1': {},
-                            'BO&A 2': {},
-                            'BO&A 3': {},
-                            'BO&A 4': {}
+                            'BO&A 1': { 'URL': '/product-list-page' },
+                            'BO&A 2': { 'URL': '/product-list-page' },
+                            'BO&A 3': { 'URL': '/product-list-page' },
+                            'BO&A 4': { 'URL': '/product-list-page' }
                         }
                     },
                     'For Mum': {
                         '_categoryLinks': {
-                            'FM 1': {},
-                            'FM 2': {},
-                            'FM 3': {}
+                            'FM 1': { 'URL': '/product-list-page' },
+                            'FM 2': { 'URL': '/product-list-page' },
+                            'FM 3': { 'URL': '/product-list-page' }
                         }
                     },
                     'Celebrate': {
                         '_categoryLinks': {
-                            'C 1': {},
-                            'C 2': {},
-                            'c 3': {}
+                            'C 1': { 'URL': '/product-list-page' },
+                            'C 2': { 'URL': '/product-list-page' },
+                            'c 3': { 'URL': '/product-list-page' }
                         }
                     }
                 },
@@ -337,47 +339,54 @@ const brandConfig = {
                 priceOld: 20.00,
                 strapline: 'Free Delivery',
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'Blue Cotton Shirt',
                 image: 'media/product_02.jpg',
                 price: 10.00,
                 priceOld: 16.50,
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'Green Alpaca Shirt',
                 image: 'media/product_03.jpg',
                 price: 10.00,
                 reviewScore: { x: 4, total: 5 },
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_04.jpg',
                 price: 14.50,
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_05.jpg',
                 price: 14.50,
                 priceOld: 20.00,
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
                 image: 'media/product_06.jpg',
                 price: 14.50,
                 priceOld: 20.00,
-                reviewScore: { x: 3, total: 5 }
+                reviewScore: { x: 3, total: 5 },
+                URL: '/product-display-page'
             },
             {
                 type: 'USP',
                 size: 'large',
                 title: 'A special USP entry block',
-                image: 'media/plp_usp_02.jpg'
+                image: 'media/plp_usp_02.jpg',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -387,7 +396,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -397,7 +407,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -407,7 +418,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -417,7 +429,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -427,7 +440,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -437,7 +451,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 type: 'USP',
@@ -453,7 +468,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -463,7 +479,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -473,7 +490,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -483,7 +501,8 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
             },
             {
                 title: 'White Cotton Pattern Shirt',
@@ -493,7 +512,42 @@ const brandConfig = {
                 strapline: 'Free Delivery',
                 reviewScore: { x: 4, total: 5 },
                 discount: 'Save 50%',
-                promotion: '3 for 2 on Selected Tops'
+                promotion: '3 for 2 on Selected Tops',
+                URL: '/product-display-page'
+            }
+        ],
+        'product_display_page': [
+            {
+                title: 'White Cotton Pattern Shirt',
+                image: 'media/product-img@3x.jpg',
+                price: 14.50,
+                priceOld: 20.00,
+                reviewScore: { x: 4, total: 5 },
+                description: 'This classic shirt is a must have wardrobe staple this summer. With short sleeves it is perfect for keeping cool on family days out.',
+                inStock: true,
+                sizes: [
+                    'Size 1',
+                    'Size 2',
+                    'Size 3'
+                ],
+                product_details: `<p>This classic shirt is a must have wardrobe staple this summer. With short sleeves it is perfect for keeping cool on family days out, pair with chino shorts for a complete look.</p>
+                                    - Lined <br />
+                                    - Shape print <br />
+                                    - Denim detail on lining <br />
+                                    - Cooling fabric <br />
+                                    - Double layered collar <br />
+                                    <br />
+                                    <strong>Additional Information</strong> <br />
+                                    100% Cotton <br />
+                                    Machine washable <br />
+                                    Do not bleach <br />
+                                    Tumble dry low`,
+                'product_information': `<strong>Delivery</strong>
+                        <p>View more information about all our delivery options.</p>
+                        <strong>Returns &amp; exchange</strong>
+                        <p>If you are not happy with your purchase you can return it to us, <u><a href="#">view more</a></u> details about returns.</p>
+                        <strong>Help</strong>
+                        <p>Need help? Why not <u><a href="#">contact us</a></u> or visit our <u><a href="#">FAQs</a></u> for more information.</p>`
             }
         ],
         'basket_personalise_message': 'Personalise me for just &pound;5',

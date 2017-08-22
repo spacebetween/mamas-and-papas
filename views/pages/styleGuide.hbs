@@ -1,25 +1,26 @@
-{{> topInfoBar}}
-<div class="container-fluid">
-    {{> header color="black" background="white"}}
-    {{> header color="white" background="gray"}}
-</div>
-{{> homepageHeader}}
-{{> slidePanel block="nav"}}
-{{> boxBanner}}
-<div class="container">
-    <div class="row py-4">
-        <div class="col">
-            <h3>Buttons </h3>
-            <div class="d-inline-block">
-                {{> arrowButton color="black"}}
-            </div>
-            <div class="d-inline-block">
-                {{> arrowButton color="black" size="small"}}
-            </div>
-            <div class="d-inline-block">
-                {{> button text="Default"}}
-                {{> button backgroundColour="primary" text="Primary"}}
-                {{> button backgroundColour="secondary" text="Secondary"}}
+<div class="wrapper">
+    {{> topInfoBar}}
+    <div class="container-fluid">
+        {{> header color="black" background="white"}}
+        {{> header color="white" background="gray"}}
+    </div>
+    {{> homepageHeader}}
+    {{> boxBanner}}
+    <div class="container">
+        <div class="row py-4">
+            <div class="col">
+                <h3>Buttons </h3>
+                <div class="d-inline-block">
+                    {{> arrowButton color="black"}}
+                </div>
+                <div class="d-inline-block">
+                    {{> arrowButton color="black" size="small"}}
+                </div>
+                <div class="d-inline-block">
+                    {{> button text="Default"}}
+                    {{> button backgroundColour="primary" text="Primary"}}
+                    {{> button backgroundColour="secondary" text="Secondary"}}
+                </div>
             </div>
         </div>
     </div>
@@ -40,9 +41,10 @@
             </div>            
         </div>
     </div>
+    {{> footer}}
 </div>
-{{> footer}}
 
+{{> slidePanel block="nav"}}
 {{> slidePanel block="basket" align="rightSide"}}
 
 {{> scripts}}

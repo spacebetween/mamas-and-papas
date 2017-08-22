@@ -2,9 +2,9 @@
     <div class="productCard transition-transform p-2 pt-4 mb-5 mt-4">
         <div class="productCard_top text-center">
             {{#if strapline}}
-            <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
-                {{strapline}}
-            </div>
+                <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
+                    {{strapline}}
+                </div>
             {{/if}}
             {{#if reviewScore}}
                 <div class="productCard_strap d-inline mx-auto p-1 text-uppercase">
@@ -13,7 +13,7 @@
             {{/if}}
         </div>
         <div class="productCard_mediaContainer my-4">
-            <img src="{{image}}" class="productCard_image mx-auto" />
+            <a href="{{ifSetOrDefault this.URL '#'}}"><img src="{{image}}" class="productCard_image mx-auto" /></a>
         </div>
         <div class="productCard_details pt-4">
             {{#if discount}}

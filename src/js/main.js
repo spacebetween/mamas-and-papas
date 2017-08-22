@@ -188,44 +188,59 @@ var transitionEnd = whichTransitionEvent();
      * Requires the class js-slidePanel on the triggers, and a data-target attribute for the DOM element to be slid in/out.
      */
 
+    // Is set when a slide panel is active. Stops multiple panels being active.
     var locked = 0;
 
+    // Appends our blackout overlay for all slide panels.
     $('body').append('<div class="blackout"></div>');
 
+    // Trigger for the slide panel, both open and close.
     $('body').on('click', '.js-slidePanel', function () {
         // Get our target element to slide in
         var target = $(this).data('target');
-        var slidePanel = null;
 
+        // Our slide panel to open or close.. 
+        var slidePanel;
+
+        // Set the lock status
         function setLock (lock) {
             locked = lock || 0;
         }
 
-        function toggleState () {
-            slidePanel.css('z-index', 9999).toggleClass('active');
-            $('body').find('.blackout').toggleClass('active');
+        // Show the slide panel
+        function showPanel () {
+            slidePanel.css('z-index', 9999).addClass('active');
+            $('body').addClass('noscroll').find('.blackout').addClass('active');
         }
 
+        // Hide the slide panel
+        function hidePanel () {
+            slidePanel.removeClass('active');
+            $('body').find('.blackout').removeClass('active');
+        }
+
+        // If we have a target, we're opening a panel, no target and we're closing the panel.
         if (!target) {
             slidePanel = $(this).closest('.slidePanel');
         } else {
             slidePanel = $(target).closest('.slidePanel');
         }
 
+        // If we've got something to work with, work magic.
         if (slidePanel.length) {
             if (slidePanel.hasClass('active')) {
-                toggleState();
+                hidePanel();
 
                 // Listen once (same as .on .off for the transition to finish, if it's closed, reset the z-index)
                 slidePanel.one(transitionEnd, function () {
                     $(this).css('z-index', '-1');
-
+                    $('body').removeClass('noscroll');
                     setLock(0);
                     slidePanel.off();
                 });
             } else if (!slidePanel.hasClass('active') && locked === 0) {
+                showPanel();
                 setLock(1);
-                toggleState();
             }
         }
     });
@@ -266,7 +281,6 @@ var transitionEnd = whichTransitionEvent();
     // Switch the category, nav list items and titles trigger this to traverse the menu
     element.nav.on('click', '.js-navSwitchCategory', function (e) {
         e.preventDefault();
-
         var category = $(this).data('goto-category');
         var gotoCategory = element.nav.find('div.nav_category[data-category=' + category + ']');
 
