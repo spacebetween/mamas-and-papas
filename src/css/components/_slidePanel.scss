@@ -1,6 +1,6 @@
 .slidePanel {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -15,6 +15,7 @@
         width: 100%;
         max-width: 380px;
         height: 100%;
+        overflow-y: scroll;
         transform: translateX(-100%);
         transition-duration: $transition-duration;
         transition-property: transform;

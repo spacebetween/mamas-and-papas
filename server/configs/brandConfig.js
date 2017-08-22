@@ -487,7 +487,13 @@ const brandConfig = {
                                     100% Cotton <br />
                                     Machine washable <br />
                                     Do not bleach <br />
-                                    Tumble dry low`
+                                    Tumble dry low`,
+                'product_information': `<strong>Delivery</strong>
+                        <p>View more information about all our delivery options.</p>
+                        <strong>Returns &amp; exchange</strong>
+                        <p>If you are not happy with your purchase you can return it to us, <u><a href="#">view more</a></u> details about returns.</p>
+                        <strong>Help</strong>
+                        <p>Need help? Why not <u><a href="#">contact us</a></u> or visit our <u><a href="#">FAQs</a></u> for more information.</p>`
             }
         ],
         'basket_personalise_message': 'Personalise me for just &pound;5',
