@@ -1,3 +1,33 @@
-<div id="filter-by-slide">
-    <h1>Filters</h1>
-</div>
+{{#each (theme code="plp_clothing_filters")}}
+    {{#ifeq name 'Filter By'}}
+        <div class="js_slideContent" id="filter-by-slide">
+            <div class="slidePanel_category slidePanel_category-selected bg-white" data-category="filter_primary">
+                <div class="slidePanel_title p-3 js-switchCategory">
+                    {{../name}}
+                </div>
+                <ul class="slidePanel_group list-unstyled m-0 px-3">
+                    {{#each ../filters}}
+                        <li data-goto-category="filter_{{stringReplace @key}}" class="js-switch_groupLink"><a href="#" class="d-block py-3">{{@key}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{#each ../filters}}
+                <div class="slidePanel_category js-checkboxContainer slidePanel_category bg-white" data-category="filter_{{stringReplace @key}}">
+                    <div data-goto-category="filter_primary" class="slidePanel_title slidePanel_backArrow font-weight-bold cursor-pointer p-3 pl-5 js-switch_groupLink">
+                        {{@key}}
+                    </div>
+                    <div class="js-checkbox">
+                        {{#each .}}
+                            <div class="d-inline-block pb-4">
+                                <div class="checkbox">
+                                    <div class="checkbox_toggle"></div>
+                                    <div class="checkbox_text">{{.}}</div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{/ifeq}} 
+{{/each}}

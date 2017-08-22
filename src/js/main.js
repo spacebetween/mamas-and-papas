@@ -49,10 +49,11 @@ var transitionEnd = whichTransitionEvent();
      * that will be toggled.
      */
     $('.js-toggle').on('click', '.js-trigger', function () {
+        console.log($(this));
         var container = $(this).closest('.js-toggle');
         var toggle = $(this).data('toggle');
         var target = container.find('[data-trigger=' + toggle + ']');
-        container.find('.js-toggle').not(target).removeClass('d-block');
+        container.find('.js-target').not(target).removeClass('d-block');
         container.find('.js-trigger').not($(this)).removeClass('active');
         container.find(target).toggleClass('d-block');
         $(this).toggleClass('active');
@@ -151,6 +152,31 @@ var transitionEnd = whichTransitionEvent();
         }
     });
 
+    /*
+    * Checkbox mobile navigation
+    */
+    var element = {
+        content: $('.js_slideContent')
+    };
+
+    function categoryChanger (gotoCategory) {
+        element.content.find('div.slidePanel_category').removeClass('slidePanel_category-selected');
+        console.log('hi');
+        gotoCategory.addClass('slidePanel_category-selected');
+    }
+
+    // Switch the category, nav list items and titles trigger this to traverse the menu
+    element.content.on('click', '.js-switch_groupLink', function (e) {
+        e.preventDefault();
+
+        var category = $(this).data('goto-category');
+        var gotoCategory = element.content.find('div.slidePanel_category[data-category=' + category + ']');
+
+        if (gotoCategory.length) {
+            categoryChanger(gotoCategory);
+        }
+    });
+
 })(jQuery);
 
 // Navigation
@@ -167,10 +193,8 @@ var transitionEnd = whichTransitionEvent();
     $('body').append('<div class="blackout"></div>');
 
     $('body').on('click', '.js-slidePanel', function () {
-        console.log('hi');
         // Get our target element to slide in
         var target = $(this).data('target');
-        console.log(target);
         var slidePanel = null;
 
         function setLock (lock) {
@@ -204,7 +228,6 @@ var transitionEnd = whichTransitionEvent();
                 toggleState();
             }
         }
-
     });
 
 }(jQuery));
