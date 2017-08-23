@@ -3,12 +3,12 @@
         {{#each (theme code="plp_clothing_filters")}}
             <div class="border-gray d-none d-md-inline-block py-2 px-3 productFilter_select mr-3 js-trigger" data-toggle="{{stringReplace name}}">
                 {{name}}
-                <div class="productFilter_label font-weight-light" id="filter{{@index}}">0 filters applied</div>
+                <div class="productFilter_label font-weight-light filter{{@index}}">0 filters applied</div>
                 <i class="ico ico-plus productFilter_icon"> </i>
             </div>
             <div class="border-gray d-inline-block d-md-none py-2 px-3 productFilter_select mr-3 js-slidePanel" data-target="#{{stringReplace name}}-slide">
                 {{name}}
-                <div class="productFilter_label font-weight-light" id="filter{{@index}}">0 filters applied</div>
+                <div class="productFilter_label font-weight-light filter{{@index}}">0 filters applied</div>
                 <i class="ico ico-plus productFilter_icon"> </i>
             </div>
         {{/each}}
@@ -76,7 +76,7 @@
                     <div class="productFilter_footer p-2 bg-grayLight">
                         <div class="row">
                             <div class="col-8">
-                                <div id="filterFooter{{@index}}" class="py-3">
+                                <div class="py-3 filterFooter{{@index}}">
                                     0 filters applied                                
                                 </div>
                             </div>

@@ -48,7 +48,8 @@ var transitionEnd = whichTransitionEvent();
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
      * that will be toggled.
      */
-    $('.js-toggle').on('click', '.js-trigger', function () {
+    $('.js-toggle').on('click', '.js-trigger', function (e) {
+        e.stopPropagation();
         console.log($(this));
         var container = $(this).closest('.js-toggle');
         var toggle = $(this).data('toggle');
@@ -105,12 +106,17 @@ var transitionEnd = whichTransitionEvent();
     function setFilterCounts (container, isClear) {
         var activeCheckboxes = container.find('div.active');
         var count = activeCheckboxes.length;
+        console.log(count);
         var index = container.data('index');
-        var btnLabel = $(document).find('#filter' + index);
-        var footer = $(document).find('#filterFooter' + index);
+        console.log('container', container);
+        // the button isn't in the container so this might be why it isn't working? Or the closest is the mobile
+        // button?
+        var btnLabel = container.closest('div').find('.filter' + index);
+        console.log('btnLabel', btnLabel);
+        var footer = container.closest('div').find('.filterFooter' + index);
+        console.log('footer', footer);
         var suffix = count === 1 ? '' : 's';
         var filterList = '';
-
         if (isClear === true) {
             btnLabel.text('0 Selected');
             footer.text('0 filters applied');
@@ -148,6 +154,7 @@ var transitionEnd = whichTransitionEvent();
         activeCheckboxes.removeClass('active');
 
         if (container.find('.productFilter_tab')) {
+            console.log('hi');
             setFilterCounts(container, true);
         }
     });

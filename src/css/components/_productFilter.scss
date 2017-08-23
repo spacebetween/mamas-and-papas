@@ -24,6 +24,10 @@
     }
     &_footer {
         font-size: $font-size-4;
+        &-bottom {
+            position: absolute;
+            bottom: 0;
+        }
     }
     &_links {
         border-bottom: .5px solid $gray;

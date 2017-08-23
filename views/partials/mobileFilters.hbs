@@ -1,6 +1,6 @@
 {{#each (theme code="plp_clothing_filters")}}
     {{#ifeq name 'Filter By'}}
-        <div class="js_slideContent productFilter_tab js-checkboxContainer" id="filter-by-slide">
+        <div class="js_slideContent productFilter_tab js-checkboxContainer" id="filter-by-slide" data-index="{{@index}}">
             <div class="slidePanel_category slidePanel_category-selected bg-white" data-category="filter_primary">
                 <div class="slidePanel_title p-3 js-switchCategory">
                     {{../name}}
@@ -28,10 +28,10 @@
                     </div>
                 </div>
             {{/each}}
-            <div class="productFilter_footer p-2 bg-grayLight">
+            <div class="productFilter_footer productFilter_footer-bottom p-2 bg-grayLight">
                 <div class="row">
                     <div class="col-8">
-                        <div id="filterFooter{{@index}}" class="py-3">
+                        <div class="py-3 filterFooter{{@index}}">
                             0 filters applied                                
                         </div>
                     </div>
