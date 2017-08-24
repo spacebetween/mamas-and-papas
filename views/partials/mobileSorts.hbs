@@ -1,3 +1,23 @@
-<div id="sort-by-slide">
-    <h1>Sort</h1>
-</div>
+{{#each (theme code="plp_clothing_sort")}}
+    {{#ifeq name 'Sort By'}}
+        <div class="productFilter_tab js_slideContent" id="sort-by-slide" data-trigger="{{stringReplace ../name}}">
+            <div class="slidePanel_category slidePanel_category-selected bg-white" data-category="filter_primary">
+                <div class="slidePanel_title p-3 js-switchCategory">
+                    {{../name}}
+                </div>
+            </div>
+            <div class="slidePanel_group">
+                <div class="js-radio" data-index="{{@index}}">
+                    {{#each ../filters}}
+                        <div class="d-inline-block pb-4">
+                            <div class="checkbox">
+                                <div class="checkbox_toggle {{#if default}}active{{/if}}"></div>
+                                <div class="checkbox_text">{{filter}}</div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>          
+        </div>
+    {{/ifeq}}
+{{/each}}

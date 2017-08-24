@@ -80,14 +80,14 @@ var transitionEnd = whichTransitionEvent();
         $(this).addClass('active');
         var index = $(this).closest('.js-radio').data('index');
         var text = $(this).siblings('.checkbox_text').text();
-        var label = $(document).find('#sortBy' + index);
+        var label = $(document).find('.sortBy' + index);
         label.text(text);
     });
 
     $(document).ready(function () {
         $('.js-radio').each(function () {
             var index = $(this).data('index');
-            var label = $(document).find('#sortBy' + index);
+            var label = $(document).find('.sortBy' + index);
             var activeText = $(this).find('.active').siblings('.checkbox_text').text();
             label.text(activeText);
         });
@@ -106,15 +106,9 @@ var transitionEnd = whichTransitionEvent();
     function setFilterCounts (container, isClear) {
         var activeCheckboxes = container.find('div.active');
         var count = activeCheckboxes.length;
-        console.log(count);
         var index = container.data('index');
-        console.log('container', container);
-        // the button isn't in the container so this might be why it isn't working? Or the closest is the mobile
-        // button?
-        var btnLabel = container.closest('div').find('.filter' + index);
-        console.log('btnLabel', btnLabel);
+        var btnLabel = $('.productFilter').find('.filter' + index);
         var footer = container.closest('div').find('.filterFooter' + index);
-        console.log('footer', footer);
         var suffix = count === 1 ? '' : 's';
         var filterList = '';
         if (isClear === true) {
@@ -152,9 +146,7 @@ var transitionEnd = whichTransitionEvent();
         var container = $(this).closest('.js-checkboxContainer');
         var activeCheckboxes = container.find('div.active');
         activeCheckboxes.removeClass('active');
-
         if (container.find('.productFilter_tab')) {
-            console.log('hi');
             setFilterCounts(container, true);
         }
     });
@@ -168,7 +160,6 @@ var transitionEnd = whichTransitionEvent();
 
     function categoryChanger (gotoCategory) {
         element.content.find('div.slidePanel_category').removeClass('slidePanel_category-selected');
-        console.log('hi');
         gotoCategory.addClass('slidePanel_category-selected');
     }
 
