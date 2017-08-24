@@ -50,7 +50,6 @@ var transitionEnd = whichTransitionEvent();
      */
     $('.js-toggle').on('click', '.js-trigger', function (e) {
         e.stopPropagation();
-        console.log($(this));
         var container = $(this).closest('.js-toggle');
         var toggle = $(this).data('toggle');
         var target = container.find('[data-trigger=' + toggle + ']');
@@ -104,6 +103,7 @@ var transitionEnd = whichTransitionEvent();
      * if false, it will set the filter counts in the filter footer and button.
      */
     function setFilterCounts (container, isClear) {
+        console.log(container);
         var activeCheckboxes = container.find('div.active');
         var count = activeCheckboxes.length;
         var index = container.data('index');
@@ -111,6 +111,7 @@ var transitionEnd = whichTransitionEvent();
         var footer = container.closest('div').find('.filterFooter' + index);
         var suffix = count === 1 ? '' : 's';
         var filterList = '';
+        //var filterCarousel = '';
         if (isClear === true) {
             btnLabel.text('0 Selected');
             footer.text('0 filters applied');
@@ -118,7 +119,15 @@ var transitionEnd = whichTransitionEvent();
             // for each active checkbox, add the text value to filterList
             $(activeCheckboxes).each(function () {
                 var sibText = $(this).siblings('.checkbox_text').text();
-                filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <i class="ico ico-cross px-1 js-uncheckCheckbox"></i>' + sibText + '</div>';
+                var id = $(this).attr('id');
+                var containerId = container.attr('id');
+                filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <div class="ico ico-cross px-1 js-uncheckCheckbox cursor-pointer" data-clear="'
+                 + id
+                 + '" data-container="'
+                 + containerId
+                 + '"></div><span class="checkbox_label">'
+                 + sibText
+                 + '</span></div>';
             });
 
             btnLabel.text(count + ' Selected');
@@ -136,10 +145,15 @@ var transitionEnd = whichTransitionEvent();
     $('.js-checkbox').on('click', '.checkbox_toggle', function () {
         $(this).toggleClass('active');
         var container = $(this).closest('.js-checkboxContainer');
-
         if (container.find('.productFilter_tab')) {
             setFilterCounts(container, false);
         }
+    });
+    $('.js-uncheckCheckboxContainer').on('click', '.js-uncheckCheckbox', function () {
+        var target = $(this).data('clear');
+        var container = $(document).find('#' + $(this).data('container'));
+        $(container).find('#' + target).removeClass('active');
+        setFilterCounts(container, false);
     });
 
     $('.js-checkboxContainer').on('click', '.js-clearCheckbox', function () {

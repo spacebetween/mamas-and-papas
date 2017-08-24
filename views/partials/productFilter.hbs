@@ -25,9 +25,9 @@
             </div>
         {{/each}}
     </div>
-    <div class="d-none d-md-block">
+    <div class="d-none d-md-block productFilter_tabContainer">
         {{#each (theme code="plp_clothing_sort")}}
-            <div class="productFilter_tab js-target" data-trigger="{{stringReplace name}}">
+            <div class="productFilter_tab bg-white js-target" data-trigger="{{stringReplace name}}">
                 <div class="row">
                     <div class="col-md-7 py-5 px-7">
                         <div class="js-radio" data-index="{{@index}}">
@@ -47,7 +47,7 @@
 
         {{#each (theme code="plp_clothing_filters")}}
             <div class="js-target" data-trigger="{{stringReplace name}}" >
-                <div class="js-toggle productFilter_tab js-checkboxContainer" data-index="{{@index}}">
+                <div class="js-toggle productFilter_tab bg-white js-checkboxContainer" id="productTab-{{stringReplace name}}-{{@index}}" data-index="{{@index}}">
                     <div class="row">
                         <div class="col-md-5 py-5">
                             <ul class="list-unstyled productFilter_filterContainer float-right">
@@ -64,7 +64,7 @@
                                     {{#each .}}
                                         <div class="d-inline-block pb-4">
                                             <div class="checkbox">
-                                                <div class="checkbox_toggle"></div>
+                                                <div class="checkbox_toggle" id="filterCheckbox-{{stringReplace .}}-{{@index}}"></div>
                                                 <div class="checkbox_text">{{.}}</div>
                                             </div>
                                         </div>
@@ -76,7 +76,7 @@
                     <div class="productFilter_footer p-2 bg-grayLight">
                         <div class="row">
                             <div class="col-8">
-                                <div class="py-3 filterFooter{{@index}}">
+                                <div class="py-3 filterFooter{{@index}} js-uncheckCheckboxContainer">
                                     0 filters applied                                
                                 </div>
                             </div>

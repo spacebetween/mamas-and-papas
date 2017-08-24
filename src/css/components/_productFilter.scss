@@ -49,4 +49,14 @@
             }
         }
     }
+    &_tabContainer {
+        position: relative;
+    }
+    &_tab {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+    }
 }

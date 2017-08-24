@@ -1,6 +1,6 @@
 {{#each (theme code="plp_clothing_filters")}}
     {{#ifeq name 'Filter By'}}
-        <div class="js_slideContent js-checkboxContainer" id="filter-by-slide" data-index="{{@index}}">
+        <div class="js_slideContent js-checkboxContainer" id="filter-by-slide" data-index="{{@index}}" id="productTabMobile-{{stringReplace ../name}}-{{@index}}">
             <div class="slidePanel_category slidePanel_category-selected bg-white" data-category="filter_primary">
                 <div class="slidePanel_title p-3 js-switchCategory">
                     {{../name}}
@@ -16,11 +16,11 @@
                     <div data-goto-category="filter_primary" class="slidePanel_title slidePanel_backArrow font-weight-bold cursor-pointer p-3 pl-5 js-switch_groupLink">
                         {{@key}}
                     </div>
-                    <div class="js-checkbox">
+                    <div class="js-checkbox p-3 row">
                         {{#each .}}
-                            <div class="d-inline-block pb-4">
+                            <div class="col-6 pb-4">
                                 <div class="checkbox">
-                                    <div class="checkbox_toggle"></div>
+                                    <div class="checkbox_toggle" id="filterCheckboxMobile-{{stringReplace .}}-{{@index}}"></div>
                                     <div class="checkbox_text">{{.}}</div>
                                 </div>
                             </div>
@@ -28,20 +28,20 @@
                     </div>
                 </div>
             {{/each}}
-            <div class="productFilter_footer productFilter_footer-bottom p-2 bg-grayLight">
+            <div class="productFilter_footer productFilter_footer-bottom p-2 bg-grayLight text-center w-100">
                 <div class="row">
-                    <div class="col-8">
-                        <div class="py-3 filterFooter{{@index}}">
+                    <div class="col">
+                        <div class="py-3 filterFooter{{@index}} filterFooterCarousel js-uncheckCheckboxContainer">
                             0 filters applied                                
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="d-inline-block">
-                            {{> button backgroundColour="primary" text="Apply Filters"}}
-                        </div>
-                        <div class="d-inline-block pl-3">
-                            {{> button text="Clear all" class="js-clearCheckbox"}}
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col px-2">
+                        {{> button backgroundColour="primary" text="Apply Filters" class="w-100"}}
+                    </div>
+                    <div class="col px-2">
+                        {{> button text="Clear all" class="js-clearCheckbox w-100"}}
                     </div>
                 </div>
             </div>

@@ -39,10 +39,10 @@
     }
     &_icon {
         font-size: $font-size-8;
-        padding-top: 5px;
+        padding-top: 10px;
         @media (min-width: breakpoint-min(md)) {
             font-size: $font-size-9;
-            padding: 0 15px;
+            padding: 0 12px;
         }
     }
     &_nav {
