@@ -10,7 +10,7 @@
     &_title {
         height: 80px;
         line-height: 46px;
-        border-bottom: 1px solid $gray;
+        border-bottom: $border-gray;
     }
     &_backArrow {
         &::before {
@@ -23,7 +23,7 @@
     &_group {
         li {
             position: relative;
-            border-bottom: 1px solid $gray;
+            border-bottom: $border-gray;
             font-size: $font-size-5;
 
             a {

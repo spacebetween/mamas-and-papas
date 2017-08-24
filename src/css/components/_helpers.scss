@@ -40,12 +40,12 @@
 .infoBar {
     height: 35px;
     line-height: 34px;
-    border: $info-bar-border;
+    border: $border-gray-light;
     &-left {
-        border-right: $info-bar-border;
+        border-right: $border-gray-light;
     }
     &-right {
-        border-left: $info-bar-border;
+        border-left: $border-gray-light;
         height: 100%;
     }
     &_currencySelect {
@@ -62,7 +62,7 @@
 
 .border {
     &-gray {
-        border: $info-bar-border;
+        border: $border-gray-light;
     }
 }
 
@@ -81,19 +81,17 @@
     vertical-align: middle;
     width: 200px;
     &_toggle {
-        cursor: pointer;
         display: table-cell;
         width: 40px;
         height: 40px;
-        border: 1px solid $gray;
-        text-align: center;
+        border: $border-gray;
         padding-top: 3px;
-        font-size: 20px;
+        font-size: $font-size-7;
         &:hover {
-            border: 1px solid $black;
+            border: $border-black;
         }
         &.active {
-            border: 1px solid $black;
+            border: $border-black;
             &::after {
                 font-family: $font-family-icons;
                 content: '\E934';
@@ -103,7 +101,6 @@
     &_text {
         display: table-cell;
         vertical-align: middle;
-        padding-left: 10px;
         font-size: $font-size-4;
     }
 }

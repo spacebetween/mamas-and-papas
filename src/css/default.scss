@@ -114,9 +114,11 @@ $body-color:                 $black!default;
 
 
 // Borders
-$info-bar-border:            1px solid $gray-light;
-$border-black:               1px solid $black;
-
+$border-black:              1px solid $black;
+$border-gray:               1px solid $gray;
+$border-gray-lighter:       1px solid $gray-lighter;
+$border-gray-light:         1px solid $gray-light;
+$border-gray-dark:          1px solid $gray-dark;
 
 //Button Borders
 $button-border-white:       1px solid $white;

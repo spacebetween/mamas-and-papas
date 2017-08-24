@@ -20,8 +20,8 @@
                         {{#each .}}
                             <div class="col-6 pb-4">
                                 <div class="checkbox">
-                                    <div class="checkbox_toggle" id="filterCheckboxMobile-{{stringReplace .}}-{{@index}}"></div>
-                                    <div class="checkbox_text">{{.}}</div>
+                                    <div class="checkbox_toggle cursor-pointer text-center" id="filterCheckboxMobile-{{stringReplace .}}-{{@index}}"></div>
+                                    <div class="checkbox_text pl-2">{{.}}</div>
                                 </div>
                             </div>
                         {{/each}}

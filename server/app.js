@@ -53,9 +53,6 @@ var hbs = exphbs.create({
                 accum += block.fn(i);
             }
             return accum;
-        },
-        log: (a) => {
-            console.log(a);
         }
     }
 });

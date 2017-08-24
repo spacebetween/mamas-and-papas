@@ -10,8 +10,8 @@
                         {{#each ../filters}}
                             <div class="d-inline-block pt-4 pl-3">
                                 <div class="checkbox">
-                                    <div class="checkbox_toggle {{#if default}}active{{/if}}"></div>
-                                    <div class="checkbox_text">{{filter}}</div>
+                                    <div class="checkbox_toggle cursor-pointer text-center{{#if default}}active{{/if}}"></div>
+                                    <div class="checkbox_text pl-2">{{filter}}</div>
                                 </div>
                             </div>
                         {{/each}}
