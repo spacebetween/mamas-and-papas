@@ -4,7 +4,7 @@
     border-top: $info-bar-border;
     .breadcrumb_item + .breadcrumb_item::before {
         color: $gray-darker;
-        font-weight: $font-light;
+        font-weight: $font-weight-light;
         content: '/\00a0';
     }
 }
