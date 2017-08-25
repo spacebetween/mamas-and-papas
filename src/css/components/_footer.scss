@@ -2,7 +2,7 @@
     font-size: $font-size-4;
     &_heading {
         position: relative;
-        border-bottom: $border-gray-lighter;
+        border-bottom: $border-width solid $gray-lighter;
         font-size: $font-size-5;
         font-weight: $headings-font-weight;
         cursor: pointer;

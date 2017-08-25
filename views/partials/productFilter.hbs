@@ -1,27 +1,32 @@
 <div class="productFilter js-toggle">
     <div class="row productFilter_filterSelectors p-2">
         {{#each (theme code="plp_clothing_filters")}}
-            <div class="border-gray d-none d-md-inline-block py-2 px-3 productFilter_select cursor-pointer mr-3 js-trigger" data-toggle="{{stringReplace name}}">
+            <div class="border-gray d-none d-md-inline-block p-2 productFilter_select cursor-pointer mr-3 js-trigger" data-toggle="{{stringReplace name}}">
                 {{name}}
                 <div class="productFilter_label font-weight-light filter{{@index}}">0 filters applied</div>
                 <i class="ico ico-plus productFilter_icon"> </i>
             </div>
-            <div class="border-gray d-inline-block d-md-none py-2 px-3 productFilter_select cursor-pointer mr-3 js-slidePanel" data-target="#{{stringReplace name}}-slide">
-                {{name}}
-                <div class="productFilter_label font-weight-light filter{{@index}}">0 filters applied</div>
-                <i class="ico ico-plus productFilter_icon"> </i>
+            <div class="col-xs-6 d-inline-block d-md-none px-2">
+                <div class="border-gray py-2 px-2 productFilter_select cursor-pointer js-slidePanel" data-target="#{{stringReplace name}}-slide">
+                    {{name}}
+                    <div class="productFilter_label font-weight-light filter{{@index}}">0 filters applied</div>
+                    <i class="ico ico-plus productFilter_icon"> </i>
+                </div>
             </div>
+            
         {{/each}}
         {{#each (theme code="plp_clothing_sort")}}
-             <div class="border-gray d-none d-md-inline-block py-2 px-3 productFilter_select cursor-pointer mr-3 js-trigger" data-toggle="{{stringReplace name}}">
+             <div class="border-gray d-none d-md-inline-block p-2 productFilter_select cursor-pointer mr-3 js-trigger" data-toggle="{{stringReplace name}}">
                 {{name}}
                 <div class="productFilter_label font-weight-light sortBy{{@index}}"></div>
                 <i class="ico ico-plus productFilter_icon"> </i>
             </div>
-            <div class="border-gray d-inline-block d-md-none py-2 px-3 productFilter_select cursor-pointer mr-3 js-slidePanel" data-target="#{{stringReplace name}}-slide">
-                {{name}}
-                <div class="productFilter_label font-weight-light sortBy{{@index}}"></div>
-                <i class="ico ico-plus productFilter_icon"> </i>
+            <div class="col-xs-6 d-inline-block d-md-none px-2">
+                <div class="border-gray py-2 px-2 productFilter_select cursor-pointer js-slidePanel" data-target="#{{stringReplace name}}-slide">
+                    {{name}}
+                    <div class="productFilter_label font-weight-light sortBy{{@index}}"></div>
+                    <i class="ico ico-plus productFilter_icon"> </i>
+                </div>    
             </div>
         {{/each}}
     </div>

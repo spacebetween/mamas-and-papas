@@ -1,8 +1,10 @@
 .productFilter {
     &_select {
-        width: 180px;
         height: 55px;
         position: relative;
+        @media (min-width: breakpoint-min(md)) {
+            width: 180px;
+        }
         &:hover {
             background-color: $gray-lighter;
         }
@@ -16,7 +18,7 @@
         width: 380px;
     }
     &_filterSelectors {
-        border-bottom: $border-gray-light;
+        border-bottom: $border-width solid $gray-light;
     }
     &_label {
         font-size: $font-size-2;

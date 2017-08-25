@@ -1,7 +1,7 @@
 .breadcrumb {
     font-size: $font-size-2;
-    border-bottom: $border-gray-light;
-    border-top: $border-gray-light;
+    border-bottom: $border-width solid $gray-light;
+    border-top: $border-width solid $gray-light;
     .breadcrumb_item + .breadcrumb_item::before {
         color: $gray-darker;
         font-weight: $font-weight-light;

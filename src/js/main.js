@@ -88,6 +88,8 @@ var transitionEnd = whichTransitionEvent();
             var index = $(this).data('index');
             var label = $(document).find('.sortBy' + index);
             var activeText = $(this).find('.active').siblings('.checkbox_text').text();
+            console.log('label', label);
+            console.log('text', activeText);
             label.text(activeText);
         });
     });
@@ -103,6 +105,7 @@ var transitionEnd = whichTransitionEvent();
      * if false, it will set the filter counts in the filter footer and button.
      */
     function setFilterCounts (container, isClear) {
+        console.log(container);
         console.log(container);
         var activeCheckboxes = container.find('div.active');
         var count = activeCheckboxes.length;
@@ -121,7 +124,7 @@ var transitionEnd = whichTransitionEvent();
                 var sibText = $(this).siblings('.checkbox_text').text();
                 var id = $(this).attr('id');
                 var containerId = container.attr('id');
-                filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <div class="ico ico-cross px-1 js-uncheckCheckbox cursor-pointer" data-clear="'
+                filterList += '<div class="font-weight-light productFilter_label px-2 d-md-inline-block"> <div class="ico ico-cross px-1 js-uncheckCheckbox cursor-pointer" data-clear="'
                  + id
                  + '" data-container="'
                  + containerId
