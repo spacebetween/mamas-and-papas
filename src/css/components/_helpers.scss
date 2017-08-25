@@ -1,12 +1,12 @@
 .font {
     &-weight {
         &-light {
-            font-weight: $font-light;
+            font-weight: $font-weight-light;
         }
     }
     &-family {
         &-secondary {
-            font-family: $font-family-secondary;
+            font-family: $font-family-serif;
         }
     }
 }

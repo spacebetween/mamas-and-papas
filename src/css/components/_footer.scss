@@ -4,7 +4,7 @@
         position: relative;
         border-bottom: $border-gray-lighter;
         font-size: $font-size-5;
-        font-weight: $font-heavy;
+        font-weight: $headings-font-weight;
         cursor: pointer;
         @media (min-width: breakpoint-min(md)) {
             border-bottom: 0;

@@ -1,13 +1,14 @@
 .header {
     background-position: center top;
     background-repeat: no-repeat;
+    color: $white;
     @media (min-width: breakpoint-min(md)) {
         background-size: cover;
     }
     &_title {
-        font-size: $header-size-2;
+        font-size: $font-size-h2;
         @media (min-width: breakpoint-min(md)) {
-            font-size: $header-size-1;
+            font-size: $font-size-h1;
         }
     }
     &_subtitle {
