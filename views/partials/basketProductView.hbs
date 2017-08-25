@@ -1,23 +1,23 @@
 <div class="row no-gutters m-2 p-2 basket_productView">
-    <div class="col-4">
+    <div class="col-xs-4">
         <img src="{{image}}" class="w-100" />
     </div>
-    <div class="col-8 px-3 py-2">
-        <div class="basket_productTitle">{{title}}</div>
+    <div class="col-xs-8 px-3 py-2">
+        <div class="basket_productTitle mb-5">{{title}}</div>
         <div class="row py-2">
-            <div class="col-6 m-0 p-0">
+            <div class="col-xs-6 m-0 p-0">
                 <span class="basket_productPrice">
                     <strong>{{formatCurrency price '£'}}</strong>
                 </span>
             </div>
             {{#if qty}}
-                <div class="col-6 m-0 p-0">
+                <div class="col-xs-6 m-0 p-0">
                     <span class="basket_productQty font-weight-light">Quantity: {{qty}}</span>
                 </div>
             {{/if}}
         </div>
         <div class="row py-0">
-            <div class="col m-0 p-0">
+            <div class="col-xs-12 m-0 p-0">
                 {{#if qty}}
                     <span class="basket_productRemove font-weight-light"><u><a href="#">remove</a></u></span>
                 {{else}}
