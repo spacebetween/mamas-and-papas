@@ -88,8 +88,6 @@ var transitionEnd = whichTransitionEvent();
             var index = $(this).data('index');
             var label = $(document).find('.sortBy' + index);
             var activeText = $(this).find('.active').siblings('.checkbox_text').text();
-            console.log('label', label);
-            console.log('text', activeText);
             label.text(activeText);
         });
     });
