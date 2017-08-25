@@ -114,7 +114,6 @@ var transitionEnd = whichTransitionEvent();
         var footer = container.closest('div').find('.filterFooter' + index);
         var suffix = count === 1 ? '' : 's';
         var filterList = '';
-        //var filterCarousel = '';
         if (isClear === true) {
             btnLabel.text('0 Selected');
             footer.text('0 filters applied');
@@ -124,7 +123,7 @@ var transitionEnd = whichTransitionEvent();
                 var sibText = $(this).siblings('.checkbox_text').text();
                 var id = $(this).attr('id');
                 var containerId = container.attr('id');
-                filterList += '<div class="font-weight-light productFilter_label px-2 d-md-inline-block"> <div class="ico ico-cross px-1 js-uncheckCheckbox cursor-pointer" data-clear="'
+                filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <div class="ico ico-cross px-1 js-uncheckCheckbox cursor-pointer" data-clear="'
                  + id
                  + '" data-container="'
                  + containerId
@@ -136,7 +135,7 @@ var transitionEnd = whichTransitionEvent();
             btnLabel.text(count + ' Selected');
             footer.text(count + ' filter' + suffix + ' applied');
 
-            $('<div class="pl-2 d-inline-block">' + filterList + '</div>').appendTo(footer);
+            $('<div class="pl-2 d-block d-md-inline-block">' + filterList + '</div>').appendTo(footer);
         }
     }
     /* 
