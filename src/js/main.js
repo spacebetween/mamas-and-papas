@@ -105,8 +105,6 @@ var transitionEnd = whichTransitionEvent();
      * if false, it will set the filter counts in the filter footer and button.
      */
     function setFilterCounts (container, isClear) {
-        console.log(container);
-        console.log(container);
         var activeCheckboxes = container.find('div.active');
         var count = activeCheckboxes.length;
         var index = container.data('index');
