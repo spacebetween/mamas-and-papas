@@ -1,6 +1,13 @@
 .productCard {
     position: relative;
     font-size: $font-size-3;
+    height: 520px;
+
+    &-background {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }
 
     &.transition {
         transform: scale(.75);
