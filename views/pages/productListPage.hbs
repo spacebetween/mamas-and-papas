@@ -1,3 +1,4 @@
+
 <div class="wrapper">
     <header>
         {{> topInfoBar}}
@@ -8,7 +9,7 @@
     
     {{> boxBanner }}
     {{> breadcrumb}}
-
+    {{> productFilter}}
     <div class="products">
         <div class="row">
             <div class="col-xs-12 py-3 text-right">
@@ -31,5 +32,7 @@
 
 {{> slidePanel block="nav"}}
 {{> slidePanel block="basket" align="rightSide"}}
+{{> slidePanel block="mobileFilters"}}
+{{> slidePanel block="mobileSorts"}}
 
 {{> scripts}}

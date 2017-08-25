@@ -18,6 +18,9 @@
     &-gray {
         color: $gray-darker;
     }
+    &-grayLight {
+        color: $gray;
+    }
     &-red {
         color: $red;
     }
@@ -37,12 +40,12 @@
 .infoBar {
     height: 35px;
     line-height: 34px;
-    border: $info-bar-border;
+    border: $border-width solid $gray-light;
     &-left {
-        border-right: $info-bar-border;
+        border-right: $border-width solid $gray-light;
     }
     &-right {
-        border-left: $info-bar-border;
+        border-left: $border-width solid $gray-light;
         height: 100%;
     }
     &_currencySelect {
@@ -57,12 +60,50 @@
     }
 }
 
+.border {
+    &-gray {
+        border: $border-width solid $gray-light;
+    }
+}
+
+.js-target {
+    display: none;
+}
+
 .transition-background {
     transition-duration: $transition-duration;
     transition-property: background;
     transition-timing-function: $transition-easing;
 }
 
+.checkbox {
+    display: table;
+    vertical-align: middle;
+    width: 200px;
+    &_toggle {
+        display: table-cell;
+        width: 40px;
+        height: 40px;
+        border: $border-width solid $gray;
+        padding-top: 3px;
+        font-size: $font-size-7;
+        &:hover {
+            border: $border-width solid $black;
+        }
+        &.active {
+            border: $border-width solid $black;
+            &::after {
+                font-family: $font-family-icons;
+                content: '\E934';
+            }
+        }
+    }
+    &_text {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: $font-size-4;
+    }
+}
 .transition-width {
     transition-duration: $transition-duration;
     transition-property: width, min-width, max-width, flex;

@@ -3,10 +3,14 @@
     text-transform: uppercase;
     cursor: pointer;
     height: 50px;
+    color: $black;
+    background-color: $white;
+    border-color: $white;
     &-arrow {
         width: 60px;
         height: 60px;
         font-size: $font-size-9;
+        background: none;
         &-black {
             border: $button-border-black;
         }

@@ -21,26 +21,175 @@ function whichTransitionEvent () {
 
 var transitionEnd = whichTransitionEvent();
 
+// Toggle function
 (function ($) {
-
+    /* 
+     * Set Filter Styles Function
+     * This is a function specific to the product filter
+     * If there is a list item that is active, all non active list items will have .text-grayLight set
+     * whilst the active will be black. If none are active, all list items will be black.
+     */
+    function setFilterStyles (container) {
+        var filterContainer = container.find('.productFilter_filterContainer');
+        var listItems = container.find('.productFilter_links');
+        if (filterContainer.find('.active').length > 0) {
+            $(listItems).each(function () {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('text-grayLight');
+                }
+            });
+        } else {
+            listItems.removeClass('text-grayLight');
+        }
+    }
     /* 
      * Toggle Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
      * that will be toggled.
      */
-
-    $('.js-toggle').on('click', '.js-trigger', function () {
-        var parent = $(this).closest('.js-toggle');
-        var toggle = $(this).data('target');
-        var target = document.querySelectorAll('[data-trigger=' + toggle + ']');
-        parent.find('.js-target').not(target).removeClass('d-block');
-        parent.find('.js-trigger').not($(this)).removeClass('active');
-        parent.find(target).toggleClass('d-block');
+    $('.js-toggle').on('click', '.js-trigger', function (e) {
+        e.stopPropagation();
+        var container = $(this).closest('.js-toggle');
+        var toggle = $(this).data('toggle');
+        var target = container.find('[data-trigger=' + toggle + ']');
+        container.find('.js-target').not(target).removeClass('d-block');
+        container.find('.js-trigger').not($(this)).removeClass('active');
+        container.find(target).toggleClass('d-block');
         $(this).toggleClass('active');
+
+        if (container.find('.productFilter_tab')) {
+            setFilterStyles(container);
+        }
     });
+
 })(jQuery);
 
+// Radio button function
+(function ($) {
+    /* 
+     * Radio Function
+     * Multi use toggle for when you only want one div to show at a time
+     * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
+     * that will be toggled.
+     */
+
+    $('.js-radio').on('click', '.checkbox_toggle', function () {
+        $('.js-radio').find('.checkbox_toggle').not($(this)).removeClass('active');
+        $(this).addClass('active');
+        var index = $(this).closest('.js-radio').data('index');
+        var text = $(this).siblings('.checkbox_text').text();
+        var label = $(document).find('.sortBy' + index);
+        label.text(text);
+    });
+
+    $(document).ready(function () {
+        $('.js-radio').each(function () {
+            var index = $(this).data('index');
+            var label = $(document).find('.sortBy' + index);
+            var activeText = $(this).find('.active').siblings('.checkbox_text').text();
+            label.text(activeText);
+        });
+    });
+
+})(jQuery);
+
+// Checkbox button function
+(function ($) {
+    /* 
+     * setFilterCounts Function
+     * This is a function specifically for the product filters that works off of the checkbox
+     * function. 'isClear' defines if the action is to clear the filters or not
+     * if false, it will set the filter counts in the filter footer and button.
+     */
+    function setFilterCounts (container, isClear) {
+        var activeCheckboxes = container.find('div.active');
+        var count = activeCheckboxes.length;
+        var index = container.data('index');
+        var btnLabel = $('.productFilter').find('.filter' + index);
+        var footer = container.closest('div').find('.filterFooter' + index);
+        var suffix = count === 1 ? '' : 's';
+        var filterList = '';
+        if (isClear === true) {
+            btnLabel.text('0 Selected');
+            footer.text('0 filters applied');
+        } else {
+            // for each active checkbox, add the text value to filterList
+            $(activeCheckboxes).each(function () {
+                var sibText = $(this).siblings('.checkbox_text').text();
+                var id = $(this).attr('id');
+                var containerId = container.attr('id');
+                filterList += '<div class="font-weight-light productFilter_label px-2 d-inline-block"> <div class="ico ico-cross px-1 js-uncheckCheckbox cursor-pointer" data-clear="'
+                 + id
+                 + '" data-container="'
+                 + containerId
+                 + '"></div><span class="checkbox_label">'
+                 + sibText
+                 + '</span></div>';
+            });
+
+            btnLabel.text(count + ' Selected');
+            footer.text(count + ' filter' + suffix + ' applied');
+
+            $('<div class="pl-2 d-block d-md-inline-block">' + filterList + '</div>').appendTo(footer);
+        }
+    }
+    /* 
+     * Checkbox Function
+     * Multi use toggle for when you only want one div to show at a time
+     * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
+     * that will be toggled.
+     */
+    $('.js-checkbox').on('click', '.checkbox_toggle', function () {
+        $(this).toggleClass('active');
+        var container = $(this).closest('.js-checkboxContainer');
+        if (container.find('.productFilter_tab')) {
+            setFilterCounts(container, false);
+        }
+    });
+    $('.js-uncheckCheckboxContainer').on('click', '.js-uncheckCheckbox', function () {
+        var target = $(this).data('clear');
+        var container = $(document).find('#' + $(this).data('container'));
+        $(container).find('#' + target).removeClass('active');
+        setFilterCounts(container, false);
+    });
+
+    $('.js-checkboxContainer').on('click', '.js-clearCheckbox', function () {
+        var container = $(this).closest('.js-checkboxContainer');
+        var activeCheckboxes = container.find('div.active');
+        activeCheckboxes.removeClass('active');
+        if (container.find('.productFilter_tab')) {
+            setFilterCounts(container, true);
+        }
+    });
+
+    /*
+    * Checkbox mobile navigation
+    */
+    var element = {
+        content: $('.js_slideContent')
+    };
+
+    function categoryChanger (gotoCategory) {
+        element.content.find('div.slidePanel_category').removeClass('slidePanel_category-selected');
+        gotoCategory.addClass('slidePanel_category-selected');
+    }
+
+    // Switch the category, nav list items and titles trigger this to traverse the menu
+    element.content.on('click', '.js-switch_groupLink', function (e) {
+        e.preventDefault();
+
+        var category = $(this).data('goto-category');
+        var gotoCategory = element.content.find('div.slidePanel_category[data-category=' + category + ']');
+
+        if (gotoCategory.length) {
+            categoryChanger(gotoCategory);
+        }
+    });
+
+})(jQuery);
+
+// Navigation
 (function ($) {
 
     /* 
@@ -57,7 +206,6 @@ var transitionEnd = whichTransitionEvent();
 
     // Trigger for the slide panel, both open and close.
     $('body').on('click', '.js-slidePanel', function () {
-
         // Get our target element to slide in
         var target = $(this).data('target');
 
@@ -105,7 +253,6 @@ var transitionEnd = whichTransitionEvent();
                 setLock(1);
             }
         }
-
     });
 
 }(jQuery));

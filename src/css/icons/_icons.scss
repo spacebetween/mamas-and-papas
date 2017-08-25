@@ -88,6 +88,11 @@
             content: '\E92A';
         }
     }
+    &-tick {
+        &::before {
+            content: '\E934';
+        }
+    }
     &-user {
         &::before {
             content: '\E71E';
