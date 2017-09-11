@@ -1,0 +1,186 @@
+.page-mnpRegisterPage,.newsletter-reg{
+	.gender-col{
+		&:before{
+			right:10%;
+			height: 14px;
+			top: 50%;
+			margin-top: -7px;
+		}
+	}
+	.select-drop{
+		&:before{
+			bottom: 15%;
+			content: "\f0d7";
+			font: 14px/1 FontAwesome;
+			right: 13%;
+			position: absolute;
+			z-index: 999;
+		}
+	}
+}
+.textpage-termsAndConditions{
+	.item_container{
+		h2{
+			padding-bottom:10px;
+		}
+	}
+}
+.userRegister{
+	.hide-desc{
+		display:none;
+	}
+	.show-desc{
+		display:block;
+	}
+}
+	@media (max-width: $screen-sm-max){
+		.password-forgotten{
+			padding-bottom:10px;
+			display:block;
+			
+		}
+	}
+.userAlreadyRegisteredForNewsLetter{
+		.control-label {
+			display:none;
+		}
+}
+
+.guest-checkout{
+	.userRegister{
+		margin-left:0;
+	}
+	
+	.userLogin, .userGuest{
+		@media (max-width: $screen-xs-max) {
+			margin-top:30px;
+		}
+		
+		.forget-password{
+		
+			@media (max-width: $screen-sm-min) {
+			margin-bottom:20px;
+		}
+		}
+	
+	}
+	h4{
+		    font-family: Arial,Helvetica,sans-serif;
+			margin-bottom: 24px;
+			padding-bottom: 15px;
+			border-bottom: 1px #4c4b4c solid;
+	}
+}
+.controls{
+	.error{
+		color: #c83745;
+		font-size: 12px;
+		font-style: italic;
+		font-weight: normal;
+		
+	}
+}
+.login-page, .guest-checkout{
+	.mnp-userRegister {
+		.postclearreg {
+			margin-bottom: 15px;
+			.control-group {
+				margin-bottom: 15px;
+			}
+			.manual-link {
+				color: #007f93;
+				text-decoration: underline;
+			}
+		}
+		.about-block {
+			.iam {
+				padding-top: 10px;
+			}
+			div.ratio-container, #Parenttobe, #Parent {
+				border: none;
+				margin-bottom: 0px;
+			}
+			#Parenttobe, #Parent, #otherRadio {
+				margin-top: 5px;
+			}
+			div.ratio-container {
+				> span {		
+					width: auto;		
+					padding-right: 12px;
+					@media (max-width: $screen-sm-min) {
+						padding-right: 8px;
+						font-size:11.5px;
+					}
+					 
+					 &:last-child {	
+					 	padding-right: 0;
+					 }	
+				}
+				label {
+					font-weight: normal;
+				}
+			}
+			#Parenttobe, #Parent {
+				padding-bottom: 0;
+			}
+			#otherRadio {
+				display: none;
+				p {
+					font-weight: bold;
+				}
+				.ratio-container {
+					overflow: hidden;
+					span {
+						float: left;
+						width: auto;
+						&:first-child {
+							padding-right: 30px;
+						}
+					}
+				}
+			}
+			.mom-add-another, .parent-add-another {
+				padding-bottom: 10px;
+			}
+		}
+		#mainMNPRegisterForm {
+			.contact-Preference {		
+				margin-top: 20px;		
+				margin-bottom: 15px;		
+				> p {		
+					margin-bottom: 14px;		
+				}		
+				.custom-cb-lable {		
+					padding-top: 5px;		
+				}		
+			}		
+			.register-action {		
+				text-align: left;		
+			}
+			.loyalty-check {
+				display: none;
+				p{
+					@media (max-width: $screen-sm-min) {
+						text-align:justify;
+					}
+				}
+				.control-group {
+					margin-bottom: 0;
+					padding-top:7px;
+					.custom-cb-lable {
+						display:inline;
+						padding-top: 5px;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.login-page .mom-add-another{
+				padding-top:10px;
+				color:#007f93;
+				text-decoration: underline;
+				display:inline-block;
+				font-weight:bold;
+			}

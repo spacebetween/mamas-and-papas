@@ -1,0 +1,245 @@
+.page-productList,.page-search{
+	.plp-block{
+		@media (max-width: $screen-sm-max){
+				#refinement.modal{
+					display:block !important;
+				}
+				#refinement.fade{
+					opacity:1;
+					position:absolute;
+				}
+		}
+	}
+}
+
+.overlay{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: #000;
+	top: 0;
+	opacity: 0.7;
+}
+
+.header-search{
+
+	@media (min-width: $screen-md-min) {
+		margin-top:2px;
+	}
+
+	.siteSearch{
+
+		.control-group{
+			margin-bottom:0;
+			@media ( min-width: 960px ){
+	   			margin-left: 2px;
+   			}
+		}
+
+		.controls{
+			display:block;
+			border-bottom: $border-base;
+			padding: 2px 0;
+			position:relative;
+			
+			.siteSearchInput{
+				border: 0;
+				font-style: italic;
+				width: 80%;
+				color: #4b4b4b;	
+				font-size: floor(($font-size-base * 1.3));	
+				background:transparent;
+				padding: 0 0 0 6px;
+				height: 22px;
+				&:focus{
+					outline: 0;
+
+					&::-webkit-input-placeholder{  
+						color: transparent;
+					}
+
+					&:-moz-placeholder{  
+						color: transparent;
+					}
+
+					&::-moz-placeholder{  
+						color: transparent;
+					}
+
+					&:-ms-input-placeholder {  
+						color: transparent;
+					}
+				}
+			}
+
+			.siteSearchSubmit{
+				background: none;
+				border: 0;
+				color: #bdbdbd;
+				position: absolute;
+			    right: -1px;
+				bottom: 5px;
+
+				i{
+					font-size:14px;	
+				}
+			}
+		}
+	}
+}
+
+.ui-autocomplete{
+	list-style: none;
+    margin-top: 16px;
+    margin-left: -4px;
+    display: block;
+    float: left;
+    background-color: $body-bg;
+    border: $border-base;
+    position : absolute;
+
+	@media ( min-width: 960px ){
+		width: 300px !important;
+		z-index : 100 !important;
+	} 
+	
+	h3{
+		font-weight: normal;
+		display: block;
+		float: left;
+		margin: $padding-base/2 0px;
+
+		span{
+			font-size: 12px;
+			font-weight: normal;
+			margin-bottom: 10px;
+			display: block;
+		}
+	}
+	
+	li{
+		width: 100%;
+		display: block;
+		float: left;
+
+		a{
+			display: block;
+			font-family: Helvetica, Arial, sans-serif;
+			padding: 13px 5px 12px 20px;
+			border-bottom: 1px solid #ccc;
+			
+			&:hover{
+				background-color: #FAFAFA;
+			}
+			
+		}
+		&:last-child > a {
+				border-bottom : none
+		}
+		.thumb{
+			display: block;
+			float: left;
+			width: 10%;
+			img{
+				max-width: 100%;
+			}
+		}
+		
+		.desc{
+			width: 90%;
+			float : left;
+			font-weight: normal;
+			display: block;
+			vertical-align: middle;
+			color: #000;
+			
+			.title{
+				width: 90%;
+				display: block;
+				float: left;
+				position: relative;
+				padding: 8px 0 0 15px;
+				line-height: 13px;
+			}
+			
+			.search-content-title{
+				width: 90%;
+				padding-bottom: 8px;
+				padding-left: 0px;
+			}
+
+			.price{
+				display: block;
+				padding-left: 5px;
+				float: left;
+				padding-left: 10px;
+				padding-top: 8px;
+			}
+			
+			i{
+				display: block;
+				float: right;
+				position: relative;
+				padding-top: 9px;
+				padding-right: 10px;
+				font-size : 16px
+			}
+		
+		}
+		.contenttitle {
+			width : 100%;
+		}
+		&.search-content{
+			margin: 0px !important;
+		}
+	}
+}
+.search-contentResult-title, .search-productResult-title {
+	padding: 10px 9px;
+    background: #ECECEC;
+    font: 13px Arial,Helvetica,sans-serif;
+    font-weight: normal;
+   
+}
+.search-content:first-child .search-contentResult-title {
+	display: block !important;
+}
+.searchNotValid {
+    .error { margin-top: 2px;}
+	input {
+		width : 100% !important;
+		height: 31px !important;
+	}
+	.controls {
+	    border-bottom: none !important;
+	}
+}
+.relatedTitle {
+	background: #f5f4f4;
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.searchHead {
+    padding: 15px 30px;
+    border-bottom: 1px solid #E0E0E0;
+    &:last-child {
+    	margin-bottom: 20px;
+    }
+    h4 {
+		font-family : Arial,Helvetica,sans-serif;
+		margin: 5px 0;
+	}
+	a {
+	    color: #8d8d8d;
+	  }
+}
+#search_form {position :relative}
+h3.suggestions {
+	padding-left: 13px;
+    font: 13px Helvetica,Arial,sans-serif;
+    width: 100%;
+    a {
+    	font-family: Helvetica,Arial,sans-serif;
+    }
+}	

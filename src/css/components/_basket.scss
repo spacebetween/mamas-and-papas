@@ -1,12 +1,13 @@
 .basket {
     &_title {
-        height: 68px;
+        height: 80px;
         line-height: 46px;
         border-bottom: $border-width solid $gray;
     }
 
     &_strap {
         font-size: $font-size-3;
+        border-top: $border-width solid $gray;
     }
 
     &_product {
@@ -70,5 +71,10 @@
         &Product {
             border: $border-width solid $gray;
         }
+    }
+
+    &_checkout {
+        position: sticky;
+        bottom: 0;
     }
 }

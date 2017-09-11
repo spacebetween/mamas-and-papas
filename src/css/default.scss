@@ -1,6 +1,8 @@
-// Core variables and mixins
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/variables';
 
+$path: '/_ui/desktop/common/';
+
+// END LEGACY VARS
 @import 'variables';
 
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins';
@@ -64,16 +66,57 @@
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/utilities';
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
 
+// LEGACY LESS FROM OLD SITE
+// Remove when new UI is fully implemented
+
+@import 'legacy/form-element';
+@import 'legacy/header';
+//@import 'legacy/homepage';
+@import 'legacy/product-category';
+@import 'legacy/home-scroll';
+@import 'legacy/mini-cart';
+@import 'legacy/site-search';
+//@import 'legacy/nav';
+@import 'legacy/content';
+@import 'legacy/facetnavigation';
+@import 'legacy/plp';
+@import 'legacy/register';
+@import 'legacy/form-element';
+@import 'legacy/login';
+@import 'legacy/uparrow';
+@import 'legacy/footer';
+@import 'legacy/forgot-password';
+@import 'legacy/cart-page';
+@import 'legacy/store-locator';
+@import 'legacy/contact-preference';
+@import 'legacy/update-personal-detail';
+@import 'legacy/address-book';
+@import 'legacy/my-account';
+@import 'legacy/order-history';
+@import 'legacy/checkout';
+@import 'legacy/my-favourites';
+@import 'legacy/datepicker';
+@import 'legacy/gift-registry';
+@import 'legacy/pdp';
+@import 'legacy/orderConfirmation';
+@import 'legacy/price-match';
+@import 'legacy/Partial-payment';
+@import 'legacy/aboutus';
+@import 'legacy/category-templates';
+@import 'legacy/newContentPage';
+@import 'legacy/cnt-armadillo-temp';
+@import 'legacy/cnt-cybex-temp';
+@import 'legacy/loyalty-offers';
 
 // sass-lint:disable clean-import-paths
 @import 'slick-carousel/slick/slick-theme.scss';
 @import 'slick-carousel/slick/slick.scss';
 // sass-lint:enable clean-import-paths
 
-// Custom icons
+// new icons
 @import 'icons/icons';
 
-// Custom imports
+// New imports
 @import 'components/slidePanel';
 @import 'components/backgrounds';
 @import 'components/helpers';
@@ -91,7 +134,6 @@
 @import 'components/slick';
 @import 'components/featureCarousel';
 @import 'components/breadcrumb';
-@import 'components/productFilter';
 @import 'components/products';
 @import 'components/productCard';
 

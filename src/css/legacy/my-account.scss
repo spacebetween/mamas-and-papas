@@ -1,0 +1,700 @@
+.gender-col{
+	position: relative;	
+	&:before{
+		content: "\f0d7";
+		font: 14px/1 FontAwesome;
+		position: absolute;
+		right: 21%;
+		top: 9px;
+		@media (max-width: $screen-xs-max){
+			top: 65%;
+			right: 4%;
+			
+		}
+	}
+}
+.page-childDetailsPage{
+	.select-drop{
+		&:before{
+			bottom: 20%;
+			content: "\f0d7";
+			font: 14px/1 FontAwesome;
+			right: 24%;
+			position: absolute;
+			z-index: 999;
+		}
+	}
+}
+ @media (max-width: 767px) {
+  .page-childDetailsPage .select-drop:before,
+	.page-mnpRegisterPage .select-drop:before {
+     bottom: 20%;
+     right: 14px;
+   }
+ }
+#childDetailForm{
+	@media (max-width: $screen-sm-max){
+		.block{
+			.date{
+				width:42%;
+			}
+			.gender{
+				width:29%;
+			}
+		}
+	}
+	@media (max-width: $screen-xs-max){
+		.block{
+			.date{
+				width:100%;
+			}
+			.gender{
+				width:100%;
+			}
+		}
+	}
+}
+
+.paymentItem{
+	border-bottom: 1px dashed #000;
+    padding-bottom: 20px;
+	overflow:hidden;
+	.paymentItem-detail{
+		@media (max-width: $screen-xs-max){
+			margin-bottom:10px;
+		}
+		>span{
+			font-weight:bold;
+		}
+	}
+	.order-detail-default{
+		>label{
+			padding-top: 5px;
+			i{
+				padding-right: 5px;
+				font-size: 14px;
+			}
+		}
+	}
+}
+.mandatory-txt-pass{
+	color: #bdbdbd;
+    display: block;
+    font-style: italic;
+    margin-bottom: 20px;
+	width: 100%;
+}
+.no-content-msg{
+	 display: block;
+    padding-top: 30px;
+    text-align: center;
+}
+.page-viewGiftRegistry{
+	#updateItemForm{
+		
+		.gift-outofstock{
+			display: block;
+			font-weight: bold;
+			padding-top: 25px;
+			text-align: center;
+			@media (max-width: $screen-xs-max){
+				padding-top: 0px;
+			}
+		}
+	}
+}
+.childRegister{
+.mom-value-table,.parent-value-table{
+	.date{
+		@media (max-width: $screen-xs-max){
+			text-align: center;
+		}
+		i{
+			font-size:18px;
+			color:#000;
+			padding-left:10px;
+			padding-right:13px;
+		}
+		.datetext {
+			width:36%;
+			@media (max-width: $screen-xs-max){
+				 width: 40%;
+				 
+			}
+		}
+		
+	}
+	.gender{
+		@media (max-width: $screen-xs-max){
+			text-align: center;
+			padding-top:15px;
+		}
+	}
+	.gender-val{
+			width:70%;
+			@media (min-width: $screen-sm-min){
+				width:58%;
+			}
+			@media (max-width: $screen-xs-max){
+				width:100%;
+			}
+		}
+		
+		.edit-remove{
+			text-align:right;
+			
+			a{
+				padding:0px 10px;
+				display:inline-block;
+			}
+		}
+		}
+	.eachbirthdate{
+		.date{
+			label{
+				font-weight: normal;
+				padding-right: 4px;
+			}
+			input.datetext{
+				width: 35%;
+				border-radius: 0;
+				padding: 6px;
+				border: 1px solid #bdbdbd;
+			}
+			.ui-datepicker-trigger{
+				background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+				border: 0 none;
+			}
+		}
+		.gender{
+			label{
+				font-weight: normal;
+			}
+			select{
+				padding: 6px;
+			}
+		}
+	}	
+}
+.page-add-edit-address{
+	#addressform_button_panel{
+		@media (max-width:$screen-xs-max){
+			padding-left:0;
+		}
+	}
+	.postcode-blk{
+		display:none;
+	}
+	.checkout-delivery-btn{
+		clear: both;
+		width: 70%;
+		@media (max-width: $screen-xs-max){
+			width: 100%;
+		}
+		#addressform_button_panel{
+			@media (max-width: $screen-xs-max){
+				 padding-left: 3px;
+			}
+		}
+	}
+}
+.mobile-inter{
+	float:left;
+}
+
+.page-account{
+	ul{
+		padding:0;
+		margin:0;
+		li{
+			list-style-type: none;
+		}
+	}
+	.my-account-heading{
+		margin-bottom: 16px;
+		@media (max-width: $screen-sm-min) {
+			padding:0 6px;
+		}
+		h4{
+			font-family: $font-family-sans-serif;
+			border-bottom: 1px solid #000000;
+			line-height: 26px;
+			padding-left:6px;
+			padding-bottom:6px;
+		}
+	}
+		.simple-banner {
+			margin-bottom:16px;
+			@media (max-width: $screen-sm-min) {
+				padding:0 6px;
+			}
+		}
+	.accountnavigationcollectioncomponent{
+		& > div{
+			:nth-child(3){
+				clear:both;
+			}
+			& > div{
+				.accountNav{
+					min-height:150px;
+					border:1px solid #bdbdbd;
+					margin-bottom:15px;
+					@media (max-width: $screen-sm-min) {
+						min-height:0;
+					}
+					h4{
+						padding-bottom: 13px;
+						padding-left: 10px;
+						padding-top: 10px;
+						margin-bottom: 0;
+						border-bottom:1px solid $gray-light;
+					}
+					ul{
+						li{
+							padding-left:10px;
+							a{
+								font-size: 12px;
+								font-weight: normal;
+								line-height: 26px;
+								display:block;
+								@media (max-width: $screen-sm-min) {
+								    line-height: 30px;
+								}
+								&:hover{
+									text-decoration: underline;
+								}
+							}		
+						}
+					}
+					.content{
+						padding-top:9px;
+						padding-bottom:12px;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+	}
+	.mobile-inter{
+		display:none;
+	}
+}
+.addressItem{
+	.add-edit-delivery{
+		margin-top: 20px;
+		
+	}
+	@media (max-width:$screen-xs-max){
+		.default-bill{
+				
+			.btn{
+				margin-top:18px;
+			}
+		}
+		.is-default-address{
+			text-align: center !important;
+			padding-top:6px !important;
+
+		}
+	}
+	
+}
+.page-childDetailsPage {
+	
+	.childRegister{
+		p{
+			padding: 0px 0px 25px 8px;
+			@media (max-width:$screen-xs-max){
+				padding: 20px 8px;
+			}
+		}
+		.eachbirthdate{
+			margin-bottom:20px;
+			>.block{
+				padding-top:20px !important;
+				padding-bottom:20px !important;
+				border-bottom:1px dashed #000;
+				border-top:1px dashed #000;
+				.edit-remove {
+					font-weight:bold;
+				}
+			}
+			.date{
+				i{
+					font-size:18px;
+					color:#000000;
+					padding-left:10px;
+					padding-right:10px;
+				}
+			}
+			.edit-remove{
+				@media (max-width:$screen-xs-max){
+					margin-top:15px;
+				}
+			a{
+				color:$cyan;
+				text-decoration:underline;
+				i{
+					display:none;
+				}
+				@media (max-width:$screen-xs-max){
+					display:block;
+					text-decoration:none;
+					text-align:center;
+					color:#000;
+					border:$border-base;
+					padding-top:10px;
+					padding-bottom:10px;
+					font-size:14px;
+					i{
+						display:inline-block;
+						font-size:14px;
+						
+					}
+				}
+				
+			}
+			.float{
+			a{
+				float:right;
+				@media (max-width:$screen-xs-max){
+					float:none;
+					i{
+						padding-left:5px;
+					}
+				}
+			}
+			}
+		}	
+		}
+	}
+	
+	#childDetailForm{
+		.new-child{
+			h5{
+				font-family:$font-family-sans-serif;
+				margin-left:7px;
+				font-weight:normal;
+				margin-bottom:7px;
+				@media (max-width:$screen-xs-max){
+					margin-left:0px;
+					margin-top:10px;
+				}
+			}
+		}
+		.parent-add{
+			@media (max-width: $screen-xs-max){
+				margin-bottom:10px;
+			}
+		}
+		#borndate{
+			width:75%;
+			padding:5px 8px;
+			margin-left:7px;
+			border:1px solid #bdbdbd;
+			-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+			border-radius: 0px;
+			@media (max-width:$screen-xs-max){
+				margin-left:0;
+			}
+		}
+		.select-drop{
+			select{
+				width:80%;
+				padding:5px 8px;
+				margin-left:7px;
+				border:1px solid #bdbdbd;
+				-webkit-border-radius: 0px;
+				-moz-border-radius: 0px;
+				border-radius: 0px;
+				@media (max-width:$screen-xs-max){
+					width:100%;
+					margin-left:0;
+					
+				}
+			}
+		}		
+		.ui-datepicker-trigger{
+			background:none;
+			border:0 none;
+			i{
+				font-size:18px;
+				padding-left:5px;
+			}
+		}
+		.add-child{
+			    border-top: 1px dashed #000;
+				margin-top:20px;
+				padding-top:20px;
+			
+		}
+		
+		.parent-value-table,.mom-value-table{
+				
+				margin-bottom:25px;
+		.date {
+			label{
+				font-weight:normal;
+				padding-right:4px;	
+			}
+		}
+		.gender {
+			label{
+				font-weight:normal;
+				padding-right:4px;	
+			}
+		}		
+				
+		> .block{
+			padding-top:20px !important;
+			padding-bottom:20px !important;
+			border-bottom:1px dashed #000;
+			p{
+				clear: both;
+				padding: 4px 0 0 44px;
+				color: #c83745;
+				font-style: italic;
+			}
+			
+		}
+		> .block:nth-child(1){
+			border-top:1px dashed #000;
+		}
+		
+		.edit-remove{
+			@media (max-width:$screen-xs-max){
+					margin-top:15px;
+				}
+			a{
+				color:$cyan;
+				text-decoration:underline;
+				font-weight:bold;
+				
+				i{
+					display:none;
+				}
+				@media (max-width:$screen-xs-max){
+					display:block;
+					text-decoration:none;
+					text-align:center;
+					color:#000;
+					border:$border-base;
+					padding-top:10px;
+					padding-bottom:10px;
+					font-size:14px;
+					i{
+						display:inline-block;
+						font-size:14px;
+						padding-left:5px;
+						
+					}
+				}
+			}
+			.float{
+			a{
+				float:right;
+				@media (max-width:$screen-xs-max){
+					float:none;
+					i{
+						padding-left:5px;
+					}
+				}
+			}
+			}
+			.edit{
+				@media (max-width:$screen-xs-max){
+					float: left;
+					margin-right: 3px;
+					width: 49%
+				}
+			}
+			.remove{
+				@media (max-width:$screen-xs-max){
+					float: left;
+					width: 49%;
+				}
+			}
+		}	
+		
+	}
+		.mom-value-table{
+			.gender{
+				label{
+					padding-right:0px;
+				}
+			}
+		}
+		
+		#parent{
+			margin-top:0;
+			p.child-error,p.child-error-date{
+				padding-bottom: 8px;
+				padding-left: 6px;
+				padding-top: 6px;
+				display:none;
+				color: #c83745;
+				font-style: italic;
+			}
+		}
+	}
+}
+.pcafade, .ui-datepicker {
+	display: none;
+}
+.my-account-ul-append{
+	ul{
+		width:40%;
+		float:left;
+	
+		@media (max-width:$screen-sm-max){
+			width:47%;
+		}
+			@media (max-width:$screen-xs-max){
+			float:none;
+			width:100%;
+		}
+	}
+} 
+@media screen and (max-width:$screen-xs-max){
+.page-account{
+	.accountnavigationcollectioncomponent{
+		& > div{
+			& > div{
+				.accountNav{
+					border-top: 1px solid #bdbdbd;
+					.content{
+						padding-top:9px;
+						padding-bottom:12px;
+						 overflow: hidden;
+					}
+				}
+			}
+		}			
+	}
+}
+}
+
+
+.contact-lable .contact-lable-form form .myAccountWrapper {
+	 	width:100%;
+	 	margin-top:-20px;
+	 	border-bottom:1px solid $gray-light;
+	 	padding-bottom:25px;
+			.inline-lable-group {
+					margin-top: 0;
+				    background-color: #ececec;
+				    overflow: hidden;
+				    padding: 10px 7px;
+					
+					.contactPreferenceformLabel{
+					    margin-top: 0;
+					    float: left;
+					    width: 100%;
+					    line-height: 15px;
+					    vertical-align: middle;
+					    padding-left: 10px;
+					    font-weight: 700;
+					    text-align: center;
+						    	
+					    	p {
+					    		text-decoration: none;
+							    padding: 10px 0 10px 6px;
+							    margin: 0;
+							    font-size: 15px;
+							    font-weight: normal;
+					    	}
+					}
+			}
+			h4 {
+				border:none;
+				margin:8px 0;
+				font-size:12px;
+				font-weight:bold;
+			}
+			.loyaltyMember {
+			h4 {
+				margin:0;
+				padding:0 0 0 6px;
+			}	
+			p{
+			    display: inline-block;
+			    padding: 5px 0 0 6px;
+    			font-size: 12px;				
+			}	
+			a{
+				color:$cyan;
+				text-decoration:underline;
+				font-weight:bold;
+				word-spacing: 1px;
+			}
+		}
+	}
+	
+	.formButtons {
+		padding-top: 15px;	
+		 .btn {
+			padding:10px 20px;
+		}
+	}
+	
+	.emailUnsub {
+		
+		h1{
+			text-align:center;
+			font-size:18px;
+			font-weight:bold;
+			margin:10px 0;
+		}
+		p{
+			text-align:center;
+			font-size:12px;
+			padding:10px 0;
+			
+			i{
+				text-align:left;
+			}
+		
+		}
+		.formButtons .btn {
+			font-size: 16px;
+    		text-transform: none;
+    		@media (max-width: $screen-sm-min) {
+				font-size:14px;
+				font-weight:normal;
+				padding: 10px 5px;
+			}
+		}
+	}
+	.myAccountHeading {
+		.accountNav h4, .accountContentPane h4{
+			border-bottom:1px solid $gray-light;
+				@media (max-width: $screen-sm-min) {
+					font-size:18px;
+					font-weight:normal;
+				}
+		}
+	}
+	
+	 .myAccountHeading .block {
+	    width: 100%;
+	    margin-bottom: 20px;
+	    padding-bottom: 20px;
+	    border-bottom: 1px #bdbdbd solid;
+	    float: left;
+	    position: relative;
+	   
+	    .thumb {
+	    	    width: 28%;
+			    float: left;
+			    text-align: center;
+			    position:relative;
+			    a{
+			    	text-decoration:none;
+			    }
+			   img {
+				    height: auto;
+				    max-width:100%;
+				}
+	    }
+	 }

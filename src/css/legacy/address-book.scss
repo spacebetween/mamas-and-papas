@@ -1,0 +1,277 @@
+.page-address-book{
+	.addressItem{
+		
+		p{
+			padding-top:5px;
+		}
+		.myadd-button{
+			.btn{
+				padding:5px 20px;
+			}
+			
+		}
+	}
+}
+.page-catalogRequestPage{
+	.mobile-inter{
+		display:none;
+	}
+}
+.parent-value-table{
+	display:none;
+}
+.accountBodyContentSlot{
+	.emptyMessage{
+		font-size:12px;
+		font-weight:bold;
+		padding-left:6px;
+		padding-top: 20px;
+	}
+	.manual-link-add{
+		color: #007f93;
+		display: block;
+		text-decoration: underline;
+		font-weight:bold;
+		padding-left:6px;
+		padding-bottom:20px;
+	}
+	.add-address{
+		padding-top:24px;
+		padding-bottom:14px;
+	}
+	.addressItem{
+		padding-bottom: 20px;
+		padding-left: 6px;
+		padding-top: 20px;
+		border-bottom:1px dashed #000000;
+		ul{
+			padding:0px;
+			margin:0;
+			li{
+				list-style-type:none;
+				font-size:12px;
+				
+			}
+		}
+		.is-default-address{
+			font-weight:bold;
+			font-size:12px;
+			text-align:right;
+			padding-top: 4px;
+			display:block;
+			span{
+				padding-right:4px;
+			}
+		}
+		@media (min-width:$screen-sm-min){
+			.btn-blk{
+				margin-top:20px;
+			}
+		}
+	}
+	.btn{
+		padding:5px 20px;
+	}
+
+	#userCatalogRequestForm{
+
+		.catalogue-head{
+			border-bottom:$border-base;
+			padding: 36px 20px 6px;
+			.ip-check-box{
+				.custom-cb-lable{
+					padding-left: 61px;
+					font-weight:normal;
+					margin-bottom: 0px;
+					padding-bottom: 0px;
+					&:before{
+						background: rgba(0, 0, 0, 0) url("../images/select-custom.png") no-repeat scroll 0 0;
+						border: medium none;
+						margin-top: -14px;
+						top:50%;
+					}
+					span{
+						display:none !important;
+					}
+					
+				}
+				input[type='checkbox']{
+					&:checked{
+						& ~ .custom-cb-lable{
+							&:before{
+								border:medium none !important;
+								background-position: 0 -28px;
+							}		
+						}
+					}
+				}
+			}
+			&:hover{
+				background-color:$gray-light;
+			}
+		}
+		.catalogue-head-title{
+			padding-bottom: 56px;
+			border-left: 1px solid;
+			padding-left: 20px;
+			
+			h4{
+				border:0;
+			}
+			ul + div{
+				
+			}
+			ul{
+				padding-right:5px;				
+			}
+			.first-name-cata{
+				padding-left: 8px;
+				padding-right: 5px;
+			}
+			.error-arrow{
+				border: 1px solid #bdbdbd;
+				padding-right: 15px;
+				select{
+					border:medium none;
+				}
+			}
+		}
+		.border-left{
+			& > h4{
+				margin-left: 26px;
+			}
+			
+		}
+		h4{
+			font-family:$font-family-sans-serif;
+			margin-bottom: 0px;
+			border-bottom:$border-base;
+		}
+		& > div{
+			margin-top:25px;
+		}
+		ul{
+			margin:0;
+			padding-left:6px;
+			padding-bottom:18px;
+			
+			+ div{
+				padding-left:6px;
+			}
+		}
+		.control-group{
+			padding-left:0;
+		}
+		
+		@media screen and (max-width:$screen-xs-max){
+			h4{
+				border:none;
+			}
+			.border-left{
+				& > h4{
+					margin-left:0;
+					border-bottom:$border-base;
+				}
+			}
+			.catalogue-head-title{
+				border-left:0;
+				padding-left: 11px;
+				padding-right:17px;
+				padding-top: 0;
+				padding-bottom:0;
+				ul + div{
+					 padding-right: 0px;
+				}
+
+			}
+			.catalogue-head{
+				border:none;
+				padding-top:10px;
+				padding-bottom:10px;
+				.control-group{
+					margin-bottom:6px;
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+.page-add-edit-address {
+	.add-address-inner-cg{			 
+		padding: 40px 63px;
+		background-color:$gray-light;
+		margin-left:6px;
+		margin-bottom:30px;
+}
+
+	#mnpAddressForm{
+		.postcode-blk{
+					background: #ececec;
+					padding: 35px 8px; 
+					margin-left: 32px;
+					margin-bottom: 30px;
+					overflow: hidden;
+				.post-row{
+					clear:both;
+					width:100%;
+					
+					.control-group{
+						margin-bottom:20px;
+					}
+				}
+		
+		}
+		
+	}
+}
+@media screen and (max-width:$screen-xs-max){
+	.accountBodyContentSlot{
+		.manual-link-add{
+			padding-left:2px;
+		}
+	
+	p{
+		padding-left:0;
+	}
+	.addressItem{
+		padding-left:0;
+		ul{
+			padding-left:7px;
+		}
+		.buttons{
+			margin-top: 15px;
+		}
+	}
+	
+	}
+	.page-add-edit-address{
+		.add-address-inner-cg{
+			margin-left:0;
+			padding: 35px 26px;
+		}
+	}
+	.accountLeftNavigation{
+		margin-top:30px;
+	}	
+}
+
+.defaultAddrBtn {
+	@media screen and (max-width:$screen-xs-max){ 
+		a {
+		padding: 5px 11px !important;
+		font-size: 13px;
+		}
+	}
+}
+
+.addressItem .defaultTxt {
+	@media screen and (max-width:$screen-xs-max){ 
+		 float: right;
+		 .is-default-address {
+			text-align: right !important;		 
+		 }
+	}
+	
+}

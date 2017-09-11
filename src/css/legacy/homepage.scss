@@ -1,0 +1,119 @@
+.homeslider{
+	.ac-price{
+		color: #585858;
+		display: block;
+		text-align: center;
+		text-decoration: line-through;
+		font-family:$font-family-serif;
+	}
+}
+#content{
+	img{
+		@extend img-responsive;
+	}
+}
+.thumb{
+	img{
+		width: 100%;
+	}
+}
+
+.home-banner{
+	margin-bottom:$padding-base;
+	display:block;
+}
+
+.services-message{
+	text-align:center;
+	border-bottom:1px #6a6c6e dashed;
+	margin-bottom:$padding-base;
+	padding-bottom:$padding-base;
+	float: left;
+	width: 100%;
+	
+	@media (max-width: $screen-xs-max) {
+		padding-bottom:0;
+	}
+	
+	.messages{
+		border-right:1px #000000 solid;
+		@media (max-width: $screen-xs-max) {
+			border-bottom:1px #000000 solid;
+			border-right:none;
+			margin-bottom:10px;
+			padding-bottom:10px;
+		}
+		&:last-child{
+			border:0;
+			
+			@media (max-width: $screen-sm-min) {
+				margin:0;					
+			}
+		}
+		
+		a{
+			font-family:$font-family-serif;
+			font-size:$font-size-h2;
+			color:#2e2f30;
+			text-transform:uppercase;
+			font-weight:bold;
+		}
+		p{
+			line-height: 5px;
+			margin: 0;
+		}
+	}
+}
+
+@mixin cat-blocks
+{
+	@media (max-width: $screen-xs-max)
+	{
+		width: 100% !important;
+
+		&[style="width:25%;"]
+		{
+			width: 50% !important;
+		}
+	}
+}
+
+.homepage-cat{
+	clear:both;			
+	
+	@media (min-width: $screen-sm-min) {
+		margin-bottom:20px;
+	}
+}
+
+.explore{
+	width: 33%;
+	text-align:center;
+	margin-bottom:$padding-base;
+
+	@media (max-width: $screen-xs-max) {
+		width: 100% !important;
+	}
+	
+	li{
+		font-size:$font-size-h2 + 4;
+		font-family:$font-family-serif;
+		margin-top:10px;
+		text-transform: uppercase;
+	}
+}
+	
+@media (min-width: 768px) and (max-width:967px) {
+	.scroller{
+		.productListItem{
+			width:105px !important;
+		}	
+	}
+}
+p.ac-price{
+	color:#bdbdbd;
+	font-size:16px;
+	text-decoration: line-through;
+	line-height: normal;
+    margin: 0px;
+}

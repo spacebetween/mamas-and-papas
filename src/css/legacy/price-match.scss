@@ -1,0 +1,82 @@
+.controls .error-menu {
+	color: #c83745;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: normal;
+}
+.priceMatchPromisePage{
+	> h4{
+		border-bottom: 1px solid #000;
+		font-family:$font-family-sans-serif;
+		margin-bottom: 16px;
+		padding-bottom: 17px;
+		padding-left: 5px;
+		padding-top: 20px;
+	}
+	.manual-postcode-blk{
+		.manual-link{
+			color: #007f93;
+			display: block;
+			margin-bottom: 25px;
+			text-decoration: underline;
+		}
+	}
+	.postcode-blk{
+		background: #ececec none repeat scroll 0 0;
+		display: none;
+		margin-right: 25px;
+		margin-top: 50px;
+		margin-bottom:30px;
+		padding: 40px 20px;
+		@media (max-width: $screen-xs-max){
+			margin-right: 0px;
+		}
+	}
+	.control-group{
+		padding-right:25px;
+		@media (max-width: $screen-xs-max){
+			padding-right:0px;
+		}
+	}
+	.second-block-price{
+		>h5{
+			font-family:$font-family-sans-serif;
+			font-weight:bold;
+			margin-bottom:15px;
+		}
+		textarea{
+			height: 90px;
+			width: 100%;
+		}
+		p{
+			margin-bottom:20px;
+		}
+		.control-group{
+			margin-bottom:10px;
+			label{
+				display:block;
+				@media (max-width: $screen-xs-max){
+					width:80%;
+				}
+			}
+			.product-code{
+				margin-bottom:20px;
+			}
+		}
+		.form-actions{
+			padding-right:25px;
+			@media (max-width: $screen-xs-max){
+				padding-right:0px;
+			}
+			.terms{
+				padding-top: 10px;
+				text-align: center;
+				text-decoration: underline;
+					a{
+						color:#007f93
+					}
+			}
+		}
+	}
+	
+}

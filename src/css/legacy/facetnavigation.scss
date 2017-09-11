@@ -1,0 +1,117 @@
+.facetNavigation{
+		@media (max-width: $screen-md-min) {
+			display:none;
+			padding:0 !important
+		}
+		@media (min-width: $screen-md-min) {
+			display:block !important;
+		}
+		h3{
+			font-family: $font-family-base;
+			padding-bottom:17px;
+			margin-bottom:15px;
+			border-bottom: 1px #6a6c6e dashed;
+		}
+		
+		.facet{
+			width:100%;
+			float:left;
+			margin-bottom:$padding-base;			
+			h4{
+				font-family: $font-family-base;
+				padding-bottom:15px;				
+				border-bottom:$border-base-black;
+				font-weight:normal;
+				
+				a{
+					display:block;
+					
+					i{
+						float:right;
+					}
+				}
+			}
+			.facetValues{
+				.allFacetValues, .topFacetValues{
+					margin-top:15px;
+				}
+				li{
+					width:100%;
+					float:left;
+					margin-bottom:5px;
+					font-family: $font-family-base;
+					font-size:$font-size-base;
+					
+					label{
+						display:block;
+						font-weight:normal;
+					}
+					
+					.facetValueCount {
+						float:right;
+						font-size:$font-size-base;
+						font-style:italic;
+						color:$gray;
+						display:block;
+						position: relative;
+						 bottom: inherit;
+						left: inherit;
+					}
+				}
+				.more{
+					display:block;
+					border-top: 1px #cacaca dashed;
+					padding: 5px 0px;
+					width:100%;
+					float:left;
+					
+					a{
+						color: #8d8d8d;
+						
+						i{
+							font-size:15px;
+							padding-right:5px;
+							color:#8d8d8d;
+						}
+					}
+				}
+				
+				.facet-star{
+					
+						.start-check{
+							display:none;
+						}
+						label{
+							cursor: pointer;
+							
+							span.facet-star{
+								background: url(../images/rating-star.png) no-repeat left center ;
+								display: inline-block;
+								width: 58px;
+								height: 11px;								
+								color: transparent;
+							}
+							span.star-0{
+									background-position: 0px 0px;
+								}
+							span.star-1{
+									background-position: 0px -11px;
+								}
+							span.star-2{
+								background-position: 0px -22px;
+							}
+							span.star-3{
+								background-position: 0px -33px;
+							}
+							span.star-4{
+								background-position: 0px -44px;
+							}
+							span.star-5{
+								background-position: 0px -55px;
+							}
+						}
+						
+				}
+			}
+		}
+	}

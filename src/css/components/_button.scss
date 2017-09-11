@@ -3,14 +3,11 @@
     text-transform: uppercase;
     cursor: pointer;
     height: 50px;
-    color: $black;
-    background-color: $white;
-    border-color: $white;
+    padding: 0 2rem;
     &-arrow {
         width: 60px;
         height: 60px;
         font-size: $font-size-9;
-        background: none;
         &-black {
             border: $button-border-black;
         }
@@ -32,4 +29,16 @@
         background-color: $btn-secondary-bg;
         border-color: $btn-secondary-border;
     }
+}
+
+.btn-primary.hover,
+.btn-primary:hover {
+    background-color: $gray-darker;
+    border-color: $gray-darker;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: $gray;
+    border-color: $gray;
 }

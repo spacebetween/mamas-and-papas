@@ -1,0 +1,97 @@
+.ui-datepicker{
+	border:$border-base;
+	width: 18em;
+	background:#FFFFFF;
+	padding-bottom:5px;
+	
+	.ui-datepicker-header{
+		background:#ebebeb;
+		padding:10px;
+		text-align:center;
+		position:relative;
+		
+		.ui-corner-all{
+			position:absolute;
+			cursor:pointer;
+			
+			span{
+				display:none;
+			}
+			&:before{
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				transform: translate(0, 0);
+			}
+			
+		}
+		.ui-datepicker-prev{			
+			left:10px;	
+
+				&:before{
+					 content: "\f053";					
+				}
+		}
+		
+		.ui-datepicker-next{			
+			right:10px;
+			
+			&:before{
+					 content: "\f054";					
+				}
+		}
+		
+		.ui-datepicker-title{
+			font-size:$font-size-large;
+			text-transform: uppercase;
+			font-weight:bold;
+		}
+	}
+	
+	.ui-datepicker-calendar{
+		margin: 0 auto;
+		padding: 5px;
+		width: 98%;
+		font-size:13px;
+		
+		th{			
+			text-transform: uppercase;
+			font-weight:bold;
+			padding:5px 0;
+			text-align:center;
+		}
+		
+		td{
+			border: 0;
+			padding: 1px;
+			
+			&.ui-state-disabled{
+				opacity: .35;
+				filter: Alpha(Opacity=35);
+			}
+			
+			.ui-state-default{
+				text-align:right;
+				background:#f6f6f6;
+				display:block;
+				padding:5px;
+				
+				&:hover{
+					text-decoration:none;
+				}
+			}
+			
+			.ui-state-active{
+				background:#d8d6d6;
+			}
+		}
+	}
+}
+.custom-datepicker {
+	@media only screen and (max-width: 670px) {
+		margin-top: -192px;
+		}
+}

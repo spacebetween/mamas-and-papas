@@ -1,0 +1,394 @@
+.page-orders{
+	.select-drop{
+		.sortOptions{
+			background: rgba(0, 0, 0, 0) url("../images/graydrop.png") no-repeat scroll 0 0;
+			background-position:right center;
+		}
+	}
+}
+.mandatory-txt{
+	text-align:right;
+	float:left;
+	color:#bdbdbd;
+	margin-top:$padding-base;
+	font-style: italic;
+
+	&:not(.block){
+		width: 100%;
+	}
+}
+
+.termsAndConditionsLink{
+	font-weight: bold;
+}		
+
+.login-page, .guest-checkout {
+    padding: 4rem 0;
+
+	h4{
+		font-family:$font-family-base;
+		margin-bottom: 24px;
+		padding-bottom:$padding-large-vertical+$padding-small-vertical;
+		border-bottom: $border-base-black
+	}
+	.mandatory-txt {
+		margin-top:0;
+	}
+	.forget-password{
+		display:block;
+		margin-bottom:20px;
+	}
+	.form-actions{
+		padding: $padding-none;
+			
+	}
+
+
+
+	.userRegister{
+		@media (max-width: $screen-md-min) {
+			margin-bottom:30px;
+		}
+	}
+	
+	.mnp-userRegister, .newsletter-reg{		
+
+		.block{
+			@media (min-width: $screen-md-min) {
+				padding-right: $padding-base + $padding-base-vertical;
+			}
+		}
+		.manual-postcode-blk{
+			margin-bottom:20px;
+			
+			p{
+				padding:0;
+				margin:0;
+			}
+			a{
+				display:block;
+				color:#007f93;
+				text-decoration:underline;
+			}
+		}
+		.postcode-blk{
+			background:#ececec;
+			padding:40px 20px;
+			display:none;
+			margin-bottom: 20px;
+		}
+		.about-block{					
+			width: 100%;
+			float: left;
+
+			h5{
+				font-family:$font-family-base;
+				margin-bottom:10px;
+				padding-bottom:10px;
+				border-bottom:$border-base;
+				line-height:15px;
+
+				span{
+					font-weight:normal;
+					color:#bdbdbd;
+				}
+			}
+
+			p.iam{
+				font-family:$font-family-base;
+				margin-bottom:10px;
+				font-weight:bold;
+			}
+
+			.ratio-container{
+				border-bottom:1px #6a6c6e dotted;
+				margin-bottom:$padding-base;
+				padding-bottom:$padding-large-vertical;
+
+				span{
+					width:33%;
+					display:inline-block;
+					padding-right:$padding-small-vertical;
+				}
+			}
+
+			.hide-desc{
+				border-bottom:1px #cacaca solid;
+				margin-bottom:$padding-base;
+				padding-bottom:$padding-large-vertical;
+				.row {
+					.controls {
+						&:first-child {
+							padding-right: 28px;
+							position: relative;
+							label {
+								margin-right: -28px;
+								max-width: none;
+							}
+							button {
+								position: absolute;
+								width: auto;
+								right: 32px;
+								top:25px;
+							}
+						}
+					}
+				}
+			}
+
+			.hasDatepicker{
+				color:#bdbdbd;
+			}
+			
+			.ui-datepicker-trigger{
+				border:0;
+				background:none;
+				font-size:18px;
+				width:18%;
+				max-width: 40px;
+			}
+			
+			.parent-add-another, .mom-add-another{
+				padding-top:10px;
+				color:#007f93;
+				text-decoration: underline;
+				display:inline-block;
+				font-weight:bold;
+				@media (max-width: $screen-sm-min) {
+							display:block;
+							text-align:center;
+							margin:5px 0;
+							padding-bottom:20px;
+							border-bottom:1px solid #bdbdbd;
+						}
+				
+			}
+			#Mumtobe{
+				display:block;
+			}
+			
+			.parent-value-table, .mom-value-table{
+				width:100%;
+				float:left;
+				display:none;
+
+				.block{
+					width:100%;
+					float:left;
+					border-bottom:1px #6a6c6e dotted;
+					padding-bottom:10px !important;
+					margin-bottom:10px;
+					padding-right:0;
+
+					span{
+						display:inline-block;	
+
+						i{
+							font-size:18px;
+							color:#000;
+							padding-right:13px;
+						}
+
+						&.date{
+							padding-right:20px;
+						}
+						&.date-col{
+							width:50%;
+							padding-right: 28px;
+							position: relative;
+							button {
+								position: absolute;
+								width: auto;
+								right: -1px;
+								i {
+									padding-right: 0;
+								}
+							}
+							@media (max-width: $screen-sm-max){
+								width:50%;
+							}
+						}
+						&.gender-col{
+							width:35%;
+							position: relative;
+							@media (max-width: $screen-sm-max){
+								width:25%;
+							}
+							@media (max-width: $screen-xs-max) {
+								width:30%;
+								padding: 0 3px;
+							}
+						}
+						&.gender{
+							text-transform: capitalize;
+						}
+						&.edit-remove{
+							float:right;
+							a{
+								padding-left:15px;
+								text-decoration:underline;
+								font-weight:bold;
+
+								&.save{
+									padding-top: 6px;
+									display: inline-block;
+								}
+								&.save-child {
+									float: right;
+									padding-top: 3px;
+								}
+							}
+						}
+					}
+
+				}
+			}
+
+		}
+		
+		.contact-Preference{
+			width: 100%;
+			float: left;
+			margin-bottom:10px;
+			.control-group{
+				margin-bottom:10px;
+			}
+		}
+		
+		.register-action{
+			text-align:left;
+			
+			.custom-cb-lable{
+				margin-top:15px;
+			}
+		}
+		
+	}
+	#MNPRegisterForm{
+		select{
+			height:31px;
+		}		
+		.custom-cb-lable{
+			@media (max-width: $screen-sm-max){
+				margin-bottom: 15px;
+			}
+			a{
+				color:#007f93;
+				text-decoration:underline;
+				
+			}
+		}
+	}
+	#mainMNPRegisterForm{
+		select{
+			height:31px;
+		}
+		.custom-cb-lable{
+			font-weight:normal;
+			text-align : center;
+			display : block;
+			@media (max-width: $screen-sm-max){
+				margin-bottom: 15px;
+			}
+			a{
+				color:#007f93;
+				text-decoration:underline;
+			}
+		}
+	}
+	
+	.unsubscribe-page{
+		margin: 0 auto;
+		float: none;
+	}
+}
+
+.userPartialRegistration {
+	#newsLetterRegistrationForm .form-actions{
+		@media (max-width:$screen-xs-max){
+			float:none !important;
+			margin:0 auto;
+		}
+	}
+	
+	.login-page, .guest-checkout{
+		margin-top: 8px;
+		h4{
+			font-size: 18px;
+			border:0;
+			margin-bottom:10px;
+			padding:0;
+			text-align: center;
+			@media (max-width:$screen-xs-max){
+				font-size:16px;
+				margin:10px 0;
+			}
+		}
+		> p {
+			@media (max-width:$screen-xs-max){
+				text-align: center;
+    		    padding: 0 25px;
+			}
+		}
+	}
+	.newsletter-reg {
+		.manual-postcode-blk {
+			a {
+				display: inline;
+				font-weight: bold;
+				margin-left: 4px;
+				@media (max-width:$screen-xs-max){
+					display:block;
+					margin-left:0;	    		    
+				}
+			}
+		}
+	}
+	.userPartialpop{
+		font-weight: bold;
+		font-family:$font-family-base;
+		margin-bottom: 20px;
+	}
+	
+}
+.child-error{
+	display: block;
+	text-align: left;
+	padding: 10px 0px 0px 10px;
+	clear: both;
+	margin-bottom: 0;
+	color: #c83745;
+	font-size: 12px;
+	font-style: italic;
+}
+.manual-linksquick{
+	color: #007f93;
+	display: block;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.manual-postcode-blk{
+	margin-bottom:20px;
+	
+	p{
+		padding:0;
+		margin:0;
+	}
+	a{
+		display:block;
+		color:#007f93;
+		text-decoration:underline;
+	}
+}
+.newsletter-reg {
+	@media (max-width: $screen-sm-min) { 
+		form .control-group {
+			margin-bottom : 10px;
+		}
+	}
+}
+.page-mnpRegisterPage, .page-account {
+	#content {
+		margin-bottom : 30px;
+	}	
+}

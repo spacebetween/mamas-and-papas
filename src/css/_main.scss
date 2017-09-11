@@ -1,4 +1,4 @@
-// Main styles for the site. Anything that isn't a component
+//Main styles for the site. Anything that isn't a component
 body {
     position: relative;
     min-height: 100vh;
@@ -7,6 +7,15 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    color: inherit;
 }
 
 .wrapper {
@@ -23,4 +32,108 @@ body {
 .row {
     max-width: 1500px;
     margin: 0 auto;
+}
+
+.toolTip {
+    border: 1px solid $gray-dark;
+    color: $black;
+    font-size: $font-size-2;
+    width: 140px;
+    padding: 7px 6px;
+    position: absolute;
+    background: $white;
+    z-index: 99;
+    font-family: Helvetica, sans-serif;
+    font-weight: normal;
+    display: none;
+    &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-top: 8px solid $gray-dark;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        bottom: -17px;
+        right: 11px;
+    }
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-top: 8px solid $white;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        right: 11px;
+        bottom: -16px;
+    }
+    &.bottom {
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-bottom: 8px solid $gray-dark;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid transparent;
+            top: -17px;
+            right: 11px;
+        }
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-bottom: 8px solid $white;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid transparent;
+            right: 11px;
+            top: -16px;
+        }
+    }
+    &.open {
+        display: block;
+    }
+}
+
+// Legacy site tweaks, eventually for removal
+#globalMessages { // sass-lint:disable-line no-ids
+    .fa {
+        float: left;
+        padding-right: .5rem;
+    }
+}
+
+.content {
+    // Fixes for old content
+    max-width: 960px;
+    margin: 0 auto;
+
+    img {
+        max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 80%;
+    }
+
+    .btn-default {
+        @extend .btn-primary;
+        line-height: 50px;
+    }
+}
+
+.page-productList #grid { // sass-lint:disable-line no-ids
+    display: flex;
+    flex-wrap: wrap;
 }
