@@ -33,3 +33,13 @@ $ npm run build
 ```
 $ npm test
 ```
+
+## Working on
+### Git Workflow
+Make a new branch for your work from Master
+Commit all your work to that branch
+Push your branch to the github repo
+Open a Pull request and include Marcus as a reviewer
+
+### General
+Create new components partials and SCSS files for each distinct section.
