@@ -1,0 +1,81 @@
+.clothingcontent{
+	margin-bottom:25px;
+	.details{
+		h3{
+			text-transform: uppercase;
+		}
+	}
+}
+.contentbannerline{
+	.bannerline{
+		display: block;
+		padding-bottom: 40px;
+		border-bottom: 1px solid #000;
+	}
+	
+}
+.category-block{
+	.image-bath{
+		margin-bottom:20px;
+	}
+	.bathtime-landing{
+		.prod_cat{
+			margin-bottom:10px;
+
+			h3{
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+.page-testPage{
+	.mnp-grid{
+		.mnpgrid-container {
+			.prod_cat{
+				margin-bottom:15px;
+			}
+			div{
+				&:nth-child(8){
+					clear:left;
+				}
+			}
+		}
+		
+	}
+}
+.nurserylanding{
+	.cmsimage{
+		text-align:center;
+	}
+}
+.page-page-00000336{ 
+	.mnp-grid{
+		margin-bottom:15px;
+		.cmsimage{
+				text-align:center;
+		}
+	}
+	.nurserylanding{
+		.nurserycontent{
+			.content{
+				padding-left:40px;
+				padding-right:40px;
+				margin-bottom:15px;
+			}
+		}
+	}
+	.prod_cat{
+		margin-bottom:15px;
+	}
+	.feeding-template{
+		margin-bottom:15px;
+	}
+}
+
+.prod_cat{
+	margin-bottom: 20px;
+	
+	h3{
+		text-transform: uppercase;
+	}
+}

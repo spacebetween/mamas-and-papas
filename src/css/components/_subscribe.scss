@@ -17,4 +17,17 @@
         top: 0;
         right: 0;
     }
+
+    // Temp, hide the hybris label
+    .control-label {
+        display: none;
+    }
+
+    input.error {
+        border-bottom: 1px solid #c83745;
+    }
+
+    label.error {
+        display: none!important; // sass-lint:disable-line no-important
+    }
 }

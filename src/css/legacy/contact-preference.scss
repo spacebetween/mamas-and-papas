@@ -1,0 +1,151 @@
+.unsubscribe-mail{
+	> h5{
+		font-family:$font-family-sans-serif;
+		padding-bottom:10px;
+	}
+}
+.unsubscribe-mailform{
+	> p{
+	    text-align: center;
+		@media(max-width:$screen-sm-max){
+			padding: 0px 15px;
+			text-align: left;
+		}
+	}
+	@media(max-width:$screen-xs-max){
+		.unsubscribe-button{
+			.pull-right{
+				float:none !important;
+			}
+		}
+	}
+}
+.page-contactPreference{
+	.contact-lable{
+		.inline-lable-group{
+			.control-elm{
+				.control-group{
+					padding-left:37px;
+					@media(max-width:$screen-xs-max){
+						padding-left: 6px;
+					}
+				}
+			}
+		}
+	}
+}
+.myAccountWrapper .control-elm{
+				@media (max-width:$screen-xs-max){
+						border-top: 1px solid #b9b9b9;
+					    padding-top: 25px;
+					}
+				}
+.contact-lable{
+	padding-top:19px;
+	.contact-lable-form{
+		form{
+			.inline-lable-group{
+				margin-top:0;
+				background-color:#ececec;
+				overflow:hidden;
+				padding: 10px 7px;
+				.contactPreferenceformLabel{
+					margin-top:0;
+					float: left;
+					width: 35%;
+					line-height: 30px;
+					vertical-align: middle;
+					padding-left: 10px;
+					font-weight:bold;
+					text-align: left;
+				}
+				.control-elm{
+					float: left;
+					width: 65%;
+					text-align: left;
+					vertical-align: middle;
+					line-height: 30px;
+
+					.control-group{
+						display:inline-block;
+						padding-left: 20px;
+						margin:0;
+					}
+
+					.control-label{
+						line-height: 30px;
+						padding-bottom: 0px;
+						margin-bottom: 0px;
+					}
+				}
+
+				@media (max-width: 767px){
+					.contactPreferenceformLabel{
+						text-align: center;
+					}
+					
+					.control-elm{
+						text-align: center;
+					}
+				}
+			}
+			.form-actions{
+				margin-top:30px;
+				@media (max-width:$screen-xs-max){
+						margin-top:5px;
+					}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width:1023px){
+	.contact-lable{
+		.contact-lable-form{
+			form{
+				.inline-lable-group{
+
+					.contactPreferenceformLabel{
+						width: 45%;
+					}
+
+					.control-elm{
+						width: 55%;
+					}
+				}
+				
+			}
+		}
+	}
+}
+@media screen and (max-width:767px){
+	.contact-lable{
+		.contact-lable-form{
+			form{
+				.inline-lable-group{
+					
+					.contactPreferenceformLabel{
+						width:100%;
+						padding:10px;
+						padding-top: 0px;
+					}
+					.control-elm{
+						width:100%;
+						padding-right:10px;
+						padding-left:20px;
+
+						.control-group{
+							padding-left: 0px;
+						}
+
+						.ip-check-box{
+							padding-right:15px;
+						}
+					}
+				}
+				
+			}
+		}
+	}
+}

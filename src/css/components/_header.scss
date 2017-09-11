@@ -1,14 +1,13 @@
 .header {
     background-position: center top;
     background-repeat: no-repeat;
-    color: $white;
     @media (min-width: breakpoint-min(md)) {
         background-size: cover;
     }
     &_title {
-        font-size: $font-size-h2;
+        font-size: $header-size-2;
         @media (min-width: breakpoint-min(md)) {
-            font-size: $font-size-h1;
+            font-size: $header-size-1;
         }
     }
     &_subtitle {
@@ -32,7 +31,7 @@
     }
     &_logo {
         width: 100%;
-        max-width: 100px;
+        max-width: 100%;
         @media (min-width: breakpoint-min(md)) {
             width: auto;
             max-width: initial;
@@ -40,7 +39,7 @@
     }
     &_icon {
         font-size: $font-size-8;
-        padding-top: 10px;
+        padding: 10px;
         @media (min-width: breakpoint-min(md)) {
             font-size: $font-size-9;
             padding: 0 12px;

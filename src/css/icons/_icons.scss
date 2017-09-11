@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Linearicons';
-    src: url('/fonts/Linearicons.ttf');
+    src: url($path + 'fonts/Linearicons.ttf');
 }
 
 .ico {
@@ -88,11 +88,6 @@
             content: '\E92A';
         }
     }
-    &-tick {
-        &::before {
-            content: '\E934';
-        }
-    }
     &-user {
         &::before {
             content: '\E71E';
@@ -107,7 +102,7 @@
 
 @font-face {
     font-family: 'grid';
-    src: url('/fonts/grid.ttf');
+    src: url($path + 'fonts/grid.ttf');
     font-weight: normal;
     font-style: normal;
 }

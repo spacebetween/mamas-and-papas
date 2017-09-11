@@ -7,76 +7,25 @@
     height: 100%;
     overflow: hidden;
     z-index: -1;
-    &_title {
-        height: 80px;
-        line-height: 46px;
-        border-bottom: $border-width solid $gray;
-    }
-    &_backArrow {
-        &::before {
-            position: absolute;
-            left: 1rem;
-            font-family: $font-family-icons;
-            content: '\E93B';
-        }
-    }
-    &_group {
-        li {
-            position: relative;
-            border-bottom: $border-width solid $gray;
-            font-size: $font-size-5;
 
-            a {
-                color: $black;
-
-                &::after {
-                    position: absolute;
-                    right: 0;
-                    font-family: $font-family-icons;
-                    content: '\E93C';
-                }
-            }
-        }
-    }
-    &_category {
-        position: absolute;
-        width: 100%;
-        visibility: hidden;
-        transition-duration: $transition-duration;
-        transition-property: transform, visibility;
-        transition-timing-function: $transition-easing;
-        transform: translateX(-100%);
-        z-index: 10;
-        max-height: 100%;
-        overflow: hidden;
-
-        &-selected {
-            max-height: none;
-            overflow: visible;
-            visibility: visible;
-            transform: translateX(0%);
-            z-index: 20;
-        }
-    }
     &_content {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
+        max-width: 380px;
         height: 100%;
         overflow-y: scroll;
         transform: translateX(-100%);
         transition-duration: $transition-duration;
         transition-property: transform;
         transition-timing-function: $transition-easing;
-        @media (min-width: breakpoint-min(md)) {
-            max-width: 380px;
-        }
     }
+
     &_close {
         position: absolute;
-        right: 1rem;
-        top: 1.4rem;
+        right: 2rem;
+        top: 2.5rem;
         font-size: $font-size-9;
         z-index: 999;
     }
@@ -88,6 +37,7 @@
             transform: translateX(100%);
         }
     }
+
     &.active {
         .slidePanel_content {
             transform: translateX(0);

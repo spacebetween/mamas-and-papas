@@ -1,0 +1,513 @@
+.loyaltyPage {
+	.simple-banner {
+		margin-bottom: 28px;
+	}
+	.your_promotions {
+		margin-bottom: 10px;
+		&.loyaltyPromotion {
+			margin-left: -6px;
+			margin-right: -14px;
+		}
+		h4 {
+			border: none;
+			margin-bottom: 12px;
+			margin-left: 6px;
+			padding: 0
+		}
+		.prod_cat {
+			display: inline-block;
+			margin-left: -4px;
+			padding: 0 10px;
+			text-align: left;
+			vertical-align: top;
+			width: 50%;
+			@media (max-width: $screen-sm-min) {
+				width:100%;
+			}
+			.details {
+				p {
+					padding: 7px 0 0;
+					width:100%;
+				}
+				h2{
+					margin-bottom:5px;
+				}
+			}
+		}
+		&.nonLoyaltyPromotion {
+			margin-bottom: 0;
+			.simple-banner {
+				margin-bottom: 0;
+				margin-top: 10px;
+			}
+		}
+	}
+	.loyalty-checker {
+		h3 {
+			border-bottom: 1px solid #b9b9b9;
+			font-family: Helvetica,sans-serif;
+			font-size: 18px;
+			line-height: 24px;
+			margin-bottom: 23px;
+			padding-bottom: 12px;
+		}
+		form {
+			.control-group {
+				border-bottom: 1px solid #b9b9b9;
+				margin-bottom: 20px;
+				padding-bottom: 13px;
+				padding-left: 0;
+				padding-left: 0;
+				.control-label {
+					font-weight: normal;
+					a {
+						color: #007f93;
+						text-decoration: underline;
+					}
+				}
+			}
+			.btn {
+				width: auto;
+				padding-top: 10px;
+				padding-bottom: 8px;
+				@media (max-width: $screen-sm-min) {
+					width: 100%;
+				}
+			}
+			
+		}
+	}
+	.loyaltySubscribe {
+		border-color: #ccc;
+		border-style: solid;
+		border-width: 0 2px 2px;
+		border-top: 0;
+		padding: 20px 30px 30px;
+		text-align: center;
+		@media (max-width: $screen-sm-min) {
+			padding: 20px 15px 15px;
+		}
+		> h3 {
+			font-family: Helvetica,sans-serif;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		> p {
+			margin-bottom: 5px;
+			padding: 0;
+		}
+		> a {
+			color: #007f93;
+			text-decoration: underline;
+			font-style: italic;
+		    font-weight: bold;
+		}
+		form {
+			margin: 15px auto 0;
+			width: 82%;
+			@media (max-width: $screen-sm-min) {
+				width : 100%;
+			}
+			
+			.btn {
+				width: auto;				
+		    	padding: 10px 45px;
+		    	@media (max-width: $screen-sm-min) {
+					width: 100%;				
+	    			padding: 5px;
+				}
+	
+			}
+			.agreeChecker {
+				position: relative;
+				&:before {
+					content: "";
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 9;
+				}
+				&.enable {
+					&:before{
+						display: none;
+					}
+				}
+				.control-label {
+					padding: 5px 0 0 45px;
+					text-align: left;
+					font-weight:normal;
+					width:85%;
+					@media (max-width: $screen-sm-min) {
+						width : 100%;
+					}
+					&:before {
+						top: 0;
+						@media (max-width: $screen-sm-min) {
+							top:8px;
+						}
+					}
+					span {
+						top: 6px;
+						@media (max-width: $screen-sm-min) {
+							top:14px;
+						}
+					}
+				}
+			}
+			.parent-box {
+				display: none;
+			}
+			.sorry-msg {
+				display: none;
+			}
+		}
+	}
+
+}
+.loyaltyPage {
+	.about-block {
+		h5 {
+			font-family:$font-family-base;
+			margin-bottom:10px;
+			padding-bottom:10px;
+			border-bottom:$border-base;
+			span{
+				font-weight:normal;
+				color:#bdbdbd;
+			}
+		}
+
+		p.iam{
+			display: inline;
+			font-family: Arial,Helvetica,sans-serif;
+			font-weight: 700;
+			margin-bottom: 10px;
+			margin-right: 20px;
+			padding: 0;
+			@media (max-width: $screen-sm-min) {
+				display:block;
+			}
+		}
+
+		.ratio-container{
+			    margin: 0 auto;
+			    margin-bottom: 30px;
+			    width: 70%;
+			    clear: both;
+			    @media (max-width: $screen-sm-min) {
+					width : 100%;
+					text-align:left;
+				}
+
+			span{
+				display: inline-block;
+				margin-right: 20px;
+				padding-right: 5px;
+			}
+		}
+
+
+		.hasDatepicker{
+			color:#bdbdbd;
+		}
+		
+		.ui-datepicker-trigger{
+			border:0;
+			background:none;
+			font-size:18px;
+			width:17px;
+			max-width: 40px;
+		}
+		
+		.parent-add-another, .mom-add-another{
+			padding-top:10px;
+			color:#007f93;
+			text-decoration: underline;
+			display:inline-block;
+			font-weight:bold;
+		}
+		#Mumtobe{
+			display:block;
+		}
+		
+		.parent-value-table, .mom-value-table{
+			width:100%;
+			float:left;
+			display:none;
+
+			.block{
+				width:100%;
+				float:left;
+				border-bottom:1px #6a6c6e dotted;
+				padding-bottom:10px !important;
+				margin-bottom:10px;
+				padding-right:0;
+
+				span{
+					display:inline-block;	
+
+					i{
+						font-size:18px;
+						color:#000;
+						padding-right:13px;
+					}
+
+					&.date{
+						padding-right:20px;
+					}
+					&.date-col{
+						width:50%;
+						padding-right: 28px;
+						position: relative;
+						button {
+							position: absolute;
+							width: auto;
+							right: -1px;
+							i {
+								padding-right: 0;
+							}
+						}
+						@media (max-width: $screen-sm-max){
+							width:50%;
+						}
+					}
+					&.gender-col{
+						width:35%;
+						position: relative;
+						@media (max-width: $screen-sm-max){
+							width:25%;
+						}
+						@media (max-width: $screen-xs-max) {
+							width:30%;
+							padding: 0 3px;
+						}
+					}
+					&.gender{
+						text-transform: capitalize;
+					}
+					&.edit-remove{
+						float:right;
+						a{
+							padding-left:15px;
+							text-decoration:underline;
+							font-weight:bold;
+
+							&.save{
+								padding-top: 6px;
+								display: inline-block;
+							}
+							&.save-child {
+								float: right;
+								padding-top: 3px;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+	.custom-cb-lable{
+		font-weight:normal;
+		@media (max-width: $screen-sm-max){
+			margin-bottom: 15px;
+		}
+		a{
+			color:#007f93;
+			text-decoration:underline;
+		}
+	}
+	
+}
+
+.loyaltyPage {
+.loyaltyOrder {
+	.parentWrapper, form .agreeChecker .control-label{
+		width: 65%;
+		@media (max-width: $screen-sm-min) {
+			width : 100%;
+		}
+		} 
+		.parentWrapper button {
+		 	bottom: 10px;
+		}
+		
+	}
+	.custom-cb-lable{
+			&:before {
+				bottom: 10px;
+				@media (max-width: $screen-sm-min) {
+					bottom: 25px;
+				}
+			}
+				span {
+					bottom:16px;
+					@media (max-width: $screen-sm-min) {
+						bottom: 32px;
+					}
+				}
+			}
+.parentWrapper {
+	    margin: 0 auto;
+    	clear:both;
+    	form {
+    		width:100%;
+    	}
+    	button {
+		   	position: absolute;
+		    width: auto;
+		    right: 22px;
+		    bottom: 5px;
+    	}
+    	.controls {    	
+	   	   label {
+		   	    display: block;
+				text-align: left;
+				margin-right : 3px;
+			   }
+			   select {
+				   	border: 1px solid #b3b3b3;
+				    background-color: #FFF;
+				    padding: 12px;		   
+				    -webkit-border-radius: 0;
+				    -moz-border-radius: 0;
+				    border-radius: 0;
+				    float: left;	
+				    line-height: 15px;	    
+			   }
+			   .error-arrow:before {
+			   		right:10px;		
+			   		top:15px;
+			   }
+			    input {
+	    		border: 1px solid #b3b3b3;
+			    background-color: #FFF;
+			    padding: 10px;
+			    -webkit-border-radius: 0;
+			    -moz-border-radius: 0;
+			    border-radius: 0;
+			   }
+			 
+		   }
+	}
+}
+
+.loyaltyPage .guestWrapper {
+	.parentWrapper, form .agreeChecker .control-label{
+		width : 65%;
+			@media (max-width: $screen-sm-min) {
+				width : 100%;
+			}
+		
+	}
+	.parentWrapper button {
+		 	bottom: 10px;
+		}
+}
+ .loyaltyPage.loyaltyOffers{
+	form {
+		width: 100%;
+	}
+	#Parent {
+		
+		 #borndate {
+			width :44%;
+			@media (max-width: $screen-sm-min) {
+					width : 100%;
+				}		
+		}
+	}
+ 	.parentWrapper {
+	    	 @media (max-width: $screen-sm-min) {
+				width : 100%;
+			}
+		#mumtobe-html {
+			@media (min-width:769px) {
+				text-align:center;
+			}
+		}
+		.col-sm-5 {
+			@media (min-width: 769px) {
+				text-align:left;
+			}
+		}
+	     
+	    .controls {  
+	    	text-align:left;
+	    	
+	    	@media (min-width: 769px) {  	
+		    	text-align: right;
+			    padding: 0;
+			    width: auto;
+			    float: none;
+			    display: inline-block;
+			}
+    		&.error-arrow {
+    			width: 130px;
+    			display: inline-block;
+    			@media (max-width: $screen-sm-min) {
+					width : 100%;
+				}
+    		}
+			label {
+		   	        display: inline-block;
+    				text-align: left;
+    				
+    				@media (min-width: 769px) {
+						text-align: right;
+					}
+			}
+			   select {
+				    float: none;	
+			   }
+			   
+			    input {
+		    	    @media (min-width: 769px) {
+		    	    	width: 130px;
+   					    margin-right: 10px;
+		    	    }
+		    	    @media (max-width: $screen-sm-min) {
+						width : 100%;
+					}
+			   }
+			 
+	   }
+    	.hide-desc{
+			display: none;		
+		    margin-bottom: 20px;
+		    padding-bottom: 10px;
+		    clear: both;
+		}
+ 	}
+}
+
+	 .datePicker {
+	 	z-index:9999 !important;
+	 }
+		
+		.mumToBe1{
+			display :none;
+		}
+		#Parent, #Parenttobe, .partobe-html {clear : both}
+.loyaltyPage {
+	.loyaltyOrder, .loyaltySubscribe {
+		form {
+			.agreeChecker {
+				label.control-label {
+					cursor: default;
+					width:100%;
+					padding-left: 0;
+					text-align: center;
+					&:before {
+						display: none;
+					}
+					.fa-check {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

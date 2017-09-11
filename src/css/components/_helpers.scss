@@ -6,7 +6,7 @@
     }
     &-family {
         &-secondary {
-            font-family: $font-family-serif;
+            font-family: $font-family-secondary;
         }
     }
 }
@@ -148,13 +148,76 @@
     height: 100%;
     content: '';
     transition-duration: $transition-duration;
-    transition-property: background, z-index;
+    transition-property: background, visibility, z-index;
     transition-timing-function: $transition-easing;
-    z-index: -1;
+    visibility: hidden;
     pointer-events: none;
+    z-index: -1;
 
     &.active {
         background: $transparent-bg-dark;
+        visibility: visible;
         z-index: 9998;
     }
+}
+
+.no {
+    &_hover:hover {
+        text-decoration: none;
+    }
+}
+
+.img {
+    &-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.absolute {
+    &-tl {
+        position: absolute;
+        top: 0;
+        left: 1rem;
+    }
+
+    &-tr {
+        position: absolute;
+        top: 0;
+        right: 1rem;
+    }
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*='col-'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+// Helpers for Bootstrap 3 - previous UI
+.control-group {
+    padding-bottom: 1rem;
+}
+
+form .error .controls::before,
+.custom-form .error .controls::before {
+    padding: 10px;
+}
+
+.BVSubmissionLightbox {
+    overflow-y: scroll;
+    max-height: 70%;
+}
+.BVLinkClose span {
+    position: absolute;
+    top: 10px!important; // sass-lint:disable-line no-important
+    right: 10px!important; // sass-lint:disable-line no-important
+    margin-top: 0!important; // sass-lint:disable-line no-important
+    z-index: 9999;
 }

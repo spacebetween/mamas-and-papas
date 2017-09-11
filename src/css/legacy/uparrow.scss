@@ -1,0 +1,28 @@
+.pod-arrow{
+	width: 0; 
+	height: 0; 
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 40px solid #DDDDDD;
+	position: absolute;
+	bottom: -1px;
+	left:50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+
+	&:before{
+		content: "";
+		width: 0; 
+		height: 0; 
+		border-left: 39px solid transparent;
+		border-right: 39px solid transparent;
+		border-bottom: 39px solid #FFFFFF;
+		position: absolute;
+		top: 1px;
+		left:50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+}

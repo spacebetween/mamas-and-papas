@@ -1,0 +1,403 @@
+	.page-viewGiftRegistry{
+		.userAlreadyRegisteredForNewsLetter{
+			.control-label{
+				display:block;
+			}
+		}
+		.myfav-update-sec{
+			padding-top:0px !important;
+			form.giftQuant {
+				label, input, button.buyerAction {
+					display: inline-block;
+					float: left;
+					width: auto;
+					margin-right: 18px;
+					@media (max-width:$screen-sm-max){
+						margin-right: 6px;
+					}
+				}
+				label {
+					margin-top: 7px;
+					margin-bottom: 7px;
+				}
+				input{
+					text-align: center;
+				}
+				button.buyerAction {
+					margin-right: 0px;
+				}
+			}
+			#addToCartForm{
+				clear: both;
+				padding-top: 10px;
+			}
+		}
+	}
+	.page-wishlist{
+		.mobile-inter{
+			display:none;
+		}
+		.gift-banner{
+			border:0 none;
+		}
+		.gift-top-content{
+			margin-top: 30px;
+		}
+		.accountBottomContentSlot{
+			.gift-banner{
+				border-top: 1px solid #000;
+				display: block;
+			}
+		}
+		.no-wishlist{
+			> p{
+			clear:left;
+			text-align:center;
+		}
+		}
+	}
+	.my-fav-content{
+		 position: relative;
+		 margin-top:20px;
+		 border:$border-base;
+		  padding: 20px 25px 20px 25px;
+		  @media (max-width:$screen-sm-max){
+				 padding: 20px 14px 29px 13px;
+			}
+		 
+		.ini-product{
+				display: table-cell;
+				vertical-align: middle;
+			.product-code{
+				color:#656665;
+				padding-top:5px;
+				padding-bottom:15px;
+				@media (max-width:$screen-sm-max){
+					
+				}
+				@media (max-width:$screen-xs-max){
+					padding-bottom:14px;
+				}
+			}
+			.stock-details{
+				padding-top:20;
+				span{
+				font-weight:bold;
+				font-size:16px;
+				}
+				.fa-check,.fa-times{
+					padding-right: 71px;
+					@media (max-width:$screen-sm-max){
+						padding-right: 40px;
+					}
+					label{
+						font-size:16px;
+						font-weight:bold;
+						font-family:$font-family-sans-serif;
+						padding-left: 8px;
+					}
+					
+				}
+				.fa-times{
+					padding-right: 45px;
+					@media (max-width:$screen-sm-max){
+						padding-right: 13px;
+					}
+					label{
+						padding-left: 5px;
+					}
+				}
+				@media (max-width:$screen-xs-max){
+					margin-bottom:14px;
+				}
+			}
+			a{
+				font-family:$font-family-sans-serif;
+				font-weight:normal;
+			}
+			border-right: 1px solid #000;
+			height: 100%;
+			h4{
+				border-bottom: 0 none;
+				line-height: 14px;
+				margin-bottom: 0;
+				padding: 0;
+			}
+			 @media screen and (max-width:$screen-xs-max){
+					border-right:0;
+					h4{
+						a{
+							padding-left:0px;
+						}
+					}
+			}
+		}
+			.init-border{
+				@media screen and (max-width:$screen-xs-max){
+					border-bottom: 1px solid #bdbdbd;
+					border-right: 0 none;
+					border-top: 1px solid #bdbdbd;
+					padding: 15px;
+					
+				}
+				border-right: 1px solid #000;
+				height: 100%;
+				display: table-cell;
+				vertical-align: middle;
+				label{
+					display: block;
+				}
+			}
+		
+			#removeFromFaviouritsForm{
+				@media (max-width:$screen-xs-max){
+					float: left;
+					width: 32%;
+					padding-left:5px;
+				}
+				margin-top:8px;
+				.fa-trash-o{
+					padding-left:8px;
+					@media (max-width:$screen-xs-max){
+						padding-left:3px;
+					}
+				}
+				
+			}
+			.qty-fav{
+				@media (max-width:$screen-xs-max){
+					float: left;
+					width: 30%;
+					padding-left:5px;
+					margin-top:0 !important;
+				}
+				text-align:center;
+				@media (max-width:$screen-xs-max){
+					text-align:left;
+				}
+				label{
+					padding-right:7px;
+					@media (max-width:$screen-xs-max){
+						padding-right:0;
+					}
+				}
+				margin-bottom:10px;
+				input{
+					
+					text-align:center;
+					margin-left:1px;
+					padding-bottom: 5px;
+					padding-top: 8px;
+					vertical-align: bottom;
+					width:30px;
+				}
+			}
+			.ip-check-box{
+				position: absolute;
+				right: -23px;
+				top: -14px;
+				@media (max-width:$screen-sm-max){
+					right:-4px;
+				}
+				@media (max-width:$screen-xs-max){
+					right: 0px;
+					top: 6px;
+				}
+				
+				input{
+					margin:0;
+				}
+				.custom-cb-lable{	
+					 padding-left: 24px;
+					 padding-bottom:0;
+					 cursor:pointer;
+					 @media (max-width:$screen-sm-max){
+						padding-left: 15px;
+					 }
+					 @media (max-width:$screen-xs-max){
+						padding-left: 17px;
+					 }
+					&:before{
+						height: 15px;
+						 width: 18px;
+					}
+					span{
+						bottom: 2px;
+						left: 3px;
+						font-size: 12px;
+					}
+				}
+			}
+			#addToCartForm{
+				@media (max-width:$screen-xs-max){
+					float: right;
+					width: 66%;
+					padding-top:8px;
+					
+				}
+				height:auto;
+				button{
+					@media (max-width:$screen-xs-max){
+						float: left;
+						width: 60%;
+					}
+						height:auto !important;
+				}
+			}
+			>.row{
+				> div{
+					height:123px;
+					@media (max-width:$screen-xs-max){
+						height:auto;
+					}
+				}
+			}
+			.productMainLink{
+				
+				@media (min-width:$screen-sm-min){
+						img{
+							height:100% !important;
+						}
+				}
+			}
+			@media (max-width:$screen-xs-max){
+					.productMainLink{
+						Padding-left: 10px;
+					}
+					.ini-product{
+						padding-left: 15px;
+						padding-right: 5px;
+					}
+					margin-bottom:30px;
+					padding: 15px 0 0px;
+					>.row{
+						height:auto;
+						div:nth-child(4){
+							 position: static;
+						}
+						div{
+							
+						}
+					}
+				
+				}
+				.myfav-right-but{
+					padding-right:17px;
+					padding-left:20px;
+					display: table;
+					@media (max-width: $screen-sm-max){
+						padding-right:10px;	
+						padding-left:10px;
+					}
+					@media (max-width: $screen-xs-max){
+						padding:15px;
+					}
+					.add-personalisation{
+						display: block;
+						text-align: center;
+						margin-top:5px;
+						label{
+							color: #bdbdbd;
+							text-decoration: underline;
+							cursor:pointer;
+						}
+						a{
+							text-align:center;
+							color: #007f93;
+							text-decoration: underline;
+							font-weight:bold;
+							display:inline-block;
+						}
+					}
+					.myfav-update-sec{
+						display: table-cell;
+						vertical-align: middle;
+					}
+				}
+				@media (max-width: $screen-xs-max){
+					#updateItemForm{
+						.gift-owner{
+							margin-top:0px;
+							width:65%;
+							float:left;
+							.qty-fav{
+								width: 32%;
+							}
+						}
+					}
+					#removeItemForm{
+						width:33%;
+						float:right;
+						margin-right:4px;
+						#removeFromFavioouritsButton{
+							width:100%;
+							
+						}
+					}
+				}
+			
+		.qty-mobile{
+			display:none;
+			@media (max-width: $screen-xs-max){
+				display:inline-block;
+			}
+		}
+		.qty-desktop{
+			display:inline-block;
+			@media (max-width: $screen-xs-max){
+				display:none;
+			}
+		}
+	}
+	.my-fav-logo{
+		margin-top:20px;
+		margin-bottom:20px;
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.add-select-to-bag{
+		border-top:1px solid #000;
+		border-top:1px solid #000;
+		border-bottom:1px solid #000;
+		overflow: hidden;
+		margin-top:20px;
+		margin-bottom:40px;
+		padding: 10px 11px 10px 30px;
+		#multyAddToCartForm{
+			#multyAddButton{
+					float: right;
+				}
+		}
+		@media (max-width:$screen-xs-max){
+			#multyAddToCartForm{
+				 text-align: center;	
+				.pull-right {
+					float:none !important;
+				}
+				#multyAddButton{
+					float: none;
+				}	
+			}
+		}
+	}
+	.total-amount-sel{
+		font-size:16px;
+		font-weight:bold;
+		padding-top: 5px;
+		@media (max-width:$screen-xs-max){
+			text-align:center;
+			margin-bottom:10px;
+		}
+	}
+
+.init-border-outer, .ini-product-outer {
+	display: table;
+}
+.ip-check-box input[disabled=disabled]~.custom-cb-lable, .ip-check-box input[disabled=disabled]~.custom-cb-lable span {
+	cursor: not-allowed;
+}
+.init-border label span {
+	font-weight: normal;
+}

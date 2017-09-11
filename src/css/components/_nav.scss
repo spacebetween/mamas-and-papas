@@ -1,4 +1,10 @@
 .nav {
+    &_top {
+        &-border {
+            border-bottom: $border-width solid $gray;
+            border-left: $border-width solid $gray;
+        }
+    }
     &_category {
         position: absolute;
         width: 100%;
@@ -42,6 +48,8 @@
             font-size: $font-size-5;
 
             a {
+                display: block;
+                padding: 2rem 0;
                 color: $black;
 
                 &::after {

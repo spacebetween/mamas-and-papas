@@ -37,6 +37,7 @@ $theme-colors: (
 //## Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:  'Roboto', sans-serif;
+$font-family-secondary:   $font-family-sans-serif;
 $font-family-serif:       Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -70,13 +71,16 @@ $font-size-h4:            $font-size-9; // ~18px
 $font-size-h5:            $font-size-base;
 $font-size-h6:            $font-size-2; // ~12px
 
+$header-size-1:           $font-size-h1;
+$header-size-2:           $font-size-h2;
+
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:           1.428571429; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed:       floor(($font-size-base * $line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-$headings-font-family:       Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
+$headings-font-family:       $font-family-base;
 $headings-font-weight:       $font-weight-bold;
 $headings-line-height:       1.1;
 $headings-color:             inherit;
@@ -172,3 +176,27 @@ $button-border-black:       1px solid $black;
 
 // Backgrounds
 $transparent-bg-dark:      rgba(50, 50, 50, .5);
+
+
+// Legacy Variables
+$padding-base:              $spacing-default;
+$padding-none:              0;
+$padding-base-vertical:     $spacing-default;
+$padding-base-horizontal:   $spacing-default;
+
+$padding-large-vertical:    $spacing-small;
+$padding-large-horizontal:  $spacing-small;
+
+$padding-small-vertical:    $spacing-xsmall;
+$padding-small-horizontal:  $spacing-small;
+
+$padding-xs-vertical:       0;
+$padding-xs-horizontal:     $spacing-xsmall;
+
+$border-base: 1px #bdbdbd solid;
+$border-dash: 1px dashed  #bdbdbd;
+$border-dash-black: 1px dashed  #000;
+$border-base-black: 1px #4c4b4c solid;
+$border-black: 1px #000 solid;
+
+$btn-primary-hover-color: lighten($btn-primary-bg, 10);

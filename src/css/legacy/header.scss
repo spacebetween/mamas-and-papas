@@ -1,0 +1,244 @@
+.nav-content{
+	.col-md-2{
+		ul{
+			.navlicount{
+				&:last-child{
+					padding-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+.breadcum-plp{
+@media (max-width:$screen-xs-max){
+	display:none;
+}
+	display: block;
+    margin-bottom: 10px;
+    overflow: hidden;
+	ul{
+		li{
+			float: left;
+			padding-right: 10px;
+			a{
+				color: #bdbdbd;
+			}
+			.last{
+				color:#656665;
+			}
+		}
+		.separator{
+			color: #bdbdbd;
+		}
+	}
+}
+.page-productList{
+	.content-plp{
+		clear: both;
+		padding-bottom: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+	.paragraph-plp
+	{
+		padding-bottom: 10px;
+		text-align: center
+	}
+}
+.page-search{
+	.content-search{
+		clear: both;
+		padding-bottom: 30px;
+		padding-top: 30px;
+		text-align: center;
+	}
+	.paragraph-search
+	{
+		padding-bottom: 10px;
+		text-align: center
+	}
+}
+.mobile-hidden{
+	overflow-x:hidden;
+}
+#header{
+	padding-top: $padding-base; 
+	
+	.siteLogo{
+		text-align: center;
+		@media (min-width: $screen-md-min) {
+			text-align: right;
+		}
+	}
+	
+	.navbar-header{
+		@media (max-width: $screen-sm-min) {
+			padding-left:7px;
+		}
+		>.btn{
+			outline: 0;
+		}
+	}
+	
+	#utilities{
+		position:relative;
+		.locale{
+			float:left;
+			a{
+				width:33px;
+				height:14px;
+				margin-bottom: 5px;
+				&.en-uk{
+					background:url('../images/flag-icon.png') no-repeat 0px 0px;
+					display: inline-block;
+				}
+				&.en-eu{
+					background:url('../images/flag-icon.png') no-repeat 0px -14px;
+					display: inline-block;
+				}
+				&.en-ie{
+					background:url('../images/flag-icon.png') no-repeat 0px -28px;
+					display: inline-block;
+				}
+				&.en-us{
+					background:url('../images/flag-icon.png') no-repeat 0px -42px;
+					display: inline-block;
+				}
+				
+				.fa-caret-down{
+					float:right;
+					color:#3d3d3b;
+				}
+				
+			}
+			.control-group {
+				> a {
+					margin-bottom: 0;
+				}
+			}
+			.orderByPhone{
+					font-size:12px;
+					padding-left:10px;
+					float:right;
+					color:$gray-light;
+					line-height: 15px;
+			}
+			ul{
+			position: absolute;
+			padding:0px;
+			display:none;
+			top: 19px;
+			
+			li{
+				width:18px;
+				height:14px;
+				display:block;
+				list-style-type:none;
+				margin-bottom:5px;
+				cursor: pointer;
+				
+				&.en-uk{
+					background:url('../images/flag-icon.png') no-repeat 0px 0px;
+				}
+				&.en-eu{
+					background:url('../images/flag-icon.png') no-repeat 0px -14px;
+				}
+				&.en-ie{
+					background:url('../images/flag-icon.png') no-repeat 0px -28px;
+				}
+				&.en-us{
+					background:url('../images/flag-icon.png') no-repeat 0px -42px;
+				}
+				span{
+					display:none;
+				}
+			}
+		}
+			
+		}
+		
+	}
+	.mobile-cart{
+		text-align:right;
+		margin-top:15px;
+		padding-right:10px;
+		
+		.bag{
+			    width: 20px;
+				height: 20px;
+				background: url('../images/bag.png') no-repeat 0px 0px;
+				float: right;
+				background-size: 100%;
+		}
+	}
+	.header-link{
+		text-align: center;
+		@media (max-width: $screen-sm-min) {
+			margin:20px 0;
+		}
+		@media (min-width: $screen-md-min) {
+			text-align: right;
+		}
+		li{
+			display:inline-block;
+			color:$gray-light;
+			
+			a{
+				color:$gray-light;
+				padding: 0px 5px;
+				border-right: $border-base-black ;
+			}
+			
+			@media (max-width: $screen-sm-min) {
+						&:nth-last-child(2){
+							a{
+								border-right:0;
+							}
+						}
+					}
+					
+			&.logged_in{
+				font-weight:bold;
+			}
+					
+		}
+	}
+	#calculate_store_distance {
+		@media (max-width:$screen-sm-min){ border-right : 0;}
+	}
+}
+.confirmation_btn {
+	padding: 10px;
+	text-align: right;
+	button {
+		margin: 0px 5px;
+		width: 30%;
+	}
+}
+header, footer, section{
+	display:block;
+}
+@media (max-width:$screen-xs-max){
+	.page-mnpRegisterPage{
+		.alert-success{
+			overflow: hidden;
+			position: relative;
+			i{
+				position: absolute;
+				top: 15%;
+			}
+			p{
+				float: right;
+				width: 90%;
+			}
+		}
+	}
+}
+@media (max-width: 480px){
+	.currency_confirmation {
+		max-width: 270px;
+	}
+	.confirmation_btn button {
+		width: 35%;
+	}
+}

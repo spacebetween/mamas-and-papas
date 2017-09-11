@@ -1,0 +1,105 @@
+.page-partialPayment{
+	.partial-payment-option {
+		margin-top:35px;
+	}
+	@media (max-width:$screen-xs-max){
+		.gift-top{
+			margin-top:25px;
+		}
+		.cardForm{
+			padding-bottom:22px;
+		}
+	}
+	#giftCardForm 
+	{	
+		.form-actions{
+			padding-left:10px !important;
+			@media (max-width:$screen-xs-max){
+				padding-left:3px !important;
+			}
+		}
+		
+	}
+	.form-action-partial{
+		margin-top: 20px;
+		@media (max-width:$screen-xs-max){
+			margin-top: 0px;
+			padding-left:3px !important;
+		}
+	}
+	.float-desk{
+		float:left;	
+	}
+	.pay-block{
+		display:none;
+		clear:left;
+	}
+	.control-group{
+		padding-left:0 !important;
+	}
+	.partial-cart{
+		padding-left:0 !important;
+		margin-top:30px;
+	}
+	.control{
+		margin-bottom:25px;
+	}
+	.partial-chk{
+		margin-bottom:25px;
+	}
+	.mobile-inter{
+		display:none;
+	}
+	
+	h2{
+		font-family:$font-family-sans-serif;
+		margin-bottom: 20px;
+		
+	}
+	.pay-block-inner{	
+		padding: 20px 0;
+		
+	}
+	.paypalButton{
+		margin-top:25px;
+	}
+	.Payment-page{
+	
+				label.custom-lable{
+					width: 100%;
+					float: left;
+					border:1px #c5c7c7 solid;
+					padding:$padding-base $padding-base $padding-base 50px;
+					border-bottom:0;
+					margin-bottom:0;
+					font-weight:normal;
+					
+					&:before{
+						bottom:inherit;
+						left:20px;
+					}
+					&:hover, &.active{
+						background:#eff3f1;
+					}
+					&.active{						
+						
+							font-weight:bold;
+							border-bottom:1px #c5c7c7 solid;
+							
+					&:before{
+						color: #000;
+						content: "\2022";
+						font-size: 30px;
+						line-height: 14px;
+						text-align: center;
+						background-color: #fff;
+						border: 1px solid #bdbdbd;
+					}
+				}
+				&.paypal-label{
+					border-bottom:1px #c5c7c7 solid;
+				}
+		}
+	
+}	
+}

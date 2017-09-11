@@ -1,0 +1,389 @@
+
+// body{
+// 	min-width: 320px;
+// }
+
+// .footer{
+// 	border-bottom: 1px dashed #000000;
+// 	border-top: 1px dashed #000000;
+// 	padding-bottom: 24px;
+// 	padding-top: 24px;
+// 	clear: both;
+	
+// 	h4{
+// 		font-family:$font-family-base;
+// 		margin-bottom:$padding-large-vertical;
+// 	}
+// 	.footer-links{
+// 		@media (max-width: $screen-sm-max) {
+// 			border-top:$border-base ;
+// 			position: relative;
+// 			h4{
+// 				padding-top:15px;
+// 				padding-bottom:15px;
+// 			}
+// 		}
+		
+// 		h4{	
+// 			@media (max-width: $screen-xs-max){
+// 				cursor:pointer;
+// 			}
+// 			@media (max-width: $screen-sm-max) {
+// 				margin-bottom:0;
+// 				padding-left:25px;
+				
+// 				&:before{
+// 					content: "\f067";
+// 					display: inline-block;
+// 					font: normal normal normal 14px/1 FontAwesome;
+// 					font-size: 12px;
+// 					text-rendering: auto;
+// 					-webkit-font-smoothing: antialiased;
+// 					-moz-osx-font-smoothing: grayscale;
+// 					position: absolute;
+// 					right:10px;
+// 				}
+
+// 				&.active{
+// 					&:before{
+// 						content: "\f068";
+// 					}
+// 				}
+// 			}
+			
+			
+// 		}
+		
+// 		ul{
+// 			margin:0;
+// 			padding:0;
+			
+// 			@media (max-width: $screen-sm-max) {
+// 				&.slideup, &.slidedown {
+// 					max-height: 0;            
+// 					overflow-y: hidden;					
+// 					background:#ececec;		
+// 					margin-top:0;
+// 					border-top: 0px solid transparent;
+// 					-webkit-transition: all 0.6s ease-in-out;
+// 					-moz-transition: all 0.6s ease-in-out;
+// 					-o-transition: all 0.6s ease-in-out;
+// 					transition: all 0.6s ease-in-out;					
+					
+					
+// 				}
+				
+// 				&.slidedown {            
+// 					max-height: 500px ; 					
+// 					border-top:$border-base ;
+// 				} 
+// 			}
+// 			li{
+// 				margin-bottom:0px;
+// 				@media (max-width: $screen-sm-max) {
+// 					padding:3px 27px;
+// 				}
+// 				a{
+// 					text-align: center;
+
+// 					@media (max-width: $screen-sm-max) {
+// 						display:block;
+// 						background:#FFFFFF;
+// 						padding:10px;
+// 						position: relative;
+						
+// 						&:before{
+// 							content: "\f0da";
+// 							display: inline-block;
+// 							font: normal normal normal 14px/1 FontAwesome;
+// 							font-size: 12px;
+// 							text-rendering: auto;
+// 							-webkit-font-smoothing: antialiased;
+// 							-moz-osx-font-smoothing: grayscale;
+// 							position: absolute;
+// 							right:10px;
+// 							margin-top: 3px;
+// 						}
+// 					}
+// 				}
+// 				&:first-child{
+// 					margin-top:7px;
+// 				}
+// 				&:last-child{
+// 					margin-bottom:7px;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	@media (max-width: $screen-sm-max){
+// 		.footer-container:last-child{
+// 			.footer-links{
+// 				border-bottom:$border-base ;
+// 			}
+// 		}
+// 	}
+// 	.footer-signup-block{
+
+// 		@media (max-width: $screen-md-min) {
+// 			padding-bottom:$padding-base + 15;
+// 		}
+
+// 		//.userRegister{			
+// 			.control-group{
+// 				margin-bottom:$padding-large-vertical;
+
+// 				label{
+// 					display:none;
+// 				}
+// 			}
+			
+// 			.btn{
+// 				padding: $padding-small-vertical  $padding-small-horizontal;
+// 			}
+// 			@media (max-width: $screen-sm-max){
+// 				h4{
+// 					text-align:center;
+// 				}
+// 			}
+// 			@media (max-width: $screen-xs-max){
+// 				.control-group{
+// 					margin-bottom: $padding-large-vertical;
+// 				}
+// 			}
+			
+// 		//}
+// 	}
+	
+// 	.footer-social{
+// 		.content{
+// 			margin-bottom: 15px;
+// 		}
+// 		.secure-ptm{
+// 			background-image: url("../images/master.png");
+// 			background-repeat: no-repeat;
+// 			height: 26px;
+// 			width: 195px;
+// 			clear:left;
+// 			margin:0 auto;
+// 		}
+// 		ul{
+// 			@media (max-width: $screen-sm-max){
+// 				font-size: 0;
+// 				margin: 0 auto;
+// 				overflow: hidden;
+// 				text-align: center;
+// 			}
+// 			li{
+// 				display: inline-block;
+// 				@media (max-width: $screen-sm-max){
+// 					font-size: 12px;
+// 					text-align: center
+// 				}
+// 				a{
+// 					background: #ffffff url("../images/social-icon.png") repeat scroll;
+// 					display: inline-block;
+// 					height: 26px;
+// 					margin-right: 2px;
+// 					width: 26px;
+// 					-webkit-transition: background-position .3s ease;
+// 					-moz-transition: background-position .3s ease;
+// 					-o-transition: background-position .3s ease;
+// 					transition: background-position .3s ease;
+// 					&:hover{
+// 						-webkit-transition: background-position .3s ease;
+// 						-moz-transition: background-position .3s ease;
+// 						-o-transition: background-position .3s ease;
+// 						transition: background-position .3s ease;
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(1){
+// 				a{
+// 					background-position: 0px -25px;
+// 					&:hover{
+// 						background-position: 0px 0px;
+
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(2){
+// 				a{
+// 					background-position:  0px -76px;
+// 					&:hover{
+// 						background-position: 0px -51px;
+
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(3){
+// 				a{
+// 					background-position: 0px -127px;
+// 					&:hover{
+// 						background-position: 0px -102px;
+
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(4){
+// 				a{
+// 					background-position: 0px -178px;
+// 					&:hover{
+// 						background-position: 0px -153px;
+
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(5){
+// 				a{
+// 					background-position: 0px -229px;
+// 					&:hover{
+// 						background-position: 0px -204px;
+
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(6){
+// 				a{
+// 					background-position: 0px -280px;
+// 					&:hover{
+// 						background-position: 0px -255px;
+
+// 					}
+// 				}
+// 			}
+// 			li:nth-child(7){
+// 				a{
+// 					background-position: 0px -331px;
+// 					&:hover{
+// 						background-position: 0px -306px;
+
+// 					}
+// 				}
+// 			}
+			
+// 		}
+
+// 		@media (max-width: $screen-sm-max) {
+// 			margin-top:$padding-base;
+// 			h4{
+// 				display:none;
+// 			}
+// 		}
+		
+// 	}
+// }
+
+// .copyright{
+// 	padding-top:25px;
+// 	padding-bottom:25px;
+// 	ul{
+// 		margin:0;
+// 		padding:0;
+// 		text-align: center;
+// 		display:block;
+// 		li{
+// 			list-style-type: none;
+// 			display: inline-block;
+			
+// 			border-right: 1px solid #000000;
+// 			padding-left: 10px;
+// 			padding-right: 10px;
+// 			line-height:10px;
+// 			@media screen and (max-width: $screen-xs-max){
+// 				width:100%;
+// 				padding-bottom : 10px
+// 			}
+// 			@media screen and (max-width: $screen-sm-min) {
+// 				border:0;
+// 			}
+// 		}
+// 		li:nth-child(3){
+// 			border:0;
+// 		}
+// 	}
+// }
+// .page-contactUsPage{
+// 	#contactUsForm{
+// 		.control-group{
+// 			padding-right:25px;
+// 			@media (max-width: $screen-xs-max){
+// 				padding-right:0px;
+// 			}
+// 		}
+// 		.manual-link{
+// 			color: #007f93;
+// 			display: block;
+// 			text-decoration: underline;
+// 			margin-bottom: 25px;
+// 		}
+// 		.postcode-blk{
+// 			background: #ececec none repeat scroll 0 0;
+// 			display: none;
+// 			padding: 40px 20px;
+// 			margin-right: 25px;
+// 			@media (max-width: $screen-xs-max){
+// 				margin-right: 0px;
+// 			}
+// 		}
+		
+// 	}
+// 	textarea{
+// 		width:100%;
+// 		height:90px;
+// 	}	
+// 	.contactUsPage{
+// 		> h4{
+// 			font-family:$font-family-sans-serif;
+// 			border-bottom:1px solid #000;
+// 			padding-bottom:17px;
+// 			margin-bottom:16px;
+// 			padding-left:5px;
+// 			padding-top:20px;
+// 		}
+		
+// 	}
+// }
+// .countryselector_footer_mobile {
+// 	display: none;
+// 	.countryselector_footer {
+// 		li {
+// 		/*@media (min-width: $screen-xs-max){
+// 			//width: 32%;
+// 			float: left;
+// 			padding: 0px !important;
+// 			margin: 10px 0px 10px 1% !important;
+// 		}*/
+// 			a{
+// 				padding: 10px;
+// 				display: block !important;
+// 				text-align: left !important;
+// 				line-height: 14px;
+// 				&.en-uk span{
+// 					background:url('../images/flag-icon.png') no-repeat 0px 0px;
+// 					display: inline-block;
+// 				}
+// 				&.en-eu span{
+// 					background:url('../images/flag-icon.png') no-repeat 0px -14px;
+// 					display: inline-block;
+// 				}
+// 				&.en-ie span{
+// 					background:url('../images/flag-icon.png') no-repeat 0px -28px;
+// 					display: inline-block;
+// 				}
+// 				&.en-us span{
+// 					background:url('../images/flag-icon.png') no-repeat 0px -42px;
+// 					display: inline-block;
+// 				}	
+// 				span {
+// 					padding-left: 35px;
+// 					height: 14px;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media (max-width: $screen-sm-max){
+// 	.countryselector_footer_mobile {
+// 		display: block;
+// 	}
+// }

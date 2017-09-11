@@ -1,0 +1,54 @@
+#content{
+	width:100%;
+	float:left;
+	margin-top:$padding-base;
+	margin-bottom:$padding-base+40;
+}
+
+body{
+	min-width: 320px;
+}
+
+.background-overlay{
+	background: rgba( 0,0,0,0.25 );
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 90;
+	display: none;
+
+	&.force{
+		z-index: 10000;
+	}
+
+	&.sidebar{
+		left: 270px;
+
+		@media (max-width: $screen-sm-max)
+		{
+			left: 260px;
+		}
+	}
+}
+
+.loading-overlay{
+	background: #FFFFFF url("../images/spinner.gif") 32px 12px no-repeat;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	position: fixed;
+	width: 214px;
+	height: 58px;
+	line-height: 58px;
+	border: 2px solid #000000;
+	padding-left: 78px;
+	padding-left: 78px;
+	top: 50%;
+	left: 50%;
+	margin-top: -29px;
+	margin-left: -107px;
+	z-index: 10001;
+	display: none;
+}
