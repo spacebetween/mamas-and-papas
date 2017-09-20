@@ -82,6 +82,10 @@ app.get('/product-display-page', (req, res) => {
     res.render('pages/productDisplayPage', {});
 });
 
+app.get('/furniture', (req, res) => {
+    res.render('pages/furniture', {});
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`Mamas and papas is running on localhost:${process.env.PORT}, go do something amazing!`);
 });
