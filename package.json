@@ -30,11 +30,13 @@
       "server": "server",
       "styles": "src/css",
       "svgs": "media/svgs",
-      "views": "views"
+      "views": "views",
+      "fonts": "src/fonts"
     },
     "dist": {
       "styles": "dist/css",
-      "scripts": "dist/js"
+      "scripts": "dist/js",
+      "fonts": "dist/fonts"
     }
   },
   "homepage": "https://github.com/spacebetween/mamas-and-papas#readme",
@@ -49,6 +51,7 @@
     "grunt": "1.0.1",
     "grunt-babel": "6.0.0",
     "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "3.0.1",
     "grunt-contrib-watch": "1.0.0",
     "grunt-eslint": "20.0.0",

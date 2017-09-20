@@ -27,6 +27,7 @@ css:
   description: 'CSS chain'
   tasks:
     - 'sasslint'
+    - 'copy'
     - 'sass'
     - 'postcss'
 
