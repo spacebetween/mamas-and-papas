@@ -721,9 +721,7 @@ $(document).ready(function () {
                         dots: false
                     }
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
+
             ]
         });
 
@@ -742,9 +740,7 @@ $(document).ready(function () {
                         dots: false
                     }
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
+
             ]
         });
 
@@ -776,17 +772,6 @@ $(document).ready(function () {
         aboutUsCarousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
             $('#aboutus-carousel .carousel-arrow-holder .carousel-arrow').detach().appendTo('#aboutus-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-text .carousel-arrow-holder');
         });
-
-        // var timeout;
-        // jQuery(window).on('resize', function () {
-        //     window.clearTimeout(timeout);
-        //     timeout = window.setTimeout(function () {
-        //         console.log('go go ');
-        //         var productCarouselWidth = $('#aboutus-carousel').parents('.product-carousel-holder').outerWidth() - 100;
-        //         $('#aboutus-carousel .product-carousel-slide').css('width', productCarouselWidth + 'px');
-        //     }, 200);
-        // });
-        // jQuery(window).trigger('resize');
 
         var slickWidth = $('#aboutus-carousel').find('.slick-track').outerWidth() + 'px';
         console.log(slickWidth);
@@ -905,17 +890,17 @@ $(document).ready(function () {
 
         initBuyingOptions();
 
-    }
-
-    $(window).on('load', function () {
-
         initStickyHeader();
 
         initStickyFooter();
 
-    });
+    }
 
-    initFurniturePageJS();
+    $(window).on('load', function () {
+        if (window.location.href.indexOf('furniture') > 0) {
+            initFurniturePageJS();
+        }
+    });
 
 })(jQuery);
 
