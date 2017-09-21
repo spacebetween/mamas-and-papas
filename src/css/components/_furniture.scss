@@ -501,7 +501,13 @@ h6 {
         float: right;
         color: #ffdbb8;
         border-color: #ffdbb8;
+        background: transparent;
+        height: auto;
+        padding: 10px;
+        font-size: 12px;
+        letter-spacing: 1.7px;
     }
+
     p {
         width: auto;
         float: left;
@@ -541,6 +547,7 @@ h6 {
     padding-top: 79px;
     position: relative;
     z-index: 110;
+    overflow: visible;
 
     @media all and (max-width: 650px) {
         padding-top: 50px;
@@ -649,6 +656,7 @@ h6 {
     height: 760px;
     position: relative;
     z-index: 100;
+    overflow: visible;
 
     @media all and (max-width: 1400px) {
         height: auto;
@@ -950,8 +958,12 @@ h6 {
     .option-button {
         float: left;
         width: auto;
-        margin: 23px 48px 0 0;
+        margin: 27px 48px 0 0;
         padding: 8px 45px;
+        font-size: 12px;
+        letter-spacing: 1.7px;
+        height: auto;
+
         &.active {
             color: #fff;
             background-color: #000;
