@@ -608,4 +608,314 @@ $(document).ready(function () {
         var homepageFeature = new Carousel();
         homepageFeature.init();
     });
+
 });
+
+(function ($) {
+
+    function equalizeHeights (rowname, individual) {
+
+        var timeout;
+        jQuery(window).on('resize', function () {
+            window.clearTimeout(timeout);
+            timeout = window.setTimeout(function () {
+                var tallest = 0;
+                $(rowname).each(function () {
+                    $(this).find(individual).each(function () {
+                        $(this).css('height', '');
+                        if ($(this).outerHeight() > tallest) {
+
+                            tallest = $(this).outerHeight();
+                        }
+                    });
+
+                    $(this).find(individual).each(function () {
+                        $(this).css('height', tallest);
+                    });
+
+                    tallest = 0;
+
+                });
+
+            }, 200);
+        });
+        jQuery(window).trigger('resize');
+
+    }
+
+    function initBuyingOptions () {
+
+        $(document).on('click', '.buying-options-section .option-button', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            var targetOption = $this.attr('data-target-id');
+            $('.buying-options-section .option-button').removeClass('active');
+            $('.buying-options-section .buying-options-block').removeClass('active');
+
+            $this.addClass('active');
+            $('.buying-options-block[data-option-id=' + targetOption + ']').addClass('active');
+        });
+
+    }
+
+    function initColourSpots () {
+
+        $(document).on('click', '.colour-option', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            $('.colour-option').removeClass('active');
+
+            $this.addClass('active');
+
+        });
+
+    }
+
+    function initTabs () {
+
+        $(document).on('click', '.tab-option', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+
+            var tabTarget = $this.attr('data-tab-target');
+
+            $('.product-content-tab-image, .tab-option, .product-content-tab-block').removeClass('active');
+
+            $this.addClass('active');
+            $('.product-content-tab-block[data-tab-id=' + tabTarget + ']').addClass('active');
+            $('.product-content-tab-image[data-tab-id=' + tabTarget + ']').addClass('active');
+
+        });
+
+        $('.product-tabs .tabcount').each(function () {
+
+            var $this = $(this);
+            var parentCarousel = $this.parents('.product-content-tabs');
+
+            var slideCount = parentCarousel.find('.product-content-tab-block').length;
+
+            if (slideCount < 10) {
+                $this.html('0' + slideCount);
+            } else {
+                $this.html(slideCount);
+            }
+
+        });
+
+    }
+
+    function initCarousels () {
+
+        // Primary Carousel
+        $('#primary-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        dots: false
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+        // Collection Carousel
+        var collectionCarousel = $('#collection-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        dots: false
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+        collectionCarousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            $('#collection-carousel .carousel-arrow-holder').detach().appendTo('#collection-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-text');
+        });
+
+        // Process Carousel
+        $('#process-carousel').slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            arrows: false
+        });
+
+        // About Us Carousel
+        var aboutUsCarousel = $('#aboutus-carousel').slick({
+            dots: false,
+            infinite: false,
+            speed: 500,
+            fade: false,
+            cssEase: 'linear',
+            arrows: false,
+            variableWidth: true
+        });
+
+        aboutUsCarousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            $('#aboutus-carousel .carousel-arrow-holder .carousel-arrow').detach().appendTo('#aboutus-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-text .carousel-arrow-holder');
+        });
+
+        // var timeout;
+        // jQuery(window).on('resize', function () {
+        //     window.clearTimeout(timeout);
+        //     timeout = window.setTimeout(function () {
+        //         console.log('go go ');
+        //         var productCarouselWidth = $('#aboutus-carousel').parents('.product-carousel-holder').outerWidth() - 100;
+        //         $('#aboutus-carousel .product-carousel-slide').css('width', productCarouselWidth + 'px');
+        //     }, 200);
+        // });
+        // jQuery(window).trigger('resize');
+
+        var slickWidth = $('#aboutus-carousel').find('.slick-track').outerWidth() + 'px';
+        console.log(slickWidth);
+        $('.about-us-inner .product-carousel-track').width(slickWidth);
+
+        // Update Carousel Count Numbers for all Carousels
+        $('.product-carousel .slidecount').each(function () {
+
+            var $this = $(this);
+            var parentCarousel = $this.parents('.product-carousel');
+
+            var slideCount = parentCarousel.find('.product-carousel-slide').length;
+
+            if (slideCount < 10) {
+                $this.html('0' + slideCount);
+            } else {
+                $this.html(slideCount);
+            }
+
+        });
+
+        // Arrow Functionality
+        $(document).on('click', '.carousel-arrow', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            var parentCarousel = $(this).parents('.product-carousel-holder').find('.product-carousel');
+            if ($this.hasClass('left')) {
+                parentCarousel.slick('slickPrev');
+            } else {
+                parentCarousel.slick('slickNext');
+            }
+        });
+
+    }
+
+    function initStickyHeader () {
+
+        var stickyNav = $('.sticky-header-nav');
+        var productNav = $('#main-product-nav');
+        var stickyNavTop = stickyNav.offset().top;
+
+        jQuery('.wrapper').on('scroll', function () {
+
+            var distanceTop = $('.wrapper').scrollTop();
+            if (distanceTop > stickyNavTop) {
+
+                if (!stickyNav.hasClass('fixed')) {
+                    stickyNav.addClass('fixed');
+                    productNav.addClass('container furniture-container');
+                }
+
+            } else {
+
+                if (stickyNav.hasClass('fixed')) {
+                    stickyNav.removeClass('fixed');
+                    productNav.removeClass('container furniture-container');
+                }
+
+            }
+        });
+
+        $(document).on('click', '.mobile-product-nav', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+
+            if ($this.hasClass('active')) {
+                $this.removeClass('active').html('Other Products +');
+                $('.product-nav').removeClass('mobile-active');
+            } else {
+                $this.addClass('active').html('Other Products -');
+                $('.product-nav').addClass('mobile-active');
+            }
+
+        });
+
+    }
+
+    function initStickyFooter () {
+
+        var stickyNav = $('.sticky-range-footer');
+        var stickyNavBottom = stickyNav.offset().top;
+
+        jQuery('.wrapper').on('scroll', function () {
+
+            var distanceTop = $('.wrapper').scrollTop() + $('.wrapper').outerHeight();
+
+            if (distanceTop > stickyNavBottom) {
+
+                if (!stickyNav.hasClass('fixed')) {
+                    stickyNav.addClass('fixed');
+                }
+
+            } else {
+
+                if (stickyNav.hasClass('fixed')) {
+                    stickyNav.removeClass('fixed');
+                }
+
+            }
+        });
+
+    }
+
+    function initFurniturePageJS () {
+
+        console.log('initializing furniture page');
+
+        equalizeHeights('.product-carousel', '.product-content-carousel');
+        equalizeHeights('.shopping-holder', '.shopping-equalize-cols');
+
+        initTabs();
+
+        initCarousels();
+
+        initColourSpots();
+
+        initBuyingOptions();
+
+    }
+
+    $(window).on('load', function () {
+
+        initStickyHeader();
+
+        initStickyFooter();
+
+    });
+
+    initFurniturePageJS();
+
+})(jQuery);
+
