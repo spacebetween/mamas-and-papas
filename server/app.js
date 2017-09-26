@@ -86,6 +86,10 @@ app.get('/furniture', (req, res) => {
     res.render('pages/furniture', {});
 });
 
+app.get('/pushchair', (req, res) => {
+    res.render('pages/pushchair', {});
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`Mamas and papas is running on localhost:${process.env.PORT}, go do something amazing!`);
 });

@@ -1,0 +1,122 @@
+.product-block {
+    .section {
+        background-position: center center;
+        background-size: cover;
+        color: #fff;
+        height: 90vh;
+        max-height: 715px;
+        @media only screen and (max-width: 767px) {
+            max-height: none;
+        }
+        position: relative;
+    }
+    .col-1 {
+        width: 60%;
+        float: left;
+        max-width: 350px;
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+        }
+    }
+    .col-2 {
+        width: 40%;
+        float: right;
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+    &__overlay {
+        background-color: rgba(0, 0, 0, .4);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+    .table {
+        position: relative;
+        z-index: 10;
+        display: table;
+        padding: 0 20px;
+        width: 100%;
+        height: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .table-cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    &__list {
+        list-style: none;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+    }
+    &__list-item {
+        background-image: url('../media/pushchair-images/arrow-right.svg');
+        background-position: left;
+        background-repeat: no-repeat;
+        margin-bottom: 20px;
+        padding-left: 40px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+    .slide-count {
+        font-size: 12px;
+        color: rgba(255, 255, 255, .4);
+        span {
+            color: #fff;
+        }
+        @media only screen and (max-width: 767px) {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            opacity: 1!important;
+        }
+    }
+    &__title {
+        font-size: 50px;
+        margin: 15px 0 50px;
+        @media only screen and (max-width: 767px) {
+            font-size: 30px;
+        }
+    }
+    &__subtitle {
+        font-size: 30px;
+        margin: 0 0 30px;
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 50px;
+        @media only screen and (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+    .btn  {
+        border: 1px solid #fff;
+        line-height: 34px;
+        height: 36px;
+        min-width: 143px;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #fff;
+            color: #333;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+}
