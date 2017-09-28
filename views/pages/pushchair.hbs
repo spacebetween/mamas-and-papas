@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <header>
+        {{> topInfoBar}}
+        <div class="container-fluid">
+            {{> header color="black" background="white"}}
+        </div>
+    </header>
+
+    <div class="container pushchair-container">
+
+        <div id="content" class="page-content-holder">
+
+          {{> textBlock}}
+
+          {{> productBlocks}}
+
+          <section class="page-section ancillary-section">
+
+              <div class="free-uk-delivery">
+                  <div class="free-uk-delivery-inner">
+                      <span class="initial-text">Free UK Delivery</span>
+                      <span class="delivery-plus"> + </span>
+                      <div class="delivery-terms">
+                          <span class="delivery-terms-number">30</span>
+                          <span class="delivery-terms-text">Day Returns</span>
+                      </div>
+                      <span class="delivery-plus"> + </span>
+                      <div class="delivery-terms">
+                          <span class="delivery-terms-number">2<sup>YR</sup></span>
+                          <span class="delivery-terms-text">Warranty</span>
+                      </div>
+                  </div>
+              </div>
+
+          </section>
+
+        </div>
+
+    </div>
+
+    {{> footer}}
+
+</div>
+
+{{> slidePanel block="nav"}}
+{{> slidePanel block="basket" align="rightSide"}}
+
+{{> scripts}}

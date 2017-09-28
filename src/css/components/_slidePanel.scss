@@ -43,4 +43,7 @@
             transform: translateX(0);
         }
     }
+    &_content_full {
+        max-width: 100%;
+    }
 }

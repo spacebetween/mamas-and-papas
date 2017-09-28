@@ -1,5 +1,4 @@
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/variables';
-
 $path: '/_ui/desktop/common/';
 
 // END LEGACY VARS
@@ -113,6 +112,9 @@ $path: '/_ui/desktop/common/';
 @import 'slick-carousel/slick/slick.scss';
 // sass-lint:enable clean-import-paths
 
+// import plugins
+@import 'plugins';
+
 // new icons
 @import 'icons/icons';
 
@@ -136,8 +138,11 @@ $path: '/_ui/desktop/common/';
 @import 'components/breadcrumb';
 @import 'components/products';
 @import 'components/productCard';
-
+@import 'components/productBlocks';
+@import 'components/textBlock';
 @import 'components/furniture';
+@import 'components/lugyBanner';
+@import 'components/lugySection';
 
 // Any styles that can't be put into a component
 @import 'main';

@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/spacebetween/mamas-and-papas#readme",
   "dependencies": {
+    "aos": "^2.2.0",
     "autoprefixer": "7.1.1",
     "babel-preset-es2015": "6.24.1",
     "bootstrap": "4.0.0-beta",

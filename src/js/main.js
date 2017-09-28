@@ -1,3 +1,5 @@
+/* global AOS */ // required for animate on scroll library
+
 'use strict';
 
 /*
@@ -23,7 +25,7 @@ var transitionEnd = whichTransitionEvent();
 
 // Toggle function
 (function ($) {
-    /* 
+    /*
      * Set Filter Styles Function
      * This is a function specific to the product filter
      * If there is a list item that is active, all non active list items will have .text-grayLight set
@@ -42,7 +44,7 @@ var transitionEnd = whichTransitionEvent();
             listItems.removeClass('text-grayLight');
         }
     }
-    /* 
+    /*
      * Toggle Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
@@ -67,7 +69,7 @@ var transitionEnd = whichTransitionEvent();
 
 // Radio button function
 (function ($) {
-    /* 
+    /*
      * Radio Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
@@ -96,7 +98,7 @@ var transitionEnd = whichTransitionEvent();
 
 // Checkbox button function
 (function ($) {
-    /* 
+    /*
      * setFilterCounts Function
      * This is a function specifically for the product filters that works off of the checkbox
      * function. 'isClear' defines if the action is to clear the filters or not
@@ -134,7 +136,7 @@ var transitionEnd = whichTransitionEvent();
             $('<div class="pl-2 d-block d-md-inline-block">' + filterList + '</div>').appendTo(footer);
         }
     }
-    /* 
+    /*
      * Checkbox Function
      * Multi use toggle for when you only want one div to show at a time
      * Add .js-toggle to the container, .js-trigger to the trigger and .js-target to the div
@@ -192,7 +194,7 @@ var transitionEnd = whichTransitionEvent();
 // Navigation
 (function ($) {
 
-    /* 
+    /*
      * Slide Panel
      * Multi use toggle for the slide panel feature.
      * Requires the class js-slidePanel on the triggers, and a data-target attribute for the DOM element to be slid in/out.
@@ -209,7 +211,7 @@ var transitionEnd = whichTransitionEvent();
         // Get our target element to slide in
         var target = $(this).data('target');
 
-        // Our slide panel to open or close.. 
+        // Our slide panel to open or close..
         var slidePanel;
 
         // Set the lock status
@@ -259,7 +261,7 @@ var transitionEnd = whichTransitionEvent();
 
 (function ($) {
 
-    /* 
+    /*
      * Navigation
      * Category change functions and esc/left arrow funcitonality only
      * The containing panel is triggered via the Slide Panel function
@@ -509,7 +511,7 @@ var Carousel = function ($, window) {
 
 (function ($) {
 
-    /* 
+    /*
      * Product Page Column Toggle
      */
 
@@ -521,7 +523,7 @@ var Carousel = function ($, window) {
         colSwapper,
         locked = 0;
 
-    // rudimentary mechanism to allow the transition to finish first.. 
+    // rudimentary mechanism to allow the transition to finish first..
     // without this, a user could click very quickly on the col switcher and be mid-transition, leaving the screen blank
     function setLock () {
         locked = 1;
@@ -896,11 +898,73 @@ $(document).ready(function () {
 
     }
 
+    function initPushchairPageJS () {
+
+        console.log('initializing pushchair page');
+
+        // Animate on scroll function
+        AOS.init();
+    }
+
+    // lugy
+    var lugy = (function () {
+
+        // declare functions
+        var _navigation = function () {
+            $('#lugy-panel-1').fadeOut(500, function () {
+                $('#preloader').addClass('active');
+                $('#lugy-panel-3').fadeIn(500);
+                // setTimeout(function () {
+                // $('#preloader').removeClass('active');
+                // }, 1000);
+            });
+        };
+
+        var _reset = function () {
+            setTimeout(function () {
+                $('.lugy-panel').hide();
+                $('#lugy-panel-1').show();
+            }, 300);
+        };
+
+        var _selectBackground = function () {
+            $('#js-lugy_overlay').toggleClass('active');
+        };
+
+        // bind events
+        $('#lugy-mum').on('click', function () {
+            _navigation();
+        });
+
+        $('.slidePanel').find('.ico').on('click', function () {
+            _reset();
+        });
+
+        // init select boxes
+        $('.lugy-select').dropkick({
+            open: function () {
+                _selectBackground();
+            },
+            close: function () {
+                _selectBackground();
+            },
+            mobile: false
+        });
+
+    })();
+
+    lugy();
+
     $(window).on('load', function () {
         if (window.location.href.indexOf('furniture') > 0) {
             initFurniturePageJS();
         }
+
+        if (window.location.href.indexOf('pushchair') > 0) {
+            initPushchairPageJS();
+
+            $('body').addClass('page-pushchair'); // add class to body for animate on scroll functionality.
+        }
     });
 
 })(jQuery);
-
