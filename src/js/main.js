@@ -825,7 +825,7 @@ $(document).ready(function () {
         });
 
         aboutUsCarousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-            $('#aboutus-carousel .carousel-arrow-holder .carousel-arrow:first').detach().appendTo('#aboutus-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-text .carousel-arrow-holder');
+            $('#aboutus-carousel .carousel-arrow-holder .carousel-arrow').detach().appendTo('#aboutus-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-text .carousel-arrow-holder');
         });
 
         var slickWidth = $('#aboutus-carousel').find('.slick-track').outerWidth() + 'px';
