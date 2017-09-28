@@ -1,0 +1,39 @@
+{
+  "customerTypes": [
+    {
+      "text": "i'm a mum to be",
+      "imgpath": "",
+      "link": ""
+    },
+    {
+      "text": "i'm a dad to be",
+      "imgpath": "",
+      "link": ""
+    },
+    {
+      "text": "i'm a mum",
+      "imgpath": "",
+      "link": ""
+    },
+    {
+      "text": "i'm a dad",
+      "imgpath": "",
+      "link": ""
+    },
+    {
+      "text": "i'm a grandparent",
+      "imgpath": "",
+      "link": ""
+    },
+    {
+      "text": "i'm not any of these",
+      "imgpath": "",
+      "link": ""
+    },
+    {
+      "text": "i'm a dad to be",
+      "imgpath": "",
+      "link": ""
+    }
+  ]
+}

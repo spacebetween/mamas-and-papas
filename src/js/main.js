@@ -906,10 +906,60 @@ $(document).ready(function () {
         AOS.init();
     }
 
+    // lugy
+    var lugy = (function () {
+
+        // declare functions
+        var _navigation = function () {
+            $('#lugy-panel-1').fadeOut(500, function () {
+                $('#preloader').addClass('active');
+                $('#lugy-panel-3').fadeIn(500);
+                // setTimeout(function () {
+                // $('#preloader').removeClass('active');
+                // }, 1000);
+            });
+        };
+
+        var _reset = function () {
+            setTimeout(function () {
+                $('.lugy-panel').hide();
+                $('#lugy-panel-1').show();
+            }, 300);
+        };
+
+        var _selectBackground = function () {
+            $('#js-lugy_overlay').toggleClass('active');
+        };
+
+        // bind events
+        $('#lugy-mum').on('click', function () {
+            _navigation();
+        });
+
+        $('.slidePanel').find('.ico').on('click', function () {
+            _reset();
+        });
+
+        // init select boxes
+        $('.lugy-select').dropkick({
+            open: function () {
+                _selectBackground();
+            },
+            close: function () {
+                _selectBackground();
+            },
+            mobile: false
+        });
+
+    })();
+
+    lugy();
+
     $(window).on('load', function () {
         if (window.location.href.indexOf('furniture') > 0) {
             initFurniturePageJS();
         }
+
         if (window.location.href.indexOf('pushchair') > 0) {
             initPushchairPageJS();
 

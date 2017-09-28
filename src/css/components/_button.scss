@@ -42,3 +42,21 @@
     background-color: $gray;
     border-color: $gray;
 }
+
+.btn-black-line {
+    text-decoration: none;
+    width: 180px;
+    padding: 16px 20px;
+    border: 1px solid #323232;
+    margin: 0 auto;
+    transition: background .25s ease-in-out;
+    text-align: left;
+    .ico-arrowRight {
+        float: right;
+    }
+    &:hover {
+        color: #fff;
+        background-color: #323232;
+        text-decoration: none;
+    }
+}
