@@ -1,0 +1,42 @@
+<div id="lugy-panel-3" class="step">
+
+    {{debug}}
+
+    <div class="lugy-intro">
+        <img src="./media/lugy-images/lugy-logo.svg">
+
+        {{#if title}}<h2>{{title}}</h2>{{/if}}
+        <p>{{description}}</p>
+
+        <p class="lugy_copy">
+            <span class="lbl-step1">I'm</span>
+            <select class="lugy-select" name="user_type">
+                {{#each users}}
+                    <option value="{{value}}">{{title}}</option>
+                {{/each}}
+            </select>
+
+
+            <span class="user-need">and I want</span>
+            <select class="lbl-step2" name="user_need">
+                {{#each needs}}
+                    <option value="{{value}}">{{title}}</option>
+                {{/each}}
+            </select>
+            <span class="lbl-step3">for...</span>
+        </p>
+    </div>
+
+    <div id="lugy-pods-page-3" class="lugy-pods-container row">
+        {{#each solutions}}
+        <a class="lugy-pod col-lg-4 col-md-4 col-sm-6 col-xs-6 col-6" href="{{url}}">
+            <div class="lugy-pod_inner">
+                {{title}}
+            </div>
+
+            <img src="{{picture}}" alt="" />
+        </a>
+        {{/each}}
+    </div>
+
+</div>

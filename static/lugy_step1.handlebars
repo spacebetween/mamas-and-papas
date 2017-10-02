@@ -1,0 +1,24 @@
+<div id="lugy-panel-1" class="step">
+
+    {{debug}}
+
+    <div class="lugy-intro">
+        <img src="./media/lugy-images/lugy-logo.svg">
+
+        {{#if title}}<h2>{{title}}</h2>{{/if}}
+        <p class="small">{{description}}</p>
+    </div>
+
+    <div id="lugy-pods-page-1" class="lugy-pods-container row">
+        {{#each users}}
+        <a class="lugy-pod col-lg-4 col-md-4 col-sm-6 col-xs-6 col-6" href="{{url}}">
+            <div class="lugy-pod_inner">
+                {{title}}
+            </div>
+
+            <img src="{{picture}}" alt="" />
+        </a>
+        {{/each}}
+    </div>
+
+</div>
