@@ -1,6 +1,119 @@
-/* global AOS */ // required for animate on scroll library
+/* global AOS, Handlebars */ // required for animate on scroll library
 
 'use strict';
+
+/*
+Set of utility functions for the Product Guide feature
+The user can select a user type and then a need and the system will dynamically
+return a list of suggested products basded on the choices.
+The return data object will be formatted in JSON.
+ */
+const mamaspapas = (() => {
+
+    // URL for the JSON files
+    const STEP1_URL = 'http://www.json-generator.com/api/json/get/ceacHwKDGW?indent=2';
+
+    // Keep track of the current step
+    let step = 0;
+
+    // Cache selectors
+    let $lugyContainer = $( '.lugy' );
+    let $dropdownOverlay = $( '#js-lugy_overlay' );
+
+    // Add the Handlebar debugging information
+    function handlebarsDebugHelper () {
+        Handlebars.registerHelper('debug', function (optionalValue) {
+            console.log('Current Context');
+            console.log('====================');
+            console.log(this);
+        });
+    }
+
+    // Render Handlebar template via ajax
+    function getTemplateAjax (path, callback) {
+        let source;
+        let template;
+
+        $.ajax({
+            url: path,
+            success: function (data) {
+                source = data;
+                template = Handlebars.compile(source);
+                if (callback) callback(template);
+            }
+        });
+    }
+
+    // Initialize the plugin for the select lists
+    function styleLists () {
+        $lugyContainer.find( '.lugy-select' ).dropkick({
+            open: function () {
+                $dropdownOverlay.toggleClass( 'active' );
+            },
+            close: function () {
+                $dropdownOverlay.toggleClass( 'active' );
+            },
+            mobile: false
+        });
+    }
+
+    // Function to compile handlebars template
+    function renderHandlebarsTemplate (withTemplate, inElement, data) {
+        getTemplateAjax(withTemplate, function (template) {
+            console.log( 'data = ', data.steps[step] );
+            console.log( 'step = ' + step );
+            $(inElement).append(template(data.steps[step]));
+
+            // Bump the step
+            step++;
+
+            // Initialize the funky dropdown lists
+            styleLists();
+        });
+    }
+
+    // Render the compiled Handlebars template
+    function renderDataVisualsTemplate (data) {
+        handlebarsDebugHelper();
+        renderHandlebarsTemplate('../../lugy_step' + (step + 1) + '.handlebars', '#lugy_steps', data);
+    }
+
+    // Get the data
+    function retriveData () {
+        var dataSource = STEP1_URL;
+        $.getJSON(dataSource, renderDataVisualsTemplate);
+    }
+
+    // Go to next step when a list from the LUGY changes
+    $( '.lugy' ).on( 'change', 'select', function () {
+
+    });
+
+    $( '.lugy' ).on( 'click', '.lugy-pod', function (e) {
+        if ( step < 3 ) {
+            e.preventDefault();
+            retriveData();
+        }
+    });
+
+    return {
+        retriveData: retriveData
+    };
+
+})();
+mamaspapas.retriveData();
+
+// Helper for comparions in Handlebars
+Handlebars.registerHelper('equal', function (lvalue, rvalue, options) {
+    if (arguments.length < 3) {
+        throw new Error('Handlebars Helper equal needs 2 parameters');
+    }
+    if ( lvalue !== rvalue ) {
+        return options.inverse(this);
+    }
+    return options.fn(this);
+
+});
 
 /*
  * https://www.iambacon.co.uk/blog/prevent-transitionend-event-firing-twice
@@ -236,10 +349,12 @@ var transitionEnd = whichTransitionEvent();
             slidePanel = $(this).closest('.slidePanel');
         } else {
             slidePanel = $(target).closest('.slidePanel');
+            console.log('slidePanel =', slidePanel);
         }
 
         // If we've got something to work with, work magic.
         if (slidePanel.length) {
+
             if (slidePanel.hasClass('active')) {
                 hidePanel();
 
@@ -907,7 +1022,8 @@ $(document).ready(function () {
     }
 
     // lugy
-    var lugy = (function () {
+    //
+    (function () {
 
         // declare functions
         var _navigation = function () {
@@ -927,10 +1043,6 @@ $(document).ready(function () {
             }, 300);
         };
 
-        var _selectBackground = function () {
-            $('#js-lugy_overlay').toggleClass('active');
-        };
-
         // bind events
         $('#lugy-mum').on('click', function () {
             _navigation();
@@ -940,20 +1052,7 @@ $(document).ready(function () {
             _reset();
         });
 
-        // init select boxes
-        $('.lugy-select').dropkick({
-            open: function () {
-                _selectBackground();
-            },
-            close: function () {
-                _selectBackground();
-            },
-            mobile: false
-        });
-
     })();
-
-    lugy();
 
     $(window).on('load', function () {
         if (window.location.href.indexOf('furniture') > 0) {
