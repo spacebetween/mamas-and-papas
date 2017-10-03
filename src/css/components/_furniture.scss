@@ -280,9 +280,35 @@ h6 {
     }
 
     @media all and (max-width: 750px) {
+
+        padding-top: 25px;
         &.constrained-section.page-section {
             padding-left: 15px;
             padding-right: 15px;
+        }
+    }
+
+
+    &.constrained-section.product-content-section.carousel-section {
+
+        padding-top: 0;
+        .product-content-inner {
+
+            @media all and (max-width: 992px) {
+                margin-top: 0;
+            }
+        }
+
+        .center-mode-mobile {
+            @media all and (max-width: 992px) {
+                padding-bottom: 0;
+            }
+        }
+
+        @media all and (max-width: 992px) {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 20px;
         }
     }
 
@@ -401,6 +427,7 @@ h6 {
         color: #fff;
         @media all and (max-width: 650px) {
             font-size: 25px;
+            margin: 0;
         }
     }
     .small-line {
@@ -980,7 +1007,7 @@ h6 {
             width: 1000px;
             display: block;
             margin: 0;
-            padding: 0 0 30px;
+            padding: 0 0 5px;
             float: left;
         }
 
@@ -1609,7 +1636,15 @@ h6 {
         width: 100%;
 
         @media all and (max-width: 992px) {
-            height: 450px;
+            height: auto!important;
+        }
+
+        .shopping-image {
+            position: relative;
+            height: auto!important;
+            top: auto;
+            left: auto;
+            width: 100%;
         }
     }
     .appointment-button {
@@ -1719,7 +1754,8 @@ h6 {
 
     @media all and (max-width: 992px) {
         margin-top: 50px;
-        padding: 25px 15px 0;
+        padding: 25px 0 25px 15px;
+        min-height: 0;
     }
 
     h2 {
@@ -1733,6 +1769,7 @@ h6 {
         @media all and (max-width: 750px) {
             font-size: 30px;
             line-height: 40px;
+            padding-right: 15px;
         }
     }
     .about-us-inner {
@@ -2023,6 +2060,12 @@ h6 {
 
         @media all and (max-width: 992px) {
             margin-bottom: 30px;
+
+        }
+
+        @media all and (max-width: 750px) {
+            font-size: 30px;
+            line-height: 1;
         }
     }
     p {
@@ -2124,6 +2167,11 @@ h6 {
         margin: 15px 0 0;
         font-weight: 500;
         margin-bottom: 53px;
+
+        @media all and (max-width: 750px) {
+            font-size: 30px;
+            line-height: 1;
+        }
     }
     p {
         color: #fff;

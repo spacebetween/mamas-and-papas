@@ -36,7 +36,7 @@
 
             
 
-        <section class="page-section constrained-section product-content-section">
+        <section class="page-section constrained-section product-content-section carousel-header-section">
 
             <div class="product-content-inner">
                 <span class="header-small-text"> Mamas &amp; Papas </span>
@@ -46,6 +46,8 @@
                 <p> If 'small and stylish' sums up your idea of a dream nursery, then you'll love Juno. Compact for smaller spaces, it's full of great storage solutions, all finished in its contemporary two-tone design. </p>
             </div>
 
+        </section>
+        <section class="page-section constrained-section product-content-section carousel-section">
             <div class="product-carousel-holder center-mode-mobile">
                 <div class="product-content-inner product-carousel" id="primary-carousel">
                     
@@ -138,8 +140,8 @@
 
             <div class="page-section sticky-range-footer">
                 <div class="range-footer-inner furniture-container container">
-                    <a href="#" class="btn btn-default all-collections"> < Collections </a>
-                    <a href="#" class="btn btn-default"> Shop Juno v </a>
+                    <a href="#" class="btn btn-default all-collections"> <span class="fa fa-angle-left"></span> Collections </a>
+                    <a href="#" class="btn btn-default"> Shop Juno <span class="fa fa-angle-down"></span> </a>
                 </div>
             </div>
 
@@ -522,7 +524,11 @@
 
             <div class="shopping-holder">
                 <div class="shopping-image shopping-equalize-cols">
-                    <img src="/media/furniture-images/personal-shopping.jpg" alt="carousel 2" class="shopping-content-image img-responsive" />
+                    <picture>
+                        <source srcset="/media/furniture-images/personal-shopping.jpg" /media="(min-width: 750px)">
+                        <source srcset="/media/furniture-images/personal-shopping-mobile.jpg">
+                        <img srcset="/media/furniture-images/personal-shopping-mobile.jpg" alt="Primary Carousel 1" class="shopping-content-image img-responsive">
+                    </picture>
                 </div>
                 <div class="shopping-content shopping-equalize-cols">
                     
