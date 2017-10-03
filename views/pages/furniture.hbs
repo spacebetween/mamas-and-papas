@@ -7,28 +7,6 @@
     </header>
     {{> breadcrumb}}
 
-    <div class="sticky-nav-container">
-        <section class="sticky-header-nav page-section">
-
-            <ul class="product-nav container furniture-container" id="main-product-nav">
-
-                <li> <a href="/" class="active"> Juno </a> </li>
-                <li> <a href="/"> Mia Classic </a> </li>
-                <li> <a href="/"> Mia Sleigh </a> </li>
-                <li> <a href="/"> Mia Vista </a> </li>
-                <li> <a href="/"> Bunny &amp; Clyde </a> </li>
-                <li> <a href="/"> Cooper </a> </li>
-                <li> <a href="/"> Atlas </a> </li>
-                <li> <a href="/"> Franklin </a> </li>
-                <li> <a href="/"> Lawson </a> </li>
-                <li> <a href="/"> Oxford </a> </li>
-
-            </ul>
-
-
-        </section>
-    </div>
-
     <section class="page-section main-carousel-section carousel-section ">
 
         <div class="carousel-inner">
@@ -160,8 +138,8 @@
 
             <div class="page-section sticky-range-footer">
                 <div class="range-footer-inner furniture-container container">
-                    <p class="range-name">Juno</p>
-                    <a href="#" class="btn btn-default"> See Full Range </a>
+                    <a href="#" class="btn btn-default all-collections"> < Collections </a>
+                    <a href="#" class="btn btn-default"> Shop Juno v </a>
                 </div>
             </div>
 
@@ -170,11 +148,31 @@
 
                 <h2> Let's just check it fits </h2>
 
+                <div data-section-id="cot" class="content-holder active">
+                    <img src="/media/furniture-images/plugin-1.jpg" alt="plugin" class="placeholder-plugin img-responsive" />
+                </div>
+                <div data-section-id="wardrobe" class="content-holder">
+                    <img src="/media/furniture-images/plugin-2.jpg" alt="plugin" class="placeholder-plugin img-responsive" />
+                </div>
+                <div data-section-id="drawers" class="content-holder">
+                    <img src="/media/furniture-images/plugin-3.jpg" alt="plugin" class="placeholder-plugin img-responsive" />
+                </div>
+                <div data-section-id="bookshelf" class="content-holder">
+                    <img src="/media/furniture-images/plugin-4.jpg" alt="plugin" class="placeholder-plugin img-responsive" />
+                </div>
+
+                <div class="product-nav-holder">
+                    <ul class="product-nav fit-section-nav">
+                        <li> <a href="#" data-section-target="cot" class="section-option active"> Cot </a> </li>
+                        <li> <a href="#" data-section-target="wardrobe" class="section-option"> Wardrobe </a> </li>
+                        <li> <a href="#" data-section-target="drawers" class="section-option"> Drawers </a> </li>
+                        <li> <a href="#" data-section-target="bookshelf" class="section-option"> Bookshelf </a> </li>
+                    </ul>
+                </div>
+
 
             </div>
-            <img src="/media/furniture-images/plugin-1.jpg" alt="plugin" class="placeholder-plugin img-responsive" />
-
-
+            
         </section>
 
         <section class="page-section constrained-section collection-section">
@@ -279,15 +277,15 @@
         <section class="page-section information-section">
 
             <div class="product-content-inner product-tabs info-tabs">
-                
-                <ul class="product-nav info-nav">
-                    <li> <a href="#" data-tab-target="age" class="tab-option active"> Age </a> </li>
-                    <li> <a href="#" data-tab-target="dimensions" class="tab-option"> Dimensions </a> </li>
-                    <li> <a href="#" data-tab-target="material" class="tab-option"> Material </a> </li>
-                    <li> <a href="#" data-tab-target="advice" class="tab-option"> Advice </a> </li>
-                    <li> <a href="#" data-tab-target="standards" class="tab-option"> Standards </a> </li>
-                </ul>
-                
+                <div class="product-nav-holder">
+                    <ul class="product-nav info-nav">
+                        <li> <a href="#" data-tab-target="age" class="tab-option active"> Age </a> </li>
+                        <li> <a href="#" data-tab-target="dimensions" class="tab-option"> Dimensions </a> </li>
+                        <li> <a href="#" data-tab-target="material" class="tab-option"> Material </a> </li>
+                        <li> <a href="#" data-tab-target="advice" class="tab-option"> Advice </a> </li>
+                        <li> <a href="#" data-tab-target="standards" class="tab-option"> Standards </a> </li>
+                    </ul>
+                </div>
                 
                 <div class="product-content-tabs tabs-right">
 
@@ -305,7 +303,7 @@
                         <span class="header-small-text"> Age </span>
 
                         <div class="content-block">
-                            <p> European safety standard EN716:2008+A1:2013 </p>
+                            <p> CONTENT 1 European safety standard EN716:2008+A1:2013 </p>
                             <p> British safety standard BS 8509:2008+A1:2011 </p>
                             <p> European safety standard EN 12221:2008+A1:2013 </p>
                             <p> British safety standard BS 14749:201 </p>
@@ -317,7 +315,7 @@
                         <span class="header-small-text"> Dimensions </span>
 
                         <div class="content-block">
-                            <p> European safety standard EN716:2008+A1:2013 </p>
+                            <p> CONTENT 2 European safety standard EN716:2008+A1:2013 </p>
                             <p> British safety standard BS 8509:2008+A1:2011 </p>
                             <p> European safety standard EN 12221:2008+A1:2013 </p>
                             <p> British safety standard BS 14749:201 </p>
@@ -329,7 +327,7 @@
                         <span class="header-small-text"> Material </span>
 
                         <div class="content-block">
-                            <p> European safety standard EN716:2008+A1:2013 </p>
+                            <p> CONTENT 3 European safety standard EN716:2008+A1:2013 </p>
                             <p> British safety standard BS 8509:2008+A1:2011 </p>
                             <p> European safety standard EN 12221:2008+A1:2013 </p>
                             <p> British safety standard BS 14749:201 </p>
@@ -341,7 +339,7 @@
                         <span class="header-small-text"> Advice </span>
 
                         <div class="content-block">
-                            <p> European safety standard EN716:2008+A1:2013 </p>
+                            <p> CONTENT 4 European safety standard EN716:2008+A1:2013 </p>
                             <p> British safety standard BS 8509:2008+A1:2011 </p>
                             <p> European safety standard EN 12221:2008+A1:2013 </p>
                             <p> British safety standard BS 14749:201 </p>
@@ -353,7 +351,7 @@
                         <span class="header-small-text"> Standards </span>
 
                         <div class="content-block">
-                            <p> European safety standard EN716:2008+A1:2013 </p>
+                            <p> CONTENT 5 European safety standard EN716:2008+A1:2013 </p>
                             <p> British safety standard BS 8509:2008+A1:2011 </p>
                             <p> European safety standard EN 12221:2008+A1:2013 </p>
                             <p> British safety standard BS 14749:201 </p>
@@ -633,7 +631,7 @@
 
                                     <h3> Dresser / Changer 3 </h3>
 
-                                    <p> The Juno dresser brings together two of our favourite things - Scandi style and handy storage solutions. </p>
+                                    <p> The Juno dresser brings together two of our favourite things - Scandi style and handy storage solutions. We love this Juno dresser. It's great. Really great.</p>
 
                                     <div class="carousel-arrow-holder">
                                     
