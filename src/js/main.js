@@ -673,8 +673,6 @@ $(document).ready(function () {
 
     function initFitSection () {
 
-        console.log('fit section started');
-
         $(document).on('click', '.fit-section .section-option', function (e) {
             e.preventDefault();
             var $this = $(this);
@@ -872,9 +870,17 @@ $(document).ready(function () {
 
     }
 
-    function initFurniturePageJS () {
+    function initDecisionPage () {
 
-        console.log('initializing furniture page');
+        if ($(window).width() < 992) {
+
+            $('.personal-shopping-section .shopping-image').detach().appendTo('.personal-shopping-section .shopping-content-text .lined-box');
+
+        }
+
+    }
+
+    function initFurniturePageJS () {
 
         equalizeHeights('.product-carousel', '.product-content-carousel');
         equalizeHeights('.shopping-holder', '.shopping-equalize-cols');
@@ -892,6 +898,8 @@ $(document).ready(function () {
         initStickyFooter();
 
         initFitSection();
+
+        initDecisionPage();
 
     }
 
