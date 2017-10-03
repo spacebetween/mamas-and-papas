@@ -671,6 +671,23 @@ $(document).ready(function () {
 
     }
 
+    function initFitSection () {
+
+        console.log('fit section started');
+
+        $(document).on('click', '.fit-section .section-option', function (e) {
+            e.preventDefault();
+            var $this = $(this);
+            var targetOption = $this.attr('data-section-target');
+            $('.fit-section .section-option').removeClass('active');
+            $('.fit-section .content-holder').removeClass('active');
+
+            $this.addClass('active');
+            $('.content-holder[data-section-id=' + targetOption + ']').addClass('active');
+        });
+
+    }
+
     function initTabs () {
 
         $(document).on('click', '.tab-option', function (e) {
@@ -706,17 +723,6 @@ $(document).ready(function () {
 
     function initCarousels () {
 
-        if ($(window).width() < 992) {
-            $('#primary-carousel').on('init', function () {
-                $('#primary-carousel').find('.slick-dots').detach().insertAfter('#primary-carousel .slick-slide[data-slick-index=0] .product-content-carousel-image');
-            });
-
-            $('#primary-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-                console.log(nextSlide);
-                $('#primary-carousel').find('.slick-dots').detach().insertAfter('#primary-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-image');
-            });
-        }
-
         // Primary Carousel
         $('#primary-carousel').slick({
             dots: true,
@@ -729,10 +735,10 @@ $(document).ready(function () {
                 {
                     breakpoint: 992,
                     settings: {
-                        dots: true,
+                        dots: false,
                         centerMode: true,
                         slidesToShow: 1,
-                        centerPadding: '20px'
+                        centerPadding: '30px'
                     }
                 }
 
@@ -740,17 +746,6 @@ $(document).ready(function () {
         });
 
         // Collection Carousel
-        if ($(window).width() < 992) {
-            $('#collection-carousel').on('init', function () {
-                $('#collection-carousel').find('.slick-dots').detach().insertAfter('#collection-carousel .slick-slide[data-slick-index=0] .product-content-carousel-image');
-            });
-
-            $('#collection-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-                console.log(nextSlide);
-                $('#collection-carousel').find('.slick-dots').detach().insertAfter('#collection-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-image');
-            });
-        }
-
         $('#collection-carousel').slick({
             dots: true,
             infinite: true,
@@ -761,10 +756,10 @@ $(document).ready(function () {
                 {
                     breakpoint: 992,
                     settings: {
-                        dots: true,
+                        dots: false,
                         centerMode: true,
                         slidesToShow: 1,
-                        centerPadding: '20px'
+                        centerPadding: '30px'
                     }
                 }
 
@@ -776,15 +771,6 @@ $(document).ready(function () {
         });
 
         // Process Carousel
-        if ($(window).width() < 992) {
-            $('#process-carousel').on('init', function () {
-                $('#process-carousel').find('.slick-dots').detach().insertAfter('#process-carousel .slick-slide[data-slick-index=0] .product-content-carousel-image');
-            });
-
-            $('#process-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-                $('#process-carousel').find('.slick-dots').detach().insertAfter('#process-carousel .slick-slide[data-slick-index=' + nextSlide + '] .product-content-carousel-image');
-            });
-        }
 
         if ($(window).width() < 992) {
             $('#process-carousel .product-carousel-slide').each(function () {
@@ -803,10 +789,10 @@ $(document).ready(function () {
                 {
                     breakpoint: 992,
                     settings: {
-                        dots: true,
+                        dots: false,
                         centerMode: true,
                         slidesToShow: 1,
-                        centerPadding: '20px'
+                        centerPadding: '15px'
                     }
                 }
 
@@ -860,48 +846,6 @@ $(document).ready(function () {
 
     }
 
-    function initStickyHeader () {
-
-        var stickyNav = $('.sticky-header-nav');
-        //var productNav = $('#main-product-nav');
-        var stickyNavTop = stickyNav.offset().top;
-
-        jQuery('.wrapper').on('scroll', function () {
-
-            var distanceTop = $('.wrapper').scrollTop();
-            if (distanceTop > stickyNavTop) {
-
-                if (!stickyNav.hasClass('fixed')) {
-                    stickyNav.addClass('fixed');
-                    //productNav.addClass('container furniture-container');
-                }
-
-            } else {
-
-                if (stickyNav.hasClass('fixed')) {
-                    stickyNav.removeClass('fixed');
-                    //productNav.removeClass('container furniture-container');
-                }
-
-            }
-        });
-
-        $(document).on('click', '.mobile-product-nav', function (e) {
-            e.preventDefault();
-            var $this = $(this);
-
-            if ($this.hasClass('active')) {
-                $this.removeClass('active').html('Other Products +');
-                $('.product-nav').removeClass('mobile-active');
-            } else {
-                $this.addClass('active').html('Other Products -');
-                $('.product-nav').addClass('mobile-active');
-            }
-
-        });
-
-    }
-
     function initStickyFooter () {
 
         var stickyNav = $('.sticky-range-footer');
@@ -934,6 +878,8 @@ $(document).ready(function () {
 
         equalizeHeights('.product-carousel', '.product-content-carousel');
         equalizeHeights('.shopping-holder', '.shopping-equalize-cols');
+        equalizeHeights('.about-us-section', '.product-content-carousel-text h3');
+        equalizeHeights('.about-us-section', '.product-content-carousel-text p');
 
         initTabs();
 
@@ -943,9 +889,9 @@ $(document).ready(function () {
 
         initBuyingOptions();
 
-        initStickyHeader();
-
         initStickyFooter();
+
+        initFitSection();
 
     }
 
