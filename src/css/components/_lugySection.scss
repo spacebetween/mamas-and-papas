@@ -1,6 +1,8 @@
 .lugy {
     .lugy-intro {
         @media only screen and (max-width: 480px) {
+            width: 100%;
+            overflow: hidden;
             margin-bottom: 30px;
         }
 
@@ -11,7 +13,7 @@
         }
     }
 
-    // overlay
+    // overlay for the lists
     &_overlay {
         position: fixed;
         top: 0;
@@ -62,6 +64,8 @@
         padding: 0;
         font-weight: $font-weight-light;
         max-height: none;
+        position: relative;
+        z-index: 11;
     }
 
     .dk-option-selected {
@@ -102,7 +106,7 @@
 
 .lugy-pod {
     display: block;
-    padding-bottom: 30px;
+    margin-bottom: 30px; // Frank
 
     &_inner {
         width: 70%;
@@ -110,25 +114,15 @@
         font-size: $font-size-6;
         text-transform: uppercase;
         text-align: center;
-        padding: 30px 0;
+        padding: 30px 20px; // Frank
         margin: 0;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
-        @media only screen and (max-width: 720px) {
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            transform: none;
-            margin: 0;
-            width: 100%;
-            vertical-align: middle;
-            display: inline-block;
-            padding: 0;
-        }
+        // Frank
+        // @media only screen and (max-width: 720px) {
     }
 
     img {
@@ -138,14 +132,33 @@
     }
 }
 
+
+// The panels for the additional steps
+// The will slide in from the bottom of the screen when they become active
 .lugy-panel {
-    display: none;
     width: 100%;
-    float: left;
+    min-height: 100vh; // Frank
+    background-color: #fff;
     position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform .8s cubic-bezier(.23, 1, .32, 1);
+
+    &.active {
+        transform: none;
+    }
 }
 
-.lugy-panel-1 {
-    visibility: visible;
-    display: block;
+.lugy-panel:nth-child(1) {
+    transform: none;
+    z-index: 2;
+}
+
+.lugy-panel:nth-child(2) {
+    z-index: 3;
+}
+
+.lugy-panel:nth-child(3) {
+    z-index: 4;
 }

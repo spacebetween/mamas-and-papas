@@ -10,15 +10,14 @@ The return data object will be formatted in JSON.
  */
 const mamaspapas = (() => {
 
-    // URL for the JSON files
-    const STEP1_URL = 'http://www.json-generator.com/api/json/get/ceacHwKDGW?indent=2';
+    // URLs for the JSON files
+    const STEP1_URL = 'http://www.json-generator.com/api/json/get/cjLCUSrswO?indent=2';
 
     // Keep track of the current step
     let step = 0;
 
     // Cache selectors
     let $lugyContainer = $( '.lugy' );
-    let $dropdownOverlay = $( '#js-lugy_overlay' );
 
     // Add the Handlebar debugging information
     function handlebarsDebugHelper () {
@@ -44,17 +43,22 @@ const mamaspapas = (() => {
         });
     }
 
-    // Initialize the plugin for the select lists
-    function styleLists () {
-        $lugyContainer.find( '.lugy-select' ).dropkick({
-            open: function () {
-                $dropdownOverlay.toggleClass( 'active' );
-            },
-            close: function () {
-                $dropdownOverlay.toggleClass( 'active' );
-            },
-            mobile: false
-        });
+    // Initialize the plugin for the select lists in the overlay panels
+    function styleLists ( $parent ) {
+        let $lists = $parent.find( 'select' );
+        let $overlay = $parent.find( '.lugy_overlay' );
+
+        for ( let i = 0; i < $lists.length; i++ ) {
+            $lists.eq(i).dropkick({
+                open: function () {
+                    $overlay.addClass( 'active' );
+                },
+                close: function () {
+                    $overlay.removeClass( 'active' );
+                },
+                mobile: false
+            });
+        }
     }
 
     // Function to compile handlebars template
@@ -64,11 +68,19 @@ const mamaspapas = (() => {
             console.log( 'step = ' + step );
             $(inElement).append(template(data.steps[step]));
 
-            // Bump the step
+            // Bump the step to show the next one
             step++;
 
-            // Initialize the funky dropdown lists
-            styleLists();
+            // Once the template part has been loaded, trigger the slideIn
+            // animation for the panel
+            setTimeout(function () {
+                let $newPanel = $( '#lugy_steps' ).find( '.lugy-panel:last-child' );
+
+                $newPanel.addClass( 'active' );
+
+                // Initialize the funky dropdown lists
+                styleLists( $newPanel );
+            }, 300);
         });
     }
 
@@ -84,9 +96,33 @@ const mamaspapas = (() => {
         $.getJSON(dataSource, renderDataVisualsTemplate);
     }
 
-    // Go to next step when a list from the LUGY changes
-    $( '.lugy' ).on( 'change', 'select', function () {
+    // Add ahHelper for comparisons in Handlebars
+    function handlebarsHelper () {
+        Handlebars.registerHelper('equal', function (lvalue, rvalue, options) {
+            if (arguments.length < 3) {
+                throw new Error('Handlebars Helper equal needs 2 parameters');
+            }
+            if ( lvalue !== rvalue ) {
+                return options.inverse(this);
+            }
+            return options.fn(this);
+        });
+    }
 
+    function initialize () {
+        // Prepare Handlebars for the templating
+        handlebarsHelper();
+
+        // Get the data for the first panel
+        retriveData();
+    }
+
+    // Go to next step when a list from the LUGY changes
+    $( '.lugy' ).on( 'change', 'select', function (e) {
+        if ( step < 3 ) {
+            e.preventDefault();
+            retriveData();
+        }
     });
 
     $( '.lugy' ).on( 'click', '.lugy-pod', function (e) {
@@ -97,23 +133,11 @@ const mamaspapas = (() => {
     });
 
     return {
-        retriveData: retriveData
+        initialize: initialize
     };
 
 })();
-mamaspapas.retriveData();
-
-// Helper for comparions in Handlebars
-Handlebars.registerHelper('equal', function (lvalue, rvalue, options) {
-    if (arguments.length < 3) {
-        throw new Error('Handlebars Helper equal needs 2 parameters');
-    }
-    if ( lvalue !== rvalue ) {
-        return options.inverse(this);
-    }
-    return options.fn(this);
-
-});
+mamaspapas.initialize();
 
 /*
  * https://www.iambacon.co.uk/blog/prevent-transitionend-event-firing-twice

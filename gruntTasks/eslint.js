@@ -11,7 +11,8 @@ module.exports = {
     ],
     webBuild: [
         '<%= package.config.src.scripts %>/**/*.js',
-        '!<%= package.config.src.scripts %>/vendor/*.js'
+        '!<%= package.config.src.scripts %>/vendor/*.js',
+        '!<%= package.config.src.scripts %>/plugins/*.js'
     ],
     server: [
         '<%= package.config.src.server %>/**/*.js',

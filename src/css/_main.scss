@@ -144,7 +144,8 @@ body.page-pushchair {
     overflow: visible!important;
 }
 .pushchair-container {
-    max-width: 1440px!important;
+    width: 100%;
+    padding: 0;
     .ancillary-section {
         text-align: center;
         margin: 92px 0 32px;
