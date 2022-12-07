@@ -46,7 +46,7 @@
     "bootstrap": "4.0.0-beta",
     "bootstrap-sass": "^3.3.7",
     "cssnano": "3.10.0",
-    "express": "4.15.3",
+    "express": "4.17.3",
     "express-handlebars": "3.0.0",
     "grunt": "1.0.1",
     "grunt-babel": "6.0.0",
